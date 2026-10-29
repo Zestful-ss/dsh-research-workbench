@@ -6,6 +6,14 @@
   "main": "./lib/index.js",
   "icon": "./assets/icon.svg",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zestful-ss/dsh-research-workbench.git"
+  },
+  "homepage": "https://github.com/Zestful-ss/dsh-research-workbench#readme",
+  "bugs": {
+    "url": "https://github.com/Zestful-ss/dsh-research-workbench/issues"
+  },
   "keywords": [
     "dsh",
     "dsh-plugin",
