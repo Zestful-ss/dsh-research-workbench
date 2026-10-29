@@ -56,10 +56,14 @@ $DSH_HOME/dsh-research-workbench/
 ## 安装
 
 ```bash
-dsh plugin --profile <profile> add dsh-research-workbench
+dsh plugin --profile <profile> add github:Zestful-ss/dsh-research-workbench
+# 固定到某个提交，而不是安装时的 main 快照
+dsh plugin --profile <profile> add github:Zestful-ss/dsh-research-workbench#<sha>
 # 或在源码目录中
 dsh plugin --profile <profile> add /path/to/dsh-research-workbench
 ```
+
+本包不在 npm 上，GitHub 仓库就是安装源；push 之后重跑这条命令才会取到新版本。
 
 `cordis.patch.yml` 只插入一行插件记录，并带防重挂载守卫：当已有其它启用项挂载本包时自动退让，
 聚合 bundle 因此不会产生重复路由。

@@ -75,10 +75,15 @@ unset, otherwise `~/.dsh`.
 ## Install
 
 ```bash
-dsh plugin --profile <profile> add dsh-research-workbench
+dsh plugin --profile <profile> add github:Zestful-ss/dsh-research-workbench
+# pin a revision instead of tracking the install-time snapshot of main
+dsh plugin --profile <profile> add github:Zestful-ss/dsh-research-workbench#<sha>
 # or, from a checkout
 dsh plugin --profile <profile> add /path/to/dsh-research-workbench
 ```
+
+The package is not on npm; the GitHub repository is the install source. Re-running the
+command after a push is how a newer plugin version is taken.
 
 `cordis.patch.yml` inserts one plugin row behind a guard that backs off when another enabled
 entry already mounts this package, so an aggregate bundle wins without a duplicate route.
