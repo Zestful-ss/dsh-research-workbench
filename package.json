@@ -1,0 +1,65 @@
+{
+  "name": "dsh-research-workbench",
+  "version": "0.1.0",
+  "description": "Research Workbench for DeepSeek Harness — unified project, literature, task, and upstream scientific Skills hub. · DSH 科研工作台：项目、文献、科研任务与上游科研 Skills 统一入口。",
+  "type": "module",
+  "main": "./lib/index.js",
+  "icon": "./assets/icon.svg",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "research",
+    "skills",
+    "literature"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./icon": "./assets/icon.svg"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/skill-sources.js && node --check lib/skill-manager.js && node --check lib/workbench-api.js && node --check lib/client.js",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "tar": "7.5.22",
+    "yaml": "^2.7.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.1-rc.1 <0.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh": {
+      "optional": true
+    }
+  }
+}

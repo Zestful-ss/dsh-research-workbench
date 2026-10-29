@@ -1,0 +1,18 @@
+# dsh-research-workbench bundle patch
+#
+# `dsh.bundle.patch` of the published package: when the plugin is installed
+# with `dsh plugin --profile <name> add dsh-research-workbench`, the CLI appends
+# the package to `dsh.profile.bundles`, and the profile boot merges this file —
+# a single `insert` of the plugin row.
+#
+# Aggregate bundles can mount the same package under their own entry id (two
+# Node halves would register `/api/dsh-research-workbench` twice and fail the
+# whole tree at boot with a duplicate route). The `!!js` expression backs THIS
+# row off when another enabled entry already mounts the package; the loader
+# evaluates it while processing this row, so an aggregate bundle must precede
+# this one in `dsh.profile.bundles` — the normal install order, because
+# `dsh plugin add` appends new bundles last.
+- insert:
+    - id: dsh-research-workbench
+      name: dsh-research-workbench
+      disabled: !!js "[...ctx.loader.entries()].some((e) => e.options.name === 'dsh-research-workbench' && e.options.id !== 'dsh-research-workbench' && !e.disabled)"

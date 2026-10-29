@@ -1,0 +1,25 @@
+# Development leftovers
+node_modules/
+.scratch/
+*.tgz
+.archify/
+
+# Workbench data that lives under $DSH_HOME/dsh-research-workbench is never
+# checked in; these entries catch accidental copies next to the sources.
+data/
+blobs/
+
+# The research notes this plugin grew out of stay local.
+工作台参考项目.md
+
+# >>> magpie: library skills placed here (magpie adds and removes these lines) >>>
+/.agents/skills/cordis-styling-nitpicking
+/.agents/skills/dsh-client-ui-ux
+/.agents/skills/dsh-official-plugin-artwork
+/.agents/skills/dsh-plugin-development
+/.agents/skills/dsh-responsive-ui
+/.agents/skills/emil-design-eng
+/.agents/skills/frontend-design
+/.agents/skills/kpi-dashboard-design
+/.agents/skills/web-design-guidelines
+# <<< magpie <<<
