@@ -16,7 +16,7 @@ import { after, before, describe, it } from 'node:test';
 import { createSkillProvider } from '../lib/index.js';
 import { SkillSourceManager } from '../lib/skill-manager.js';
 import { SkillError, writeJsonAtomic } from '../lib/skill-sources.js';
-import { ResearchRoleStore, evaluateSelection, readRoleFile } from '../lib/research-roles.js';
+import { LEGACY_TEMPLATE_IDS, ROLE_TEMPLATES, ResearchRoleStore, evaluateSelection, readRoleFile } from '../lib/research-roles.js';
 import { indexDsBotSessions, markerOf, roleMarker } from '../lib/ds-bot.js';
 import { createWorkbenchHandler } from '../lib/workbench-api.js';
 
@@ -185,6 +185,60 @@ describe('role transactions', () => {
   });
 });
 
+describe('template coverage', () => {
+  const natureSkills = [
+    'nature-academic-search',
+    'nature-citation',
+    'nature-data',
+    'nature-downloader',
+    'nature-experiment-log',
+    'nature-figure',
+    'nature-image2ppt',
+    'nature-literature-pipeline',
+    'nature-paper-card',
+    'nature-paper-to-patent',
+    'nature-paper-trans',
+    'nature-paper-xray',
+    'nature-paper2ppt',
+    'nature-paper2word',
+    'nature-polishing',
+    'nature-proposal-writer',
+    'nature-reader',
+    'nature-ref-verifier',
+    'nature-response',
+    'nature-reviewer',
+    'nature-social-science',
+    'nature-statistics',
+    'nature-writing',
+  ];
+
+  it('ships five templates that cover every nature-skills entry', () => {
+    assert.equal(ROLE_TEMPLATES.length, 5);
+    const covered = new Set(ROLE_TEMPLATES
+      .flatMap(template => template.skills)
+      .filter(skill => skill.sourceId === 'nature-skills')
+      .map(skill => skill.name));
+    assert.deepEqual([...covered].sort(), natureSkills.slice().sort());
+  });
+
+  it('routes a retired template id to its consolidated successor', async () => {
+    const legacyFile = join(root, 'roles-legacy.json');
+    await writeJsonAtomic(legacyFile, {
+      version: 1,
+      pending: {},
+      roles: {
+        'bot-legacy': {
+          templateId: 'translation-polish',
+          skills: [{ sourceId: 'nature-skills', name: 'nature-polishing' }],
+        },
+      },
+    });
+    const legacy = await readRoleFile(legacyFile);
+    assert.equal(legacy.roles['bot-legacy'].templateId, 'paper-writing');
+    assert.equal(LEGACY_TEMPLATE_IDS['translation-polish'], 'paper-writing');
+  });
+});
+
 describe('per-Agent skill isolation', () => {
   it('gives each research Bot only its own skills, in every DS-Bot Session', async () => {
     const team = await readTeam();
@@ -217,7 +271,7 @@ describe('per-Agent skill isolation', () => {
     await writeJsonAtomic(stateFile(), team);
     const store = makeStore();
     const prepared = await store.prepare({
-      templateId: 'data-availability',
+      templateId: 'peer-review',
       name: 'Pending',
       skills: [{ sourceId: 'source-b', name: 'nature-data' }],
     });
@@ -355,7 +409,7 @@ describe('role HTTP surface', () => {
 
     const prepared = await post(store, {
       action: 'prepare-role',
-      templateId: 'data-availability',
+      templateId: 'peer-review',
       name: 'HTTP Bot',
       skills: [{ sourceId: 'source-b', name: 'nature-data' }],
     });
