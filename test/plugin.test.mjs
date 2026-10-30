@@ -1,9 +1,9 @@
 /**
  * Wiring tests for both halves of the plugin.
  *
- * The host entry must publish a skill provider and the API route into the
- * contexts it is handed; the browser bundle must register its three slots
- * with the exact option shapes the host's slot framework reads.
+ * The host entry must mount one role-scoped skill provider per live Agent and
+ * register the API route; the browser bundle must keep the classic panel and
+ * add its shell overrides only in research mode.
  */
 
 import assert from 'node:assert/strict';
@@ -18,11 +18,39 @@ import { SkillSourceManager } from '../lib/skill-manager.js';
 import { SKILL_NAME } from '../lib/skill-sources.js';
 
 describe('host entry', () => {
-  it('registers a skill provider and the JSON route inside their own contexts', async () => {
+  it('mounts one role provider per live Agent and registers the JSON route', async () => {
     const dataRoot = await mkdtemp(join(tmpdir(), 'dsh-rw-wiring-'));
     const registrations = [];
     const effects = [];
-    const providerHolder = { provider: undefined, invalidated: 0 };
+    const listeners = [];
+    const mountedProviders = [];
+    const scopedDisposals = [];
+
+    const agent = {
+      id: 'session-1',
+      session: { id: 'session-1' },
+      ctx: {
+        plugin(spec) {
+          const scoped = {
+            logger: { warn() {} },
+            effect: (fn) => {
+              const dispose = fn();
+              if (typeof dispose === 'function') scopedDisposals.push(dispose);
+              return dispose;
+            },
+            skills: {
+              registerProvider: (create) => {
+                const provider = create({ invalidate() {} });
+                mountedProviders.push(provider);
+                return () => {};
+              },
+            },
+          };
+          spec.apply(scoped);
+          return { await: async () => {}, dispose: async () => {} };
+        },
+      },
+    };
 
     const fakeCtx = {
       logger: { warn() {} },
@@ -36,16 +64,15 @@ describe('host entry', () => {
         const child = {
           logger: { warn() {} },
           get: () => undefined,
+          agents: { list: () => [agent] },
           effect: (fn) => {
             const dispose = fn();
             effects.push(dispose);
             return dispose;
           },
-          skills: {
-            registerProvider: (create) => {
-              providerHolder.provider = create({ invalidate: () => { providerHolder.invalidated += 1; } });
-              return () => {};
-            },
+          on: (event, listener) => {
+            listeners.push({ event, listener });
+            return () => {};
           },
           connection: {
             fetch: {
@@ -65,22 +92,27 @@ describe('host entry', () => {
     process.env.DSH_HOME = dataRoot;
     try {
       apply(fakeCtx);
+      await Promise.resolve();
     } finally {
       if (previousHome === undefined) delete process.env.DSH_HOME;
       else process.env.DSH_HOME = previousHome;
     }
 
-    assert.equal(providerHolder.provider.name, PROVIDER_NAME);
+    assert.equal(mountedProviders.length, 1);
+    assert.equal(mountedProviders[0].name, PROVIDER_NAME);
+    assert.deepEqual(await mountedProviders[0].list(), []);
+    assert.equal(await mountedProviders[0].get({ name: 'nope', locator: {} }), undefined);
+    assert.equal(listeners.some(entry => entry.event === 'agent/created'), true);
+    assert.equal(listeners.some(entry => entry.event === 'agent/disposed'), true);
+    assert.equal(listeners.some(entry => entry.event === 'agent/pre-step'), true);
+
     assert.equal(registrations.length, 1);
     assert.equal(registrations[0].path, API_PATH);
     assert.deepEqual(registrations[0].methods, ['GET', 'POST']);
     assert.equal(registrations[0].requestBody, 'buffered');
     assert.equal(typeof registrations[0].fetch, 'function');
 
-    const provider = providerHolder.provider;
-    assert.deepEqual(await provider.list(), []);
-    assert.equal(await provider.get({ name: 'nope', locator: {} }), undefined);
-
+    for (const dispose of scopedDisposals) await dispose();
     for (const dispose of effects) if (typeof dispose === 'function') await dispose();
     await rm(dataRoot, { recursive: true, force: true });
   });
@@ -96,7 +128,8 @@ describe('host entry', () => {
     await manager.addLocalSource({ path: root, id: 'fixture' });
     let invalidated = 0;
     const stop = manager.onChange(() => { invalidated += 1; });
-    const provider = createSkillProvider(manager, { warn() {} });
+    const roleStore = { hasAny: async () => true, resolveSession: async () => ({ status: 'role', via: 'role', botId: 'bot-1', templateId: 'fixture', skills: [{ sourceId: 'fixture', name: 'skill-a' }] }) };
+    const provider = createSkillProvider(manager, { warn() {} }, { session: { id: 'session-1' } }, roleStore);
 
     const candidates = await provider.list();
     assert.equal(candidates.length, 1);
@@ -124,15 +157,22 @@ describe('host entry', () => {
 
 describe('browser bundle', () => {
   let factory;
+  let storedSurface;
 
   before(async () => {
     const source = await readFile(new URL('../lib/client.js', import.meta.url), 'utf8');
     const sandbox = {
       console,
+      setTimeout,
+      clearTimeout,
       document: {
         querySelector: () => ({}),
         createElement: () => ({ dataset: {} }),
         head: { appendChild() {} },
+      },
+      localStorage: {
+        getItem: () => storedSurface,
+        setItem: (_key, value) => { storedSurface = value; },
       },
       __ModuleLoader__: { load: spec => { factory = spec.factory; } },
     };
@@ -143,7 +183,7 @@ describe('browser bundle', () => {
     assert.equal(typeof factory, 'function');
   });
 
-  it('registers the main panel, the sidebar entry, and the settings section', async () => {
+  it('registers the main panel and sidebar entry without a settings section', async () => {
     const React = {
       createElement: (type, props, ...children) => ({ type, props, children }),
       useState: value => [typeof value === 'function' ? value() : value, () => {}],
@@ -191,14 +231,14 @@ describe('browser bundle', () => {
 
     module.apply(fakeCtx);
 
-    assert.deepEqual(injected.sort(), ['settings.section', 'sidebar.panellist']);
+    assert.deepEqual(injected.sort(), ['sidebar.panellist']);
     const main = registered.find(entry => entry.options.name === 'main');
     const row = registered.find(entry => entry.options.name === 'sidebar.panellist');
     const section = registered.find(entry => entry.options.name === 'settings.section');
     assert.equal(main.options.key, 'dsh-research-workbench');
     assert.equal(row.options.id, 'dsh-research-workbench');
     assert.equal(typeof row.options.label, 'function');
-    assert.equal(section.options.id, 'dsh-research-workbench');
+    assert.equal(section, undefined);
 
     const dictionaries = localeDictionaries.find(entry => entry.namespace === 'researchWorkbench').dictionaries;
     const zhKeys = Object.keys(dictionaries.zh).sort();
@@ -209,5 +249,48 @@ describe('browser bundle', () => {
       assert.equal(typeof dictionaries.zh[key], 'string');
       assert.equal(dictionaries.en[key].length > 0, true);
     }
+  });
+
+  it('installs the research shell overrides only in research mode', async () => {
+    storedSurface = 'research';
+    const React = {
+      createElement: (type, props, ...children) => ({ type, props, children }),
+      useState: value => [typeof value === 'function' ? value() : value, () => {}],
+      useEffect: () => {},
+      useMemo: fn => fn(),
+      useCallback: fn => fn,
+      useRef: value => ({ current: value }),
+      useSyncExternalStore: (subscribe, snapshot) => snapshot(),
+    };
+    const injected = [];
+    const registered = [];
+    const fakeCtx = {
+      get: () => undefined,
+      effect: fn => { const dispose = fn(); return dispose; },
+      locale: { register: () => () => {}, bind: () => key => key, subscribe: () => () => {}, getSnapshot: () => ({}) },
+      slots: {
+        entries: name => (name === 'sidebar.workspaces' ? [{ options: { priority: -100 } }] : []),
+        inject: (name, callback) => {
+          injected.push(name);
+          return callback();
+        },
+        register: (options, component) => {
+          registered.push({ options, component });
+          return () => {};
+        },
+      },
+    };
+    const module = factory(specifier => {
+      if (specifier === 'react') return React;
+      throw new Error(`unexpected require: ${specifier}`);
+    });
+    module.apply(fakeCtx);
+    await new Promise(resolve => setTimeout(resolve, 30));
+    assert.equal(injected.includes('sidebar.workspaces'), true);
+    assert.equal(injected.includes('shell.overlay'), true);
+    assert.equal(injected.includes('conversation.input.model'), true);
+    const workspaces = registered.find(entry => entry.options.name === 'sidebar.workspaces');
+    assert.equal(workspaces.options.priority <= -100, true);
+    storedSurface = undefined;
   });
 });

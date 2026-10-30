@@ -1,35 +1,61 @@
 # dsh-research-workbench（DSH 科研工作台）
 
-DeepSeek Harness（DSH）原生插件。左侧主导航新增「科研工作台」入口，把科研会话真正需要的四样东西收在一处：
-正在使用的项目文件夹、已有的会话、磁盘上的文献与稿件，以及负责阅读、写作、审阅、绘图的**上游科研 Skills**。
+DeepSeek Harness（DSH）原生插件。它有两个界面：
 
-插件不重建 DSH 已有的能力：工作区来自 `workspaceRegistry`，会话与标题来自 `sessionController` / `sessionTitle`，
-文件夹选择来自 `directoryPicker`，系统打开来自会话控制器，技能目录来自 `ctx.skills`。工作台只增加入口、
-上游技能来源管理和一个面向这些来源的 `ctx.skills` provider。
+- **科研模式**：独立的科研侧栏、首页、Skills 页与科研助手；经典会话列表和普通对话在科研模式中隐藏。
+- **经典工作台面板**：从普通 Agent 侧栏仍可打开同一套项目、文献与上游 Skills 管理。
+
+科研助手就是 DS-Bot 中长期运行的普通 Bot。工作台给 Bot 增加一个“角色”，但不接管它的名称、模型、聊天记录或群聊：
+这些始终属于 DS-Bot。工作台只负责这个 Bot 可以看到哪些科研 Skills。普通 Agent、没有科研角色的 Bot、
+以及非科研 Bot 都不会从工作台获得技能目录。
+
+支持 DS-Bot **0.2.3**。宿主侧只读取 DS-Bot 原子写入的 `state.json`；创建、改名、换模型、删除和群聊操作都走
+DS-Bot 自己的同源 `POST /api/bot`。工作台绝不改写 `$DSH_HOME/bot/state.json`。
 
 ## 界面
 
-**工作台面板**（左栏「科研工作台」，同时注册为设置页一项）：
+### 科研模式
 
-- **任务卡片**：论文阅读、写作与润色、审稿与核验、科研绘图。每张卡片自动挑一个匹配的上游技能，带上当前项目里
-  最新的对应文件，新建（或复用空白）会话并把 `/<skill> <指令>` 连同文件绝对路径填进输入框。`/skill` 是宿主自己的
-  技能手势，下一步会自动注入技能正文。
-- **科研项目**：所有已登记工作区的路径、会话数、资料数；「添加项目文件夹」直接调用宿主的文件夹选择器并登记为工作区。
-- **最近会话**：实时读取宿主会话列表，点击即跳回。
+从经典工作台面板进入（`科研工作台` → `进入科研模式`）。经典侧栏、新建会话、品牌和页脚会被隐藏，科研侧栏显示：
+
+- **首页**：任务卡、科研项目、科研助手、项目资料与本地文献。
+- **科研 Skills**：上游来源管理与完整技能列表。
+- **科研助手**：每个助手显示 Bot 名称、模型、工作目录和已选技能。
+- **返回经典 Agent**：撤掉科研覆盖，恢复经典界面。
+
+任务卡和「使用技能」会先询问由哪个科研助手执行，然后打开该 Bot 在 DS-Bot 中的当前对话并把任务写进输入框；
+不会再创建空白工作区会话。没有助手具备所需技能时，同一个对话框提供创建入口。
+
+窗口变窄时宿主侧栏收成竖条，右下角的**科研导航**按钮可以打开侧栏；选择目标后侧栏自动收起。
+
+### 科研助手与技能
+
+- 九个只读模板：文献检索、论文精读、论文写作、审稿与回复、科研绘图、统计报告审查、数据与代码可用性、
+  论文汇报、翻译润色。模板只决定初始技能，之后每个助手都可以自由增删。
+- 创建时选择名称、`provider/model`、可选工作目录和技能；模型来自 DSH 已提供的模型，经 DS-Bot 写入 Bot。
+- 创建是事务式的：先记录 pending 选择，再让 DS-Bot 创建带不可见事务标记的 Bot，最后绑定角色。
+  如果响应丢失，重新打开工作台会按标记找到唯一 Bot 并补完角色，不会重复创建。
+- 技能只有在“角色已选、全局启用、来源存在、没有同名冲突”时才提供给模型。同名冲突会明确报告，不静默选胜者：
+  两个已选来源不能有同名技能，同一来源内两条同名路径也算冲突。
+- 移除角色只删除工作台的技能分配；是否删除 DS-Bot 中的 Bot 是另一个明确选项。
+- 角色技能覆盖 Bot 自己的对话、历史聊天段、群成员会话与群成员历史段。provider 在每轮开始前读取 DS-Bot 已保存的
+  会话归属，因此 DS-Bot 新建的群会话或聊天段在第一轮就能拿到正确目录。
+- DS-Bot 缺失、版本不符或状态不可读时，角色界面显示原因并禁用创建与技能编辑；普通 Agent 不受影响。
+
+### 经典工作台面板
+
+- **科研项目**：所有已登记工作区的路径、会话数、资料数；「添加项目文件夹」调用宿主选择器并登记为工作区。
 - **项目资料与本地文献**：按项目列出最新的 PDF、Markdown、TeX、Bib、图片与脚本；另可登记本地文献目录
-  （Zotero 的 `storage` 目录也可以）。文件可在系统程序中打开、在资源管理器中定位，或直接带入对话。
-
-**科研 Skills 页**：
-
-- 一键订阅推荐来源，或添加任意 GitHub 仓库／本地文件夹。
-- 每个来源：当前版本、更新状态、`检查更新`、`变更预览`（当前版本 → 最新版本、待更新提交、diffstat）、`更新`、`移除`。
-- 每个技能：分类、来源、版本、**共享依赖状态**、启用/停用、完整的上游 `SKILL.md`、「在会话中使用」。
+  （Zotero 的 `storage` 目录也可以）。文件可系统打开、在资源管理器中定位，或带入科研助手对话。
+- **科研 Skills 页**：一键订阅推荐来源，或添加任意 GitHub 仓库／本地文件夹。每个来源显示当前版本、更新状态、
+  `检查更新`、`变更预览`、`更新`、`移除`；每个技能显示分类、来源、版本、共享依赖状态、启用/停用、
+  完整上游 `SKILL.md`，以及「在会话中使用」（科研模式下可用）。
 
 ## 上游来源按整仓保留
 
 一个来源就是仓库的完整目录树，存放在 `$DSH_HOME/dsh-research-workbench/sources/<id>/`。不做改写、不拍平，
 因为科研技能仓库通常把共享库放在同级目录、技能用相对路径引用：例如 `nature-skills` 里
-`nature-writing` 引用 `../nature-shared/journal-profiles.md`。技能以自身目录作为 provider 的 `resourceBase`，
+`nature-writing` 引用 `../nature-shared/core/...`。技能以自身目录作为 provider 的 `resourceBase`，
 所以 `../nature-shared/...` 在磁盘上照常命中。
 
 技能列表会显示这项检查：`nature-shared ✓` 表示同级共享库存在，`✗` 表示该技能引用的库不在检出里。
@@ -49,9 +75,14 @@ $DSH_HOME/dsh-research-workbench/
   state.json          来源、停用技能、本地文献目录
   sources/<id>/       完整的上游仓库目录树
   install.lock        同步任务的单写者锁
+  roles.json          { version, pending, roles } — Bot id → 模板 + 已选技能
+  roles.lock          角色编辑的单写者锁
 ```
 
+DS-Bot 的数据仍在它自己的位置：默认 `$DSH_HOME/bot/state.json`，或启用中的 `ds-bot` 插件行配置的 `home`。
 `$DSH_HOME` 遵循宿主规则：显式 `DSH_HOME` 优先，空白视为未设置，否则用 `~/.dsh`。
+
+`roles.json` 损坏或版本未知时只报错并保留原文件；provider 返回空目录，绝不回退成整个来源库。
 
 ## 安装
 
@@ -63,6 +94,12 @@ dsh plugin --profile <profile> add github:Zestful-ss/dsh-research-workbench#<sha
 dsh plugin --profile <profile> add /path/to/dsh-research-workbench
 ```
 
+科研助手还需要同一 profile 中的 DS-Bot 0.2.3：
+
+```bash
+dsh plugin --profile <profile> add ds-bot
+```
+
 本包不在 npm 上，GitHub 仓库就是安装源；push 之后重跑这条命令才会取到新版本。
 
 `cordis.patch.yml` 只插入一行插件记录，并带防重挂载守卫：当已有其它启用项挂载本包时自动退让，
@@ -70,42 +107,54 @@ dsh plugin --profile <profile> add /path/to/dsh-research-workbench
 
 ## 安全
 
-浏览器端不直接访问文件系统、工作区注册表或技能检出。所有动作都走同源 JSON 接口
+浏览器端不直接访问文件系统、工作区注册表或技能检出。工作台动作都走同源 JSON 接口
 `/api/dsh-research-workbench`：
 
 - POST 必须带 `bootstrap` 下发的本次启动令牌 `x-workbench-token`；
 - 跨站请求与宿主自身的请求拒绝先被处理；
 - 请求体有上限，错误都带稳定的业务码。
 
-宿主侧只通过 `ctx.get(...)` 读取服务，不触碰其它插件的内部实现。
+DS-Bot 适配器在宿主侧只读。创建、改名、换模型/目录、删除与群聊动作由页面调用 DS-Bot 自己的 `POST /api/bot`，
+因此 DS-Bot 的锁、迁移和归档行为仍是唯一权威。工作台不模拟 DS-Bot 的界面点击，也不改写它的 localStorage。
+
+技能隔离是“提供给模型的目录”边界，不是文件系统沙箱。Bot 本来就能读到的路径仍然可读；provider 只决定
+DSH 把哪些 `SKILL.md` 作为技能提供出来。
 
 ## 开发
 
 ```bash
 npm install
 npm run check   # 对所有 lib 模块执行 node --check
-npm test        # node --test：扫描、provider 契约、HTTP 围栏
+npm test        # node --test：扫描、角色、provider 隔离、HTTP 围栏、git 更新
 ```
 
 `test/workbench.test.mjs` 构造 `nature-skills` 形状的夹具（同级共享库，加深度 1 与 2 的技能），
 校验扫描结果与 provider 契约，并覆盖 HTTP 路由：令牌拒绝、跨站围栏、content-type 校验、锁争用、目录浏览。
 
+`test/roles.test.mjs` 构造 DS-Bot 形状的状态文件，覆盖角色事务与标记恢复、不同 Bot 在自聊/历史段/群会话中的隔离、
+pending 标记、同名冲突、停用/移除来源、重启持久化、损坏的 `roles.json`、角色 HTTP 动作与 `roles.lock` 的 423，
+并用真实本地 Git 来源验证 `applyUpdate` 后所选技能目录失效。
+
 宿主模块：
 
 | 模块 | 作用 |
 | --- | --- |
-| `lib/index.js` | 插件入口：数据根、`ctx.skills` provider、HTTP 路由 |
+| `lib/index.js` | 插件入口：数据根、逐 Agent 技能 provider、HTTP 路由 |
+| `lib/ds-bot.js` | DS-Bot 版本/目录发现、状态读取、Session → Bot 索引 |
+| `lib/research-roles.js` | `roles.json`、模板、选择评估、Session → 角色 |
 | `lib/skill-sources.js` | 状态、锁、git 执行、GitHub 归档、原子目录替换 |
-| `lib/skill-manager.js` | 来源安装/更新/移除、`SKILL.md` 扫描、provider 目录 |
-| `lib/workbench-api.js` | JSON 路由：bootstrap、技能、资料、系统打开 |
-| `lib/client.js` | 浏览器 bundle：导航入口、工作台面板、Skills 页 |
+| `lib/skill-manager.js` | 来源安装/更新/移除、`SKILL.md` 扫描、管理目录 |
+| `lib/workbench-api.js` | JSON 路由：bootstrap、角色、技能、资料、系统打开 |
+| `lib/client.js` | 浏览器 bundle：科研模式、科研助手、工作台面板、Skills 页 |
 
 ## 已知边界
 
+- DS-Bot 固定支持 0.2.3；其它版本会禁用角色界面，直到升级适配。
 - GitHub 来源的安装与更新检查需要网络。
 - 本地文件夹来源只原位读取，没有版本可比，因此标记为「本地目录」而不是更新状态。
 - 资料列表只看根目录加一层子目录——科研项目把输入放根目录、章节放下一层。
-- 任务卡片打开的仍是普通 DSH 会话；停止、归档、模型选择都交给 DSH。
+- 上游改名不会被静默跟随。已选技能目录消失时保留选择并显示不可用，等用户选择新的技能名。
+- 技能隔离只覆盖提供给模型的目录，不等于文件系统权限。
 
 ## 许可
 

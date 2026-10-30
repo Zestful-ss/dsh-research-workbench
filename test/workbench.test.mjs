@@ -138,8 +138,19 @@ describe('source scanning', () => {
 });
 
 describe('skill provider contract', () => {
+  const roleSkills = [
+    { sourceId: 'fixture', name: 'nature-writing' },
+    { sourceId: 'fixture', name: 'nature-reading' },
+    { sourceId: 'fixture', name: 'scientific-figure-making' },
+  ];
+  const roleStore = {
+    hasAny: async () => true,
+    resolveSession: async () => ({ status: 'role', via: 'role', botId: 'bot-fixture', templateId: 'fixture', skills: roleSkills }),
+  };
+  const agent = { id: 'session-fixture', session: { id: 'session-fixture' } };
+
   it('lists valid candidates pointing at the skill directory', async () => {
-    const provider = createSkillProvider(manager, { warn() {} });
+    const provider = createSkillProvider(manager, { warn() {} }, agent, roleStore);
     const candidates = await provider.list();
     assert.equal(candidates.length, 3);
     const writing = candidates.find(candidate => candidate.name === 'nature-writing');
@@ -152,7 +163,7 @@ describe('skill provider contract', () => {
   });
 
   it('loads the body without frontmatter and keeps the resource base', async () => {
-    const provider = createSkillProvider(manager, { warn() {} });
+    const provider = createSkillProvider(manager, { warn() {} }, agent, roleStore);
     const candidates = await provider.list();
     const writing = candidates.find(candidate => candidate.name === 'nature-writing');
     const definition = await provider.get(writing);
@@ -165,7 +176,7 @@ describe('skill provider contract', () => {
   });
 
   it('hides a disabled skill from list and refuses to load it', async () => {
-    const provider = createSkillProvider(manager, { warn() {} });
+    const provider = createSkillProvider(manager, { warn() {} }, agent, roleStore);
     await manager.setSkillEnabled({ sourceId: 'fixture', name: 'nature-writing', enabled: false });
     const candidates = await provider.list();
     assert.equal(candidates.some(candidate => candidate.name === 'nature-writing'), false);
