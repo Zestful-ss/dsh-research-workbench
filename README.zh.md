@@ -49,8 +49,8 @@ DS-Bot 自己的同源 `POST /api/bot`。工作台绝不改写 `$DSH_HOME/bot/st
 - **项目资料与本地文献**：按项目列出最新的 PDF、Markdown、TeX、Bib、图片与脚本；另可登记本地文献目录
   （Zotero 的 `storage` 目录也可以）。文件可系统打开、在资源管理器中定位，或带入科研助手对话。
 - **科研 Skills 页**：一键订阅推荐来源，或添加任意 GitHub 仓库／本地文件夹。推荐来源包括 NatureSkills、
-  figures4papers、Science Superpowers（计算科研方法论）、Scientific Writer、Bioinformatics Skills、
-  Drug Discovery Skills 与 book-to-skill。每个来源显示当前版本、更新状态、`检查更新`、`变更预览`、
+  figures4papers、Academic Research Skills（CC BY-NC 4.0，仅限非商业使用）、Science Superpowers
+  （计算科研方法论）、Scientific Writer、Bioinformatics Skills、Drug Discovery Skills 与 book-to-skill。每个来源显示当前版本、更新状态、`检查更新`、`变更预览`、
   `更新`、`移除`；每个技能显示分类、来源、版本、共享依赖状态、启用/停用、完整上游 `SKILL.md`，
   以及「在会话中使用」（科研模式下可用）。K-Dense 的 177 技能全量库可用本地克隆注册，但仓库约 470 MB，
   不适合做一键预设。

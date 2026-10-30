@@ -192,6 +192,7 @@ describe('preset sources', () => {
     for (const id of [
       'nature-skills',
       'figures4papers',
+      'academic-research-skills',
       'science-superpowers',
       'scientific-writer',
       'bioinformatics-skills',
