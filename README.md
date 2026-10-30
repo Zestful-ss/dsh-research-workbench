@@ -40,12 +40,15 @@ button opens it, and choosing a destination closes it again.
 
 ### Research assistants and Skills
 
-- Five read-only templates: literature search and verification; paper reading and
-  conversion; writing and submission; review, statistics and data; figures and experiment
-  logs. Together they cover every registrable `nature-skills` entry plus
-  `scientific-figure-making` from `figures4papers`. A template only seeds the initial
-  selection; every assistant can add or remove Skills afterwards. Role files written under
-  the earlier nine-template names are read as their consolidated successor.
+- Six read-only templates: literature search and reading; research questions and design;
+  data and results analysis; paper writing and submission; review and quality checks;
+  figures and research presentation. Together they cover the currently registrable
+  `nature-skills` entries plus `scientific-figure-making` from `figures4papers`. The design
+  template starts with literature search, proposal writing and social-science topic skills;
+  the analysis template starts with statistical reporting review, data availability and
+  experiment logs. Further analysis depends on the Skills and tools the user adds. A
+  template only seeds the initial selection; every assistant can add or remove Skills.
+  Earlier template IDs are read as their current successors without changing existing Skills.
 - Name, `provider/model`, optional working folder, and Skill selection are chosen when the
   assistant is created. The model comes from DSH's served models through DS-Bot.
 - A creation is transactional: the workbench first records a pending selection, creates the

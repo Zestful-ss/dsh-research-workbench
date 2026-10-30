@@ -16,7 +16,7 @@ import { after, before, describe, it } from 'node:test';
 import { createSkillProvider } from '../lib/index.js';
 import { SkillSourceManager } from '../lib/skill-manager.js';
 import { SkillError, writeJsonAtomic } from '../lib/skill-sources.js';
-import { LEGACY_TEMPLATE_IDS, ROLE_TEMPLATES, ResearchRoleStore, evaluateSelection, readRoleFile } from '../lib/research-roles.js';
+import { ROLE_TEMPLATES, ResearchRoleStore, evaluateSelection, readRoleFile } from '../lib/research-roles.js';
 import { indexDsBotSessions, markerOf, roleMarker } from '../lib/ds-bot.js';
 import { createWorkbenchHandler } from '../lib/workbench-api.js';
 
@@ -157,7 +157,7 @@ describe('role transactions', () => {
     assert.equal(completed.botId, 'bot-a');
 
     const preparedB = await store.prepare({
-      templateId: 'paper-reading',
+      templateId: 'literature-search',
       name: 'Reader',
       skills: [{ sourceId: 'source-a', name: 'nature-paper-xray' }],
     });
@@ -202,7 +202,7 @@ describe('template coverage', () => {
     'nature-paper2ppt',
     'nature-paper2word',
     'nature-polishing',
-    'nature-proposal-writer',
+    'researchwrite',
     'nature-reader',
     'nature-ref-verifier',
     'nature-response',
@@ -212,8 +212,8 @@ describe('template coverage', () => {
     'nature-writing',
   ];
 
-  it('ships five templates that cover every nature-skills entry', () => {
-    assert.equal(ROLE_TEMPLATES.length, 5);
+  it('ships six templates that cover every nature-skills entry', () => {
+    assert.equal(ROLE_TEMPLATES.length, 6);
     const covered = new Set(ROLE_TEMPLATES
       .flatMap(template => template.skills)
       .filter(skill => skill.sourceId === 'nature-skills')
@@ -235,7 +235,28 @@ describe('template coverage', () => {
     });
     const legacy = await readRoleFile(legacyFile);
     assert.equal(legacy.roles['bot-legacy'].templateId, 'paper-writing');
-    assert.equal(LEGACY_TEMPLATE_IDS['translation-polish'], 'paper-writing');
+  });
+
+  it('preserves existing reading and presentation roles and unfinished selections', async () => {
+    const legacyFile = join(root, 'roles-reading-legacy.json');
+    const transactionId = randomUUID();
+    const readingSkills = [{ sourceId: 'nature-skills', name: 'nature-paper-xray' }];
+    const presentationSkills = [{ sourceId: 'nature-skills', name: 'nature-paper2ppt' }];
+    await writeJsonAtomic(legacyFile, {
+      version: 1,
+      pending: { [transactionId]: { templateId: 'paper-reading', name: 'Reader', skills: readingSkills } },
+      roles: {
+        reader: { templateId: 'paper-reading', skills: readingSkills },
+        presenter: { templateId: 'paper-presentation', skills: presentationSkills },
+      },
+    });
+    const state = await readRoleFile(legacyFile);
+    assert.equal(state.pending[transactionId].templateId, 'literature-search');
+    assert.deepEqual(state.pending[transactionId].skills, readingSkills);
+    assert.equal(state.roles.reader.templateId, 'literature-search');
+    assert.deepEqual(state.roles.reader.skills, readingSkills);
+    assert.equal(state.roles.presenter.templateId, 'research-figure');
+    assert.deepEqual(state.roles.presenter.skills, presentationSkills);
   });
 });
 
