@@ -11,7 +11,7 @@ import { join } from 'node:path';
 import { after, before, describe, it } from 'node:test';
 
 import { SkillSourceManager, categorizeSkill, parseFrontmatter, referencedSiblings } from '../lib/skill-manager.js';
-import { SkillError, acquireInstallLock, parseGitHubUrl } from '../lib/skill-sources.js';
+import { BUILTIN_PRESET_SOURCES, SkillError, acquireInstallLock, parseGitHubUrl } from '../lib/skill-sources.js';
 import { createWorkbenchHandler } from '../lib/workbench-api.js';
 import { createSkillProvider } from '../lib/index.js';
 
@@ -183,6 +183,26 @@ describe('skill provider contract', () => {
     assert.equal(await provider.get({ name: 'nature-writing', locator: { path: join(fixture, 'nature-writing', 'SKILL.md'), directory: join(fixture, 'nature-writing'), sourceId: 'fixture' } }), undefined);
     await manager.setSkillEnabled({ sourceId: 'fixture', name: 'nature-writing', enabled: true });
     assert.equal((await provider.list()).some(candidate => candidate.name === 'nature-writing'), true);
+  });
+});
+
+describe('preset sources', () => {
+  it('offers the curated research collections alongside the original presets', () => {
+    const ids = BUILTIN_PRESET_SOURCES.map(preset => preset.id);
+    for (const id of [
+      'nature-skills',
+      'figures4papers',
+      'science-superpowers',
+      'scientific-writer',
+      'bioinformatics-skills',
+      'drug-discovery-skills',
+      'book-to-skill',
+    ]) {
+      assert.equal(ids.includes(id), true, id);
+    }
+    for (const preset of BUILTIN_PRESET_SOURCES) {
+      assert.equal(parseGitHubUrl(preset.url).repository.length > 0, true);
+    }
   });
 });
 

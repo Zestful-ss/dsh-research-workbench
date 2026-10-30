@@ -73,10 +73,14 @@ button opens it, and choosing a destination closes it again.
   plus any local literature folders you register (a Zotero `storage` directory works). Files
   can be opened natively, revealed in the file manager, or sent to a research assistant.
 - **Skills page** — subscribe to a suggested upstream repository or add any GitHub repository /
-  local folder. Per source: current revision, update state, `Check`, `Preview` (installed →
-  latest, pending commits, diffstat), `Update`, `Remove`. Per Skill: category, source,
-  revision, shared-dependency status, enable/disable, the complete upstream `SKILL.md`, and
-  “use in session” (available in research mode).
+  local folder. Suggested collections cover NatureSkills, figures4papers, Science Superpowers
+  (computational-science methodology), Scientific Writer, Bioinformatics Skills, Drug
+  Discovery Skills, and book-to-skill. Per source: current revision, update state, `Check`,
+  `Preview` (installed → latest, pending commits, diffstat), `Update`, `Remove`. Per Skill:
+  category, source, revision, shared-dependency status, enable/disable, the complete upstream
+  `SKILL.md`, and “use in session” (available in research mode). The full 177-skill K-Dense
+  library is usable from a local clone, but its ~470 MB repository is too large for a
+  one-click preset.
 
 ## Upstream sources are kept whole
 
