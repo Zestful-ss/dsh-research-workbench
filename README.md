@@ -50,7 +50,8 @@ button opens it, and choosing a destination closes it again.
   template only seeds the initial selection; every assistant can add or remove Skills.
   Earlier template IDs are read as their current successors without changing existing Skills.
 - Name, `provider/model`, optional working folder, and Skill selection are chosen when the
-  assistant is created. The model comes from DSH's served models through DS-Bot.
+  assistant is created. The Skill list shows each name, source, and category, with search,
+  filters, and checkboxes. The model comes from DSH's served models through DS-Bot.
 - A creation is transactional: the workbench first records a pending selection, creates the
   Bot in DS-Bot with an invisible transaction marker, then attaches the role. If the response
   is lost, reopening the workbench finds the matching Bot by that marker and completes the
