@@ -50,8 +50,9 @@ button opens it, and choosing a destination closes it again.
   template only seeds the initial selection; every assistant can add or remove Skills.
   Earlier template IDs are read as their current successors without changing existing Skills.
 - Name, `provider/model`, optional working folder, and Skill selection are chosen when the
-  assistant is created. The Skill list shows each name, source, and category, with search,
-  filters, and checkboxes. The model comes from DSH's served models through DS-Bot.
+  assistant is created. The Skill list shows the purpose, source, and category, with search,
+  filters, checkboxes, and expandable examples and upstream descriptions. The model comes
+  from DSH's served models through DS-Bot.
 - A creation is transactional: the workbench first records a pending selection, creates the
   Bot in DS-Bot with an invisible transaction marker, then attaches the role. If the response
   is lost, reopening the workbench finds the matching Bot by that marker and completes the
@@ -80,7 +81,9 @@ button opens it, and choosing a destination closes it again.
   local folder. Suggested collections cover NatureSkills, figures4papers, Academic Research Skills
   (CC BY-NC 4.0), Science Superpowers (computational-science methodology), Scientific
   Writer, Bioinformatics Skills, Drug Discovery Skills, and book-to-skill. Per source: current revision, update state, `Check`,
-  `Preview` (installed → latest, pending commits, diffstat), `Update`, `Remove`. Per Skill:
+  `Preview` (installed → latest, pending commits, diffstat), `Update`, `Remove`. Skills from
+  the built-in NatureSkills and figures4papers sources include plain-language purposes and
+  examples; other sources retain their upstream descriptions. Each Skill also shows its
   category, source, revision, shared-dependency status, enable/disable, the complete upstream
   `SKILL.md`, and “use in session” (available in research mode). The full 177-skill K-Dense
   library is usable from a local clone, but its ~470 MB repository is too large for a
