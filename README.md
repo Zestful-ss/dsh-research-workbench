@@ -38,6 +38,13 @@ one.
 At narrow widths the shell collapses to a sidebar rail; a floating **Research navigation**
 button opens it, and choosing a destination closes it again.
 
+Pages follow the host's light and dark themes, with a shared type and spacing scale.
+Home puts four common tasks first. The Skills page separates search and filters;
+“Example request” expands a usage example, and “Manage skill sources” expands source actions.
+Assistant cards separate the model, folder, assigned Skills, and actions; unavailable-Skill
+warnings remain visible. Dialogs support Escape, a Tab focus loop, and focus restoration.
+Touch input fields use at least 16px text.
+
 ### Research assistants and Skills
 
 - Six read-only templates: literature search and reading; research questions and design;
