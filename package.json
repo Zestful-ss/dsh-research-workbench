@@ -1,6 +1,6 @@
 {
   "name": "dsh-research-workbench",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Research Workbench for DeepSeek Harness — unified project, literature, task, and upstream scientific Skills hub. · DSH 科研工作台：项目、文献、科研任务与上游科研 Skills 统一入口。",
   "type": "module",
   "main": "./lib/index.js",

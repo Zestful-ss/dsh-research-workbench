@@ -134,21 +134,24 @@ describe('DS-Bot indexing', () => {
   });
 });
 
-describe('DS-Bot version compatibility', () => {
-  it('loads roles and group sessions with 0.2.4 while rejecting unknown versions', async () => {
-    const fixture = join(root, 'ds-bot-compatibility');
-    const profile = join(fixture, 'profile');
-    const home = join(fixture, 'bot');
-    const roleHome = join(fixture, 'workbench');
+describe('DS-Bot state compatibility', () => {
+  async function fixture(name) {
+    const base = join(root, 'ds-bot-compatibility', name);
+    const profile = join(base, 'profile');
+    const home = join(base, 'bot');
+    const roleHome = join(base, 'workbench');
     const packageFile = join(profile, 'node_modules', 'ds-bot', 'package.json');
+    const stateFile = join(home, 'state.json');
     const selectedSkills = [{ sourceId: 'source-a', name: 'nature-writing' }];
-    await put(packageFile, JSON.stringify({ name: 'ds-bot', version: '0.2.4' }));
-    await put(join(home, 'state.json'), JSON.stringify({
+    const state = {
       version: 1,
       bots: { writer: { id: 'writer', name: 'Writer', sessionId: 'chat-current', segments: [{ sessionId: 'chat-old' }] } },
       rooms: { group: { sessions: { writer: 'group-current' }, segments: { writer: [{ sessionId: 'group-old' }] } } },
       privateArchives: [],
-    }));
+      futureMetadata: { extraFieldsAreAllowed: true },
+    };
+    await put(packageFile, JSON.stringify({ name: 'ds-bot', version: '0.2.4' }));
+    await put(stateFile, JSON.stringify(state));
     await put(join(roleHome, 'roles.json'), JSON.stringify({
       version: 2,
       pending: {},
@@ -158,29 +161,45 @@ describe('DS-Bot version compatibility', () => {
       get: name => name === 'profileContext' ? { dir: profile } : undefined,
       loader: { entries: () => [{ options: { name: 'ds-bot' }, fiber: { config: { home } } }] },
     };
-    const store = new ResearchRoleStore({ dataRoot: roleHome, manager, ctx });
-    const view = await store.view();
-    assert.equal(view.compatible, true);
-    assert.equal(view.entries[0].name, 'Writer');
-    assert.equal(view.entries[0].workspaceId, 'project-a');
-    for (const sessionId of ['chat-current', 'chat-old', 'group-current', 'group-old']) {
-      const resolved = await store.resolveSession(sessionId);
-      assert.equal(resolved.botId, 'writer');
-      assert.deepEqual(resolved.skills, selectedSkills);
+    return { store: new ResearchRoleStore({ dataRoot: roleHome, manager, ctx }), packageFile, stateFile, state, selectedSkills };
+  }
+
+  it('keeps roles and session ownership for later DS-Bot versions with the same state format', async () => {
+    const { store, packageFile, selectedSkills } = await fixture('future-versions');
+    for (const version of ['0.2.3', '0.2.4', '0.2.5', '0.9.0', '1.0.0']) {
+      await put(packageFile, JSON.stringify({ name: 'ds-bot', version }));
+      const view = await store.view();
+      assert.equal(view.compatible, true, version);
+      assert.equal(view.dsBot.version, version);
+      assert.equal(view.entries[0].name, 'Writer');
+      assert.equal(view.entries[0].workspaceId, 'project-a');
+      for (const sessionId of ['chat-current', 'chat-old', 'group-current', 'group-old']) {
+        const resolved = await store.resolveSession(sessionId);
+        assert.equal(resolved.botId, 'writer', `${version}: ${sessionId}`);
+        assert.deepEqual(resolved.skills, selectedSkills);
+      }
     }
+  });
 
-    await put(join(home, 'state.json'), JSON.stringify({ version: 2, bots: {}, rooms: {} }));
-    const unsupportedState = await store.view();
-    assert.equal(unsupportedState.compatible, false);
-    assert.equal(unsupportedState.reason, 'state-version');
-
-    await put(packageFile, JSON.stringify({ name: 'ds-bot', version: '0.2.5' }));
-    const unsupported = await store.view();
-    assert.equal(unsupported.compatible, false);
-    assert.equal(unsupported.reason, 'version');
-    assert.match(unsupported.error, /0\.2\.5/);
-    assert.match(unsupported.error, /0\.2\.3/);
-    assert.match(unsupported.error, /0\.2\.4/);
+  it('preserves roles and reports incompatible state and session ownership formats', async () => {
+    const { store, packageFile, stateFile, state } = await fixture('incompatible-state');
+    await put(packageFile, JSON.stringify({ name: 'ds-bot', version: '1.0.0' }));
+    const incompatibleStates = [
+      { state: { ...state, version: 2 }, reason: 'state-version' },
+      { state: { ...state, bots: [] }, reason: 'state' },
+      { state: { ...state, bots: { writer: { ...state.bots.writer, segments: {} } } }, reason: 'state' },
+      { state: { ...state, rooms: { group: { sessions: [] } } }, reason: 'state' },
+      { state: { ...state, rooms: { group: { segments: { writer: {} } } } }, reason: 'state' },
+    ];
+    for (const entry of incompatibleStates) {
+      await put(stateFile, JSON.stringify(entry.state));
+      const view = await store.view();
+      assert.equal(view.compatible, false);
+      assert.equal(view.reason, entry.reason);
+      assert.match(view.error, /DS-Bot/);
+      assert.equal(view.entries[0].workspaceId, 'project-a');
+      assert.equal((await store.resolveSession('group-current')).status, 'unavailable');
+    }
   });
 });
 
