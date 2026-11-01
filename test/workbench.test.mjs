@@ -5,7 +5,7 @@
  */
 
 import assert from 'node:assert/strict';
-import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { after, before, describe, it } from 'node:test';
@@ -398,5 +398,121 @@ describe('category precedence', () => {
     assert.equal(categorizeSkill('nature-reader', 'creates readers with figures and tables'), 'reading');
     assert.equal(categorizeSkill('nature-figure', 'draw panels'), 'figure');
     assert.equal(categorizeSkill('nature-polishing', 'polish English'), 'writing');
+  });
+});
+
+describe('project creation', () => {
+  const projectsRoot = () => join(root, 'projects');
+  const projectHandler = (registry) => {
+    const workspaces = registry ?? {
+      resolveByPath: async () => undefined,
+      create: async (path, title) => ({ id: `ws-${title}`, path, title, sessionIds: [] }),
+    };
+    return createWorkbenchHandler({
+      ctx: { get: (name) => (name === 'workspaceRegistry' ? workspaces : undefined) },
+      manager,
+      token: TOKEN,
+      version: '0.1.0',
+    });
+  };
+  const create = (handler, body, headers = { 'x-workbench-token': TOKEN }) => handler(new Request(API, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...headers },
+    body: JSON.stringify(body),
+  }));
+
+  it('creates and registers one real subfolder of an existing parent', async () => {
+    await mkdir(projectsRoot(), { recursive: true });
+    const created = [];
+    const handler = projectHandler({
+      resolveByPath: async () => undefined,
+      create: async (path, title) => {
+        created.push({ path, title });
+        return { id: 'ws-new', path, title, sessionIds: [] };
+      },
+    });
+    const response = await create(handler, { action: 'create-workspace', parentPath: projectsRoot(), name: 'Project A' });
+    assert.equal(response.status, 200);
+    const payload = await response.json();
+    const expectedPath = join(projectsRoot(), 'Project A');
+    assert.deepEqual(created, [{ path: expectedPath, title: 'Project A' }]);
+    assert.deepEqual(payload.workspace, { id: 'ws-new', path: expectedPath, title: 'Project A', sessionIds: [] });
+    assert.equal((await stat(expectedPath)).isDirectory(), true);
+  });
+
+  it('refuses an existing folder, a path in the name, a missing parent, and a file parent', async () => {
+    await mkdir(join(projectsRoot(), 'Taken'), { recursive: true });
+    const handler = projectHandler();
+
+    const duplicate = await create(handler, { action: 'create-workspace', parentPath: projectsRoot(), name: 'Taken' });
+    assert.equal(duplicate.status, 409);
+    assert.equal((await duplicate.json()).code, 'duplicate');
+
+    for (const name of ['../escape', 'a/b', '..', '.', '', 'con']) {
+      const refused = await create(handler, { action: 'create-workspace', parentPath: projectsRoot(), name });
+      assert.equal(refused.status, 400, `name ${JSON.stringify(name)} must be refused`);
+      assert.equal((await refused.json()).code, 'invalid_name');
+    }
+    assert.equal(await readdir(projectsRoot()).then(rows => rows.includes('escape')), false);
+
+    const missing = await create(handler, { action: 'create-workspace', parentPath: join(root, 'ghost-parent'), name: 'X' });
+    assert.equal(missing.status, 400);
+    assert.equal((await missing.json()).code, 'invalid_directory');
+
+    const relative = await create(handler, { action: 'create-workspace', parentPath: 'relative/dir', name: 'X' });
+    assert.equal(relative.status, 400);
+
+    const fileParent = await create(handler, { action: 'create-workspace', parentPath: join(root, 'papers', 'one.pdf'), name: 'X' });
+    assert.equal(fileParent.status, 400);
+    assert.equal((await fileParent.json()).code, 'invalid_directory');
+
+    const noToken = await create(handler, { action: 'create-workspace', parentPath: projectsRoot(), name: 'NoToken' }, {});
+    assert.equal(noToken.status, 403);
+    assert.equal(await readdir(projectsRoot()).then(rows => rows.includes('NoToken')), false);
+  });
+
+  it('keeps the folder when registration fails, and registers it as an existing folder', async () => {
+    const failing = projectHandler({
+      resolveByPath: async () => undefined,
+      create: async () => {
+        throw new Error('registry offline');
+      },
+    });
+    const response = await create(failing, { action: 'create-workspace', parentPath: projectsRoot(), name: 'Kept' });
+    assert.equal(response.status, 500);
+    const payload = await response.json();
+    assert.equal(payload.code, 'register_failed');
+    assert.equal(payload.error.includes(join(projectsRoot(), 'Kept')), true);
+    const kept = join(projectsRoot(), 'Kept');
+    assert.equal((await stat(kept)).isDirectory(), true);
+
+    const registering = projectHandler({
+      resolveByPath: async (path) => ({ id: 'ws-kept', path, title: 'Kept', sessionIds: [] }),
+      create: async () => {
+        throw new Error('must not create');
+      },
+    });
+    const added = await create(registering, { action: 'add-workspace', path: kept });
+    assert.equal(added.status, 200);
+    assert.equal((await added.json()).workspace.id, 'ws-kept');
+  });
+
+  it('reports which project folders still exist, and null without a registry', async () => {
+    const existing = join(projectsRoot(), 'Taken');
+    const gone = join(projectsRoot(), 'Gone');
+    const withRegistry = projectHandler({
+      list: () => [{ id: 'ws-here', path: existing, title: 'Here', sessionIds: [] }, { id: 'ws-gone', path: gone, title: 'Gone', sessionIds: [] }],
+    });
+    const payload = await (await withRegistry(new Request(`${API}?action=bootstrap`, { method: 'GET' }))).json();
+    assert.deepEqual(payload.workspaceAvailability, { 'ws-here': true, 'ws-gone': false });
+
+    const withoutRegistry = createWorkbenchHandler({
+      ctx: { get: () => undefined },
+      manager,
+      token: TOKEN,
+      version: '0.1.0',
+    });
+    const bare = await (await withoutRegistry(new Request(`${API}?action=bootstrap`, { method: 'GET' }))).json();
+    assert.equal(bare.workspaceAvailability, null);
   });
 });

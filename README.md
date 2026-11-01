@@ -8,10 +8,11 @@ It has two surfaces:
 - the **classic workbench panel** — the same project, literature, and upstream Skill
   management reachable from the ordinary Agent sidebar.
 
-Research assistants are ordinary long-lived **DS-Bot** Bots. The workbench adds a role to a
-Bot without owning its name, model, chat history, or group chats: those stay in DS-Bot. What
-the workbench owns is which research Skills that Bot may see. A normal Agent, a non-research
-Bot, and a research Bot without a role never receive the workbench catalog.
+Research assistants are ordinary long-lived **DS-Bot** Bots. The workbench adds a role and an
+optional project to a Bot without owning its name, model, chat history, or group chats: those
+stay in DS-Bot. What the workbench owns is which research Skills that Bot may see and which
+project it belongs to. A normal Agent, a non-research Bot, and a research Bot without a role
+never receive the workbench catalog.
 
 DS-Bot **0.2.3** is the supported release. The host half only reads its atomically written
 `state.json`; every change to the team goes through DS-Bot's own same-origin `POST /api/bot`.
@@ -77,10 +78,40 @@ Touch input fields use at least 16px text.
 - If DS-Bot is missing, the wrong version, or its state is unreadable, the role surface names
   the reason and disables creation and Skill editing. Ordinary Agents keep working.
 
+### Projects and assistant teams
+
+A project is one DSH workspace, so no second project database exists. `New project` creates
+one folder inside a parent you pick and registers it; `Choose existing folder` registers a
+folder that is already there (the host picker, or a typed path when the host has none). A
+created folder is never deleted again: if registration fails, the folder stays and is offered
+as an existing folder.
+
+- The selected project is remembered per browser. A project that vanished from the registry
+  is reported as such instead of silently switching to another one, and its folder is marked
+  unavailable when it is gone, which disables its tasks and creation entry points while the
+  Bot records stay visible.
+- Assistants created from a project belong to it, default to `“project · template”` as their
+  name (cut to DS-Bot's 40-unit limit) and to the project folder as their working folder.
+  Assistants created from the sidebar belong to no project and can be added later. Every
+  project assistant can be removed from the project without deleting the Bot, its history or
+  its files; the working folder is changed only by the explicit `Use project folder` action.
+  An ownership that changed in another tab is reported as a conflict, not overwritten.
+- Group chats stay DS-Bot's: the project page lists the rooms whose members include one of
+  the project's assistants, shows the members and current folder, and marks rooms that also
+  contain other projects' assistants. `New group chat` creates the room through DS-Bot and
+  then sets the room folder to the project folder, because DS-Bot does not take a folder at
+  creation. A lost response is resolved by listing the matching new room and asking before
+  the folder is set; a failed folder update keeps the room and offers a retry. When the
+  project *is* DS-Bot's team workspace, DS-Bot normalises the folder to "team workspace" and
+  members use their own folders instead: the page says so and lists each member's folder.
+- Projects organise assistants and set a default folder. They are not a sandbox: reading
+  outside a project still follows the host tools, approvals and permissions, and DS-Bot's
+  team memory stays shared across projects.
+
 ### Classic workbench panel
 
-- **Projects** — every registered workspace with its path, session count, and material count.
-  `Add project folder` uses the host's own picker and registers the folder as a workspace.
+- **Projects** — every registered workspace with its path, session count, and material count,
+  plus the project actions above.
 - **Materials and literature** — newest PDF/Markdown/TeX/Bib/image/script files per project
   plus any local literature folders you register (a Zotero `storage` directory works). Files
   can be opened natively, revealed in the file manager, or sent to a research assistant.

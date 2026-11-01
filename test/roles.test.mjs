@@ -551,3 +551,266 @@ describe('Git source update', () => {
   });
 });
 
+
+describe('projects', () => {
+  const projectA = 'ws-project-a';
+  const projectB = 'ws-project-b';
+  const projectRoot = name => join(root, name);
+
+  function registryFixture(projects) {
+    const byId = new Map(projects.map(project => [project.id, project]));
+    return {
+      list: () => [...byId.values()],
+      get: id => byId.get(id),
+      resolveByPath: async () => undefined,
+      create: async () => {
+        throw new Error('must not create');
+      },
+    };
+  }
+
+  async function prepareAndComplete(store, { botId, workspaceId, name, model, workDir }) {
+    const prepared = await store.prepare({
+      templateId: 'paper-writing',
+      name,
+      skills: [{ sourceId: 'source-a', name: 'nature-writing' }],
+      ...(workspaceId === undefined ? {} : { workspaceId }),
+      ...(model === undefined ? {} : { model }),
+      ...(workDir === undefined ? {} : { workDir }),
+    });
+    await registerBotMarker(botId, prepared.transactionId);
+    const completed = await store.complete({ transactionId: prepared.transactionId, botId });
+    return { prepared, completed };
+  }
+
+  before(async () => {
+    await mkdir(projectRoot('project-a'), { recursive: true });
+    await mkdir(projectRoot('project-b'), { recursive: true });
+    const team = await readTeam();
+    team.bots['bot-pa'] = { id: 'bot-pa', name: 'Project A writer', model: 'rw-test/model-a', sessionId: 'bot-pa' };
+    team.bots['bot-pb'] = { id: 'bot-pb', name: 'Project B writer', model: 'rw-test/model-b', sessionId: 'bot-pb' };
+    team.bots['bot-legacy'] = { id: 'bot-legacy', name: 'Legacy', sessionId: 'bot-legacy' };
+    team.bots['bot-gone'] = { id: 'bot-gone', name: 'Gone', sessionId: 'bot-gone' };
+    team.bots['bot-http-project'] = { id: 'bot-http-project', name: 'HTTP project role', sessionId: 'bot-http-project' };
+    await writeJsonAtomic(stateFile(), team);
+  });
+
+  it('reads a version 1 file as version 2 and upgrades it on the first write', async () => {
+    const legacyRoot = join(root, 'legacy-home');
+    await mkdir(legacyRoot, { recursive: true });
+    const file = join(legacyRoot, 'roles.json');
+    await writeJsonAtomic(file, {
+      version: 1,
+      pending: {},
+      roles: { 'bot-legacy': { templateId: 'paper-writing', skills: [{ sourceId: 'source-a', name: 'nature-writing' }] } },
+    });
+    const state = await readRoleFile(file);
+    assert.equal(state.version, 2);
+    assert.equal(state.roles['bot-legacy'].workspaceId, undefined);
+
+    const legacyStore = new ResearchRoleStore({ dataRoot: legacyRoot, manager, log: { warn() {} }, ctx: adapterCtx() });
+    await legacyStore.setSkills({ botId: 'bot-legacy', skills: [{ sourceId: 'source-a', name: 'nature-writing' }] });
+    const written = JSON.parse(await readFile(file, 'utf8'));
+    assert.equal(written.version, 2);
+    assert.equal(written.roles['bot-legacy'].workspaceId, undefined);
+    assert.deepEqual(written.roles['bot-legacy'].skills, [{ sourceId: 'source-a', name: 'nature-writing' }]);
+  });
+
+  it('keeps project, model, and folder on an unfinished creation across a restart', async () => {
+    const store = makeStore();
+    const prepared = await store.prepare({
+      templateId: 'paper-writing',
+      name: 'Pending in A',
+      skills: [{ sourceId: 'source-a', name: 'nature-writing' }],
+      workspaceId: projectA,
+      model: 'rw-test/model-a',
+      workDir: projectRoot('project-a'),
+    });
+    const restarted = makeStore();
+    const pending = (await restarted.view()).pending.find(entry => entry.transactionId === prepared.transactionId);
+    assert.equal(pending.workspaceId, projectA);
+    assert.equal(pending.model, 'rw-test/model-a');
+    assert.equal(pending.workDir, projectRoot('project-a'));
+    await restarted.cancel({ transactionId: prepared.transactionId });
+  });
+
+  it('binds a Bot once and answers the existing role when completion is retried', async () => {
+    const store = makeStore();
+    const { prepared, completed } = await prepareAndComplete(store, {
+      botId: 'bot-pa', workspaceId: projectA, name: 'Project A writer',
+    });
+    assert.equal(completed.role.workspaceId, projectA);
+    assert.equal(completed.already, undefined);
+
+    const retried = await store.complete({ transactionId: prepared.transactionId, botId: 'bot-pa' });
+    assert.equal(retried.already, true);
+    assert.equal(retried.role.workspaceId, projectA);
+    const file = JSON.parse(await readFile(join(dataRoot, 'roles.json'), 'utf8'));
+    assert.equal(file.roles['bot-pa'].workspaceId, projectA);
+    assert.equal(Object.hasOwn(file.pending, prepared.transactionId), false);
+
+    const other = await store.prepare({
+      templateId: 'paper-writing',
+      name: 'Other',
+      skills: [{ sourceId: 'source-a', name: 'nature-writing' }],
+    });
+    await assert.rejects(
+      () => store.complete({ transactionId: other.transactionId, botId: 'bot-pa' }),
+      error => error instanceof SkillError && error.code === 'invalid',
+    );
+    await store.cancel({ transactionId: other.transactionId });
+  });
+
+  it('filters roles by project and keeps an old assistant unassigned', async () => {
+    const store = makeStore();
+    await prepareAndComplete(store, { botId: 'bot-pb', workspaceId: projectB, name: 'Project B writer' });
+    await prepareAndComplete(store, { botId: 'bot-legacy', name: 'Legacy' });
+    const entries = (await store.view()).entries;
+    const inA = entries.filter(entry => entry.workspaceId === projectA).map(entry => entry.botId);
+    const inB = entries.filter(entry => entry.workspaceId === projectB).map(entry => entry.botId);
+    const unassigned = entries.filter(entry => entry.workspaceId === null).map(entry => entry.botId);
+    assert.deepEqual(inA, ['bot-pa']);
+    assert.deepEqual(inB, ['bot-pb']);
+    assert.equal(unassigned.includes('bot-legacy'), true);
+    assert.equal(unassigned.includes('bot-pa'), false);
+  });
+
+  it('moves an assistant between projects only on a current expectation', async () => {
+    const store = makeStore();
+    const joined = await store.setProject({ botId: 'bot-legacy', workspaceId: projectA, expectedWorkspaceId: null });
+    assert.equal(joined.workspaceId, projectA);
+    await assert.rejects(
+      () => store.setProject({ botId: 'bot-legacy', workspaceId: projectB, expectedWorkspaceId: null }),
+      error => error instanceof SkillError && error.code === 'conflict',
+    );
+    const moved = await store.setProject({ botId: 'bot-legacy', workspaceId: projectB, expectedWorkspaceId: projectA });
+    assert.equal(moved.workspaceId, projectB);
+    const left = await store.setProject({ botId: 'bot-legacy', workspaceId: null, expectedWorkspaceId: projectB });
+    assert.equal(left.workspaceId, null);
+    assert.equal((await store.view()).entries.find(entry => entry.botId === 'bot-legacy').workspaceId, null);
+    assert.equal((await readTeam()).bots['bot-legacy'].id, 'bot-legacy');
+  });
+
+  it('refuses to join a project for a Bot DS-Bot no longer has, but allows leaving', async () => {
+    const store = makeStore();
+    await prepareAndComplete(store, { botId: 'bot-gone', workspaceId: projectB, name: 'Deleted soon' });
+    const team = await readTeam();
+    delete team.bots['bot-gone'];
+    await writeJsonAtomic(stateFile(), team);
+
+    await assert.rejects(
+      () => store.setProject({ botId: 'bot-gone', workspaceId: projectA, expectedWorkspaceId: projectB }),
+      error => error instanceof SkillError && error.code === 'not_found',
+    );
+    const left = await store.setProject({ botId: 'bot-gone', workspaceId: null, expectedWorkspaceId: projectB });
+    assert.equal(left.workspaceId, null);
+    const entry = (await store.view()).entries.find(row => row.botId === 'bot-gone');
+    assert.equal(entry.missing, true);
+
+    team.bots['bot-gone'] = { id: 'bot-gone', name: 'Gone', sessionId: 'bot-gone' };
+    team.bots['bot-http-project'] = { id: 'bot-http-project', name: 'HTTP project role', sessionId: 'bot-http-project' };
+    await writeJsonAtomic(stateFile(), team);
+  });
+
+  it('moves, detaches, and re-joins through the HTTP actions with a live registry', async () => {
+    const store = makeStore();
+    const registry = registryFixture([
+      { id: projectA, path: projectRoot('project-a'), title: 'A', sessionIds: [] },
+      { id: projectB, path: projectRoot('project-b'), title: 'B', sessionIds: [] },
+    ]);
+    const handler = createWorkbenchHandler({
+      ctx: { get: name => (name === 'workspaceRegistry' ? registry : undefined) },
+      manager,
+      roles: store,
+      token: TOKEN,
+      version: '0.1.0',
+    });
+    const post = body => handler(new Request(API, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-workbench-token': TOKEN },
+      body: JSON.stringify(body),
+    }));
+
+    const prepared = await post({
+      action: 'prepare-role',
+      templateId: 'paper-writing',
+      name: 'HTTP project role',
+      skills: [{ sourceId: 'source-a', name: 'nature-writing' }],
+      workspaceId: projectA,
+      model: 'rw-test/model-a',
+      workDir: projectRoot('project-a'),
+    });
+    assert.equal(prepared.status, 200);
+    const preparedBody = await prepared.json();
+    assert.equal(preparedBody.pending.workspaceId, projectA);
+    assert.equal(preparedBody.roleStatus.pending.find(entry => entry.transactionId === preparedBody.transactionId).model, 'rw-test/model-a');
+    await registerBotMarker('bot-http-project', preparedBody.transactionId);
+    const completed = await post({ action: 'complete-role', transactionId: preparedBody.transactionId, botId: 'bot-http-project' });
+    assert.equal((await completed.json()).role.workspaceId, projectA);
+    const retried = await post({ action: 'complete-role', transactionId: preparedBody.transactionId, botId: 'bot-http-project' });
+    assert.equal(retried.status, 200);
+    const retriedBody = await retried.json();
+    assert.equal(retriedBody.already, true);
+    assert.equal(retriedBody.role.workspaceId, projectA);
+    assert.equal(retriedBody.roleStatus.entries.filter(entry => entry.botId === 'bot-http-project').length, 1);
+
+    const stale = await post({ action: 'set-role-project', botId: 'bot-http-project', workspaceId: projectB, expectedWorkspaceId: null });
+    assert.equal(stale.status, 409);
+    assert.equal((await stale.json()).code, 'conflict');
+
+    const moved = await post({ action: 'set-role-project', botId: 'bot-http-project', workspaceId: projectB, expectedWorkspaceId: projectA });
+    assert.equal(moved.status, 200);
+    assert.equal((await moved.json()).roleStatus.entries.find(entry => entry.botId === 'bot-http-project').workspaceId, projectB);
+
+    const unknown = await post({ action: 'set-role-project', botId: 'bot-http-project', workspaceId: 'ws-missing', expectedWorkspaceId: projectB });
+    assert.equal(unknown.status, 404);
+
+    const detached = await post({ action: 'set-role-project', botId: 'bot-http-project', workspaceId: null, expectedWorkspaceId: projectB });
+    assert.equal(detached.status, 200);
+    assert.equal((await detached.json()).roleStatus.entries.find(entry => entry.botId === 'bot-http-project').workspaceId, null);
+    assert.equal((await readTeam()).bots['bot-http-project'].id, 'bot-http-project');
+  });
+
+  it('keeps an assistant visible when its project folder disappears', async () => {
+    const store = makeStore();
+    await store.setProject({ botId: 'bot-pa', workspaceId: projectA, expectedWorkspaceId: projectA });
+    const registry = registryFixture([{ id: projectA, path: join(root, 'project-a-missing'), title: 'A', sessionIds: [] }]);
+    const handler = createWorkbenchHandler({
+      ctx: { get: name => (name === 'workspaceRegistry' ? registry : undefined) },
+      manager,
+      roles: store,
+      token: TOKEN,
+      version: '0.1.0',
+    });
+    const payload = await (await handler(new Request(`${API}?action=bootstrap`, { method: 'GET' }))).json();
+    assert.equal(payload.workspaceAvailability[projectA], false);
+    const entry = payload.roleStatus.entries.find(row => row.botId === 'bot-pa');
+    assert.equal(entry.workspaceId, projectA);
+    assert.equal(entry.name, 'Project A writer');
+  });
+
+  it('gives two project assistants their own skills in one group chat and its segments', async () => {
+    const team = await readTeam();
+    team.bots['bot-pa'].segments = [{ sessionId: 'pa-old' }];
+    team.bots['bot-pb'].segments = [{ sessionId: 'pb-old' }];
+    team.rooms = {
+      'room-projects': {
+        id: 'room-projects',
+        name: 'Project room',
+        members: ['bot-pa', 'bot-pb'],
+        workDir: projectRoot('project-a'),
+        sessions: { 'bot-pa': 'pa-room', 'bot-pb': 'pb-room' },
+        segments: { 'bot-pa': [{ sessionId: 'pa-room-old' }], 'bot-pb': [{ sessionId: 'pb-room-old' }] },
+      },
+    };
+    await writeJsonAtomic(stateFile(), team);
+    const store = makeStore();
+    const names = async sessionId => (await createSkillProvider(manager, { warn() {} }, { session: { id: sessionId } }, store).list()).map(row => row.name);
+    for (const sessionId of ['bot-pa', 'pa-old', 'pa-room', 'pa-room-old']) {
+      assert.deepEqual(await names(sessionId), ['nature-writing'], sessionId);
+    }
+    for (const sessionId of ['bot-pb', 'pb-old', 'pb-room', 'pb-room-old']) {
+      assert.deepEqual(await names(sessionId), ['nature-writing'], sessionId);
+    }
+  });
+});
