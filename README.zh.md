@@ -9,7 +9,7 @@ DeepSeek Harness（DSH）原生插件。它有两个界面：
 模型、聊天记录或群聊：这些始终属于 DS-Bot。工作台负责这个 Bot 可以看到哪些科研 Skills，以及它属于哪个科研项目。
 普通 Agent、没有科研角色的 Bot、以及非科研 Bot 都不会从工作台获得技能目录。
 
-支持 DS-Bot **0.2.3**。宿主侧只读取 DS-Bot 原子写入的 `state.json`；创建、改名、换模型、删除和群聊操作都走
+支持 DS-Bot **0.2.3 和 0.2.4**。宿主侧只读取 DS-Bot 原子写入的 `state.json`；创建、改名、换模型、删除和群聊操作都走
 DS-Bot 自己的同源 `POST /api/bot`。工作台绝不改写 `$DSH_HOME/bot/state.json`。
 
 ## 界面
@@ -127,7 +127,7 @@ dsh plugin --profile <profile> add github:Zestful-ss/dsh-research-workbench#<sha
 dsh plugin --profile <profile> add /path/to/dsh-research-workbench
 ```
 
-科研助手还需要同一 profile 中的 DS-Bot 0.2.3：
+科研助手还需要同一 profile 中的 DS-Bot 0.2.3 或 0.2.4：
 
 ```bash
 dsh plugin --profile <profile> add ds-bot
@@ -182,7 +182,7 @@ pending 标记、同名冲突、停用/移除来源、重启持久化、损坏�
 
 ## 已知边界
 
-- DS-Bot 固定支持 0.2.3；其它版本会禁用角色界面，直到升级适配。
+- DS-Bot 支持 0.2.3 和 0.2.4；其他版本会禁用角色界面，直到完成验证。
 - GitHub 来源的安装与更新检查需要网络。
 - 本地文件夹来源只原位读取，没有版本可比，因此标记为「本地目录」而不是更新状态。
 - 资料列表只看根目录加一层子目录——科研项目把输入放根目录、章节放下一层。

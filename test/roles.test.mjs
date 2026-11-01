@@ -134,6 +134,56 @@ describe('DS-Bot indexing', () => {
   });
 });
 
+describe('DS-Bot version compatibility', () => {
+  it('loads roles and group sessions with 0.2.4 while rejecting unknown versions', async () => {
+    const fixture = join(root, 'ds-bot-compatibility');
+    const profile = join(fixture, 'profile');
+    const home = join(fixture, 'bot');
+    const roleHome = join(fixture, 'workbench');
+    const packageFile = join(profile, 'node_modules', 'ds-bot', 'package.json');
+    const selectedSkills = [{ sourceId: 'source-a', name: 'nature-writing' }];
+    await put(packageFile, JSON.stringify({ name: 'ds-bot', version: '0.2.4' }));
+    await put(join(home, 'state.json'), JSON.stringify({
+      version: 1,
+      bots: { writer: { id: 'writer', name: 'Writer', sessionId: 'chat-current', segments: [{ sessionId: 'chat-old' }] } },
+      rooms: { group: { sessions: { writer: 'group-current' }, segments: { writer: [{ sessionId: 'group-old' }] } } },
+      privateArchives: [],
+    }));
+    await put(join(roleHome, 'roles.json'), JSON.stringify({
+      version: 2,
+      pending: {},
+      roles: { writer: { templateId: 'paper-writing', workspaceId: 'project-a', skills: selectedSkills } },
+    }));
+    const ctx = {
+      get: name => name === 'profileContext' ? { dir: profile } : undefined,
+      loader: { entries: () => [{ options: { name: 'ds-bot' }, fiber: { config: { home } } }] },
+    };
+    const store = new ResearchRoleStore({ dataRoot: roleHome, manager, ctx });
+    const view = await store.view();
+    assert.equal(view.compatible, true);
+    assert.equal(view.entries[0].name, 'Writer');
+    assert.equal(view.entries[0].workspaceId, 'project-a');
+    for (const sessionId of ['chat-current', 'chat-old', 'group-current', 'group-old']) {
+      const resolved = await store.resolveSession(sessionId);
+      assert.equal(resolved.botId, 'writer');
+      assert.deepEqual(resolved.skills, selectedSkills);
+    }
+
+    await put(join(home, 'state.json'), JSON.stringify({ version: 2, bots: {}, rooms: {} }));
+    const unsupportedState = await store.view();
+    assert.equal(unsupportedState.compatible, false);
+    assert.equal(unsupportedState.reason, 'state-version');
+
+    await put(packageFile, JSON.stringify({ name: 'ds-bot', version: '0.2.5' }));
+    const unsupported = await store.view();
+    assert.equal(unsupported.compatible, false);
+    assert.equal(unsupported.reason, 'version');
+    assert.match(unsupported.error, /0\.2\.5/);
+    assert.match(unsupported.error, /0\.2\.3/);
+    assert.match(unsupported.error, /0\.2\.4/);
+  });
+});
+
 describe('role transactions', () => {
   it('prepares, completes with the Bot marker, and views the role', async () => {
     await writeTeam({

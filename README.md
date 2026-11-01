@@ -14,7 +14,7 @@ stay in DS-Bot. What the workbench owns is which research Skills that Bot may se
 project it belongs to. A normal Agent, a non-research Bot, and a research Bot without a role
 never receive the workbench catalog.
 
-DS-Bot **0.2.3** is the supported release. The host half only reads its atomically written
+DS-Bot **0.2.3 and 0.2.4** are supported. The host half only reads its atomically written
 `state.json`; every change to the team goes through DS-Bot's own same-origin `POST /api/bot`.
 The workbench never rewrites `$DSH_HOME/bot/state.json`.
 
@@ -179,7 +179,7 @@ dsh plugin --profile <profile> add github:Zestful-ss/dsh-research-workbench#<sha
 dsh plugin --profile <profile> add /path/to/dsh-research-workbench
 ```
 
-Research assistants additionally need DS-Bot 0.2.3 in the same profile:
+Research assistants additionally need DS-Bot 0.2.3 or 0.2.4 in the same profile:
 
 ```bash
 dsh plugin --profile <profile> add ds-bot
@@ -243,7 +243,7 @@ Host modules:
 
 ## Known limits
 
-- DS-Bot is pinned to 0.2.3; another version disables the role surface until it is updated.
+- DS-Bot releases other than 0.2.3 and 0.2.4 disable the role surface until verified.
 - A GitHub source needs network access to install and to check for updates.
 - A local folder source is read in place; it has no revision to compare, so it reports as a
   local folder instead of an update.
