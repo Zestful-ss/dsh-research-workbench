@@ -281,13 +281,28 @@ describe('template coverage', () => {
     'nature-writing',
   ];
 
-  it('ships six templates that cover every nature-skills entry', () => {
+  // One upstream skill is field-specific: nature-social-science targets social
+  // science and neighbouring humanities work. No template may hand it to every
+  // user, so it stays catalog-only and the coverage check exempts it by name.
+  const fieldSpecific = 'nature-social-science';
+
+  it('ships six templates that cover every general nature-skills entry', () => {
     assert.equal(ROLE_TEMPLATES.length, 6);
     const covered = new Set(ROLE_TEMPLATES
       .flatMap(template => template.skills)
       .filter(skill => skill.sourceId === 'nature-skills')
       .map(skill => skill.name));
-    assert.deepEqual([...covered].sort(), natureSkills.slice().sort());
+    assert.deepEqual(
+      [...covered].sort(),
+      natureSkills.filter(name => name !== fieldSpecific).sort(),
+    );
+  });
+
+  it('never defaults the field-specific social-science skill', () => {
+    const defaulted = ROLE_TEMPLATES
+      .flatMap(template => template.skills)
+      .filter(skill => skill.name === fieldSpecific);
+    assert.deepEqual(defaulted, []);
   });
 
   it('routes a retired template id to its consolidated successor', async () => {

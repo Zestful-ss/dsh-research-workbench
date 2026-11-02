@@ -52,10 +52,12 @@ Touch input fields use at least 16px text.
 - Six read-only templates: literature search and reading; research questions and design;
   data and results analysis; paper writing and submission; review and quality checks;
   figures and research presentation. Together they cover the currently registrable
-  `nature-skills` entries plus `scientific-figure-making` from `figures4papers`. The design
-  template starts with literature search, proposal writing and social-science topic skills;
-  the analysis template starts with statistical reporting review, data availability and
-  experiment logs. Further analysis depends on the Skills and tools the user adds. A
+  `nature-skills` entries except the field-specific `nature-social-science`, plus
+  `scientific-figure-making` from `figures4papers`. The design template starts with
+  literature search, proposal writing and topic framing; the analysis template starts with
+  statistical reporting review, data availability and experiment logs. No template assumes
+  a discipline: a field-specific Skill stays in the catalog for the users who pick it.
+  Further analysis depends on the Skills and tools the user adds. A
   template only seeds the initial selection; every assistant can add or remove Skills.
   Earlier template IDs are read as their current successors without changing existing Skills.
 - Name, `provider/model`, optional working folder, and Skill selection are chosen when the
