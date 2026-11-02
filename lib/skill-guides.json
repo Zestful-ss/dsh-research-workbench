@@ -261,19 +261,6 @@
       ],
       "sourceHash": "8ca28cc8e8bda2b5254056940d2a696dc0d3cabcd5573cdec98ffc3cbd162610"
     },
-    "nature-skills/nature-social-science": {
-      "zh": [
-        "社科选题与论证",
-        "帮助社会科学及相邻学科梳理选题、文献、证据路线和论文论证。",
-        "把这个宽泛的社科兴趣整理成研究问题，并分析可行性。"
-      ],
-      "en": [
-        "Social-science research design",
-        "Develop topics, literature maps, evidence plans, and arguments for social science and related fields.",
-        "Turn this broad social-science interest into research questions and assess feasibility."
-      ],
-      "sourceHash": "62c1b5624734ba954da28330adb93f2330605d4dfb2a463044fae9e539c037eb"
-    },
     "nature-skills/nature-statistics": {
       "zh": [
         "统计报告审查",

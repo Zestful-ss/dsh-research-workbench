@@ -136,6 +136,46 @@ describe('source scanning', () => {
     ]);
     await writeFileAt(path, WRITING_SKILL);
   });
+
+  it('hides a field-specific skill of a preset repository but keeps it in other repositories', async () => {
+    const home = await mkdtemp(join(tmpdir(), 'dsh-rw-field-'));
+    try {
+      const dataRoot = join(home, 'workbench');
+      const presetTree = join(dataRoot, 'sources', 'nature-skills');
+      const ownTree = join(home, 'own-skills');
+      for (const [root, name] of [[presetTree, 'nature-writing'], [presetTree, 'nature-social-science'], [ownTree, 'nature-social-science']]) {
+        await mkdir(join(root, name), { recursive: true });
+        await writeFile(join(root, name, 'SKILL.md'), `---\nname: ${name}\ndescription: ${name} 用途\n---\n\n# ${name}\n`, 'utf8');
+      }
+      await writeFile(join(dataRoot, 'state.json'), JSON.stringify({
+        version: 1,
+        sources: [
+          {
+            id: 'nature-skills',
+            title: 'NatureSkills',
+            kind: 'github',
+            repository: 'Yuan1z0825/nature-skills',
+            branch: 'main',
+            syncMode: 'tarball',
+            installedRevision: 'a'.repeat(40),
+          },
+          { id: 'own-skills', title: 'Own', kind: 'local', localPath: ownTree, syncMode: 'local' },
+        ],
+        disabledSkills: [],
+        literatureDirs: [],
+        pinnedProjects: [],
+      }), 'utf8');
+
+      const isolated = new SkillSourceManager({ dataRoot });
+      const rows = await isolated.scanSkills({ fresh: true });
+      const presetRows = rows.filter(row => row.sourceId === 'nature-skills').map(row => row.name);
+      const ownRows = rows.filter(row => row.sourceId === 'own-skills').map(row => row.name);
+      assert.deepEqual(presetRows, ['nature-writing']);
+      assert.deepEqual(ownRows, ['nature-social-science']);
+    } finally {
+      await rm(home, { recursive: true, force: true });
+    }
+  });
 });
 
 describe('skill provider contract', () => {

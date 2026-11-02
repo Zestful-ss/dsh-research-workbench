@@ -123,7 +123,10 @@ as an existing folder.
   (CC BY-NC 4.0), Science Superpowers (computational-science methodology), Scientific Writer and
   book-to-skill. Every suggestion stays usable across fields; a discipline-specific library
   (bioinformatics, drug discovery, clinical tools) is added by URL when that field is the work,
-  never offered as a general research collection.
+  never offered as a general research collection. A skill that a preset repository ships for one
+  field only (`nature-skills/nature-social-science`) is not listed at all, so no template or
+  picker can hand it to a researcher of another field; the same skill in another repository is
+  listed normally.
   Per source: current revision, update state, `Check`,
   `Preview` (installed → latest, pending commits, diffstat), `Update`, `Remove`. A preset counts
   as installed by its repository, not by its id, so a repository registered under another id
