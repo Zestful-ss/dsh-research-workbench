@@ -712,11 +712,11 @@ describe('repository identity', () => {
     const home = await mkdtemp(join(tmpdir(), 'dsh-rw-repo-'));
     try {
       const dataRoot = join(home, 'workbench');
-      await mkdir(join(dataRoot, 'sources', 'scientific-agent-skills'), { recursive: true });
+      await mkdir(join(dataRoot, 'sources', 'science-superpowers'), { recursive: true });
       await writeFile(join(dataRoot, 'state.json'), JSON.stringify({
         version: 1,
         sources: [{
-          id: 'scientific-agent-skills',
+          id: 'science-superpowers',
           title: 'Something else',
           kind: 'github',
           repository: 'example/other-repo',
@@ -730,10 +730,10 @@ describe('repository identity', () => {
       }), 'utf8');
       const isolated = new SkillSourceManager({ dataRoot });
       let presets = (await isolated.status()).presets;
-      assert.equal(presets.find(preset => preset.id === 'scientific-agent-skills').installed, false);
+      assert.equal(presets.find(preset => preset.id === 'science-superpowers').installed, false);
 
       const state = await isolated.load();
-      assert.equal(await isolated.freeSourceId(state, 'scientific-agent-skills'), 'scientific-agent-skills-official');
+      assert.equal(await isolated.freeSourceId(state, 'science-superpowers'), 'science-superpowers-official');
       state.sources.push({
         id: 'academic-research-skills-official',
         title: 'Academic Research Skills',

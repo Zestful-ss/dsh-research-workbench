@@ -120,10 +120,11 @@ as an existing folder.
   can be opened natively, revealed in the file manager, or sent to a research assistant.
 - **Skills page** — subscribe to a suggested upstream repository or add any GitHub repository /
   local folder. Suggested collections cover NatureSkills, figures4papers, Academic Research Skills
-  (CC BY-NC 4.0), Science Superpowers (computational-science methodology), Scientific
-  Agent Skills (198-skill bundle: Science Superpowers, Academic Research Skills and the
-  177-skill K-Dense library), Scientific Writer, Bioinformatics Skills, Drug Discovery Skills,
-  and book-to-skill. Per source: current revision, update state, `Check`,
+  (CC BY-NC 4.0), Science Superpowers (computational-science methodology), Scientific Writer,
+  Bioinformatics Skills, Drug Discovery Skills, and book-to-skill. Collections are listed by
+  field where the whole repository is field-specific (Bioinformatics Skills, Drug Discovery
+  Skills); no suggested collection mixes discipline tools into a general research library.
+  Per source: current revision, update state, `Check`,
   `Preview` (installed → latest, pending commits, diffstat), `Update`, `Remove`. A preset counts
   as installed by its repository, not by its id, so a repository registered under another id
   still hides the duplicate subscribe button, and an id already taken by a different repository
@@ -131,7 +132,7 @@ as an existing folder.
   revision, shared-dependency status, enable/disable, the complete `SKILL.md`, and “use in
   session” (available in research mode).
 - **Skill guides** — every skill from the built-in NatureSkills, figures4papers, Science
-  Superpowers, Academic Research Skills and Scientific Agent Skills sources carries a curated
+  Superpowers and Academic Research Skills sources carries a curated
   Chinese and English title, purpose and example request, generated from the upstream
   `SKILL.md` at a recorded hash. When upstream later edits that file the guide is marked as
   possibly stale and the upstream description is shown next to it; a skill with no curated
@@ -163,8 +164,7 @@ The Skills page shows that check per Skill: `nature-shared ✓` means the siblin
   upstream rewrote history).
 - When git cannot reach the network, the same revision is installed from the GitHub archive and
   updates replace the whole tree. Both paths keep the complete directory tree.
-- An archive download gets a ten-minute budget and a 100 MB cap, except the
-  `scientific-agent-skills` repository whose full archive is ~245 MB and gets 512 MB. A download
+- An archive download gets a ten-minute budget and a 100 MB cap. A download
   that fails changes nothing: the installed tree is only replaced after the new one is complete.
 - One install runs at a time (`install.lock`, with stale-lock recovery); a second request gets
   `423`.

@@ -80,14 +80,14 @@ Skills 页将搜索和分类筛选独立排列，「可以这样说」展开请�
   （Zotero 的 `storage` 目录也可以）。文件可系统打开、在资源管理器中定位，或带入科研助手对话。
 - **科研 Skills 页**：一键订阅推荐来源，或添加任意 GitHub 仓库／本地文件夹。推荐来源包括 NatureSkills、
   figures4papers、Academic Research Skills（CC BY-NC 4.0，仅限非商业使用）、Science Superpowers
-  （计算科研方法论）、Scientific Agent Skills（含 Science Superpowers、Academic Research Skills
-  与 K-Dense 177 技能全量库，共 198 个技能）、Scientific Writer、Bioinformatics Skills、
-  Drug Discovery Skills 与 book-to-skill。每个来源显示当前版本、更新状态、`检查更新`、`变更预览`、
+  （计算科研方法论）、Scientific Writer、Bioinformatics Skills、Drug Discovery Skills 与
+  book-to-skill。整库面向单一领域的来源直接按领域命名（Bioinformatics Skills、Drug Discovery
+  Skills），不把学科工具混进一个号称通用的科研技能库。每个来源显示当前版本、更新状态、`检查更新`、`变更预览`、
   `更新`、`移除`。预设是否已安装按仓库判断而非来源 id：同一仓库换了 id 仍不会出现重复订阅，
   规范 id 被其他仓库占用时自动改用 `<id>-official` 而不是报错。每个技能显示分类、来源、版本、
   共享依赖状态、启用/停用、完整 `SKILL.md`，以及「在会话中使用」（科研模式下可用）。
-- **技能介绍**：内置 NatureSkills、figures4papers、Science Superpowers、Academic Research Skills
-  与 Scientific Agent Skills 的每个技能都有逐项核对的中英文标题、用途和示例请求，并记录生成时的
+- **技能介绍**：内置 NatureSkills、figures4papers、Science Superpowers 与 Academic Research Skills
+  的每个技能都有逐项核对的中英文标题、用途和示例请求，并记录生成时的
   上游 `SKILL.md` 哈希。上游后来改动该文件时，介绍会标注可能过期并同时显示最新上游说明；没有人工
   整理介绍的新技能会明确说明，只显示上游原文，不编造用途。
 - **共享技能版本**：技能详情里的「编辑共享版本」会把一份修改后的 `SKILL.md` 存到 `skill-overrides/`，
@@ -110,7 +110,7 @@ Skills 页将搜索和分类筛选独立排列，「可以这样说」展开请�
 - 能连 GitHub 时用 `git clone --filter=blob:none --depth=50`；更新是增量的：`git fetch`、提交列表、
   `git diff --stat`、快进合并（上游改写历史时改用 reset）。
 - git 不可用时，同一版本改由 GitHub 归档包安装，更新时整树替换；两条路径都保留完整目录树。
-- 归档包下载有 10 分钟预算与 100 MB 上限；`scientific-agent-skills` 的完整归档约 245 MB，单独放宽到 512 MB。
+- 归档包下载有 10 分钟预算与 100 MB 上限。
   下载失败不会改动任何东西，只有新目录树完整落地后才会替换旧的。
 - 同一时间只允许一个同步任务（`install.lock`，支持陈旧锁恢复），并发请求返回 `423`。
 

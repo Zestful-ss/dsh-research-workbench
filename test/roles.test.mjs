@@ -942,7 +942,5 @@ describe('recommendations and unusable customizations', () => {
     assert.equal(byName.get('framing-research-questions').available, true);
     assert.equal(byName.get('designing-the-analysis').available, false);
     assert.equal(byName.get('designing-the-analysis').reason, 'disabled');
-    assert.equal(byName.get('experimental-design').available, false);
-    assert.equal(byName.get('experimental-design').reason, 'source-missing');
   });
 });
