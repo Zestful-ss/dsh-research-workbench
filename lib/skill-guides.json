@@ -586,6 +586,19 @@
       ],
       "sourceHash": "0721adfe0050565dfac9706f5531781fa8cac710a1310125eb080186fed0e132"
     },
+    "scienceplots/scienceplots": {
+      "zh": [
+        "SciencePlots 论文绘图",
+        "用 SciencePlots 的 Matplotlib 样式（science、ieee、nature 等）绘制和调整投稿级图表，含免 LaTeX 与中文字体处理。",
+        "用 science 和 ieee 样式画这张对比图并导出矢量 PDF。"
+      ],
+      "en": [
+        "SciencePlots publication figures",
+        "Styles matplotlib figures with SciencePlots (science, ieee, nature and colour cycles) for paper submission, including the no-LaTeX and CJK-font paths.",
+        "Render this comparison figure with the science and ieee styles and export a vector PDF."
+      ],
+      "sourceHash": "64d56724a320c292a29eb53fad4897557f1e1501f6501e5c28e4be0ba0554e74"
+    },
     "scientific-agent-skills/13c-metabolic-flux": {
       "zh": [
         "碳13代谢通量",
