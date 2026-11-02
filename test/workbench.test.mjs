@@ -14,6 +14,7 @@ import { SkillSourceManager, categorizeSkill, parseFrontmatter, referencedSiblin
 import { BUILTIN_PRESET_SOURCES, SkillError, acquireInstallLock, parseGitHubUrl } from '../lib/skill-sources.js';
 import { createWorkbenchHandler } from '../lib/workbench-api.js';
 import { createSkillProvider } from '../lib/index.js';
+import { guideFor, loadSkillGuides } from '../lib/skill-guides.js';
 
 const API = 'http://127.0.0.1/api/dsh-research-workbench';
 const TOKEN = 'test-token';
@@ -795,6 +796,39 @@ Read shared/references/routing_core.md first.
       assert.deepEqual(definition.resourceBase, { kind: 'directory', path: skillDir });
     } finally {
       await rm(home, { recursive: true, force: true });
+    }
+  });
+});
+
+describe('skill guides', () => {
+  it('follows the canonical repository id and flags a moved upstream text', async () => {
+    const guides = await loadSkillGuides();
+    const row = {
+      sourceId: 'science-superpowers-official',
+      canonicalSourceId: 'science-superpowers',
+      name: 'framing-research-questions',
+      sourceHash: '0'.repeat(64),
+    };
+    const guide = guideFor(guides, row);
+    assert.equal(Array.isArray(guide.zh), true);
+    assert.equal(guide.zh.length, 3);
+    assert.equal(Array.isArray(guide.en), true);
+    assert.equal(guide.stale, true);
+    assert.equal(guideFor(guides, { ...row, sourceHash: undefined }).stale, false);
+  });
+
+  it('answers nothing for a skill nobody curated instead of inventing one', async () => {
+    const guides = await loadSkillGuides();
+    assert.equal(guideFor(guides, { sourceId: 'local-source', canonicalSourceId: 'local-source', name: 'uncurated-skill', sourceHash: 'f'.repeat(64) }), undefined);
+  });
+
+  it('ships every bundled research skill with both locales', async () => {
+    const guides = await loadSkillGuides();
+    for (const [key, guide] of guides) {
+      assert.equal(guide.zh.length, 3, key);
+      assert.equal(guide.en.length, 3, key);
+      assert.equal(guide.zh.every(text => text.trim() !== ''), true, key);
+      assert.equal(guide.en.every(text => text.trim() !== ''), true, key);
     }
   });
 });

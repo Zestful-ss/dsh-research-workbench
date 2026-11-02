@@ -11,7 +11,8 @@
         "Literature search",
         "Find papers across sources, verify citations, and plan a search strategy.",
         "Find recent reviews on this topic and list their sources and DOIs."
-      ]
+      ],
+      "sourceHash": "3ed327e3e9c56cddfaa0e48ffb3503b1f9e27f917916013798ef57bf8131101a"
     },
     "nature-skills/nature-citation": {
       "zh": [
@@ -23,7 +24,8 @@
         "Nature-family citations",
         "Find and verify Nature or CNS-family references for specific manuscript claims.",
         "Find Nature-family sources for this paragraph and map each claim to a source."
-      ]
+      ],
+      "sourceHash": "f0436639c2bcf966e8f8cdda6e06501b396bb32cc3b7cce57f67eb0cd7b5a44d"
     },
     "nature-skills/nature-data": {
       "zh": [
@@ -35,7 +37,8 @@
         "Data availability",
         "Plan dataset access and citations, or review a data availability statement; this is not data cleaning.",
         "Review this data availability statement and identify missing access details."
-      ]
+      ],
+      "sourceHash": "4ef9c383411b069265901e9f157cb4d73861f42f6ddd28611084005e67eafa43"
     },
     "nature-skills/nature-downloader": {
       "zh": [
@@ -47,7 +50,8 @@
         "Get paper full text",
         "Find lawful full text and supplements through open access, institutional access, or publisher APIs.",
         "Look for an open-access or institutionally available copy of this paper and its supplements."
-      ]
+      ],
+      "sourceHash": "d57f02ec3fc3a5341819a132df039f192d3beaf5709b57dee552589254ef6b85"
     },
     "nature-skills/nature-experiment-log": {
       "zh": [
@@ -59,7 +63,8 @@
         "Experiment logs",
         "Turn supplied text, images, or voice notes into a structured experiment log.",
         "Organize these notes into experimental conditions, results, and points to confirm."
-      ]
+      ],
+      "sourceHash": "1f7fffcbc950d4f60fcb5ad9f2aabe82246ebbd83bf29621a0e90c9ff4ec4b8b"
     },
     "nature-skills/nature-figure": {
       "zh": [
@@ -71,7 +76,8 @@
         "Scientific figures",
         "Create, revise, and audit manuscript figures in Python or R, then export them for submission.",
         "Make a multi-panel figure from these data and check fonts and export formats."
-      ]
+      ],
+      "sourceHash": "5aefe708a2531c5ddaa8ee74d5155d747e96c0f21a33143d38316b7c5c88ffc4"
     },
     "nature-skills/nature-image2ppt": {
       "zh": [
@@ -83,7 +89,8 @@
         "Image to editable slides",
         "Reconstruct a slide image or scanned page as editable PowerPoint objects.",
         "Rebuild this slide screenshot as an editable PowerPoint slide."
-      ]
+      ],
+      "sourceHash": "0b49331f7b97e0751248c84506cada638f29ff44bb3023686f89a9f858748e9e"
     },
     "nature-skills/nature-literature-pipeline": {
       "zh": [
@@ -95,7 +102,8 @@
         "Literature workflow",
         "Combine paper discovery, screening, reading, and archiving; scheduled delivery needs additional setup.",
         "Find and screen papers on this topic, then organize a digest and archive list."
-      ]
+      ],
+      "sourceHash": "1dcaa692457ec9c2be409cb7777f834a2db833788b2e9b680baf0e961126b01a"
     },
     "nature-skills/nature-paper-card": {
       "zh": [
@@ -107,7 +115,8 @@
         "Paper reading card",
         "Make a structured card for one paper covering its question, methods, evidence, limitations, and ideas.",
         "Create a reading card for this paper, emphasizing its methods, evidence, and limits."
-      ]
+      ],
+      "sourceHash": "a71e3dbc446523e415ed4b896bed8ea60e0c598fb8655c587679d719648b68c9"
     },
     "nature-skills/nature-paper-to-patent": {
       "zh": [
@@ -119,7 +128,8 @@
         "Paper to patent draft",
         "Use a paper and inventor materials to prepare a Chinese patent draft or technical disclosure.",
         "Draft a Chinese technical disclosure from this paper and inventor notes."
-      ]
+      ],
+      "sourceHash": "b65243157addf3e4e38de4cb35136d95478c2c997bdd5600e6ae21f91f4d06f0"
     },
     "nature-skills/nature-paper-trans": {
       "zh": [
@@ -131,7 +141,8 @@
         "Translate a paper PDF",
         "Translate selected pages or an English paper into a layout-preserving Chinese image PDF; image generation is required.",
         "Translate pages 1–5 of this paper into a Chinese PDF while preserving figures and equations."
-      ]
+      ],
+      "sourceHash": "bf59cfce453dcc0616e3e95530f9dd7da51511fbd5793fc20005fa7f7ddde57c"
     },
     "nature-skills/nature-paper-xray": {
       "zh": [
@@ -143,7 +154,8 @@
         "Deep paper analysis",
         "Reconstruct the reasoning, key design choices, formulas, and evidence limits of one paper.",
         "Explain why this paper chose its design and illustrate the key formula with a small example."
-      ]
+      ],
+      "sourceHash": "c889b3751672fa453d761f0a2956cf8304b51a383be6d10f06d27f0371012d87"
     },
     "nature-skills/nature-paper2ppt": {
       "zh": [
@@ -155,7 +167,8 @@
         "Paper presentation",
         "Create a Chinese academic slide deck from a paper or reading notes, with figures and speaker notes.",
         "Turn this paper into a group-meeting deck with methods, results, and speaker notes."
-      ]
+      ],
+      "sourceHash": "a8d0fd14ca0863602cfc76305467d0f5a6ac2c104abedd7f7e86dfcf46bf04cf"
     },
     "nature-skills/nature-paper2word": {
       "zh": [
@@ -167,7 +180,8 @@
         "Manuscript to Word",
         "Format a Markdown manuscript as Word with equations, tables, and references; the md-to-word tool is required.",
         "Export this Markdown manuscript to Word using the target journal format."
-      ]
+      ],
+      "sourceHash": "d9371f771c6fb68c8a5ca1cac4089e8ac45450543aecad1b120dded567703074"
     },
     "nature-skills/nature-polishing": {
       "zh": [
@@ -179,7 +193,8 @@
         "Polish and translate",
         "Polish, translate, or shorten existing academic text while preserving facts and terminology.",
         "Polish this manuscript paragraph without changing its meaning."
-      ]
+      ],
+      "sourceHash": "9391b2a2487306cf2ed560377d4bc10c339fd2c220a79db278cb7f9d31e79023"
     },
     "nature-skills/researchwrite": {
       "zh": [
@@ -191,7 +206,8 @@
         "Research proposals",
         "Draft, revise, or audit research plans and proposals using the evidence supplied.",
         "Use these papers and goals to outline the research questions and methods for a proposal."
-      ]
+      ],
+      "sourceHash": "9be8ae52f909969592529414fb6f5bb54059c8cbe520e78b53d22b297cef5e4a"
     },
     "nature-skills/nature-reader": {
       "zh": [
@@ -203,7 +219,8 @@
         "Source-grounded paper reader",
         "Read a paper with source-linked text, figures, equations, or Chinese–English comparisons.",
         "Explain the results section using the source text and figures."
-      ]
+      ],
+      "sourceHash": "999a5c1b116558133d0389ce6c1bbc3dc9cf5242d1be2870358789769d97a84e"
     },
     "nature-skills/nature-ref-verifier": {
       "zh": [
@@ -215,7 +232,8 @@
         "Reference verification",
         "Cross-check reference authors, titles, years, and DOIs and flag inconsistencies.",
         "Check this bibliography and flag entries with questionable authors, years, or DOIs."
-      ]
+      ],
+      "sourceHash": "6a975074d7a1c62c00dd9e8c7367cd2af0ef9d573d6d6ce5ea12f70d9320a516"
     },
     "nature-skills/nature-response": {
       "zh": [
@@ -227,7 +245,8 @@
         "Reviewer responses",
         "Draft or audit point-by-point replies, revision letters, and manuscript revision notes.",
         "Draft a point-by-point reply using these reviewer comments and my revision notes."
-      ]
+      ],
+      "sourceHash": "a8283db56e73879413311cbcde1db4c72dd4390bbe21ab2f62f1f968610b5de1"
     },
     "nature-skills/nature-reviewer": {
       "zh": [
@@ -239,7 +258,8 @@
         "Mock peer review",
         "Review a manuscript from a referee perspective, covering significance, methods, evidence, and concerns.",
         "Review this manuscript and separate major concerns from minor ones."
-      ]
+      ],
+      "sourceHash": "8ca28cc8e8bda2b5254056940d2a696dc0d3cabcd5573cdec98ffc3cbd162610"
     },
     "nature-skills/nature-social-science": {
       "zh": [
@@ -251,7 +271,8 @@
         "Social-science research design",
         "Develop topics, literature maps, evidence plans, and arguments for social science and related fields.",
         "Turn this broad social-science interest into research questions and assess feasibility."
-      ]
+      ],
+      "sourceHash": "62c1b5624734ba954da28330adb93f2330605d4dfb2a463044fae9e539c037eb"
     },
     "nature-skills/nature-statistics": {
       "zh": [
@@ -263,7 +284,8 @@
         "Statistical reporting review",
         "Check statistical methods, experimental units, replication, and figure legends; reanalysis requires data and a request.",
         "Review the sample sizes, statistical tests, and uncertainty reported in these methods and figures."
-      ]
+      ],
+      "sourceHash": "89d2a101fc45d7adf8ca327a6da4bda4a696d6364d7c36ead4f53413627a9b6f"
     },
     "nature-skills/nature-writing": {
       "zh": [
@@ -275,7 +297,8 @@
         "Manuscript writing",
         "Draft or restructure manuscript sections and initial submission materials from supplied evidence.",
         "Draft a results section from these findings and mark claims needing more evidence."
-      ]
+      ],
+      "sourceHash": "ce7c4d20329b96b03b0f0c0bb744411b1b4deaa7a7b69b90757705a83c195b12"
     },
     "figures4papers/scientific-figure-making": {
       "zh": [
@@ -287,7 +310,8 @@
         "Publication figures with Matplotlib",
         "Create paper and report figures with Matplotlib, including multi-panel layouts and vector export.",
         "Make a publication-ready Matplotlib figure from these data and export it as a vector file."
-      ]
+      ],
+      "sourceHash": "952300b4d0bd8fbd0c55aaa732a47a0abb8e9707bc80965c8e70221ef13f0292"
     },
     "academic-research-skills/academic-paper": {
       "zh": [
@@ -299,7 +323,8 @@
         "Academic Paper Writing",
         "A 12-agent paper-writing pipeline with 11 modes from full drafting to revision, citation checks, and format conversion; DOCX/PDF output needs Pandoc.",
         "Write a paper on the impact of AI on higher education quality assurance"
-      ]
+      ],
+      "sourceHash": "8a7bb8ae8bfebefb9e3ea4a11ab2a42c024dd6a27d4ecc04c2865471ab8137b3"
     },
     "academic-research-skills/academic-paper-reviewer": {
       "zh": [
@@ -311,7 +336,8 @@
         "Simulated Peer Review Panel",
         "A five-seat review panel (journal fit, three peer roles, devil's advocate) producing reports plus an editorial decision; modes include re-review and calibration.",
         "Give my manuscript a full simulated peer review with a revision roadmap"
-      ]
+      ],
+      "sourceHash": "61c0b64e0b0cfe4bdbba2a9c50f35a56b4b3d4d63235d0f538e39205ea064ccb"
     },
     "academic-research-skills/academic-pipeline": {
       "zh": [
@@ -323,7 +349,8 @@
         "End-to-End Paper Pipeline",
         "Orchestrates a 10-stage research-to-manuscript workflow dispatching deep-research, academic-paper, and reviewer skills with integrity checks; does no substantive work itself.",
         "Run the full pipeline from my research topic to a reviewed final manuscript"
-      ]
+      ],
+      "sourceHash": "7fd09a9933394df54c2587ba936b48952e236228dfb460a83fbd4b86a8f0372c"
     },
     "academic-research-skills/deep-research": {
       "zh": [
@@ -335,7 +362,8 @@
         "Deep Academic Research",
         "A 13-agent research team with 8 modes including literature review, fact-check, systematic review with meta-analysis, and Socratic guidance; outputs APA 7.0 reports.",
         "Do deep research on declining birth rates and private university strategy"
-      ]
+      ],
+      "sourceHash": "d4b056eab3bb520bf7a45aeb3cf16260b532e0d99cec414d9ed9085b1f470948"
     },
     "academic-research-skills/sr-screener": {
       "zh": [
@@ -347,7 +375,8 @@
         "Systematic Review Screening",
         "Protocol-driven dual-reviewer screening of RIS/PubMed/CSV records with adjudication and PRISMA 2020 counts; Python 3.9+ scripts, openpyxl optional for Excel log.",
         "Screen my EndNote export against the eligibility criteria with a pilot first"
-      ]
+      ],
+      "sourceHash": "6bab01023c6a4b6534a5ba904511c60f1212416ce3f51be36c73486059ad4789"
     },
     "science-superpowers/designing-the-analysis": {
       "zh": [
@@ -359,7 +388,8 @@
         "Design the Analysis Plan",
         "Turns an approved research question into a concrete analysis plan covering data flow, confounds, power, and bite-sized validated steps, before any outcome data or model fitting.",
         "Write a pre-registrable analysis plan for my approved research question"
-      ]
+      ],
+      "sourceHash": "ba2332cc1980f6993153718bc71d6c00bd6e534552a4f6a1d1ed68681835b768"
     },
     "science-superpowers/dispatching-parallel-investigations": {
       "zh": [
@@ -371,7 +401,8 @@
         "Dispatch Parallel Investigations",
         "Delegates independent investigations to isolated subagents run in parallel, then synthesizes; requires investigations be independent and pre-specified or fully reported.",
         "Split my literature survey into three parallel subagent investigations"
-      ]
+      ],
+      "sourceHash": "c0bef023dde4f91d65de01055d33d6818b61c25cab606b654fd7e9346cbda682"
     },
     "science-superpowers/establishing-feasibility-first": {
       "zh": [
@@ -383,7 +414,8 @@
         "Establish Feasibility First",
         "When whether the computation can run at all is unknown, runs a minimal end-to-end runner and scaling probes before research planning; opt-in only by the user.",
         "This pipeline has never run on the cluster; verify feasibility before study design"
-      ]
+      ],
+      "sourceHash": "53ce3f3db22297061f141f641d45c2c324f058f15cf620455773939496786352"
     },
     "science-superpowers/executing-analysis": {
       "zh": [
@@ -395,7 +427,8 @@
         "Execute a Registered Analysis",
         "Executes a frozen pre-registered plan inline in one session with validations and checkpoints; requires prior pre-registration and workspace setup.",
         "Run my pre-registered analysis plan step by step in this session"
-      ]
+      ],
+      "sourceHash": "245b14c34f8d0deec3ad45479244b07726bb276ae8251d50e869194ef8291f75"
     },
     "science-superpowers/framing-research-questions": {
       "zh": [
@@ -407,7 +440,8 @@
         "Frame Research Questions",
         "Turns a fuzzy research interest into a falsifiable question with hypotheses and answer criteria through dialogue; mandatory before touching outcome data.",
         "Help me turn my vague idea about this dataset into a testable question"
-      ]
+      ],
+      "sourceHash": "f26651fec7df5a9919b92f8bfe7bb5aea0d6b9a520033dcec8d9ecaa6799c449"
     },
     "science-superpowers/investigating-anomalous-results": {
       "zh": [
@@ -419,7 +453,8 @@
         "Investigate Anomalous Results",
         "Requires root-cause investigation of surprising results, pipeline failures, or failed replications before any adjustment; forbids silently dropping data or tweaking parameters.",
         "My model will not converge and results look too good; find the root cause first"
-      ]
+      ],
+      "sourceHash": "9c9fb3cda944c418eb4118a822220addb392f3ca5da5618e62e9fa9e4e32fc9c"
     },
     "science-superpowers/preregistering-analysis": {
       "zh": [
@@ -431,7 +466,8 @@
         "Pre-Register the Analysis",
         "Writes and freezes hypotheses, predictions, exact analysis, and decision rules before seeing outcomes; required before any confirmatory claim.",
         "Pre-register my hypotheses and decision rules before I run this test"
-      ]
+      ],
+      "sourceHash": "52b8560d60af85cd768ca2d71d45a849e3b4e39af697aa6f71251f645f8815c9"
     },
     "science-superpowers/receiving-critical-review": {
       "zh": [
@@ -443,7 +479,8 @@
         "Receive Critical Review",
         "Guides verified, technical responses to critical feedback on analyses or manuscripts: check each concern against data and pre-registration before changing anything.",
         "A reviewer questioned my confound controls; verify and draft a response"
-      ]
+      ],
+      "sourceHash": "48af2ab8bb593c000af2c3ba22af254f86ea241c04e33fb908886a305977917f"
     },
     "science-superpowers/reporting-and-archiving-findings": {
       "zh": [
@@ -455,7 +492,8 @@
         "Report and Archive Findings",
         "Finishes an investigation by confirming end-to-end reproducibility, separating confirmatory from exploratory results, and archiving code, data, environment, and pre-registration.",
         "Confirm my analysis reproduces and prepare the report and archive"
-      ]
+      ],
+      "sourceHash": "645d951675e4893d774f96893d5fdad8ae66e3620cee485bcbd7c3f3a36366ed"
     },
     "science-superpowers/requesting-red-team-review": {
       "zh": [
@@ -467,7 +505,8 @@
         "Request Red-Team Review",
         "Dispatches a skeptical reviewer subagent to attack a conclusion before it is believed or reported; needs subagent support and git-bounded work.",
         "Have a hostile reviewer subagent attack my finding before I report it"
-      ]
+      ],
+      "sourceHash": "3f08383d24d74de000e15d989e1cac539c3c2c6096ab5b18a6a7933bf8b9672f"
     },
     "science-superpowers/setting-up-reproducible-analysis": {
       "zh": [
@@ -479,7 +518,8 @@
         "Set Up Reproducible Analysis",
         "Creates an isolated reproducible workspace with git worktrees, pinned environment, fixed seeds, and immutable raw data before running anything.",
         "Set up an isolated reproducible workspace for my analysis"
-      ]
+      ],
+      "sourceHash": "f52c4d4c107744ec42ef4ad13cef7e652b1c6b8e01fd4717e8ddf07dce73b487"
     },
     "science-superpowers/subagent-driven-analysis": {
       "zh": [
@@ -491,7 +531,8 @@
         "Subagent-Driven Analysis",
         "Runs a frozen pre-registered plan by dispatching a fresh subagent per step with protocol-compliance then statistical-rigor review; requires subagent support.",
         "Execute my frozen analysis plan with a fresh subagent per step"
-      ]
+      ],
+      "sourceHash": "2cee4173125e8998066528a0893a9700a47f8139b58a8a77b40e8e1c2d8b7fc8"
     },
     "science-superpowers/surveying-prior-work": {
       "zh": [
@@ -503,7 +544,8 @@
         "Survey Prior Work",
         "Surveys established methods, known confounds, prior effect sizes, and novelty position before designing an analysis; feeds power calculation and method choice.",
         "Survey standard methods and known confounds for my research question"
-      ]
+      ],
+      "sourceHash": "e502b4b1e4b80ecee4bcd96d4239632b9e40279bf2cdbe6ad2a69961a3c0e360"
     },
     "science-superpowers/using-science-superpowers": {
       "zh": [
@@ -515,7 +557,8 @@
         "Use Science Superpowers",
         "Entry-point skill that mandates invoking applicable Science Superpowers skills before any response, establishing workflow discipline and instruction priority.",
         "I am starting a data analysis; check which research workflow applies first"
-      ]
+      ],
+      "sourceHash": "fac8de9f7be50ec9688661060db95c02dd92b4cfd7e87b1da448b78fa633cd1a"
     },
     "science-superpowers/verifying-results-before-claiming": {
       "zh": [
@@ -527,7 +570,8 @@
         "Verify Before Claiming",
         "Requires re-running the analysis fresh from immutable raw data and reading actual output before claiming any result, effect, or reproducibility.",
         "Re-run the analysis fresh to verify my headline result before I write it up"
-      ]
+      ],
+      "sourceHash": "90fbeb6dce4a1213778c3ced639ba6aab5a5a801bc4ee2a53c98d7058c4decad"
     },
     "science-superpowers/writing-science-skills": {
       "zh": [
@@ -539,7 +583,8 @@
         "Write Science Skills",
         "Treats skill authoring as an experiment: observe baseline agent failure, write the skill, verify behavior changes; for creating or vetting skills.",
         "Help me author a new research-workflow skill and verify it changes behavior"
-      ]
+      ],
+      "sourceHash": "0721adfe0050565dfac9706f5531781fa8cac710a1310125eb080186fed0e132"
     },
     "scientific-agent-skills/13c-metabolic-flux": {
       "zh": [
@@ -551,7 +596,8 @@
         "Carbon-13 Metabolic Flux Analysis",
         "Estimates intracellular metabolic fluxes from steady-state carbon-13 labeling data using the bundled mfapy EMU simulator with multistart fitting and flux-profile identifiability checks; runs locally in a pinned Python 3.12 environment.",
         "Fit my steady-state 13C tracer dataset and report flux-profile intervals for reactions v3 and v7."
-      ]
+      ],
+      "sourceHash": "8318b1c785cc80bf095b8667a96061cd5f4b0b9c4e5fa77fd7f57fd8403f2c0f"
     },
     "scientific-agent-skills/adaptyv": {
       "zh": [
@@ -563,7 +609,8 @@
         "Adaptyv Foundry Protein Assays",
         "Designs protein characterization experiments on the Adaptyv Bio Foundry cloud lab, covering cost estimates, sequence submission, monitoring, and result retrieval; requires a Foundry account, bearer token, and network access.",
         "Draft a BLI affinity experiment for my protein variants on Adaptyv Foundry and show the cost estimate and quote."
-      ]
+      ],
+      "sourceHash": "5de115067c118609dc096f9d582c687fdf331150e3f21c54eedb2ade24d12846"
     },
     "scientific-agent-skills/aeon": {
       "zh": [
@@ -575,7 +622,8 @@
         "Aeon Time Series Machine Learning",
         "Applies the scikit-learn-compatible aeon toolkit to time series classification, regression, clustering, forecasting, anomaly detection, segmentation, and similarity search in a local Python environment.",
         "Compare time-series classifiers for my multichannel sensor recordings, keeping series from the same experiment together in the splits."
-      ]
+      ],
+      "sourceHash": "e1d25cbe0ba5f849299e9e02bd339773bb41529dcece5a6ee68bb080855b97a6"
     },
     "scientific-agent-skills/alphagenome": {
       "zh": [
@@ -587,7 +635,8 @@
         "AlphaGenome Variant Effect Lookup",
         "Ranks human GRCh38 variants with the precomputed AlphaGenome Atlas AVI scores and feature attributions or scores variants and windows on demand; requires a free non-commercial API key and network access.",
         "Retrieve AlphaGenome Atlas rankings for these GRCh38 variants and show which features drive the scores in lung tissue."
-      ]
+      ],
+      "sourceHash": "b133d2a9ff99652b439e0a6f00f93bad49f388be207f7e0241837e001a964947"
     },
     "scientific-agent-skills/analytical-method-validation": {
       "zh": [
@@ -599,7 +648,8 @@
         "Analytical Method Validation",
         "Plans and computes validation, verification, and transfer statistics for analytical procedures under frameworks like ICH Q2(R2), USP, and ICH M10 using local Python standard-library scripts.",
         "Plan an ICH Q2(R2) validation for my LC-MS assay and compute repeatability and intermediate precision against pre-stated criteria."
-      ]
+      ],
+      "sourceHash": "7c2cd278bd397f0f85f4fc790b236a61190cff8799c8ece8da923342f4dc0032"
     },
     "scientific-agent-skills/anndata": {
       "zh": [
@@ -611,7 +661,8 @@
         "AnnData Annotated Matrices",
         "Creates, reads, combines, and subsets AnnData annotated matrices in h5ad and Zarr formats as the data layer of the scverse single-cell ecosystem; needs Python 3.12+ and the anndata package.",
         "Combine these single-cell datasets into one AnnData object, preserving raw counts and batch metadata, then save and verify an h5ad file."
-      ]
+      ],
+      "sourceHash": "a619c4088e1be6f6feaa5838c63ff8c4381fa21b4adee2a9276aa61464f3a034"
     },
     "scientific-agent-skills/arbor": {
       "zh": [
@@ -623,7 +674,8 @@
         "Arbor Hypothesis Tree Optimization",
         "Runs Arbor's hypothesis-tree-refinement loop for autonomous artifact optimization with persistent hypotheses, isolated git worktree experiments, and a held-out merge gate; needs Python 3.10+, Git, and credentials for model calls.",
         "Use Arbor to improve this model-training experiment within a fixed compute budget, testing hypotheses in isolated worktrees against a held-out evaluator."
-      ]
+      ],
+      "sourceHash": "aae219831d92984eb6584831f77509cb8650a3986e8c42474aaa4d118ce080a6"
     },
     "scientific-agent-skills/arboreto": {
       "zh": [
@@ -635,7 +687,8 @@
         "Arboreto Regulatory Network Inference",
         "Infers candidate gene regulatory networks from bulk or single-cell expression with Arboreto's GRNBoost2 and GENIE3, requiring a pinned Python 3.11 compatibility stack with Dask; inference runs locally.",
         "Run GRNBoost2 on this expression matrix with my transcription-factor list and assess edge stability across seeds and resampled cells."
-      ]
+      ],
+      "sourceHash": "38ff6f24b8fd4a86e2a57ae7bb7669fe4ce401f7375efcc82a6c004f4c51d344"
     },
     "scientific-agent-skills/astropy": {
       "zh": [
@@ -647,7 +700,8 @@
         "Astropy Astronomy Workflows",
         "Covers Astropy units, coordinates, FITS I/O, tables, time scales, WCS, and cosmology for astronomy code on Python 3.11+; object-name resolution and remote data features need network access.",
         "Cross-match two source catalogs with different coordinate conventions using Astropy and report match separations with a justified radius."
-      ]
+      ],
+      "sourceHash": "2f9d43ae65766a9715112e3b56cb83fb9c12e4e8b6356c0c4c22131c6cfa536f"
     },
     "scientific-agent-skills/autoskill": {
       "zh": [
@@ -659,7 +713,8 @@
         "Autoskill Workflow Mining",
         "Analyzes user-requested Screenpipe history windows to cluster repeated research workflows and stage skill drafts or composition recipes; needs a running local Screenpipe daemon plus LM Studio or an opt-in cloud LLM.",
         "Analyze last week's Screenpipe history with a dry run first, then draft skill proposals for the repeated workflows using my local model."
-      ]
+      ],
+      "sourceHash": "d7fc7db094649f5cd1ee6349110d78197166011e929aecd2d468e251b0542ecc"
     },
     "scientific-agent-skills/benchling-integration": {
       "zh": [
@@ -671,7 +726,8 @@
         "Benchling Lab Data Integration",
         "Automates Benchling registry entities, sequence imports, inventory, ELN entries, workflows, and warehouse queries via benchling-sdk and the v2 REST API; requires a tenant with API access plus API key or OAuth credentials.",
         "Import the sequences in this FASTA file into my Benchling tenant's registry, preserving external IDs for reconciliation."
-      ]
+      ],
+      "sourceHash": "115b5418f7c42748918eed922b78010c795920b276063b8b759802eb0172d5de"
     },
     "scientific-agent-skills/bgpt-paper-search": {
       "zh": [
@@ -683,7 +739,8 @@
         "BGPT Paper Evidence Search",
         "Searches BGPT by topic or DOI for claim-level evidence extracted from full text, including experiments, statistics, scope, and provenance, via a configured remote BGPT MCP connection; paid tiers need an API key.",
         "Search BGPT for recent primary studies on CRISPR delivery in neurons and tabulate each paper's evidence units with provenance."
-      ]
+      ],
+      "sourceHash": "3b7db6956c13ccf24df151f0905ae579ed58230708a4ba19e6d6fb3bf9d4d6b7"
     },
     "scientific-agent-skills/bids": {
       "zh": [
@@ -695,7 +752,8 @@
         "BIDS Neuroimaging Data Organization",
         "Organizes, queries, validates, and converts Brain Imaging Data Structure datasets across MRI, EEG, PET, and other modalities with PyBIDS and the bids-validator; DICOM conversion needs external tools like dcm2niix.",
         "Convert these DICOM scans to BIDS, write the dataset_description.json, and run the validator to check compliance."
-      ]
+      ],
+      "sourceHash": "e1ae63105ccc2e4da7c40e8a2f40d031dd8f2a77270be626df780f0c39eb0b1b"
     },
     "scientific-agent-skills/biopython": {
       "zh": [
@@ -707,7 +765,8 @@
         "Biopython Molecular Biology",
         "Provides Biopython workflows for sequence manipulation, FASTA/GenBank/PDB parsing, alignments, phylogenetics, and NCBI Entrez access; Entrez requires a contact email and local tools like BLAST need separate executables.",
         "Parse this GenBank file with Biopython, extract CDS translations, and fetch the linked PubMed records through Entrez."
-      ]
+      ],
+      "sourceHash": "b617561b38a2e3ecc8f8cf3dd8bb0307ac1aaf4d67e6e0432b0c248bc4382245"
     },
     "scientific-agent-skills/bioservices": {
       "zh": [
@@ -719,7 +778,8 @@
         "BioServices Database Access",
         "Provides a Python interface to UniProt, KEGG, ChEMBL, Reactome, QuickGO, and UniChem for cross-database protein annotation, pathway retrieval, and chemical identifier mapping; needs internet access and a contact email for EBI BLAST.",
         "Map this list of UniProt accessions to KEGG pathways and retrieve their GO annotations with bioservices."
-      ]
+      ],
+      "sourceHash": "9edc884f0fe216d510417d565ae74cc61608824b52eeb53ed0cdea3dcda5bda3"
     },
     "scientific-agent-skills/bulk-rnaseq": {
       "zh": [
@@ -731,7 +791,8 @@
         "Bulk RNA-seq Count Preparation",
         "Prepares bulk RNA-seq FASTQ or Salmon/STAR/featureCounts outputs into a reproducible gene-level counts matrix via nf-core/rnaseq or standalone quantification, handing off to PyDESeq2; upstream processing needs Nextflow or local bioinformatics tools.",
         "Assemble these Salmon quantifications into a counts matrix with explicit sample order and provenance for a PyDESeq2 analysis."
-      ]
+      ],
+      "sourceHash": "e945e970268505368e20d9ddc0c135de469e86626d67565ae9047fb05f70cdbf"
     },
     "scientific-agent-skills/cantera": {
       "zh": [
@@ -743,7 +804,8 @@
         "Cantera Ignition Delay Simulation",
         "Runs Cantera homogeneous closed adiabatic ideal-gas reactors at constant volume or pressure with a defined ignition-delay measure plus conservation and refinement checks; custom mechanisms must be Cantera YAML files.",
         "Compute the constant-volume ignition delay for a hydrogen-oxygen-argon mixture at 1000 K and 1 atm with this mechanism and verify numerical resolution."
-      ]
+      ],
+      "sourceHash": "1dcb22bba51475a69dc93bbefa7d2581f3dfdb6a03a6fc55f8637e398f733a51"
     },
     "scientific-agent-skills/cellprofiler": {
       "zh": [
@@ -755,7 +817,8 @@
         "CellProfiler Nuclear Quantification",
         "Runs reproducible headless CellProfiler 4.2.8 pipelines for nuclear segmentation, counts, and per-object fluorescence measurements on 2D grayscale TIFFs; segmentation requires a separately installed CellProfiler application or container.",
         "Segment and count nuclei in this batch of DAPI TIFFs with CellProfiler, reviewing overlay QC before running the full plate."
-      ]
+      ],
+      "sourceHash": "b822ed64acb189d900f59ba69418e5e41261d539fd2fd847e402cded2fc1bb38"
     },
     "scientific-agent-skills/cellxgene-census": {
       "zh": [
@@ -767,7 +830,8 @@
         "CELLxGENE Census Queries",
         "Queries versioned public single-cell and spatial transcriptomics data in the CZ CELLxGENE Census by organism, tissue, disease, and cell type without downloading whole studies; needs Linux or macOS, Python 3.10+, and network access.",
         "Query B cells in human brain tissue on the pinned Census release, estimate the slice size, then pull expression for my gene list."
-      ]
+      ],
+      "sourceHash": "123b66d6701c7c0587d0a615a2394caee52e62745b3fd31176381ea64aaa794a"
     },
     "scientific-agent-skills/cirq": {
       "zh": [
@@ -779,7 +843,8 @@
         "Cirq Quantum Circuits",
         "Builds, simulates, and transforms quantum circuits with Google's Cirq, including noise modeling, parameter sweeps, and hardware-oriented compilation for Google Quantum AI and partner backends; cloud execution needs provider credentials.",
         "Simulate this parameterized circuit with a noise model in Cirq, then compile it to the target hardware gateset and sweep the parameters."
-      ]
+      ],
+      "sourceHash": "6ab4c57fd133d21013ac0a8cfdbb2235dcc461d6fc82445693ea475c3d5d6bc1"
     },
     "scientific-agent-skills/citation-management": {
       "zh": [
@@ -791,7 +856,8 @@
         "Citation Management",
         "Searches OpenAlex, PubMed, and Google Scholar, extracts metadata, deduplicates, and generates validated BibTeX for bibliographies; needs Python with requests and network access (Scholar scraping is rate-limited).",
         "Convert these DOIs to BibTeX, validate volume and page fields, and search PubMed for highly cited papers on this topic"
-      ]
+      ],
+      "sourceHash": "dc79fe1e8438dcf598040615d5323360c6a7ed0b868fc3ffc82512c871a1e3ff"
     },
     "scientific-agent-skills/clinical-decision-support": {
       "zh": [
@@ -803,7 +869,8 @@
         "Clinical Decision Support",
         "Produces research-only CDS artifacts — GRADE evidence profiles, aggregate cohort tables, model evaluations, survival plans, and governance checklists — via local Python scripts; never for real patient care.",
         "Draft a GRADE evidence profile and an aggregate model-performance evaluation for my prediction-model study using synthetic summary data"
-      ]
+      ],
+      "sourceHash": "05645e4bc5c73a613ddaeba5bea616739cc0cd71c789c869d97cdfcd8994e072"
     },
     "scientific-agent-skills/clinical-reports": {
       "zh": [
@@ -815,7 +882,8 @@
         "Clinical Report Drafting",
         "Creates safety-bounded draft structures for case reports (CARE), trial reports (CONSORT/SPIRIT/ICH E3), and aggregate safety tables with local checks; only synthetic, de-identified, or aggregate inputs — never for real care or submission.",
         "Generate a CARE case-report draft template and run the structural checker to flag missing required fields"
-      ]
+      ],
+      "sourceHash": "0d7c821b7857a4a761805e1a8263920a37f181658f77f1397755df0e14125022"
     },
     "scientific-agent-skills/cobrapy": {
       "zh": [
@@ -827,7 +895,8 @@
         "COBRApy Metabolic Modeling",
         "Runs constraint-based metabolic modeling with COBRApy — FBA, pFBA, FVA, gene knockouts, flux sampling, media design, and SBML validation; requires Python 3.9+ with the cobra package and a solver (GLPK via swiglpk), network only for remote model downloads.",
         "Load the textbook metabolic model, run FBA and flux variability analysis, then screen knockouts that maximize acetate production"
-      ]
+      ],
+      "sourceHash": "b11365507e183d8e153dd415df3a85a00f34b068bcf8edbad28c0580253564db"
     },
     "scientific-agent-skills/consciousness-council": {
       "zh": [
@@ -839,7 +908,8 @@
         "Consciousness Council",
         "Simulates a council of thinking archetypes (Architect, Contrarian, Empiricist, and more) that deliberate a hard choice and yield a conditional recommendation; prompt-only, no services or real experts.",
         "Run a quick council: our budget covers either a pilot study or the full experiment — which should we do first?"
-      ]
+      ],
+      "sourceHash": "84b5eb07e5459cc110d7d6f63be48a7a01d374ec618da8e293a88b1d037c0c8c"
     },
     "scientific-agent-skills/dask": {
       "zh": [
@@ -851,7 +921,8 @@
         "Dask Parallel Computing",
         "Scales pandas, NumPy, and custom Python workflows beyond memory or across clusters via Dask DataFrames, Arrays, Bags, Futures, and distributed diagnostics; needs Python 3.10+, dask 2026.8.0, pandas 2+, and s3fs/gcsfs for cloud paths.",
         "My 200GB of Parquet files won't fit in memory — build a Dask DataFrame groupby aggregation with a distributed client and dashboard"
-      ]
+      ],
+      "sourceHash": "3b563a98f4cb42858bb1cc49832a3fa1ff9483d929af57ebe629473538e5a041"
     },
     "scientific-agent-skills/database-lookup": {
       "zh": [
@@ -863,7 +934,8 @@
         "Database Lookup",
         "Performs reproducible, auditable lookups across 80 public scientific databases (UniProt, PubChem, gnomAD, ClinicalTrials.gov, NASA) with explicit endpoints and pagination; needs network, and some databases require their own API keys or licenses.",
         "Retrieve all Reactome pathways involving TP53 from UniProt and Reactome, logging endpoints and page counts so the query is reproducible"
-      ]
+      ],
+      "sourceHash": "ead247f623212ca1560486d863a2d0a8c0555d8d20b975d55053eeb4ed043d37"
     },
     "scientific-agent-skills/datalad": {
       "zh": [
@@ -875,7 +947,8 @@
         "DataLad Data Management",
         "Versions, fetches, and publishes large datasets with DataLad and git-annex (OpenNeuro, DANDI), and records re-executable provenance via datalad run/rerun; requires DataLad 1.6.5, Git, git-annex 10.x, and optionally Singularity/Docker for containers.",
         "Clone OpenNeuro dataset ds000001, fetch the T1w image, and record a datalad run for FSL brain extraction so it can be re-executed"
-      ]
+      ],
+      "sourceHash": "bb902427db0c501db4187aafd3433eea67fa1071348cf07adcea2558ed49debb"
     },
     "scientific-agent-skills/datamol": {
       "zh": [
@@ -887,7 +960,8 @@
         "Datamol Cheminformatics",
         "Handles standard drug-discovery cheminformatics via datamol's Pythonic RDKit wrapper — SMILES standardization, descriptors, fingerprints, clustering, 3D conformers, parallel batches; needs Python 3.11+, datamol 0.13.0, and cloud credentials for remote paths.",
         "Standardize this table of 10,000 SMILES, compute ECFP fingerprints, and pick 200 diverse representative molecules"
-      ]
+      ],
+      "sourceHash": "3a0d725456f37c650595a1bdf0cd104936acc5e2bf4146be6829d3fcd4ea6c59"
     },
     "scientific-agent-skills/deepchem": {
       "zh": [
@@ -899,7 +973,8 @@
         "DeepChem Molecular ML",
         "Builds molecular property prediction with DeepChem — featurization, scaffold or grouped holdouts, masked multitask labels, graph models, encoder transfer — for ADMET/toxicity/solubility; needs Python 3.11, DeepChem 2.8.0, RDKit, and per-model backends (Torch, DGL).",
         "Train a solubility model on ESOL data: ECFP fingerprints, scaffold split, MultitaskRegressor, and report metrics in original units"
-      ]
+      ],
+      "sourceHash": "2965735ee473cf70d63c6170f1c8867bd533539809d4535c162acacc07d0b17d"
     },
     "scientific-agent-skills/deepspot-m": {
       "zh": [
@@ -911,7 +986,8 @@
         "DeepSpot-M Virtual Spatial",
         "Predicts transcriptome-wide virtual spatial expression from 224x224 H&E tiles at ~20x for ~19k protein-coding genes, assembling whole-slide maps; needs deepspotm and PyTorch, gated Hugging Face weights restricted to academic noncommercial use.",
         "Tile this TCGA slide into 224x224 patches, predict EPCAM and CD3D virtual spatial expression, and assemble the whole-slide map"
-      ]
+      ],
+      "sourceHash": "a917434c523e136ddc1ce45b54acbef8c28398dd293314f72faa278431e67418"
     },
     "scientific-agent-skills/deeptools": {
       "zh": [
@@ -923,7 +999,8 @@
         "deepTools NGS Analysis",
         "Runs the deepTools NGS toolkit — BAM-to-bigWig coverage tracks, fingerprint/correlation/PCA QC, and TSS/peak heatmaps — for ChIP-seq, RNA-seq, and ATAC-seq; requires Python 3.12+, deepTools 4.0.0, and samtools for indexing.",
         "Convert these two ChIP-seq BAMs to RPGC-normalized bigWigs, run sample correlation QC, and plot a TSS heatmap"
-      ]
+      ],
+      "sourceHash": "f09f32bad2d0c54f4a422cb7bcca7703466e653544b2b6e77a7492e6f29ccf8b"
     },
     "scientific-agent-skills/depmap": {
       "zh": [
@@ -935,7 +1012,8 @@
         "DepMap Cancer Dependencies",
         "Retrieves and analyzes DepMap releases — CRISPR Chronos gene effects, model annotations, omics biomarkers, PRISM drug sensitivity — for selective-dependency and synthetic-lethality hypotheses; needs Python with numpy/pandas/scipy and network access for downloads.",
         "Using DepMap 26Q1, compare KRAS dependency scores between lung-lineage and other models, then list the top 20 co-essential genes"
-      ]
+      ],
+      "sourceHash": "893eb02a2dc8a77e61260dfb74b2acdf6c85e08f33028329d73657a23d398586"
     },
     "scientific-agent-skills/dhdna-profiler": {
       "zh": [
@@ -947,7 +1025,8 @@
         "DHDNA Text Profiling",
         "Annotates reasoning and writing patterns in a supplied text across the DHDNA rubric's twelve dimensions with quote-level evidence and optional 1–10 scores; no dependencies, but scores describe the sample only and must not drive personnel decisions.",
         "Apply the DHDNA framework to this research memo of mine and report each dimension with supporting quotations"
-      ]
+      ],
+      "sourceHash": "55cbc0e142ec3e6e6427c601391aeb38b8de6a83897082f46154f5c8273ccf50"
     },
     "scientific-agent-skills/diffdock": {
       "zh": [
@@ -959,7 +1038,8 @@
         "DiffDock Molecular Docking",
         "Predicts protein–small-molecule binding poses with DiffDock/DiffDock-L from PDB or sequence plus SMILES, with batch runs and confidence-ranked triage (confidence is not affinity); needs the pinned upstream v1.1.3 environment or Docker, CUDA for sequence folding, and network for weights.",
         "Dock this SMILES ligand into the PDB receptor with DiffDock, generate 10 poses, rank by confidence, and sanity-check the top pose"
-      ]
+      ],
+      "sourceHash": "5fafc5d9f53fa35a47c498f1cf3bad20fbee7404f248226e76e62bb327749912"
     },
     "scientific-agent-skills/dnanexus-integration": {
       "zh": [
@@ -971,7 +1051,8 @@
         "DNAnexus Integration",
         "Builds and operates reproducible genomics workloads on DNAnexus — dx CLI, dxpy automation, data transfers, dxapp.json applets, job monitoring, and WDL/CWL/Nextflow imports; requires a DNAnexus account, dx-toolkit/dxpy, and Python 3.11+; some features need org licenses.",
         "Package my BAM QC script as a DNAnexus applet: write the dxapp.json, validate it, then launch with dx run and a cost limit"
-      ]
+      ],
+      "sourceHash": "e8fcca26f5558e04256a2253c002cc8c8c024c06614fbd7d6e0161e53c5aa519"
     },
     "scientific-agent-skills/esm": {
       "zh": [
@@ -983,7 +1064,8 @@
         "ESM Protein Models",
         "Uses the Biohub esm SDK for ESM3 masked generation, ESMC embeddings, and ESMFold2 all-atom folding, locally or via hosted clients; needs Python 3.12+, esm 3.4.1.post1, weights/RAM for local inference, and ESM_API_KEY for hosted calls (separate from fair-esm).",
         "Complete this masked protein sequence with ESM3, then fold it with ESMFold2 and export the PDB file"
-      ]
+      ],
+      "sourceHash": "49da3c6f5c81359d48b7c0b4416a212e7106f777b4c7174b2b42ce0c02bd95f6"
     },
     "scientific-agent-skills/etetoolkit": {
       "zh": [
@@ -995,7 +1077,8 @@
         "ETE Phylogenetic Trees",
         "Analyzes and renders existing phylogenetic trees with ETE 4 — Newick I/O, topology comparison, gene-tree duplication/speciation events, NCBI/GTDB taxonomy, SmartView/Qt rendering; needs Python 3.10+, ete4 4.4.0, network for taxonomy, Chrome/Qt extras for image output.",
         "Compare these two Newick trees by Robinson-Foulds distance, midpoint-root the first, and render a publication SVG"
-      ]
+      ],
+      "sourceHash": "da2e57c0e3677a4219d0629a2c1392470f20bc3ade2809c1f0334fd84441da08"
     },
     "scientific-agent-skills/exa-search": {
       "zh": [
@@ -1007,7 +1090,8 @@
         "Exa Academic Search",
         "Searches scientific web content with Exa and batch-extracts page or PDF text, with a publication category and academic domain filters for scholarly discovery; requires Python 3.11+, exa-py, an EXA_API_KEY, and internet access.",
         "Search Exa for the latest CRISPR off-target papers restricted to arxiv.org and nature.com, then extract text from the top 5"
-      ]
+      ],
+      "sourceHash": "8cdedf5648783a209593ff91024f43bd8d8e066b03f0a72a6cf36d90e1650204"
     },
     "scientific-agent-skills/experimental-design": {
       "zh": [
@@ -1019,7 +1103,8 @@
         "Experimental Design",
         "Designs studies before data collection — randomized, blocked, factorial, screening, response-surface, crossover, and cluster designs — with scripts that generate seeded allocation schedules and DOE matrices; requires Python 3.12+, numpy, pandas, and pydoe 1.5.0.",
         "Design a 3-factor 2-level full factorial experiment, generate the run table, then block-randomize 32 mice into treatment and control arms by batch"
-      ]
+      ],
+      "sourceHash": "db2de0f3d29b7729776a91e923c9c83801298f5ad8e88fe44570045fbefcc248"
     },
     "scientific-agent-skills/exploratory-data-analysis": {
       "zh": [
@@ -1031,7 +1116,8 @@
         "Exploratory Data Analysis",
         "Produces bounded, local profiles of supported scientific files with missingness, leakage, and outlier audits; Python 3.11+ core, optional pinned libraries for arrays, HDF5, sequences, and images, and unknown formats fail closed.",
         "Profile this CSV for missingness and leakage risks, then draft an EDA report"
-      ]
+      ],
+      "sourceHash": "955c4cefa49106dd03b55cbd62603bab2d2fb678e627dd452ba62040c7128484"
     },
     "scientific-agent-skills/fictiv": {
       "zh": [
@@ -1043,7 +1129,8 @@
         "Fictiv Part Manufacturing",
         "Operates Fictiv's on-demand manufacturing web app end to end—CAD upload, process and material config, DFM feedback, quotes, checkout, order tracking—using network access, browser automation, and your logged-in Fictiv account.",
         "Configure this STEP file as a CNC aluminum part on Fictiv and get a quote"
-      ]
+      ],
+      "sourceHash": "c4f9b182d2f4664fe4b729832fff7fe98112b6823eaea3601633fa17112a6164"
     },
     "scientific-agent-skills/flowio": {
       "zh": [
@@ -1055,7 +1142,8 @@
         "FlowIO FCS File Handling",
         "Reads, inspects, and writes FCS 2.0/3.0/3.1 cytometry files with FlowIO 1.4.0—metadata and channel inspection, NumPy event extraction, multi-dataset files, and FCS 3.1 writing—locally on Python 3.9-3.13; no compensation or gating.",
         "Read this FCS file, list its channels, and export events to a NumPy array"
-      ]
+      ],
+      "sourceHash": "24247696d4e9455f4b5509b7bee1856c251fa59181d80aa8de22d54ecd685b62"
     },
     "scientific-agent-skills/flowkit": {
       "zh": [
@@ -1067,7 +1155,8 @@
         "FlowKit Cytometry Analysis",
         "Runs FlowKit 1.3.2 cytometry analysis—spillover compensation, logicle transforms, hierarchical gating, GatingML, and supported FlowJo 10 workspaces—on Python 3.13 with network only for installation.",
         "Apply compensation and this gating strategy to my FCS batch and report population percentages"
-      ]
+      ],
+      "sourceHash": "47c4dcb907dc6ec15daa4bdf1855e9c96860ef1a558507bef0084d79c2d1c57c"
     },
     "scientific-agent-skills/fluidsim": {
       "zh": [
@@ -1079,7 +1168,8 @@
         "FluidSim CFD Simulations",
         "Plans and audits FluidSim 0.9.0 pseudospectral CFD runs—solver selection, parameter review, FFT/MPI resource estimation, restarts, and numerical-validity checks; MPI and native FFT need site HPC toolchain support.",
         "Pick a FluidSim solver for 2D turbulence and estimate the CPU and memory it needs"
-      ]
+      ],
+      "sourceHash": "7784bbf33615014f5965ff1db3d11bcc42e1bc4bb1f18f26208c62892b66df28"
     },
     "scientific-agent-skills/folklore-variant-evidence": {
       "zh": [
@@ -1091,7 +1181,8 @@
         "Folklore Variant Evidence",
         "Queries Folklore's public MCP service at api.helena.bio for ClinGen gene-disease validity assertions and evidence, ACMG/AMP decision support, and linked literature for one GRCh38 germline variant; keyless, network required, no patient data.",
         "Retrieve public evidence and ACMG classification support for this BRCA1 variant"
-      ]
+      ],
+      "sourceHash": "134b5ea684815b99c56fadf92a1cb42d37eaca4245515278e404b8876b7acfe0"
     },
     "scientific-agent-skills/generate-image": {
       "zh": [
@@ -1103,7 +1194,8 @@
         "AI Image Generation",
         "Generates and edits images through the OpenRouter Image API (Gemini, Seedream, Recraft, GPT-Image) for illustrations, photos, posters, and compositing; needs Python 3.9+, network, and a billed OPENROUTER_API_KEY; technical diagrams use scientific-schematics.",
         "Generate an illustration of a cell signaling pathway for my conference poster"
-      ]
+      ],
+      "sourceHash": "42438be890c5ba875ddee1bbbf505e623433886a2b180f21b2012f72d038f92a"
     },
     "scientific-agent-skills/geniml": {
       "zh": [
@@ -1115,7 +1207,8 @@
         "Geniml Interval Machine Learning",
         "Audits and plans Geniml genomic-interval ML workflows—BED and universe contract validation, Region2Vec/scEmbed planning, model-tokenizer compatibility—locally; the tested training stack needs Python 3.12 with geniml 0.8.4 and gtars 0.10.0.",
         "Check whether these BED files are compatible with my Region2Vec universe"
-      ]
+      ],
+      "sourceHash": "7fb9ad57657b2fda7dbc3f234af5dab47915953c6678fbc066c9086c83eadd21"
     },
     "scientific-agent-skills/genomic-coordinates": {
       "zh": [
@@ -1127,7 +1220,8 @@
         "Genomic Coordinate Conversion",
         "Converts genomic intervals across BED/GFF/VCF/SAM conventions, reconciles 0-based vs 1-based systems, normalizes indels, and detects assembly mismatches using pure Python 3.11+ stdlib offline; variant normalization needs a local reference FASTA.",
         "Convert these VCF variants to 0-based BED intervals and check for assembly mismatches"
-      ]
+      ],
+      "sourceHash": "da3eee43dfee06ee632388ddda0c38bb0bc57ec33420cbf26b14ce86be3c28a0"
     },
     "scientific-agent-skills/genomic-intelligence": {
       "zh": [
@@ -1139,7 +1233,8 @@
         "Genomic Intelligence Predictions",
         "Predicts promoters, splice sites, enhancer activity, chromatin state, expression, and gene annotation from DNA sequence via Genomic Intelligence's hosted transformer models; network required—REST needs GI_API_KEY, the hosted MCP demo tier is keyless but rate-limited.",
         "Predict promoter regions and expression level for this DNA sequence"
-      ]
+      ],
+      "sourceHash": "cdb027004996d313d31b55f6b93306de45306a89b8a4a792e94c36cf2d1dea20"
     },
     "scientific-agent-skills/geomaster": {
       "zh": [
@@ -1151,7 +1246,8 @@
         "GeoMaster Geospatial Analysis",
         "Supports remote sensing, vector/raster GIS, spatial statistics, terrain and network analysis, and Earth-observation ML including STAC catalog access; core recipes need Python 3.12+ with GeoPandas and Rasterio, while Earth Engine/CDS services need credentials.",
         "Fetch Sentinel imagery for this region and align it with my vector layer's CRS"
-      ]
+      ],
+      "sourceHash": "7b3b88f13f0094285372dfcc25a000fb7e74e5fc4b67c1b6999543fff3cadde8"
     },
     "scientific-agent-skills/geopandas": {
       "zh": [
@@ -1163,7 +1259,8 @@
         "GeoPandas Vector Workflows",
         "Guides GeoPandas GeoSeries/GeoDataFrame, spatial operations, and vector I/O with local audit tools for inventory, CRS reprojection planning, and geometry validity; needs Python 3.12+ and the pinned GeoPandas 1.2.0 stack.",
         "Audit this shapefile's geometry validity and plan its reprojection to WGS84"
-      ]
+      ],
+      "sourceHash": "c03a46f911535326802af476208a1e04de13ea385f4d5309b022ad931826b222"
     },
     "scientific-agent-skills/get-available-resources": {
       "zh": [
@@ -1175,7 +1272,8 @@
         "Detect Available Resources",
         "Detects effective CPU, memory, disk, scheduler, container, and accelerator limits for the current process and emits a redacted JSON snapshot for resource-aware planning; pure Python 3.11+ stdlib with optional psutil, read-only probes only.",
         "How many CPUs and how much memory can this process actually use? Plan my parallelism accordingly"
-      ]
+      ],
+      "sourceHash": "54044d598fce28fca2ce50e7895f44423b070493db2f9c96ff0445bee4d3689d"
     },
     "scientific-agent-skills/gget": {
       "zh": [
@@ -1187,7 +1285,8 @@
         "gget Bioinformatics Queries",
         "Queries 20+ bioinformatics resources via the gget 0.30.8 CLI/Python package—gene info, BLAST/BLAT, viral sequences, PDB structures, enrichment, OpenTargets, COSMIC, CELLxGENE; needs Python 3.12+ and network, and COSMIC downloads require an account.",
         "Use gget to fetch TP53 gene info and download its PDB structures"
-      ]
+      ],
+      "sourceHash": "55027a94be8dde013fd17e563ba20ccba92b7131c29c21e9c83e54fbce2b348a"
     },
     "scientific-agent-skills/ginkgo-cloud-lab": {
       "zh": [
@@ -1199,7 +1298,8 @@
         "Ginkgo Cloud Lab Ordering",
         "Guides protocol selection, input preparation, pricing checks, and browser ordering on Ginkgo Bioworks Cloud Lab—cell-free/E. coli/Pichia expression, IVT mRNA, thermal shift, SPR assays; needs network and a browser, with account access for ordering and results.",
         "Pick a cell-free protein expression protocol on Ginkgo Cloud Lab and prepare my sample list"
-      ]
+      ],
+      "sourceHash": "b3675d3ad36070fd598642fd2b58c36d3cfd09a08eef3f52d77629856e2e845b"
     },
     "scientific-agent-skills/glycoengineering": {
       "zh": [
@@ -1211,7 +1311,8 @@
         "Glycoengineering Analysis",
         "Analyzes protein glycosylation by scanning N-glycosylation sequons, scoring S/T-rich regions, checking GlyTouCan evidence, and preparing NetNGlyc/NetOGlyc and GlycoSHIELD workflows; local scripts need Python 3.10+, predictors run in a browser, and GlycoSHIELD needs GROMACS.",
         "Scan this antibody sequence for N-glycosylation sites and look up related glycans on GlyTouCan"
-      ]
+      ],
+      "sourceHash": "b529bde5367cd84175f07db473361c9713a69af8f641cd740a10c0b660b32bc7"
     },
     "scientific-agent-skills/gtars": {
       "zh": [
@@ -1223,7 +1324,8 @@
         "Gtars Interval Toolkit",
         "Uses Gtars 0.10.0 (Rust core) for genomic interval set algebra, overlaps, consensus and coverage, tokenization, and refget/BEDbase planning across Python, Rust, and CLI; Python bindings need Python 3.10+, and remote caching needs explicit network approval.",
         "Compute pairwise interval overlap counts across these BED files with gtars"
-      ]
+      ],
+      "sourceHash": "c3586bcfa1e8d89a2abb23d74496d41e68daec5e7a8af6cefb9080a0ed469161"
     },
     "scientific-agent-skills/histolab": {
       "zh": [
@@ -1235,7 +1337,8 @@
         "Histolab Slide Tiling",
         "Extracts and preprocesses whole-slide histology tiles with Histolab 0.7.0—WSI metadata, tissue masks, random/grid/score-based tiling, H&E normalization; needs Python 3.8-3.11 and native OpenSlide on Linux/macOS, and makes no diagnostic claims.",
         "Tile this WSI on a grid and apply H&E stain normalization"
-      ]
+      ],
+      "sourceHash": "af0c6c98951d02cab64e904504a8ab97b815a461e99744134da0e7dd57189331"
     },
     "scientific-agent-skills/hugging-science": {
       "zh": [
@@ -1247,7 +1350,8 @@
         "Hugging Science Catalog",
         "Discovers and evaluates scientific datasets, models, posts, and Spaces across domains like biology, chemistry, and materials via the Hugging Science catalog; catalog fetch needs Python 3.10+ and network, gated resources need HF_TOKEN.",
         "Find single-cell analysis models on Hugging Science and check their inference interfaces"
-      ]
+      ],
+      "sourceHash": "cff6c7e67d7f1925f008e11f5d0428f08391c35f4294d2c4c70350667b2decb2"
     },
     "scientific-agent-skills/hypogenic": {
       "zh": [
@@ -1259,7 +1363,8 @@
         "HypoGeniC Hypothesis Generation",
         "Plans and audits ChicagoHAI HypoGeniC/HypoRefine runs that generate candidate textual hypotheses from labeled datasets; audit tools are stdlib-only, but real runs need a separately approved LLM provider, credentials, and possibly Redis—and outputs are candidates, not validated science.",
         "Plan a HypoGeniC run to generate hypotheses from this labeled text dataset"
-      ]
+      ],
+      "sourceHash": "8ad3f55669b7c5e8bbf1c70111259f2782fc26ec39826b011d51799de08b9da5"
     },
     "scientific-agent-skills/hypothesis-generation": {
       "zh": [
@@ -1271,7 +1376,8 @@
         "Hypothesis Generation",
         "Turns observations or preliminary findings into evidence-bounded candidate hypotheses, rival explanations, discriminating predictions, and preregistration-ready plans; runs fully locally with no network or credentials.",
         "Turn my pilot experiment observations into competing hypotheses with discriminating predictions I could preregister."
-      ]
+      ],
+      "sourceHash": "5bccec0437d96d61821ec2095e7e32b61e8634cd8c02f11f42da953121e92719"
     },
     "scientific-agent-skills/imaging-data-commons": {
       "zh": [
@@ -1283,7 +1389,8 @@
         "Cancer Imaging Data Access",
         "Queries and downloads public cancer imaging from NCI Imaging Data Commons, including collections, DICOM, metadata SQL and AI datasets; unauthenticated data access, optional BigQuery routes need Google credentials.",
         "Find IDC collections of lung CT scans and download a batch of DICOM files."
-      ]
+      ],
+      "sourceHash": "8dd250a80dc6959fcebc9cbae8049b25a83be31647c597f17a9e674c4f2e3685"
     },
     "scientific-agent-skills/infographics": {
       "zh": [
@@ -1295,7 +1402,8 @@
         "AI Infographic Generation",
         "Creates and reviews infographics via Nano Banana 2 on OpenRouter with ten layouts and optional Sonar research; requires network access and an OPENROUTER_API_KEY.",
         "Generate a process-comparison infographic from this experiment data and review its readability."
-      ]
+      ],
+      "sourceHash": "dcd4ac5b46ac7f88ce8bd4ddf3efc8aa99a3f4bc6cc9ce2067c7d469758f0a8f"
     },
     "scientific-agent-skills/iso-standards-readiness": {
       "zh": [
@@ -1307,7 +1415,8 @@
         "ISO Readiness Evidence",
         "Organizes scope, controlled documents, risk files, traceability and readiness evidence for ISO 13485, 14971, 17025 and 15189; it structures evidence only and makes no certification or accreditation decisions.",
         "Organize our lab's accreditation scope and controlled documents for an ISO 17025 internal review."
-      ]
+      ],
+      "sourceHash": "0ffd95e86924a698fcd0c806e51f24e2fc500847697d8ff99b255af817e15259"
     },
     "scientific-agent-skills/lab-hardware-cad": {
       "zh": [
@@ -1319,7 +1428,8 @@
         "Lab Hardware CAD Design",
         "Designs parametric lab hardware in build123d - microfluidics, optomechanical mounts, racks and fixtures - exporting STEP/STL/DXF; requires the build123d package, vendor drawings need network.",
         "Design a 3D-printed cuvette holder matching standard dimensions and export it as STEP."
-      ]
+      ],
+      "sourceHash": "d3e9c67c3f08bfd7c6bb6c91d6ccc6621a72d2f47248965b4db4e1e296426b18"
     },
     "scientific-agent-skills/labarchive-integration": {
       "zh": [
@@ -1331,7 +1441,8 @@
         "LabArchives ELN Integration",
         "Integrates with the official LabArchives ELN and Inventory APIs, handling regional endpoints, signed requests and user authorization; needs network and LABARCHIVES_* credentials such as Access Key and UID.",
         "List my LabArchives notebook structure and sync recent entries with attachments via the API."
-      ]
+      ],
+      "sourceHash": "dcc452099ec0c4db3bf7aa0417bfeb70b14d249650be316b67f4f495461d1c0a"
     },
     "scientific-agent-skills/lamindb": {
       "zh": [
@@ -1343,7 +1454,8 @@
         "Biological Data with LaminDB",
         "Manages biological datasets with LaminDB: artifact registration, lineage, schema validation and Bionty ontology annotation; local SQLite needs no login, remote storage and private instances need network and credentials.",
         "Register these AnnData files in LaminDB and annotate the gene fields with Bionty ontologies."
-      ]
+      ],
+      "sourceHash": "00f1246a7f59b6ec11ca119687ccc3ff384547f40d44f2140f557ac3ddd01b35"
     },
     "scientific-agent-skills/latchbio-integration": {
       "zh": [
@@ -1355,7 +1467,8 @@
         "Latch Bioinformatics Workflows",
         "Builds, registers, debugs and runs bioinformatics workflows on Latch via its Python SDK and CLI, covering Nextflow, Snakemake, Registry and MCP; needs a Latch account, network, and Docker for local image builds.",
         "Package this Snakemake pipeline, register it on Latch and launch a test run."
-      ]
+      ],
+      "sourceHash": "0f01df45ed4aecb81d672a5576820aee37c32864b4fe84bb4d049471a14d3e5c"
     },
     "scientific-agent-skills/latex-posters": {
       "zh": [
@@ -1367,7 +1480,8 @@
         "LaTeX Research Posters",
         "Creates conference posters in LaTeX using beamerposter, tikzposter or baposter with multi-column layouts and PDF preflight; needs a LaTeX distribution and Poppler, optional AI schematics need OPENROUTER_API_KEY.",
         "Lay out this paper's key results as a beamerposter conference poster and compile the PDF."
-      ]
+      ],
+      "sourceHash": "4350dc80280fea210f9682991103445e97c58504ddd14e7a26f3d84e2fee5837"
     },
     "scientific-agent-skills/liteparse": {
       "zh": [
@@ -1379,7 +1493,8 @@
         "Local Parsing with LiteParse",
         "Parses PDFs, Office files and images locally into spatial text with bounding boxes, Markdown or page PNGs with OCR; Office formats need LibreOffice, optional HTTP OCR needs network.",
         "Batch-parse this folder of paper PDFs into layout-preserved JSON for my RAG pipeline."
-      ]
+      ],
+      "sourceHash": "02a789c7959670cb8898e329588a41d43fa7b270c768a70c22aed05031d042a4"
     },
     "scientific-agent-skills/literature-review": {
       "zh": [
@@ -1391,7 +1506,8 @@
         "Systematic Literature Review",
         "Conducts systematic, scoping and narrative reviews across PubMed, arXiv, bioRxiv, Semantic Scholar and more with screening, citation checking and Markdown/PDF output; needs network, PDF export needs Pandoc and XeLaTeX.",
         "Run a systematic search and screening on this topic and draft a review with verified citations."
-      ]
+      ],
+      "sourceHash": "16a9e85bcdcb9bb859e1646bf836e51b22900445ba2e367d8d75be05b5a5cba8"
     },
     "scientific-agent-skills/mageck": {
       "zh": [
@@ -1403,7 +1519,8 @@
         "CRISPR Screens with MAGeCK",
         "Analyzes pooled CRISPR screen FASTQ reads and guide-count matrices with MAGeCK, producing QC, gene rankings with effect sizes and FDR; requires MAGeCK 0.5.9.5 with its compiled RRA executable.",
         "Run MAGeCK test on this knockout screen count matrix and report gene rankings with FDR."
-      ]
+      ],
+      "sourceHash": "562d7e2cb2febef14ab722bc29cd33983b523da287fb02b64eadf18702d4a9d1"
     },
     "scientific-agent-skills/marine-carbonate-chemistry": {
       "zh": [
@@ -1415,7 +1532,8 @@
         "Seawater Carbonate Chemistry",
         "Solves seawater carbonate systems with PyCO2SYS from paired alkalinity, DIC, pH or pCO2 inputs, giving speciation, mineral saturation and uncertainty propagation; needs the PyCO2SYS package, runs locally.",
         "From these alkalinity and DIC measurements compute pH and aragonite saturation with propagated uncertainties."
-      ]
+      ],
+      "sourceHash": "03e58c7f9d7df75a323a6a8cf29ec18ae524cc308e5002c27fb5c65e1230f174"
     },
     "scientific-agent-skills/markdown-mermaid-writing": {
       "zh": [
@@ -1427,7 +1545,8 @@
         "Markdown and Mermaid Writing",
         "Writes scientific Markdown docs and Mermaid structural diagrams for workflows, relationships and timelines with syntax references and accessibility guidance; local rendering needs Node.js, Mermaid CLI and Chromium.",
         "Document this analysis pipeline in Markdown with a Mermaid diagram of the module relationships."
-      ]
+      ],
+      "sourceHash": "c28a9d602fc5b55e9fa80cff493b045bb70d3cec47e2288e38051744337214c4"
     },
     "scientific-agent-skills/market-research-reports": {
       "zh": [
@@ -1439,7 +1558,8 @@
         "Market Research Reports",
         "Builds evidence-traceable market research reports and assumption-driven sizing covering market definition, competitive landscape and TAM/SAM/SOM reconciliation; online research needs user-approved network, bundled CLIs run offline.",
         "Draft a market report for this reagent kit with a sourced TAM/SAM/SOM estimate."
-      ]
+      ],
+      "sourceHash": "8fba27d8509bb95caade7ef856d83ddbd7e51303590f5f2db149b0270cf6fd40"
     },
     "scientific-agent-skills/markitdown": {
       "zh": [
@@ -1451,7 +1571,8 @@
         "Documents to Markdown",
         "Converts Office, PDF and other documents to Markdown with Microsoft MarkItDown for search and LLM/RAG ingestion, with plugins, vision OCR and Azure support; local conversion works offline, URL and cloud routes need network.",
         "Batch-convert these Word and PDF files to Markdown for my knowledge base."
-      ]
+      ],
+      "sourceHash": "8c165c18ceaddc9367dd74f65fd60e42c1c3de9d180828ae1ff09a001af42339"
     },
     "scientific-agent-skills/matchms": {
       "zh": [
@@ -1463,7 +1584,8 @@
         "Mass Spectra Matching",
         "Cleans, compares and searches tandem mass spectra with matchms: MS/MS I/O, metadata harmonization, peak filtering, similarity scoring and library matching; needs the matchms package, USI loading needs network.",
         "Score these MS/MS spectra against the reference library with matchms and output the score matrix."
-      ]
+      ],
+      "sourceHash": "1bde0e20f69f99dfa44800b9e908b0f90aa1256cfdb1d88a36ed0b8064c447ec"
     },
     "scientific-agent-skills/matlab": {
       "zh": [
@@ -1475,7 +1597,8 @@
         "MATLAB and Octave Workflows",
         "Builds, reviews and migrates MATLAB or GNU Octave numerical workflows covering arrays, tables, tests, projects, graphics, MAT files and Python interop; bundled CLIs run locally without MATLAB installed.",
         "Review this MATLAB script and give me a compatibility checklist for migrating to GNU Octave."
-      ]
+      ],
+      "sourceHash": "91afa6ec0f0b3797f51da62b79d44d00a32fcdf3690b9505e5987982a8e6d0e2"
     },
     "scientific-agent-skills/matplotlib": {
       "zh": [
@@ -1487,7 +1610,8 @@
         "Scientific Plots with Matplotlib",
         "Creates and finely customizes scientific plots with Matplotlib, exporting PNG/PDF/SVG for publication; needs Python 3.11+ and Matplotlib, local plotting needs no credentials.",
         "Plot a multi-panel error-bar line chart in Matplotlib and export a publication-ready PDF."
-      ]
+      ],
+      "sourceHash": "60b80aaa802e1a88db30729611789bf5ee92b3f2a7bb695502bac10dd255ee86"
     },
     "scientific-agent-skills/medchem": {
       "zh": [
@@ -1499,7 +1623,8 @@
         "Medicinal Chemistry Filters",
         "Triages compound libraries with the medchem package: drug-likeness rules like Lipinski, structural alert catalogs like PAINS, complexity metrics and a query language; needs medchem, datamol and RDKit.",
         "Filter this compound library with PAINS and Lipinski rules and output pass/fail lists."
-      ]
+      ],
+      "sourceHash": "07e44d0dc965278ab8e4fe9a325e89198bccd7e3ee26c1c454e788e1f4df9c2f"
     },
     "scientific-agent-skills/modal": {
       "zh": [
@@ -1511,7 +1636,8 @@
         "Modal Serverless Cloud",
         "Runs Python on demand in the Modal cloud, including GPU training, inference endpoints, batch jobs and schedules; requires a Modal account and network access, plus a payment method for GPUs.",
         "Deploy this inference script as a Modal GPU endpoint with a scheduled retraining job"
-      ]
+      ],
+      "sourceHash": "5da5d0a39db4ea5f429ffc40772bbce87e26f778fac363c42873ca6bb84fecd9"
     },
     "scientific-agent-skills/molecular-dynamics": {
       "zh": [
@@ -1523,7 +1649,8 @@
         "Molecular Dynamics",
         "Sets up and analyzes MD simulations with OpenMM and MDAnalysis, covering force fields, minimization, production runs and trajectory metrics like RMSD, RMSF and free-energy surfaces; runs in a local Python environment.",
         "Minimize this protein-ligand complex in OpenMM, run 10 ns of MD, then analyze RMSD and contact maps"
-      ]
+      ],
+      "sourceHash": "1efb31165ec1477b37c31394ba04b5fb280d44db8907afdf2a956e48487f1136"
     },
     "scientific-agent-skills/molfeat": {
       "zh": [
@@ -1535,7 +1662,8 @@
         "Molecular Featurization",
         "Turns SMILES into ECFP/MACCS fingerprints, RDKit descriptors, pharmacophores or pretrained embeddings with Molfeat for QSAR, similarity search and virtual screening; pretrained models download weights from the network.",
         "Featurize these SMILES with Molfeat ECFP fingerprints and train a baseline activity model"
-      ]
+      ],
+      "sourceHash": "6bc3c336b58c8c7214042c5679cd793e655c15e703fa5d5ac34e09250d11df5e"
     },
     "scientific-agent-skills/ncats-arax": {
       "zh": [
@@ -1547,7 +1675,8 @@
         "Biomedical Graph Lookup",
         "Queries the NCATS Translator ARAX production API for bounded one-hop or endpoint-pinned two-hop biomedical knowledge-graph relationships with provenance; needs outbound HTTPS, no API key, but queries may be publicly visible.",
         "Look up what evidence-backed paths connect metformin and AMPK in ARAX"
-      ]
+      ],
+      "sourceHash": "f15f9f9a149a942ab1eaed0115879afa399249e261d7118a6d19e3da834ba74c"
     },
     "scientific-agent-skills/networkx": {
       "zh": [
@@ -1559,7 +1688,8 @@
         "Network Graph Analysis",
         "Creates, analyzes and visualizes networks with NetworkX: shortest paths, centrality, community detection, synthetic graph generators and common graph file formats; runs locally in Python with no credentials.",
         "Compute PageRank and communities on this citation network with NetworkX and plot the topology"
-      ]
+      ],
+      "sourceHash": "981a213f33ddca21ec327ecee13e8ef8b85b7986274b84a10268ee73310df5be"
     },
     "scientific-agent-skills/neurokit2": {
       "zh": [
@@ -1571,7 +1701,8 @@
         "Biosignal Processing",
         "Builds reproducible NeuroKit2 workflows for physiological time-series preprocessing, event detection, variability and complexity analysis across ECG, EDA, EEG and more; a research tool, not for diagnosis.",
         "Process this ECG recording with NeuroKit2, detect R-peaks and compute HRV metrics"
-      ]
+      ],
+      "sourceHash": "6f73a726bdea37723aa68bf7aaf896eb10322e875cbf3bc5ee96707643f1be35"
     },
     "scientific-agent-skills/neuropixels-analysis": {
       "zh": [
@@ -1583,7 +1714,8 @@
         "Neuropixels Analysis",
         "Analyzes Neuropixels extracellular recordings end-to-end with SpikeInterface: loading SpikeGLX/Open Ephys/NWB, preprocessing, drift correction, Kilosort4 sorting and unit curation; optional AI review needs an Anthropic API key.",
         "Preprocess this SpikeGLX .ap.bin recording and spike-sort it with Kilosort4"
-      ]
+      ],
+      "sourceHash": "65985e85e9ac2206c92291446f543505b2b568bf1d622448e162ae6255e154dc"
     },
     "scientific-agent-skills/nextflow": {
       "zh": [
@@ -1595,7 +1727,8 @@
         "Nextflow Pipelines",
         "Builds, runs and debugs Nextflow DSL2 and nf-core pipelines: processes, channels, samplesheets, nf-test, containers and HPC/cloud executor config; requires Bash, Java 17+ and Nextflow locally.",
         "Write a Nextflow DSL2 pipeline for RNA-seq quantification configured to resume on our SLURM cluster"
-      ]
+      ],
+      "sourceHash": "daa37795b3fe13ebf1c980acafb8401c4d1d7749dae013acc948f76c50c7379c"
     },
     "scientific-agent-skills/nmrglue": {
       "zh": [
@@ -1607,7 +1740,8 @@
         "1D NMR Processing",
         "Processes calibrated one-dimensional NMR free-induction decays with nmrglue into phased spectra, peak candidates and signed integrals; runs locally but needs acquisition parameters, and Bruker/Varian/JEOL imports are unverified.",
         "Apodize, Fourier-transform and phase this 1D FID with nmrglue and report region integrals"
-      ]
+      ],
+      "sourceHash": "358b5a5d64d20092e8631aeb8f4a06f11634a9fdeb8c594a93e6c1282b04b10b"
     },
     "scientific-agent-skills/nwb-conversion": {
       "zh": [
@@ -1619,7 +1753,8 @@
         "NWB Conversion",
         "Converts planar two-photon TIFF imaging plus timestamped behavioral position CSVs into validated NWB files with NeuroConv and PyNWB, including clock alignment and round-trip checks; arbitrary acquisition formats are not supported.",
         "Convert this two-photon TIFF session plus position CSV into an NWB file that passes NWB Inspector"
-      ]
+      ],
+      "sourceHash": "e2381f17db5e2b20354186a8a3c85b466afcf534cc1ae6181e87654ba5ed5fc6"
     },
     "scientific-agent-skills/omero-integration": {
       "zh": [
@@ -1631,7 +1766,8 @@
         "OMERO Integration",
         "Inspects and automates OMERO.server microscopy workflows via omero-py, BlitzGateway, CLI, tables, annotations and ROIs; requires network access to an OMERO server and valid credentials or a session key.",
         "Connect to our OMERO server and export metadata and ROI listings for every image in this project"
-      ]
+      ],
+      "sourceHash": "c75e73ba447bbf9530f6d3df4ba6224185f3c7728460b37938c8626dab664ad2"
     },
     "scientific-agent-skills/onekgpd": {
       "zh": [
@@ -1643,7 +1779,8 @@
         "1000 Genomes Queries",
         "Queries the 1000 Genomes Project cohort of 3,202 whole genomes at the individual level: variant carriers in a gene or region, allele frequencies and pairwise relatedness; variant queries need network access, no credentials.",
         "Find which 1000 Genomes individuals carry rare variants in the BRCA1 region, with gnomAD frequencies"
-      ]
+      ],
+      "sourceHash": "6a7c0a90c42e899e818de866e843cf60d5434422fa69b910a7db9a06f25240e9"
     },
     "scientific-agent-skills/ontology-term-resolution": {
       "zh": [
@@ -1655,7 +1792,8 @@
         "Ontology Term Resolution",
         "Resolves free-text labels to ontology term IDs and validates CURIEs via EBI OLS4, ZOOMA, Bioregistry, Identifiers.org and Ontobee for metadata annotation and submission audits; needs network access, no API key.",
         "Resolve the tissue and disease columns in this metadata table to UBERON and MONDO IDs and flag obsolete terms"
-      ]
+      ],
+      "sourceHash": "db310515a230a47023169be207f654458789377c98b30fa593ee420738e4eefb"
     },
     "scientific-agent-skills/open-notebook": {
       "zh": [
@@ -1667,7 +1805,8 @@
         "Open Notebook",
         "Automates the self-hosted Open Notebook alternative to NotebookLM via its REST API: source ingestion, cited chat, text and vector search, transformations and podcasts; requires a running instance and a configured AI provider.",
         "Ingest these paper PDFs into Open Notebook, build a notebook and run cited Q&A over them"
-      ]
+      ],
+      "sourceHash": "39f3bb01946218b53c02e3aedde025e6f8b786307e5ba0c4698c5aed02f9fdd6"
     },
     "scientific-agent-skills/openpiv": {
       "zh": [
@@ -1679,7 +1818,8 @@
         "Particle Image Velocimetry",
         "Performs PIV analysis with OpenPIV: cross-correlating image pairs into velocity fields, validating and replacing spurious vectors, and computing vorticity, strain rate and turbulence statistics; runs offline after install.",
         "Analyze this PIV image pair with OpenPIV, extract the velocity field and compute vorticity"
-      ]
+      ],
+      "sourceHash": "dc9aeeb18ef4b4832b9405c342ce40abbb09bc8162e35f2c659dd5814b07369a"
     },
     "scientific-agent-skills/opentrons-integration": {
       "zh": [
@@ -1691,7 +1831,8 @@
         "Opentrons Protocols",
         "Authors, reviews, migrates and simulates Python Protocol API v2 protocols for Opentrons Flex and OT-2, covering deck setup, pipettes, modules and runtime parameters; physical execution needs the robot and Opentrons App.",
         "Write a Flex serial-dilution protocol for a 96-well plate, simulate it locally, then prepare it for App analysis"
-      ]
+      ],
+      "sourceHash": "3600fece96f89e7cedc23d13e48ce7eb25a90698d7ae3d8bae65035d89f392ff"
     },
     "scientific-agent-skills/optimize-for-gpu": {
       "zh": [
@@ -1703,7 +1844,8 @@
         "GPU Optimization",
         "GPU-accelerates scientific Python on NVIDIA hardware via CuPy, cuDF, cuML, RAPIDS, Numba-CUDA and Warp, verifying correctness and real speedups with synchronized benchmarks; requires a CUDA-capable GPU.",
         "My pandas aggregation over 200M rows is too slow — evaluate a cuDF GPU version and benchmark it"
-      ]
+      ],
+      "sourceHash": "e31bdb10b8ea66e5ec438583755999b66b9afab90f2583e1d500b8457ef28054"
     },
     "scientific-agent-skills/pacsomatic": {
       "zh": [
@@ -1715,7 +1857,8 @@
         "PacBio Somatic Workflow",
         "Prepares and launches the nf-core/pacsomatic matched tumor-normal PacBio HiFi pipeline from unaligned BAMs: samplesheet generation, pinned launch artifacts and LSF/Slurm submission; execution needs Nextflow, Java and containers.",
         "Build a pacsomatic samplesheet for this unaligned tumor-normal HiFi BAM pair and submit it to Slurm"
-      ]
+      ],
+      "sourceHash": "5425319387beb29684ae5148cba33bd3a6c4306651ba574d47c76a8dc390d45d"
     },
     "scientific-agent-skills/paper-lookup": {
       "zh": [
@@ -1727,7 +1870,8 @@
         "Paper Lookup",
         "Searches 18 scholarly APIs including PubMed, arXiv, OpenAlex, Crossref, Semantic Scholar and Unpaywall for papers, citations and open-access full text with reproducible provenance; needs network and curl, no keys required.",
         "Look up this DOI's metadata, citation counts and whether an open-access PDF exists"
-      ]
+      ],
+      "sourceHash": "fac99456ad404ff9a0d3043709b956b5d6383838ae8e8394f274a5693d8bd294"
     },
     "scientific-agent-skills/paperclip": {
       "zh": [
@@ -1739,7 +1883,8 @@
         "Paperclip Literature Reading",
         "Searches and reads biomedical papers, FDA/PMDA/EMA documents, trials and protein records through the GXL Paperclip CLI and SDK, with full-text grep, structured extraction and line-pinned citations; requires the CLI plus an API key or login.",
         "Use paperclip to grep dosing passages across these papers, extract them into a table with line citations"
-      ]
+      ],
+      "sourceHash": "4f6fc05346aefdf5685b11d6d34fbe5b9782fc5156d69702c00dd8c71bf63473"
     },
     "scientific-agent-skills/paperzilla": {
       "zh": [
@@ -1751,7 +1896,8 @@
         "Paperzilla Project Recommendations",
         "Uses the pz CLI to browse Paperzilla project feeds, open recommendations, fetch canonical papers, export JSON, and leave feedback; requires the pz CLI, network access, and a Paperzilla account.",
         "Show this week's recommendations for my Paperzilla project and explain why the top three matter."
-      ]
+      ],
+      "sourceHash": "f1b5feb3c76ce064803e5d44757f0fc468bf670499015b9c6a9d487fca699771"
     },
     "scientific-agent-skills/parallel-web": {
       "zh": [
@@ -1763,7 +1909,8 @@
         "Parallel Web Intelligence",
         "Runs web search, URL extraction, deep research reports, data enrichment, entity discovery, and recurring monitoring via the Parallel CLI; needs parallel-cli, internet access, and a Parallel API key or CLI login.",
         "Run a Parallel deep research report on solid-state battery interfaces and keep the cited sources."
-      ]
+      ],
+      "sourceHash": "04b4873674998c4fb47de017397e753d69049609135efed43a82572b9002f52c"
     },
     "scientific-agent-skills/pathml": {
       "zh": [
@@ -1775,7 +1922,8 @@
         "PathML Digital Pathology",
         "Builds local computational-pathology workflows with PathML: slide loading, tiling, QC, preprocessing, h5path storage, spatial graphs, and bounded inference; needs Python 3.10–3.12, OpenSlide, and a JDK; research use only, not diagnostic.",
         "Tile these H&E slides with patient-level splits, run QC, and save h5path files with tile coordinates."
-      ]
+      ],
+      "sourceHash": "654cef910bd567689b854eab52176628f39184d7cca7a6bf405343f337e58538"
     },
     "scientific-agent-skills/pathogen-variant-surveillance": {
       "zh": [
@@ -1787,7 +1935,8 @@
         "Pathogen Variant Surveillance",
         "Queries public GenSpectrum LAPIS deployments for lineage nomenclature, weekly sequence proportions, reporting delays, and mutation frequencies across SARS-CoV-2, influenza, RSV, mpox, and more; needs Python 3.11+ and network, no credentials; descriptive only.",
         "Check the dominant submitted Pango lineages on LAPIS over the last four weeks and verify their nomenclature."
-      ]
+      ],
+      "sourceHash": "95510f890a47ab2e2275832fe60e725eca34e5318dcde88b0940d9362b3ab590"
     },
     "scientific-agent-skills/pathway-enrichment": {
       "zh": [
@@ -1799,7 +1948,8 @@
         "Pathway Enrichment Analysis",
         "Runs ORA, Enrichr, preranked GSEA, and ssGSEA/GSVA on gene lists via gseapy, g:Profiler, MSigDB, GO, KEGG, Reactome, and WikiPathways; needs Python 3.12+ with gseapy; online queries need network.",
         "Run ORA and GSEA on this PyDESeq2 hit list and report significant GO and KEGG terms with the chosen background."
-      ]
+      ],
+      "sourceHash": "82783d8ba63b6b03646492ee75afcdf591903a213decf7e7c9d844eb517acd78"
     },
     "scientific-agent-skills/peer-review": {
       "zh": [
@@ -1811,7 +1961,8 @@
         "Peer Review Assistant",
         "Prepares evidence-bounded, constructive review drafts for authorized manuscripts, protocols, preprints, or proposals, checking claims, methods, statistics, reproducibility, and figures; bundled tools run locally and require reviewer authorization.",
         "Draft a peer review for this authorized submission, checking each major claim against the evidence presented."
-      ]
+      ],
+      "sourceHash": "a042ccdc76d3399431b9a6c4cd4f98968eab964b1c14baeea4d9e73de82c7d19"
     },
     "scientific-agent-skills/pennylane": {
       "zh": [
@@ -1823,7 +1974,8 @@
         "PennyLane Quantum Circuits",
         "Builds and differentiates PennyLane 0.45.1 circuits, hybrid PyTorch/JAX models, molecular VQE, and QAOA workflows; needs Python 3.11+ with NumPy 2+; local simulation needs no credentials, hardware needs provider access and network.",
         "Write a VQE for molecular hydrogen, verify gradients on the default simulator, then outline hardware steps."
-      ]
+      ],
+      "sourceHash": "7908ee374ed9bef310bd7071a175d97e0428cec184cce3e36db9fe3ae8e77c52"
     },
     "scientific-agent-skills/phylogenetics": {
       "zh": [
@@ -1835,7 +1987,8 @@
         "Phylogenetic Tree Inference",
         "Aligns homologous sequences with MAFFT and infers trees via IQ-TREE maximum likelihood or FastTree, with ETE3 summaries and figures; requires those executables installed, plus Python 3.12 and PyQt5 for visualization.",
         "Align these protein sequences with MAFFT, build an IQ-TREE phylogeny, and produce a support-annotated tree figure."
-      ]
+      ],
+      "sourceHash": "eef2354a8fe6c51c2ad8a506e512326553bda52c731952598adef677ae2d67d5"
     },
     "scientific-agent-skills/pi-agent": {
       "zh": [
@@ -1847,7 +2000,8 @@
         "Pi Terminal Coding Agent",
         "Installs, configures, and extends the Pi terminal coding harness: providers, models, skills, extensions, themes, prompt templates, SDK embedding, RPC/event streams, and llama.cpp local models; requires Node.js 22.19+ and npm.",
         "Install Pi, configure a custom model provider, and write an extension that loads my project context."
-      ]
+      ],
+      "sourceHash": "ef84742b6e491b3f65941dbb19fdd508b0aada3b87d95aa28b0f66a111f7c748"
     },
     "scientific-agent-skills/pkpd-modeling": {
       "zh": [
@@ -1859,7 +2013,8 @@
         "PK/PD Modeling",
         "Performs pharmacokinetic/pharmacodynamic analysis: NCA, compartmental and population PK, exposure-response, TMDD, bioequivalence, allometric scaling, and first-in-human dose; needs Python 3.12+ with NumPy/SciPy; proprietary tools like NONMEM are oriented to but never invoked.",
         "Run non-compartmental analysis on this concentration-time data for AUC, Cmax, and half-life, then fit a one-compartment model."
-      ]
+      ],
+      "sourceHash": "fc58aed600d0fe9de911176cb0f2a43e8df6bbae8c2260be6f8abade133a2837"
     },
     "scientific-agent-skills/polars": {
       "zh": [
@@ -1871,7 +2026,8 @@
         "Polars DataFrames",
         "Covers high-performance table processing with Polars 1.44: expression API, lazy query optimization, parallel and streaming execution, Arrow interop, and pandas migration; requires Python 3.10+, with extras for Excel, databases, cloud, and GPU.",
         "Rewrite this pandas cleaning script as a Polars lazy query that streams a 20GB experiment log."
-      ]
+      ],
+      "sourceHash": "05d64a001190b516bc922bac616483c3109a6d29c3e9950e3e2d6c31b9415e79"
     },
     "scientific-agent-skills/polars-bio": {
       "zh": [
@@ -1883,7 +2039,8 @@
         "polars-bio Genomic Intervals",
         "Runs genomic interval overlap, nearest, merge, coverage, complement, and subtraction on Polars DataFrames and reads BED, VCF, BAM, CRAM, GFF, FASTA/FASTQ; needs Python 3.11–3.14 with polars-bio 0.36; credentials only for remote data.",
         "Count overlaps between these ChIP-seq peaks and gene annotations, then compute read depth over target regions."
-      ]
+      ],
+      "sourceHash": "b9dbf93b5d8dbaa3de4541449b828cd6199625c54956e8598f7552eefc30116f"
     },
     "scientific-agent-skills/pptx-posters": {
       "zh": [
@@ -1895,7 +2052,8 @@
         "PowerPoint Research Posters",
         "Generates editable macro-free one-slide PowerPoint posters from an author-approved local manifest with physical, printer, accessibility, and package-security checks; needs Python 3.10+ with pinned python-pptx, Pillow, and lxml; final review stays manual.",
         "Build a 48x36 inch conference poster PPTX from my manifest and verify figure resolution and layout."
-      ]
+      ],
+      "sourceHash": "bb4923ec520ac5175f837e75c8b600344cc1eb71490b1fa9c809ac65e64f1fb9"
     },
     "scientific-agent-skills/primekg": {
       "zh": [
@@ -1907,7 +2065,8 @@
         "PrimeKG Knowledge Graph",
         "Queries a pinned PrimeKG CSV for typed gene, drug, disease, and phenotype nodes, direct associations, disease context, and one- or two-hop paths with provenance preserved; needs Python 3.11+, pandas, the ~1GB downloaded CSV, and several GB of RAM.",
         "Find genes and drugs associated with this disease in PrimeKG, then two interpretable two-hop paths with source rows."
-      ]
+      ],
+      "sourceHash": "b20698944fa51b287a13e7dc22ac033b83836b73614a21cff725ad7d6d807226"
     },
     "scientific-agent-skills/primer-design": {
       "zh": [
@@ -1919,7 +2078,8 @@
         "Primer Design and Specificity",
         "Designs and audits PCR/RT-qPCR primers with Primer3 thermodynamics, reference-based off-target screening, exon-junction or isoform assays, cloning tails, and multiplex checks; needs primer3-py, plus local blastn/makeblastdb for BLAST screening.",
         "Design an exon-junction RT-qPCR primer pair for this gene and screen off-target products against a local reference."
-      ]
+      ],
+      "sourceHash": "ea8bed0aa340a5f6538c206bb3d9fe503da6759e68a944a2bce564fa115d25e4"
     },
     "scientific-agent-skills/protocolsio-integration": {
       "zh": [
@@ -1931,7 +2091,8 @@
         "protocols.io Integration",
         "Reads, validates, and exports protocols.io protocols per current REST/MCP contracts, or builds non-executing mutation plans; offline validation needs no credentials, REST reads need official-host HTTPS access and usually a bearer token, and network requires explicit --execute.",
         "Fetch the pinned version of this protocol DOI, validate its step structure, and export a reviewable Markdown."
-      ]
+      ],
+      "sourceHash": "4439249ba8cd35a8507463f8be84db511abc23daa00be3f892c47d847d2aeda5"
     },
     "scientific-agent-skills/pufferlib": {
       "zh": [
@@ -1943,7 +2104,8 @@
         "PufferLib RL Environments",
         "Version-aware guidance for PufferLib environments, vectorization, policies, PuffeRL training, and evaluation across native 5.0, PyPI 3.0.0, and pinned 4.0; bundled checks need only Python 3.10+, while 5.0 training needs a C/CUDA toolchain.",
         "Help me pick the right PufferLib version for my Gymnasium environment and check its observation and reward contract."
-      ]
+      ],
+      "sourceHash": "031975c6abaabd8237c18b6472886f4a718c509da70fc6ebca06455f8a002fa7"
     },
     "scientific-agent-skills/pybamm": {
       "zh": [
@@ -1955,7 +2117,8 @@
         "PyBaMM Battery Simulation",
         "Simulates lithium-ion charge, discharge, and rest with PyBaMM 26.9, records parameter-set provenance, checks mesh and solver sensitivity, and compares predictions to cycling data; needs Python 3.12 with pybammsolvers; local runs need no credentials.",
         "Compare SPM and DFN simulations of a 1C discharge with Chen2020 parameters and check mesh sensitivity."
-      ]
+      ],
+      "sourceHash": "9d6f375f4d9def40072ea734f07e1a48c60a1cd906231cab1a4189a75499a1a4"
     },
     "scientific-agent-skills/pycalphad": {
       "zh": [
@@ -1967,7 +2130,8 @@
         "pycalphad Phase Equilibria",
         "Computes finite-temperature CALPHAD equilibria, phase fractions, and compositions from TDB databases with pycalphad 0.11, for alloy phase stability and temperature sweeps; needs Python 3.12+, and real materials require a licensed thermodynamic database.",
         "Compute phase fractions versus temperature for a Cu-Ni alloy from 800–1400K using this TDB and check mass balance."
-      ]
+      ],
+      "sourceHash": "7748a9413e22566316893d882596b5c2a321e9e03de93e6097c59a003e899a24"
     },
     "scientific-agent-skills/pydeseq2": {
       "zh": [
@@ -1979,7 +2143,8 @@
         "PyDESeq2 Differential Expression",
         "Runs bulk RNA-seq differential expression with PyDESeq2: count validation, formula designs, explicit contrasts, Wald tests, FDR correction, LFC shrinkage, and visualization; needs Python 3.11+ with PyDESeq2 0.5.4 and true biological replicates.",
         "Run a treatment-versus-control differential expression on this count table with a batch covariate and report significant genes."
-      ]
+      ],
+      "sourceHash": "f06a9f5ece540c05bd8a8208bb3970d000b13cb1032abc9488cfbfe6106cd843"
     },
     "scientific-agent-skills/pydicom": {
       "zh": [
@@ -1991,7 +2156,8 @@
         "DICOM file processing",
         "Reads, inspects, converts, and preflights local DICOM datasets and pixel data with pydicom for research imaging work; local authorized files only, no diagnostic or PACS use, requires pydicom plus optional NumPy/Pillow/pylibjpeg plugins.",
         "Inspect this DICOM collection's transfer syntaxes and plan a bounded de-identified export"
-      ]
+      ],
+      "sourceHash": "e42c35688a3dc7e0faaf1d1e88c8883eabc60ad291d348bfe5aee89a64c95b01"
     },
     "scientific-agent-skills/pyhealth": {
       "zh": [
@@ -2003,7 +2169,8 @@
         "Clinical prediction pipelines",
         "Builds PyHealth clinical ML pipelines for EHR, signals, imaging tasks, and medical-code mapping on MIMIC/eICU/OMOP-style data; needs Python 3.12/3.13 with Torch and authorized access to restricted clinical datasets.",
         "Set up a PyHealth mortality-prediction pipeline on MIMIC-IV with patient-level splits"
-      ]
+      ],
+      "sourceHash": "ec4de54618b71a4f8cfeb086d131c610127784a6839d842a67b3c1e87b66e161"
     },
     "scientific-agent-skills/pylabrobot": {
       "zh": [
@@ -2015,7 +2182,8 @@
         "Lab automation planning",
         "Develops PyLabRobot liquid-handling resources, deck layouts, and transfer plans with software-only simulation for protocol development and review; physical devices stay behind an explicit operator safety gate, requires PyLabRobot 0.2.2.",
         "Turn this 96-well pipetting protocol into a PyLabRobot plan and simulate it offline"
-      ]
+      ],
+      "sourceHash": "b2aab8871006d84e53621fc0f4886d0fd0c671007d112569e444e0a56a564d76"
     },
     "scientific-agent-skills/pymatgen": {
       "zh": [
@@ -2027,7 +2195,8 @@
         "Materials structure analysis",
         "Validates, converts, and analyzes crystal structures and computed materials data with pymatgen, covering symmetry, phase diagrams, and electronic-structure files; needs Python 3.11+, and Materials Project queries need network plus an MP_API_KEY.",
         "Parse this VASP output and check its space-group assignment across tolerances"
-      ]
+      ],
+      "sourceHash": "4a106d7682cd9881765700d534cb419458ba407935a59168547da1ae6ea4b6b1"
     },
     "scientific-agent-skills/pymc": {
       "zh": [
@@ -2039,7 +2208,8 @@
         "Bayesian modeling with PyMC",
         "Builds and checks Bayesian models in PyMC, including hierarchical models, NUTS MCMC, posterior predictive checks, and PSIS-LOO comparison; runs fully locally with Python 3.12+ and pinned PyMC/PyTensor/ArviZ versions.",
         "Build a hierarchical PyMC model and run posterior predictive checks"
-      ]
+      ],
+      "sourceHash": "77d29ba7adf73d822329eab576d15a748811633a60bca88f5e93954793b3ea8a"
     },
     "scientific-agent-skills/pymoo": {
       "zh": [
@@ -2051,7 +2221,8 @@
         "Multi-objective optimization",
         "Solves single-, multi-, and many-objective optimization with pymoo, including NSGA-II/III, MOEA/D, constraints, and ZDT/DTLZ benchmarks for trade-off analysis; local runs need Python 3.10+ and pymoo 0.6.2.",
         "Solve this constrained two-objective problem with NSGA-II and plot the Pareto front"
-      ]
+      ],
+      "sourceHash": "942573e5b8099717487b45cf84798348fb2128516791dcafe2d76aa1bdfed117"
     },
     "scientific-agent-skills/pyopenms": {
       "zh": [
@@ -2063,7 +2234,8 @@
         "Mass spectrometry processing",
         "Processes proteomics and metabolomics MS data with pyOpenMS, shipping ready-to-run scripts for inspection, feature detection, identification, and quantification; needs CPython 3.11+ and pyOpenMS 3.6.0, search engines installed separately.",
         "Detect metabolite features in these mzML files and export an intensity matrix"
-      ]
+      ],
+      "sourceHash": "020e7392adbb000aaab4968ae9a803ca4bd97818ca35e9eebd3abc222766a48f"
     },
     "scientific-agent-skills/pysam": {
       "zh": [
@@ -2075,7 +2247,8 @@
         "Genomic file workflows",
         "Reads, queries, filters, and writes SAM/BAM/CRAM, VCF/BCF, FASTA/FASTQ, and tabix data with pysam for region queries and QC; needs pysam 0.24.1 locally, and CRAM decoding needs the matching reference FASTA.",
         "Summarize coverage over a chr1 region in this BAM and filter low-quality alignments"
-      ]
+      ],
+      "sourceHash": "afc275bbeb084553cd6507c4ffee848c46bef94dcd24c3b8a58d8b14d021ea09"
     },
     "scientific-agent-skills/pytdc": {
       "zh": [
@@ -2087,7 +2260,8 @@
         "Therapeutics data benchmarks",
         "Accesses Therapeutics Data Commons datasets, task-aware splits, evaluators, and benchmark groups via PyTDC for drug-discovery ML; needs CPython 3.11, PyTDC 1.1.15, setuptools 80.9.0, plus network and disk for downloads.",
         "List TDC ADME datasets and evaluate my predictions with the recommended split"
-      ]
+      ],
+      "sourceHash": "b7df3f50c1c618a47a81e994b2863ddd8adf695e795aa495c3a8fef5e78a0493"
     },
     "scientific-agent-skills/pytorch-lightning": {
       "zh": [
@@ -2099,7 +2273,8 @@
         "Structured PyTorch training",
         "Organizes PyTorch code into LightningModules and configures Trainers for multi-GPU/TPU, callbacks, loggers, and distributed strategies like DDP/FSDP/DeepSpeed; needs lightning 2.6.6 with matching PyTorch, hardware and logger credentials as applicable.",
         "Refactor this PyTorch training script into a LightningModule with DDP configured"
-      ]
+      ],
+      "sourceHash": "d8829e74e8a1d908f923cf0c0a850ecfdd9edcb004d2fa90ec32fb1ed0006ce8"
     },
     "scientific-agent-skills/pyzotero": {
       "zh": [
@@ -2111,7 +2286,8 @@
         "Zotero library management",
         "Manages Zotero libraries via pyzotero and the Web API v3 or local API, covering items, collections, tags, attachments, and citation export; remote private access needs a Zotero API key, local access needs Zotero 7+/10+ with the local API enabled.",
         "Attach these PDFs to their Zotero items and export the collection as BibTeX"
-      ]
+      ],
+      "sourceHash": "82dec36c7294674f33d9b6003e523d1dc4da33ed1c7427dc4e53731119fc5f74"
     },
     "scientific-agent-skills/qiime2-amplicon": {
       "zh": [
@@ -2123,7 +2299,8 @@
         "16S amplicon analysis",
         "Processes paired-end 16S reads into QIIME 2 ASVs and taxonomy with retained provenance for microbiome studies; requires the official conda/container QIIME 2 2026.7 distribution and a compatible classifier, plus network for installs and reference downloads.",
         "Run primer trimming, DADA2 denoising, and taxonomy on these paired-end 16S FASTQs"
-      ]
+      ],
+      "sourceHash": "605ae0581620f654ca9e12122a2bdb1d62a813841c5fea61b0eacb2031377cf7"
     },
     "scientific-agent-skills/qiskit": {
       "zh": [
@@ -2135,7 +2312,8 @@
         "Quantum circuit development",
         "Builds, transpiles, simulates, and executes Qiskit 2.x circuits via V2 primitives locally or on IBM Quantum Runtime; local work needs qiskit and qiskit-aer, IBM QPU runs additionally need network, an IBM Quantum account, and an API key.",
         "Build this parameterized circuit, transpile it for the target backend, and sample it locally"
-      ]
+      ],
+      "sourceHash": "538e5db262e7c237cff2bac191480f81688b8679167740af7405fcda1340511e"
     },
     "scientific-agent-skills/qutip": {
       "zh": [
@@ -2147,7 +2325,8 @@
         "Open quantum system simulation",
         "Simulates closed and open quantum-system dynamics, trajectories, steady states, and spectra with QuTiP 5 for local quantum-dynamics work; needs Python 3.11+ and qutip 5.3.1, no network or hardware execution involved.",
         "Simulate this driven two-level system's dissipative evolution and test truncation convergence"
-      ]
+      ],
+      "sourceHash": "6b93a95eb586147b2f1639f7e669dece3182ab4ddd70b1200291073cfd533902"
     },
     "scientific-agent-skills/rdkit": {
       "zh": [
@@ -2159,7 +2338,8 @@
         "Cheminformatics with RDKit",
         "Parses SMILES/SDF, computes descriptors and fingerprints, runs substructure search, reactions, and 3D generation with RDKit for fine-grained molecular control; local only after installing the rdkit package, no credentials needed.",
         "Compute MW, LogP, and fingerprints for these SMILES and cluster them by similarity"
-      ]
+      ],
+      "sourceHash": "9f32d5d229bc1a5bac3e57de5fb87895cdb85dcc99132c57373905db0e1a941e"
     },
     "scientific-agent-skills/relion": {
       "zh": [
@@ -2171,7 +2351,8 @@
         "Cryo-EM refinement",
         "Validates and runs RELION single-particle cryo-EM refinement and half-map postprocessing, checking STAR optics, gold-standard half sets, and soft masks; requires RELION 5.0.1 with MPI, OpenMP, and an FFT library, GPU builds need their accelerator stack.",
         "Validate this particles.star file and launch a gold-standard 3D refinement"
-      ]
+      ],
+      "sourceHash": "3f80369ef73ccb8c20e2e49ad2b9bd71da3ffa4a819c035691ca4a5b26cb8399"
     },
     "scientific-agent-skills/relsa-severity-assessment": {
       "zh": [
@@ -2183,7 +2364,8 @@
         "Animal welfare severity scoring",
         "Combines welfare readouts like weight, temperature, and clinical scores into RELSA relative severity scores with exploratory ARIMA forecasts for lab-animal studies; runs locally with Python 3.12+ and numpy/pandas/scipy/statsmodels/matplotlib.",
         "Combine these mouse weight and clinical scores into RELSA severity scores and forecast the next observation"
-      ]
+      ],
+      "sourceHash": "10ee1a904565f5e9c9d432b3af136db42927d0811f07f646355600fec6633f8a"
     },
     "scientific-agent-skills/research-grants": {
       "zh": [
@@ -2195,7 +2377,8 @@
         "Research grant writing",
         "Supports proposal preparation and review for NSF, NIH, DOE, DARPA, and Taiwan NSTC, covering aims, review criteria, budgets, and compliance matrices; verifying current opportunities needs network or supplied official documents, optional figures need OPENROUTER_API_KEY.",
         "Check this NIH R01 draft's aims and budget consistency against the review criteria"
-      ]
+      ],
+      "sourceHash": "3ca7ea8075bbe8008389660cc4a5769d66ac9ec638f3f61a955a5d7b20aeba85"
     },
     "scientific-agent-skills/research-lookup": {
       "zh": [
@@ -2207,7 +2390,8 @@
         "Scholarly evidence gathering",
         "Compiles scholarly evidence for manuscripts via Parallel Search/Extract/Research into references, evidence matrices, and claim-to-source maps; needs Python 3.10+, network, and the parallel-web-tools CLI, explicit Chat needs PARALLEL_API_KEY and optional Perplexity needs OPENROUTER_API_KEY.",
         "Gather about 60 relevant references for this paper's introduction and build an evidence matrix"
-      ]
+      ],
+      "sourceHash": "8da1618350bf3434e4569a180a15b7241a50118ee9b79bccc514fa1bf3b4a102"
     },
     "scientific-agent-skills/rowan": {
       "zh": [
@@ -2219,7 +2403,8 @@
         "Cloud molecular modeling",
         "Runs hosted Rowan workflows for pKa prediction, conformer/tautomer ensembles, docking, protein-ligand cofolding, and MD via its Python API for batch screening without local HPC; needs rowan-python, network access, and a ROWAN_API_KEY.",
         "Submit pKa prediction and conformer searches for these molecules to Rowan and organize the results"
-      ]
+      ],
+      "sourceHash": "d631f00ae0f9325aa58912bb571b7eb43bc42c553498e4c97f4d65a1683c8599"
     },
     "scientific-agent-skills/scanpy": {
       "zh": [
@@ -2231,7 +2416,8 @@
         "Scanpy Single-Cell Analysis",
         "Runs complete Scanpy scRNA-seq workflows: QC, normalization, PCA/UMAP, clustering, exploratory marker ranking, and pseudobulk preparation; requires Python 3.12+ with the scanpy package installed, runs locally without credentials.",
         "Analyze my human blood 10x data with Scanpy: check quality, cluster cells, propose immune cell types from multiple markers, and save the UMAP plots and h5ad dataset"
-      ]
+      ],
+      "sourceHash": "4a59f87933a1e9ed49eac603719af1b0c606dd99050fe59ffa1c1bf807900cb8"
     },
     "scientific-agent-skills/scholar-evaluation": {
       "zh": [
@@ -2243,7 +2429,8 @@
         "Scholarly Work Evaluation",
         "Gives evidence-traceable developmental feedback on papers, drafts, protocols, or research ideas, with optional local standard-library Python rubric auditing; excludes acceptance and ranking judgments and needs no network or credentials.",
         "Review my research protocol with scholar-evaluation: link comments to the draft, preserve uncertainty, and recommend concrete revisions without issuing an acceptance judgment"
-      ]
+      ],
+      "sourceHash": "9abc66a9ba13f6cf0f61614ddfff17822b5be2cc7118f52ef2631323dac8c94e"
     },
     "scientific-agent-skills/scientific-brainstorming": {
       "zh": [
@@ -2255,7 +2442,8 @@
         "Scientific Brainstorming",
         "Structures early-stage ideation: generates candidate explanations independently, separates assumptions from evidence, compares directions on declared criteria, and preserves dissent; the core workflow needs no packages, network, or credentials.",
         "Use scientific-brainstorming to explore explanations for an unexpected result: list independent alternatives, label assumptions and predictions, then rank follow-up directions by information gained and feasibility"
-      ]
+      ],
+      "sourceHash": "06f73b71556356a7f488c369b9445d7943543a3f14d159b2168fd3f621d6f8a9"
     },
     "scientific-agent-skills/scientific-critical-thinking": {
       "zh": [
@@ -2267,7 +2455,8 @@
         "Scientific Critical Thinking",
         "Appraises what a scientific claim is supported by across design, bias, statistics, and applicability, then writes a traceable constructive critique; core needs no software, optional diagrams require an OpenRouter API key.",
         "Assess this paper's causal claim with scientific-critical-thinking: identify the exact comparison and effect estimate, review confounding and selection, and distinguish missing reporting from real design flaws"
-      ]
+      ],
+      "sourceHash": "563af70571b7dcd6a96bf2e303bedfdcba623b4e9f082d58f04aacbc961fdae4"
     },
     "scientific-agent-skills/scientific-schematics": {
       "zh": [
@@ -2279,7 +2468,8 @@
         "Scientific Schematics",
         "Drafts raster diagrams of pathways, workflows, or model architectures from a precise brief, with automated visual review and limited refinement; requires Python, network access, and an OpenRouter API key.",
         "Draft a diagram of my analysis workflow with scientific-schematics: show measured inputs versus inferred outputs, use a restrained palette, and keep the review log for manual checking"
-      ]
+      ],
+      "sourceHash": "e15d761ef88013c98fd5b19cc144aba7336e20dbadf340db17bd1ba2227d1d69"
     },
     "scientific-agent-skills/scientific-slides": {
       "zh": [
@@ -2291,7 +2481,8 @@
         "Scientific Slides",
         "Builds research talks for conferences, seminars, or defenses: plans the narrative, assigns slide purposes, and assembles editable PPTX, Beamer, or image decks; image generation needs an OpenRouter API key, PPTX needs Node.js and PptxGenJS, Beamer needs TeX.",
         "Turn my figures and summary into a 15-minute conference talk with scientific-slides: plan the narrative, keep quantitative plots editable, add concise citations, and inspect the rendered deck"
-      ]
+      ],
+      "sourceHash": "b1d34b81d30789f561bd4ee3ddb373c9fb84bed25086794bebd842af46afbad6"
     },
     "scientific-agent-skills/scientific-visualization": {
       "zh": [
@@ -2303,7 +2494,8 @@
         "Scientific Visualization",
         "Guides honest research figure design with Matplotlib, Seaborn, or Plotly: encoding choice, uncertainty and missingness display, deliberate export, and final-file inspection; local work needs no credentials, Plotly static export needs a Chrome/Chromium install.",
         "Redesign my multi-panel results figure with scientific-visualization: preserve every point, label uncertainty intervals and the unit of replication, distinguish groups without color alone, and export at manuscript width"
-      ]
+      ],
+      "sourceHash": "8cbde7cdc10d959cf72cfd08335cc8ce996247eee6ebdb900eb64a4cb0ff34a3"
     },
     "scientific-agent-skills/scientific-writing": {
       "zh": [
@@ -2315,7 +2507,8 @@
         "Scientific Writing",
         "Turns verified study material into clear manuscript prose with claims traced to sources, consistency checks, and reporting-coverage audits; optional local helpers run offline with no API keys and never invent results.",
         "Revise my Results and Discussion with scientific-writing from verified tables: separate observations from interpretation, reconcile all sample counts and units, and flag unsupported statements"
-      ]
+      ],
+      "sourceHash": "511a2096bebecd8cf0f8212b9d262d37154ae1ba566eb385d93ac968682edbd1"
     },
     "scientific-agent-skills/scikit-bio": {
       "zh": [
@@ -2327,7 +2520,8 @@
         "scikit-bio Community Analysis",
         "Handles sequences, community tables, and phylogenetic trees for alpha and beta diversity, UniFrac, ordination, and ecological statistics; requires Python 3.10+ with scikit-bio installed, local work needs no credentials.",
         "Explore my community count table with scikit-bio: align samples and tree tips, compare abundance and phylogenetic distances, show an ordination, and check whether the permutation test fits my repeated sampling design"
-      ]
+      ],
+      "sourceHash": "4a7a5760adadf32782dc4694028371df13b25472ff8ffe4cef2b2fc564226f6c"
     },
     "scientific-agent-skills/scikit-learn": {
       "zh": [
@@ -2339,7 +2533,8 @@
         "scikit-learn Machine Learning",
         "Builds and evaluates classification, regression, clustering, and dimensionality-reduction pipelines with leak-free preprocessing and splits that respect the independent sampling unit; requires Python 3.11+ and scikit-learn installed locally.",
         "Compare models for my tabular prediction task with scikit-learn: keep each specimen's records in one partition, fit preprocessing inside cross-validation, hold out a test set, and report the errors that matter"
-      ]
+      ],
+      "sourceHash": "a1765797d072ab40094522abe68fb04505d0881f66b7dfceeb8582422dbe488d"
     },
     "scientific-agent-skills/scikit-survival": {
       "zh": [
@@ -2351,7 +2546,8 @@
         "Survival Analysis Modeling",
         "Fits survival models on right-censored time-to-event data with censoring-aware evaluation, risk scores, survival probabilities, and nonparametric competing-risk cumulative incidence; requires Python 3.11+ and the scikit-survival package.",
         "Evaluate my cohort's time-to-event model with scikit-survival: define event and censoring rules, keep preprocessing inside training folds, and report discrimination separately from probability accuracy at supported horizons"
-      ]
+      ],
+      "sourceHash": "8f99860440f23312d9803d3ac65ae9eb65274597d59499f1021d59378adef2fb"
     },
     "scientific-agent-skills/scvelo": {
       "zh": [
@@ -2363,7 +2559,8 @@
         "scVelo RNA Velocity",
         "Runs RNA velocity analysis from aligned spliced and unspliced counts: kinetic model fitting, gene phase portraits, velocity graphs, and sensitivity checks on directional interpretations; requires a Python 3.13 stack with scvelo, scanpy, and anndata.",
         "Examine my aligned spliced and unspliced counts with scVelo: verify count provenance, inspect phase portraits for key genes, test neighborhood and gene-set sensitivity, and compare direction with my collection-time labels"
-      ]
+      ],
+      "sourceHash": "c43258bccdbaa5772fd1aeac8d12d6107dd9c9b19c6a3a81fde7d421c0d2609e"
     },
     "scientific-agent-skills/scvi-tools": {
       "zh": [
@@ -2375,7 +2572,8 @@
         "scvi-tools Probabilistic Models",
         "Fits probabilistic single-cell models for batch integration, annotation, multimodal analysis, and model-based differential expression while preserving required input representations; needs Python 3.12+ with scvi-tools and PyTorch, CPU training supported.",
         "Integrate my two scRNA-seq datasets with scvi-tools: preserve raw counts, state which variables are treated as batch, assess both batch mixing and retained biology, and save the model with feature order"
-      ]
+      ],
+      "sourceHash": "b22633470d40ddaf31451fbbf811941fc89c3174c404ca359f25378691267e73"
     },
     "scientific-agent-skills/seaborn": {
       "zh": [
@@ -2387,7 +2585,8 @@
         "Seaborn Statistical Plotting",
         "Creates distribution, relationship, categorical, regression, and faceted plots from tidy tables with explicit estimators, intervals, and missing-data handling; requires Python with seaborn, pandas, NumPy, and Matplotlib, no credentials needed.",
         "Explore my repeated-measures experiment with Seaborn: show individual subject trajectories and a separate summary of within-subject change, state what each interval means, and keep consistent scales across treatment groups"
-      ]
+      ],
+      "sourceHash": "d1500d1e3d9db1db4c72cd272861378d1b98b0b5a5a98e8a3fca5a45bc0c6b2e"
     },
     "scientific-agent-skills/shap": {
       "zh": [
@@ -2399,7 +2598,8 @@
         "SHAP Model Explanations",
         "Computes feature attributions for a fitted model: explainer and reference-population selection, additivity validation, and local or global plots that describe model behavior rather than causality; requires Python with the shap package and the model's own library.",
         "Explain my evaluated classifier's held-out predictions with SHAP: explain positive-class probability, use training data as background, verify attributions reconstruct the output, and show individual and aggregate views"
-      ]
+      ],
+      "sourceHash": "9c395662e608accd60acb62158f1d25299b12ec0e40f9f94b70a46ec527d52c1"
     },
     "scientific-agent-skills/simpy": {
       "zh": [
@@ -2411,7 +2611,8 @@
         "SimPy Discrete-Event Simulation",
         "Builds process-based discrete-event simulations of queues and resource contention for labs, services, or logistics, with verification, independent replications, and performance summaries; requires Python with SimPy installed, runs locally without credentials.",
         "Model my lab's sample-processing queue with SimPy: use my arrival patterns and equipment capacity, verify simple cases, compare two capacity scenarios across independent replications, and report waiting times with uncertainty"
-      ]
+      ],
+      "sourceHash": "027244a3587e70c3e2f1aed4bfb5d737cb24fdc6b2ad276302ed81c02e38a7fc"
     },
     "scientific-agent-skills/stable-baselines3": {
       "zh": [
@@ -2423,7 +2624,8 @@
         "Stable Baselines3 Reinforcement Learning",
         "Trains and evaluates PPO, SAC, DQN, and other policies in Gymnasium environments: interface validation, monitored training, checkpoint and normalization preservation, and multi-seed evaluation; requires Python 3.10+, PyTorch, and stable-baselines3.",
         "Train a policy in my simulator with Stable Baselines3: validate observations, actions, rewards, and episode endings first, compare training seeds against a baseline, save normalization with each checkpoint, and evaluate on separate scenarios"
-      ]
+      ],
+      "sourceHash": "8383ae480e27163b9dbe1d9af822e05f0e85dd05b5bab1f6444588d57f569837"
     },
     "scientific-agent-skills/statistical-analysis": {
       "zh": [
@@ -2435,7 +2637,8 @@
         "Statistical Analysis Guidance",
         "Chooses and reports analyses around study design and the effect of interest: group comparisons, regression, correlation, assumption review, effect sizes, and Bayesian alternatives; uses a local Python stack like SciPy, statsmodels, PyMC, no credentials needed.",
         "Compare my paired measurements with statistical-analysis: check pairing identifiers and missing pairs, define within-specimen change as the effect, report an estimate with uncertainty, and separate planned from exploratory analyses"
-      ]
+      ],
+      "sourceHash": "e112848726b3713267cac65e4e2c15491a0a26ee1ed628db01195f7e43f97997"
     },
     "scientific-agent-skills/statistical-power": {
       "zh": [
@@ -2447,7 +2650,8 @@
         "Statistical Power and Sample Size",
         "Plans sample size, power, minimum detectable effects, and power curves using analytical methods for standard designs or simulation for complex ones, with transparent assumptions and sensitivity ranges; needs Python with statsmodels and related packages, runs locally.",
         "Plan my paired study with statistical-power: use my target within-person effect, variability and correlation assumptions, and expected attrition; show sensitivity curves and distinguish completed participants from recruitment numbers"
-      ]
+      ],
+      "sourceHash": "a969660eafdc3504ac36e49bd7ded00e18b00fe5cef5699940d5d8281e24dd3d"
     },
     "scientific-agent-skills/statsmodels": {
       "zh": [
@@ -2459,7 +2663,8 @@
         "Statsmodels Statistical Modeling",
         "Fits regression, GLMs, discrete and mixed models, and time-series models with diagnostics, interpretable effects, and explicit uncertainty assumptions; requires Python 3.10+ with statsmodels installed, local fitting needs no credentials.",
         "Model my count outcome with statsmodels including an exposure offset: review predictor coding and missing rows, check overdispersion, report interpretable effects with uncertainty, and flag influential cases"
-      ]
+      ],
+      "sourceHash": "9e6c034bb4acbf0972fda18892d2feea907885ac5ad7194d220182d8810295a3"
     },
     "scientific-agent-skills/sympy": {
       "zh": [
@@ -2471,7 +2676,8 @@
         "SymPy Symbolic Math",
         "Performs exact symbolic algebra, calculus, equation solving and LaTeX/code generation with SymPy 1.14.0 on Python 3.9+; defer purely numerical workloads to NumPy/SciPy.",
         "Differentiate and simplify this equation symbolically under positive-real assumptions, then lambdify it to a Python function"
-      ]
+      ],
+      "sourceHash": "bb97087bdddccc845401737ddc7f7a8da1c14ced5e8d40da01271c991ac46e23"
     },
     "scientific-agent-skills/tamarind": {
       "zh": [
@@ -2483,7 +2689,8 @@
         "Tamarind Bio Cloud Tools",
         "Runs hosted AlphaFold, RFdiffusion, DiffDock and other molecular-design tools via Tamarind Bio's REST API or MCP without local GPUs; requires Python 3.10+, a Tamarind account and API key.",
         "Submit these protein sequences to AlphaFold on Tamarind Bio and download the predicted structures"
-      ]
+      ],
+      "sourceHash": "aa9bb0aa10acefa52621acd9ba06604997ed2f3d20533359f47d4b24dfdc9494"
     },
     "scientific-agent-skills/tellurium": {
       "zh": [
@@ -2495,7 +2702,8 @@
         "Tellurium Kinetic Simulation",
         "Simulates SBML/Antimony biochemical kinetics with Tellurium and libRoadRunner, checks units and exports reproducible COMBINE archives; requires Python 3.11 with pinned packages, while flux analysis belongs to cobrapy.",
         "Simulate this Antimony model's concentration time course and export a replayable SED-ML COMBINE archive"
-      ]
+      ],
+      "sourceHash": "69faa97aa45e7ad46515acd3e6497b044b7b44624ffd28c74fb40d97c74513a7"
     },
     "scientific-agent-skills/tiledbvcf": {
       "zh": [
@@ -2507,7 +2715,8 @@
         "TileDB-VCF Variant Store",
         "Ingests indexed VCF/BCF into an incremental TileDB-VCF cohort store for region queries, allele statistics and export; needs a native install, and TileDB Cloud adds token and storage requirements.",
         "Ingest these VCF samples into a TileDB-VCF cohort and query variants overlapping a genomic interval"
-      ]
+      ],
+      "sourceHash": "38e55a6962e14637e82f60be8e53e6d87c78f1a7874b9f832f442a038942f7d5"
     },
     "scientific-agent-skills/timesfm-forecasting": {
       "zh": [
@@ -2519,7 +2728,8 @@
         "TimesFM Time-Series Forecasting",
         "Zero-shot forecasting with Google's TimesFM covering quantile outputs, covariates and held-out evaluation; requires timesfm 3.0.2 with PyTorch and a network download of the Hugging Face checkpoint.",
         "Forecast this monthly series with TimesFM quantiles and compare rolling-origin accuracy against a naive baseline"
-      ]
+      ],
+      "sourceHash": "6f785fe73b133e9af7720fa46cf9013645198950155624889ef611b7b0dc74b8"
     },
     "scientific-agent-skills/torch-geometric": {
       "zh": [
@@ -2531,7 +2741,8 @@
         "PyTorch Geometric GNNs",
         "Builds GCN/GAT/GraphSAGE graph neural networks with PyTorch Geometric including heterogeneous graphs and neighbor sampling; requires PyTorch 2.9+ and version-matched torch-geometric wheels.",
         "Write a PyG heterogeneous GAT for node classification and document the evaluation split"
-      ]
+      ],
+      "sourceHash": "89805e17cdbc64ed01426548442b3aa1bda8bcfdd4f9528f5c8dd6e0ea813c96"
     },
     "scientific-agent-skills/torchdrug": {
       "zh": [
@@ -2543,7 +2754,8 @@
         "TorchDrug Molecular Learning",
         "Builds and troubleshoots TorchDrug 0.2.1 workflows for property prediction, pretraining, generation and protein representations; needs its older stack (PyTorch 1.8–2.0, RDKit, fair-esm) and is CPU-only on Apple Silicon.",
         "Get my TorchDrug property-prediction script running in a compatible environment and fix the errors"
-      ]
+      ],
+      "sourceHash": "03538274e00aad262d159ca5ebed55fe6519d605171569feff44afeb781088fd"
     },
     "scientific-agent-skills/transformers": {
       "zh": [
@@ -2555,7 +2767,8 @@
         "Hugging Face Transformers",
         "Loads Hub models, runs pipeline inference and Trainer fine-tuning across NLP, vision and audio with Transformers; requires PyTorch 2.5+ and an HF token for gated models.",
         "Fine-tune a Transformers classifier on my dataset with Trainer and record the checkpoint revisions"
-      ]
+      ],
+      "sourceHash": "584d1c35d513f87616df9bcf7ddc8c48ab38cfbfad18d55c8481578d1c0d6f1a"
     },
     "scientific-agent-skills/treatment-plans": {
       "zh": [
@@ -2567,7 +2780,8 @@
         "Treatment-Plan Documentation",
         "Formats and structurally validates treatment-plan documents for decisions already supplied by licensed clinicians, never making clinical judgments; uses only the Python standard library on local JSON files.",
         "Turn this clinician-approved intervention record into a treatment-plan JSON and flag missing fields"
-      ]
+      ],
+      "sourceHash": "ebb509854e12d016475ee6d45834a2a72c16815d1b9d940a9d156e7f024cbed6"
     },
     "scientific-agent-skills/umap-learn": {
       "zh": [
@@ -2579,7 +2793,8 @@
         "UMAP Dimensionality Reduction",
         "Applies umap-learn to nonlinear embeddings, clustering preprocessing and supervised/DensMAP/Parametric UMAP workflows; requires Python 3.9+ and umap-learn, with optional HDBSCAN and TensorFlow.",
         "Embed this high-dimensional cell matrix in 2D with UMAP and check stability across parameters"
-      ]
+      ],
+      "sourceHash": "0cfef32ae0e1d52eec6513bafc0ab4387cf38e43121fba715762b2b2c11b6930"
     },
     "scientific-agent-skills/uncertainty-and-units": {
       "zh": [
@@ -2591,7 +2806,8 @@
         "Units and Uncertainty",
         "Tracks physical units and propagates measurement uncertainty with pint and uncertainties, including GUM budgets and plausibility checks; needs Python 3.12+ with NumPy/SciPy and runs fully offline.",
         "Propagate uncertainty through these measurements and check whether the Reynolds number is plausible"
-      ]
+      ],
+      "sourceHash": "caaafa079a4eaac6012717bcf705dec0417b5434f5dbd1af934a3a36ad375722"
     },
     "scientific-agent-skills/usfiscaldata": {
       "zh": [
@@ -2603,7 +2819,8 @@
         "U.S. Treasury Fiscal Data",
         "Queries the U.S. Treasury Fiscal Data API for debt, revenue, spending, auctions, interest and exchange rates with no API key; Python examples need requests and pandas plus network access.",
         "Pull five years of Debt to the Penny records and assemble an analysis-ready table"
-      ]
+      ],
+      "sourceHash": "7cdcb756489ae8e94a73df1eebfb9abef554e912af6559ebd28dffa021ab63d5"
     },
     "scientific-agent-skills/vaex": {
       "zh": [
@@ -2615,7 +2832,8 @@
         "Vaex Out-of-Core Tables",
         "Analyzes larger-than-RAM HDF5/Arrow/CSV/Parquet tables with Vaex lazy expressions, streamed statistics and binned plots; requires Python 3.9–3.12 with vaex-core and format subpackages.",
         "Filter and bin statistics on this 20GB Parquet table with Vaex without loading it fully into memory"
-      ]
+      ],
+      "sourceHash": "a8ab5bcb0ab9c8d372b987e584b5c589a15b1e2b2f73457546d2888988d40b4f"
     },
     "scientific-agent-skills/venue-templates": {
       "zh": [
@@ -2627,7 +2845,8 @@
         "Venue Submission Templates",
         "Prepares journal, conference, poster and grant documents against venue-specific rules with bundled LaTeX scaffolds; needs Python 3.11+, optional LaTeX/Poppler, and network to verify current instructions.",
         "Check my LaTeX submission against NeurIPS's current anonymity and page-limit rules"
-      ]
+      ],
+      "sourceHash": "8607993327f451cc6b9d7ca7502c0e7d5f5060954fec12e2ea779d96841e78b5"
     },
     "scientific-agent-skills/waypoint-bio": {
       "zh": [
@@ -2639,7 +2858,8 @@
         "Waypoint Microbiome Models",
         "Works with Outpost Bio's Waypoint microbiome foundation models for embeddings, fine-tuning and the Compass benchmark plus abundance-table conversion; needs waypoint-bio, an approved HF token for downloads, and ideally a GPU.",
         "Convert this QIIME 2 abundance table to waypoint format and embed samples with Waypoint-45m"
-      ]
+      ],
+      "sourceHash": "132d1f33d5d99bd6288a4cb432b277fcbc0f8bc4315e333dcecb840e7adc87a5"
     },
     "scientific-agent-skills/what-if-oracle": {
       "zh": [
@@ -2651,7 +2871,8 @@
         "What-If Scenario Analysis",
         "Structures what-if scenario analysis for research plans across favorable, adverse, wild-card and second-order scenarios with explicit assumptions and decision triggers; qualitative, not causal or probabilistic forecasting.",
         "Run adverse-scenario stress tests on my experiment plan with triggers for each failure mode"
-      ]
+      ],
+      "sourceHash": "509af149c8cfc8f17dd15608d6337eb8a7ff3f4056fcadeda573c5e527c68a97"
     },
     "scientific-agent-skills/zarr-python": {
       "zh": [
@@ -2663,7 +2884,8 @@
         "Zarr Chunked Arrays",
         "Stores and queries chunked N-D arrays with Zarr-Python 3 including codecs, sharding, S3/GCS backends and NumPy/Dask/Xarray integration; requires Python 3.12+, zarr 3.4.0 and provider credentials for remote stores.",
         "Write this simulation output as a sharded Zarr array on S3 and read it back with Xarray to verify"
-      ]
+      ],
+      "sourceHash": "1edaabfc3fc618d4c3a16bd70c589c039a3cb3a26683f02bca0ccc140d3c9c4d"
     }
   }
 }
