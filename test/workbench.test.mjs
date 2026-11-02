@@ -516,3 +516,285 @@ describe('project creation', () => {
     assert.equal(bare.workspaceAvailability, null);
   });
 });
+
+describe('shared skill versions', () => {
+  const roleSkills = [{ sourceId: 'fixture', name: 'nature-writing' }];
+  const roleStore = {
+    hasAny: async () => true,
+    resolveSession: async () => ({ status: 'role', via: 'role', botId: 'bot-shared', templateId: 'fixture', skills: roleSkills }),
+  };
+  const agent = { id: 'session-shared', session: { id: 'session-shared' } };
+  const post = (body, headers = { 'x-workbench-token': TOKEN }) => createWorkbenchHandler({
+    ctx: { get: () => undefined },
+    manager,
+    token: TOKEN,
+    version: '0.1.0',
+  })(new Request(API, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...headers },
+    body: JSON.stringify(body),
+  }));
+
+  const EDITED = `---
+name: nature-writing
+description: 编辑后的论文写作说明
+whenToUse: 需要共享版本时
+---
+# Shared Writing
+
+Use the shared instructions.
+`;
+
+  const upstreamPath = () => join(fixture, 'nature-writing', 'SKILL.md');
+
+  it('saves one shared version that the catalog, the dialog, and the provider all use', async () => {
+    const detail = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-writing' });
+    assert.equal(detail.customized, false);
+    assert.equal(detail.expectedHash.length, 64);
+    const response = await post({
+      action: 'save-skill-override',
+      sourceId: 'fixture',
+      name: 'nature-writing',
+      content: EDITED,
+      expectedHash: detail.expectedHash,
+    });
+    assert.equal(response.status, 200);
+    const payload = await response.json();
+    assert.equal(payload.detail.customized, true);
+    assert.equal(payload.detail.content, EDITED);
+    assert.equal(payload.detail.upstreamContent, WRITING_SKILL);
+    assert.equal(payload.skillStatus.skills.find(row => row.name === 'nature-writing').description, '编辑后的论文写作说明');
+
+    const provider = createSkillProvider(manager, { warn() {} }, agent, roleStore);
+    const candidate = (await provider.list()).find(item => item.name === 'nature-writing');
+    const definition = await provider.get(candidate);
+    assert.equal(definition.content, '# Shared Writing\n\nUse the shared instructions.');
+    assert.equal(definition.description, '编辑后的论文写作说明');
+    assert.equal(definition.path, undefined);
+    assert.deepEqual(definition.resourceBase, { kind: 'directory', path: join(fixture, 'nature-writing') });
+
+    // The repository tree is never rewritten.
+    assert.equal(await readFile(upstreamPath(), 'utf8'), WRITING_SKILL);
+  });
+
+  it('refuses a stale editor state and keeps the saved text', async () => {
+    const detail = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-writing' });
+    const stale = await post({
+      action: 'save-skill-override',
+      sourceId: 'fixture',
+      name: 'nature-writing',
+      content: EDITED.replace('Shared', 'Other'),
+      expectedHash: 'a'.repeat(64),
+    });
+    assert.equal(stale.status, 409);
+    assert.equal((await stale.json()).code, 'conflict');
+    const after = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-writing' });
+    assert.equal(after.content, EDITED);
+    assert.equal(detail.expectedHash, after.expectedHash);
+  });
+
+  it('rejects a document that would break the catalog', async () => {
+    const detail = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-writing' });
+    for (const content of [
+      '# no frontmatter\n',
+      EDITED.replace('name: nature-writing', 'name: another-name'),
+      EDITED.replace('description: 编辑后的论文写作说明', 'description: ""'),
+      `${EDITED}\n${'x'.repeat(300 * 1024)}\n`,
+    ]) {
+      const response = await post({
+        action: 'save-skill-override',
+        sourceId: 'fixture',
+        name: 'nature-writing',
+        content,
+        expectedHash: detail.expectedHash,
+      });
+      assert.equal(response.status >= 400, true);
+      assert.notEqual(response.status, 500);
+    }
+    const after = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-writing' });
+    assert.equal(after.content, EDITED);
+  });
+
+  it('keeps the customization through an upstream update and restores the new upstream text', async () => {
+    const updated = `${WRITING_SKILL}\nNew upstream section.\n`;
+    await writeFileAt(upstreamPath(), updated);
+    const detail = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-writing' });
+    assert.equal(detail.upstreamChanged, true);
+    assert.equal(detail.upstreamContent, updated);
+    assert.equal(detail.content, EDITED);
+
+    const reset = await post({
+      action: 'reset-skill-override',
+      sourceId: 'fixture',
+      name: 'nature-writing',
+      expectedHash: detail.expectedHash,
+    });
+    assert.equal(reset.status, 200);
+    const payload = await reset.json();
+    assert.equal(payload.detail.customized, false);
+    assert.equal(payload.detail.content, updated);
+    const provider = createSkillProvider(manager, { warn() {} }, agent, roleStore);
+    const definition = await provider.get((await provider.list())[0]);
+    assert.equal(definition.content.includes('New upstream section.'), true);
+    assert.equal(definition.path, upstreamPath());
+    await writeFileAt(upstreamPath(), WRITING_SKILL);
+  });
+
+  it('keeps a broken customization out of the assistants and restores it on request', async () => {
+    const file = manager.overridePath('fixture', 'nature-writing');
+    await writeFileAt(file, '{ not json');
+    const rows = await manager.scanSkills({ fresh: true });
+    const row = rows.find(item => item.name === 'nature-writing');
+    assert.equal(typeof row.overrideError, 'string');
+    const provider = createSkillProvider(manager, { warn() {} }, agent, roleStore);
+    assert.equal(await provider.get({ name: 'nature-writing', locator: { sourceId: 'fixture', path: row.skillFilePath } }), undefined);
+
+    const detail = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-writing' });
+    assert.equal(typeof detail.overrideError, 'string');
+    const save = await post({
+      action: 'save-skill-override',
+      sourceId: 'fixture',
+      name: 'nature-writing',
+      content: EDITED,
+      expectedHash: detail.expectedHash,
+    });
+    assert.equal(save.status, 409);
+    const reset = await post({
+      action: 'reset-skill-override',
+      sourceId: 'fixture',
+      name: 'nature-writing',
+      expectedHash: detail.expectedHash,
+    });
+    assert.equal(reset.status, 200);
+    assert.equal((await reset.json()).detail.overrideError, undefined);
+    await assert.rejects(readFile(file, 'utf8'), { code: 'ENOENT' });
+  });
+
+  it('keeps customizations when their source is removed and re-attaches them on re-add', async () => {
+    const detail = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-reading' });
+    const response = await post({
+      action: 'save-skill-override',
+      sourceId: 'fixture',
+      name: 'nature-reading',
+      content: READING_SKILL.replace('论文精读与要点提取', '共享的精读说明'),
+      expectedHash: detail.expectedHash,
+    });
+    assert.equal(response.status, 200);
+    const before = await readFile(manager.overridePath('fixture', 'nature-reading'), 'utf8');
+    await manager.removeSource('fixture');
+    assert.equal(await readFile(manager.overridePath('fixture', 'nature-reading'), 'utf8'), before);
+    await manager.addLocalSource({ path: fixture, title: 'Fixture skills', id: 'fixture' });
+    const restored = await manager.skillDetail({ sourceId: 'fixture', name: 'nature-reading' });
+    assert.equal(restored.customized, true);
+    assert.equal(restored.description, '共享的精读说明');
+    await manager.resetSkillOverride({ sourceId: 'fixture', name: 'nature-reading', expectedHash: restored.expectedHash });
+  });
+
+  it('answers 423 for this process own live lock and keeps an unreadable lock', async () => {
+    const lockPath = join(root, 'home', 'install.lock');
+    await writeFile(lockPath, JSON.stringify({ pid: process.pid, createdAt: new Date().toISOString() }), 'utf8');
+    const response = await post({ action: 'save-skill-override', sourceId: 'fixture', name: 'nature-writing', content: EDITED, expectedHash: 'x' });
+    assert.equal(response.status, 423);
+    await rm(lockPath, { force: true });
+
+    await writeFile(lockPath, '', 'utf8');
+    const blank = await post({ action: 'save-skill-override', sourceId: 'fixture', name: 'nature-writing', content: EDITED, expectedHash: 'x' });
+    assert.equal(blank.status, 423);
+    assert.equal((await blank.json()).error.includes(lockPath), true);
+    assert.equal(await readFile(lockPath, 'utf8'), '');
+    await rm(lockPath, { force: true });
+  });
+});
+
+describe('repository identity', () => {
+  it('reads preset installation from the repository, not from a reused id', async () => {
+    const home = await mkdtemp(join(tmpdir(), 'dsh-rw-repo-'));
+    try {
+      const dataRoot = join(home, 'workbench');
+      await mkdir(join(dataRoot, 'sources', 'scientific-agent-skills'), { recursive: true });
+      await writeFile(join(dataRoot, 'state.json'), JSON.stringify({
+        version: 1,
+        sources: [{
+          id: 'scientific-agent-skills',
+          title: 'Something else',
+          kind: 'github',
+          repository: 'example/other-repo',
+          branch: 'main',
+          syncMode: 'tarball',
+          installedRevision: 'b'.repeat(40),
+        }],
+        disabledSkills: [],
+        literatureDirs: [],
+        pinnedProjects: [],
+      }), 'utf8');
+      const isolated = new SkillSourceManager({ dataRoot });
+      let presets = (await isolated.status()).presets;
+      assert.equal(presets.find(preset => preset.id === 'scientific-agent-skills').installed, false);
+
+      const state = await isolated.load();
+      assert.equal(await isolated.freeSourceId(state, 'scientific-agent-skills'), 'scientific-agent-skills-official');
+      state.sources.push({
+        id: 'academic-research-skills-official',
+        title: 'Academic Research Skills',
+        kind: 'github',
+        repository: 'Imbad0202/academic-research-skills',
+        branch: 'main',
+        syncMode: 'tarball',
+        installedRevision: 'c'.repeat(40),
+      });
+      await isolated.save(state);
+      presets = (await isolated.status()).presets;
+      assert.equal(presets.find(preset => preset.id === 'academic-research-skills').installed, true);
+      assert.equal(presets.find(preset => preset.id === 'science-superpowers').installed, false);
+    } finally {
+      await rm(home, { recursive: true, force: true });
+    }
+  });
+
+  it('prepends the repository-root path map only for Academic Research Skills', async () => {
+    const home = await mkdtemp(join(tmpdir(), 'dsh-rw-academic-'));
+    try {
+      const dataRoot = join(home, 'workbench');
+      const skillDir = join(dataRoot, 'sources', 'academic-research-skills', 'deep-research');
+      await mkdir(skillDir, { recursive: true });
+      await writeFile(join(skillDir, 'SKILL.md'), `---
+name: deep-research
+description: 深度研究流水线
+---
+# Deep Research
+
+Read shared/references/routing_core.md first.
+`, 'utf8');
+      await writeFile(join(dataRoot, 'state.json'), JSON.stringify({
+        version: 1,
+        sources: [{
+          id: 'academic-research-skills',
+          title: 'Academic Research Skills',
+          kind: 'github',
+          repository: 'Imbad0202/academic-research-skills',
+          branch: 'main',
+          syncMode: 'tarball',
+          installedRevision: 'd'.repeat(40),
+        }],
+        disabledSkills: [],
+        literatureDirs: [],
+        pinnedProjects: [],
+      }), 'utf8');
+      const isolated = new SkillSourceManager({ dataRoot });
+      const status = await isolated.status();
+      const row = status.skills.find(item => item.name === 'deep-research');
+      assert.equal(row.canonicalSourceId, 'academic-research-skills');
+      const provider = createSkillProvider(isolated, { warn() {} }, { session: { id: 's' } }, {
+        hasAny: async () => true,
+        resolveSession: async () => ({ status: 'role', skills: [{ sourceId: 'academic-research-skills', name: 'deep-research' }] }),
+      });
+      const definition = await provider.get((await provider.list())[0]);
+      assert.equal(definition.content.startsWith('本技能来自 Academic Research Skills'), true);
+      assert.equal(definition.content.includes(join(dataRoot, 'sources', 'academic-research-skills')), true);
+      assert.equal(definition.content.includes('# Deep Research'), true);
+      assert.deepEqual(definition.resourceBase, { kind: 'directory', path: skillDir });
+    } finally {
+      await rm(home, { recursive: true, force: true });
+    }
+  });
+});

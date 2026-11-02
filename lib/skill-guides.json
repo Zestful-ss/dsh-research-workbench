@@ -1,0 +1,2669 @@
+{
+  "version": 1,
+  "guides": {
+    "nature-skills/nature-academic-search": {
+      "zh": [
+        "文献检索",
+        "按主题跨来源查找文献、核验引文并制定检索策略。",
+        "查找近五年关于这个课题的综述，并列出来源和 DOI。"
+      ],
+      "en": [
+        "Literature search",
+        "Find papers across sources, verify citations, and plan a search strategy.",
+        "Find recent reviews on this topic and list their sources and DOIs."
+      ]
+    },
+    "nature-skills/nature-citation": {
+      "zh": [
+        "Nature 系列引文",
+        "为论文中的论点寻找并核对 Nature／CNS 系列支撑文献。",
+        "为这段结论寻找 Nature 系列引文，并标明各文献支持哪句话。"
+      ],
+      "en": [
+        "Nature-family citations",
+        "Find and verify Nature or CNS-family references for specific manuscript claims.",
+        "Find Nature-family sources for this paragraph and map each claim to a source."
+      ]
+    },
+    "nature-skills/nature-data": {
+      "zh": [
+        "数据共享与可用性",
+        "整理数据存放、访问和引用方式，起草或审查数据可用性声明；不负责数据清洗。",
+        "检查这篇论文的数据可用性声明，指出缺少哪些访问信息。"
+      ],
+      "en": [
+        "Data availability",
+        "Plan dataset access and citations, or review a data availability statement; this is not data cleaning.",
+        "Review this data availability statement and identify missing access details."
+      ]
+    },
+    "nature-skills/nature-downloader": {
+      "zh": [
+        "获取论文全文",
+        "通过开放获取、机构授权或出版商接口查找论文及补充材料。",
+        "尝试通过开放获取或学校授权获取这篇论文和补充材料。"
+      ],
+      "en": [
+        "Get paper full text",
+        "Find lawful full text and supplements through open access, institutional access, or publisher APIs.",
+        "Look for an open-access or institutionally available copy of this paper and its supplements."
+      ]
+    },
+    "nature-skills/nature-experiment-log": {
+      "zh": [
+        "实验日志整理",
+        "把提供的文字、图片或语音记录整理成结构化实验日志。",
+        "根据这些实验记录整理实验条件、结果和待确认的信息。"
+      ],
+      "en": [
+        "Experiment logs",
+        "Turn supplied text, images, or voice notes into a structured experiment log.",
+        "Organize these notes into experimental conditions, results, and points to confirm."
+      ]
+    },
+    "nature-skills/nature-figure": {
+      "zh": [
+        "论文图表制作",
+        "使用 Python 或 R 制作、修改和检查论文图表，并按投稿要求导出。",
+        "根据这份数据制作多面板论文图，并检查字号与导出格式。"
+      ],
+      "en": [
+        "Scientific figures",
+        "Create, revise, and audit manuscript figures in Python or R, then export them for submission.",
+        "Make a multi-panel figure from these data and check fonts and export formats."
+      ]
+    },
+    "nature-skills/nature-image2ppt": {
+      "zh": [
+        "图片还原为 PPT",
+        "将幻灯片截图、图片或扫描页重建成可编辑的 PowerPoint 元素。",
+        "把这张幻灯片截图还原成可编辑的 PPT。"
+      ],
+      "en": [
+        "Image to editable slides",
+        "Reconstruct a slide image or scanned page as editable PowerPoint objects.",
+        "Rebuild this slide screenshot as an editable PowerPoint slide."
+      ]
+    },
+    "nature-skills/nature-literature-pipeline": {
+      "zh": [
+        "文献整理流程",
+        "串联文献检索、筛选、阅读和归档；定时推送需要额外配置。",
+        "按这个研究方向检索并筛选文献，整理摘要和归档清单。"
+      ],
+      "en": [
+        "Literature workflow",
+        "Combine paper discovery, screening, reading, and archiving; scheduled delivery needs additional setup.",
+        "Find and screen papers on this topic, then organize a digest and archive list."
+      ]
+    },
+    "nature-skills/nature-paper-card": {
+      "zh": [
+        "论文精读卡",
+        "为一篇论文整理研究问题、方法、证据、局限与可借鉴的思路。",
+        "把这篇论文整理成精读卡，重点说明方法、证据和局限。"
+      ],
+      "en": [
+        "Paper reading card",
+        "Make a structured card for one paper covering its question, methods, evidence, limitations, and ideas.",
+        "Create a reading card for this paper, emphasizing its methods, evidence, and limits."
+      ]
+    },
+    "nature-skills/nature-paper-to-patent": {
+      "zh": [
+        "论文转专利草稿",
+        "根据论文和发明材料整理中国发明专利草稿或技术交底书。",
+        "根据这篇论文和发明说明起草中文技术交底书。"
+      ],
+      "en": [
+        "Paper to patent draft",
+        "Use a paper and inventor materials to prepare a Chinese patent draft or technical disclosure.",
+        "Draft a Chinese technical disclosure from this paper and inventor notes."
+      ]
+    },
+    "nature-skills/nature-paper-trans": {
+      "zh": [
+        "论文翻译（PDF）",
+        "将英文论文的全文或指定页翻译为尽量保留版式的中文图片型 PDF，需要图像生成能力。",
+        "把这篇英文论文的第 1 至 5 页翻译为中文 PDF，保留图表和公式。"
+      ],
+      "en": [
+        "Translate a paper PDF",
+        "Translate selected pages or an English paper into a layout-preserving Chinese image PDF; image generation is required.",
+        "Translate pages 1–5 of this paper into a Chinese PDF while preserving figures and equations."
+      ]
+    },
+    "nature-skills/nature-paper-xray": {
+      "zh": [
+        "论文深度拆解",
+        "围绕一篇论文拆解研究思路、关键设计、公式和证据边界。",
+        "讲透这篇论文为什么这样设计，并用小例子解释关键公式。"
+      ],
+      "en": [
+        "Deep paper analysis",
+        "Reconstruct the reasoning, key design choices, formulas, and evidence limits of one paper.",
+        "Explain why this paper chose its design and illustrate the key formula with a small example."
+      ]
+    },
+    "nature-skills/nature-paper2ppt": {
+      "zh": [
+        "论文汇报 PPT",
+        "根据论文或读书笔记制作中文学术汇报 PPT，可整理原文图片和讲稿备注。",
+        "根据这篇论文制作组会汇报 PPT，包含方法、结果和讲稿备注。"
+      ],
+      "en": [
+        "Paper presentation",
+        "Create a Chinese academic slide deck from a paper or reading notes, with figures and speaker notes.",
+        "Turn this paper into a group-meeting deck with methods, results, and speaker notes."
+      ]
+    },
+    "nature-skills/nature-paper2word": {
+      "zh": [
+        "论文排版为 Word",
+        "将 Markdown 论文排版为 Word，支持公式、表格和参考文献；需要 md-to-word 工具。",
+        "把这份 Markdown 论文按目标期刊要求导出为 Word。"
+      ],
+      "en": [
+        "Manuscript to Word",
+        "Format a Markdown manuscript as Word with equations, tables, and references; the md-to-word tool is required.",
+        "Export this Markdown manuscript to Word using the target journal format."
+      ]
+    },
+    "nature-skills/nature-polishing": {
+      "zh": [
+        "论文润色与翻译",
+        "润色、翻译或精简已有学术文本，保留原有事实和术语。",
+        "润色这段英文论文，保持原意并统一术语。"
+      ],
+      "en": [
+        "Polish and translate",
+        "Polish, translate, or shorten existing academic text while preserving facts and terminology.",
+        "Polish this manuscript paragraph without changing its meaning."
+      ]
+    },
+    "nature-skills/researchwrite": {
+      "zh": [
+        "研究计划与开题",
+        "基于已有证据起草、修改或审查研究计划、开题报告和项目申请。",
+        "根据这些文献和研究目标，梳理开题报告的研究问题与方法。"
+      ],
+      "en": [
+        "Research proposals",
+        "Draft, revise, or audit research plans and proposals using the evidence supplied.",
+        "Use these papers and goals to outline the research questions and methods for a proposal."
+      ]
+    },
+    "nature-skills/nature-reader": {
+      "zh": [
+        "论文对照阅读",
+        "围绕原文阅读论文，可整理中英文对照、图表、公式和指定问题。",
+        "阅读这篇论文的结果部分，结合原文和图表解释主要发现。"
+      ],
+      "en": [
+        "Source-grounded paper reader",
+        "Read a paper with source-linked text, figures, equations, or Chinese–English comparisons.",
+        "Explain the results section using the source text and figures."
+      ]
+    },
+    "nature-skills/nature-ref-verifier": {
+      "zh": [
+        "参考文献核验",
+        "逐条核对参考文献的作者、标题、年份和 DOI，标记不一致。",
+        "核对这份参考文献表，标出作者、年份或 DOI 有疑问的条目。"
+      ],
+      "en": [
+        "Reference verification",
+        "Cross-check reference authors, titles, years, and DOIs and flag inconsistencies.",
+        "Check this bibliography and flag entries with questionable authors, years, or DOIs."
+      ]
+    },
+    "nature-skills/nature-response": {
+      "zh": [
+        "审稿意见回复",
+        "根据审稿意见和修改内容起草或检查逐条回复、返修信和修订说明。",
+        "根据审稿意见和我的修改记录，起草逐条回复。"
+      ],
+      "en": [
+        "Reviewer responses",
+        "Draft or audit point-by-point replies, revision letters, and manuscript revision notes.",
+        "Draft a point-by-point reply using these reviewer comments and my revision notes."
+      ]
+    },
+    "nature-skills/nature-reviewer": {
+      "zh": [
+        "投稿前模拟审稿",
+        "从审稿人视角检查稿件的意义、方法、证据和主要问题。",
+        "模拟审稿这篇稿件，区分主要问题与次要问题。"
+      ],
+      "en": [
+        "Mock peer review",
+        "Review a manuscript from a referee perspective, covering significance, methods, evidence, and concerns.",
+        "Review this manuscript and separate major concerns from minor ones."
+      ]
+    },
+    "nature-skills/nature-social-science": {
+      "zh": [
+        "社科选题与论证",
+        "帮助社会科学及相邻学科梳理选题、文献、证据路线和论文论证。",
+        "把这个宽泛的社科兴趣整理成研究问题，并分析可行性。"
+      ],
+      "en": [
+        "Social-science research design",
+        "Develop topics, literature maps, evidence plans, and arguments for social science and related fields.",
+        "Turn this broad social-science interest into research questions and assess feasibility."
+      ]
+    },
+    "nature-skills/nature-statistics": {
+      "zh": [
+        "统计报告审查",
+        "检查统计方法、实验单位、重复次数和图注；提供数据并明确要求时可辅助重新分析。",
+        "检查论文方法和图注中的样本量、统计检验及不确定性说明。"
+      ],
+      "en": [
+        "Statistical reporting review",
+        "Check statistical methods, experimental units, replication, and figure legends; reanalysis requires data and a request.",
+        "Review the sample sizes, statistical tests, and uncertainty reported in these methods and figures."
+      ]
+    },
+    "nature-skills/nature-writing": {
+      "zh": [
+        "论文写作与论证",
+        "根据作者提供的证据起草或重组论文段落、章节及首次投稿材料。",
+        "根据这些结果和文献，起草结果段落并标出需要补充的证据。"
+      ],
+      "en": [
+        "Manuscript writing",
+        "Draft or restructure manuscript sections and initial submission materials from supplied evidence.",
+        "Draft a results section from these findings and mark claims needing more evidence."
+      ]
+    },
+    "figures4papers/scientific-figure-making": {
+      "zh": [
+        "Matplotlib 发表图",
+        "使用 Matplotlib 制作适合论文和报告的图表，包含多面板与矢量导出。",
+        "用这份数据制作可投稿的 Matplotlib 图，并导出矢量文件。"
+      ],
+      "en": [
+        "Publication figures with Matplotlib",
+        "Create paper and report figures with Matplotlib, including multi-panel layouts and vector export.",
+        "Make a publication-ready Matplotlib figure from these data and export it as a vector file."
+      ]
+    },
+    "academic-research-skills/academic-paper": {
+      "zh": [
+        "学术论文写作",
+        "12 代理论文写作管线，含 11 种模式：全文、大纲、修改、摘要、引用核查、格式转换等；LaTeX/DOCX 输出需 Pandoc。",
+        "帮我写一篇关于人工智能对高等教育质量保障影响的论文"
+      ],
+      "en": [
+        "Academic Paper Writing",
+        "A 12-agent paper-writing pipeline with 11 modes from full drafting to revision, citation checks, and format conversion; DOCX/PDF output needs Pandoc.",
+        "Write a paper on the impact of AI on higher education quality assurance"
+      ]
+    },
+    "academic-research-skills/academic-paper-reviewer": {
+      "zh": [
+        "模拟同行评审",
+        "五席位多视角评审面板（期刊契合加三类评审与唱反调者），支持完整评审、复审、速评、方法聚焦与校准模式。",
+        "以审稿人角度完整评审我这篇论文并给出修改路线图"
+      ],
+      "en": [
+        "Simulated Peer Review Panel",
+        "A five-seat review panel (journal fit, three peer roles, devil's advocate) producing reports plus an editorial decision; modes include re-review and calibration.",
+        "Give my manuscript a full simulated peer review with a revision roadmap"
+      ]
+    },
+    "academic-research-skills/academic-pipeline": {
+      "zh": [
+        "全流程论文管线",
+        "编排研究到成稿的十阶段流程，调度 deep-research、academic-paper、academic-paper-reviewer，含诚信核查与两段评审；本身不做实质工作。",
+        "从选题到成稿走完整管线：先研究再写作、诚信核查和两轮评审"
+      ],
+      "en": [
+        "End-to-End Paper Pipeline",
+        "Orchestrates a 10-stage research-to-manuscript workflow dispatching deep-research, academic-paper, and reviewer skills with integrity checks; does no substantive work itself.",
+        "Run the full pipeline from my research topic to a reviewed final manuscript"
+      ]
+    },
+    "academic-research-skills/deep-research": {
+      "zh": [
+        "深度学术研究",
+        "13 代理深度研究管线，8 种模式含文献综述、事实核查、系统综述与 Meta 分析、苏格拉底式引导，产出 APA 报告。",
+        "对少子化对私立大学经营策略的影响做一次系统文献研究"
+      ],
+      "en": [
+        "Deep Academic Research",
+        "A 13-agent research team with 8 modes including literature review, fact-check, systematic review with meta-analysis, and Socratic guidance; outputs APA 7.0 reports.",
+        "Do deep research on declining birth rates and private university strategy"
+      ]
+    },
+    "academic-research-skills/sr-screener": {
+      "zh": [
+        "综述文献筛选",
+        "按方案把数据库导出文献做双人盲筛加第三人裁决，产出 PRISMA 计数与语料交接；脚本需 Python 3.9+，Excel 日志需 openpyxl。",
+        "按我的纳排标准筛选这批 EndNote 导出的题录并出 PRISMA 流程数"
+      ],
+      "en": [
+        "Systematic Review Screening",
+        "Protocol-driven dual-reviewer screening of RIS/PubMed/CSV records with adjudication and PRISMA 2020 counts; Python 3.9+ scripts, openpyxl optional for Excel log.",
+        "Screen my EndNote export against the eligibility criteria with a pilot first"
+      ]
+    },
+    "science-superpowers/designing-the-analysis": {
+      "zh": [
+        "设计分析方案",
+        "在已批准的研究问题基础上编写完整分析计划：数据流、混杂处理、功效与样本量、逐步执行与验证，需在碰结果数据前完成。",
+        "帮我为已批准的研究问题写一份可预注册的分析计划"
+      ],
+      "en": [
+        "Design the Analysis Plan",
+        "Turns an approved research question into a concrete analysis plan covering data flow, confounds, power, and bite-sized validated steps, before any outcome data or model fitting.",
+        "Write a pre-registrable analysis plan for my approved research question"
+      ]
+    },
+    "science-superpowers/dispatching-parallel-investigations": {
+      "zh": [
+        "并行派遣调查",
+        "把互不依赖的调查（子主题文献、多数据集复现、预设稳健性检验）分给独立子代理并行执行再综合；禁止用并行挑选显著结果。",
+        "把文献综述的三个子主题分别派给并行子代理调查"
+      ],
+      "en": [
+        "Dispatch Parallel Investigations",
+        "Delegates independent investigations to isolated subagents run in parallel, then synthesizes; requires investigations be independent and pre-specified or fully reported.",
+        "Split my literature survey into three parallel subagent investigations"
+      ]
+    },
+    "science-superpowers/establishing-feasibility-first": {
+      "zh": [
+        "先证可行性",
+        "在算力、管线能否跑通尚未知时，先跑最小端到端运行器和扩展探针再决定后续研究；需用户明确选择进入此模式。",
+        "这个仿真流程从没在集群上跑过，先验证可行性再谈研究设计"
+      ],
+      "en": [
+        "Establish Feasibility First",
+        "When whether the computation can run at all is unknown, runs a minimal end-to-end runner and scaling probes before research planning; opt-in only by the user.",
+        "This pipeline has never run on the cluster; verify feasibility before study design"
+      ]
+    },
+    "science-superpowers/executing-analysis": {
+      "zh": [
+        "执行已注册分析",
+        "在无子代理的会话中逐步执行已冻结的预注册分析计划，带验证与检查点，遇异常须停下调查而非擅自调整。",
+        "按预注册计划在当前会话里执行我的分析并汇报结果"
+      ],
+      "en": [
+        "Execute a Registered Analysis",
+        "Executes a frozen pre-registered plan inline in one session with validations and checkpoints; requires prior pre-registration and workspace setup.",
+        "Run my pre-registered analysis plan step by step in this session"
+      ]
+    },
+    "science-superpowers/framing-research-questions": {
+      "zh": [
+        "界定研究问题",
+        "在任何数据分析前，通过对话把模糊兴趣打磨成可证伪的问题、假设和判定标准，获批准后才允许碰结果数据。",
+        "帮我把对这个数据集的模糊想法变成可检验的研究问题"
+      ],
+      "en": [
+        "Frame Research Questions",
+        "Turns a fuzzy research interest into a falsifiable question with hypotheses and answer criteria through dialogue; mandatory before touching outcome data.",
+        "Help me turn my vague idea about this dataset into a testable question"
+      ]
+    },
+    "science-superpowers/investigating-anomalous-results": {
+      "zh": [
+        "追查异常结果",
+        "结果反常、管线报错或复现失败时，先定位根因（代码、数据还是真发现）再做任何调整，禁止悄悄删数据或调参。",
+        "模型不收敛且结果好得离谱，帮我查清根因再决定怎么办"
+      ],
+      "en": [
+        "Investigate Anomalous Results",
+        "Requires root-cause investigation of surprising results, pipeline failures, or failed replications before any adjustment; forbids silently dropping data or tweaking parameters.",
+        "My model will not converge and results look too good; find the root cause first"
+      ]
+    },
+    "science-superpowers/preregistering-analysis": {
+      "zh": [
+        "预注册分析",
+        "在看结果数据前写下并冻结假设、方向性预测、精确分析和决策规则；看过结果后再做的分析只能算探索性。",
+        "在开始检验假设前帮我预注册这次分析的预测和决策规则"
+      ],
+      "en": [
+        "Pre-Register the Analysis",
+        "Writes and freezes hypotheses, predictions, exact analysis, and decision rules before seeing outcomes; required before any confirmatory claim.",
+        "Pre-register my hypotheses and decision rules before I run this test"
+      ]
+    },
+    "science-superpowers/receiving-critical-review": {
+      "zh": [
+        "应对批评性评审",
+        "收到对分析或稿件的批评时，先核实意见是否对本分析成立，再逐条技术回应或据理反驳，而非盲目照改或敷衍同意。",
+        "审稿人质疑我的混杂控制，帮我核实意见并起草回应"
+      ],
+      "en": [
+        "Receive Critical Review",
+        "Guides verified, technical responses to critical feedback on analyses or manuscripts: check each concern against data and pre-registration before changing anything.",
+        "A reviewer questioned my confound controls; verify and draft a response"
+      ]
+    },
+    "science-superpowers/reporting-and-archiving-findings": {
+      "zh": [
+        "报告归档发现",
+        "分析完成并验证后，确认全流程可复现，区分确认性与探索性结果，选择报告形式并归档代码、数据、环境与预注册记录。",
+        "分析做完了，帮我确认可复现并整理报告与归档材料"
+      ],
+      "en": [
+        "Report and Archive Findings",
+        "Finishes an investigation by confirming end-to-end reproducibility, separating confirmatory from exploratory results, and archiving code, data, environment, and pre-registration.",
+        "Confirm my analysis reproduces and prepare the report and archive"
+      ]
+    },
+    "science-superpowers/requesting-red-team-review": {
+      "zh": [
+        "请求红队评审",
+        "在相信或报告结论前，派一个持怀疑态度的评审子代理专门攻击结论；需要子代理能力并提供限定的工作范围。",
+        "在写报告前让一个挑剔的评审子代理攻击我的结论"
+      ],
+      "en": [
+        "Request Red-Team Review",
+        "Dispatches a skeptical reviewer subagent to attack a conclusion before it is believed or reported; needs subagent support and git-bounded work.",
+        "Have a hostile reviewer subagent attack my finding before I report it"
+      ]
+    },
+    "science-superpowers/setting-up-reproducible-analysis": {
+      "zh": [
+        "搭建可复现环境",
+        "在跑分析前建立隔离可复现的工作区：独立 git 工作树、固定环境、固定种子、原始数据只读。",
+        "开始前帮我搭一个隔离、环境固定、数据只读的分析工作区"
+      ],
+      "en": [
+        "Set Up Reproducible Analysis",
+        "Creates an isolated reproducible workspace with git worktrees, pinned environment, fixed seeds, and immutable raw data before running anything.",
+        "Set up an isolated reproducible workspace for my analysis"
+      ]
+    },
+    "science-superpowers/subagent-driven-analysis": {
+      "zh": [
+        "子代理执行分析",
+        "为预注册计划的每一步派新子代理执行，每步后做协议合规与统计严谨两道评审；需子代理能力和已冻结的计划。",
+        "用子代理逐步执行我冻结的分析计划，每步都过两道评审"
+      ],
+      "en": [
+        "Subagent-Driven Analysis",
+        "Runs a frozen pre-registered plan by dispatching a fresh subagent per step with protocol-compliance then statistical-rigor review; requires subagent support.",
+        "Execute my frozen analysis plan with a fresh subagent per step"
+      ]
+    },
+    "science-superpowers/surveying-prior-work": {
+      "zh": [
+        "调研既有工作",
+        "在设计分析前调研该问题的成熟方法、已知混杂与伪影、先验效应量和与既有工作的关系，供功效计算和方法选型用。",
+        "这个领域公认的分析方法和已知混杂是什么？帮我调研"
+      ],
+      "en": [
+        "Survey Prior Work",
+        "Surveys established methods, known confounds, prior effect sizes, and novelty position before designing an analysis; feeds power calculation and method choice.",
+        "Survey standard methods and known confounds for my research question"
+      ]
+    },
+    "science-superpowers/using-science-superpowers": {
+      "zh": [
+        "使用本技能库",
+        "会话起始元技能：强制在任何回答前先查找并调用适用的 Science Superpowers 技能，确立流程纪律与指令优先级。",
+        "开始一个数据分析任务，先检查该走哪套科研流程"
+      ],
+      "en": [
+        "Use Science Superpowers",
+        "Entry-point skill that mandates invoking applicable Science Superpowers skills before any response, establishing workflow discipline and instruction priority.",
+        "I am starting a data analysis; check which research workflow applies first"
+      ]
+    },
+    "science-superpowers/verifying-results-before-claiming": {
+      "zh": [
+        "先验证再宣称",
+        "宣称任何结果或复现成功前，必须从原始数据、固定种子重新完整跑出并读真实输出，确认假设成立后才下结论。",
+        "在我写结论前，重新跑一遍分析验证这个结果确实成立"
+      ],
+      "en": [
+        "Verify Before Claiming",
+        "Requires re-running the analysis fresh from immutable raw data and reading actual output before claiming any result, effect, or reproducibility.",
+        "Re-run the analysis fresh to verify my headline result before I write it up"
+      ]
+    },
+    "science-superpowers/writing-science-skills": {
+      "zh": [
+        "编写科研技能",
+        "把写新技能当作实验：先观察无技能时代理的失败基线，再编写并验证行为改变，用于创建或修改科研流程技能。",
+        "帮我按实验方法写一个新的科研流程技能并验证它有效"
+      ],
+      "en": [
+        "Write Science Skills",
+        "Treats skill authoring as an experiment: observe baseline agent failure, write the skill, verify behavior changes; for creating or vetting skills.",
+        "Help me author a new research-workflow skill and verify it changes behavior"
+      ]
+    },
+    "scientific-agent-skills/13c-metabolic-flux": {
+      "zh": [
+        "碳13代谢通量",
+        "用 mfapy 对稳态碳13标记数据做 EMU 前向模拟与多重起点拟合，估计胞内代谢通量并检查可辨识性；需 Python 3.12 装固定依赖，本地运行。",
+        "用碳13代谢通量技能拟合我的稳态示踪实验数据，给出 v3 和 v7 反应的通量区间。"
+      ],
+      "en": [
+        "Carbon-13 Metabolic Flux Analysis",
+        "Estimates intracellular metabolic fluxes from steady-state carbon-13 labeling data using the bundled mfapy EMU simulator with multistart fitting and flux-profile identifiability checks; runs locally in a pinned Python 3.12 environment.",
+        "Fit my steady-state 13C tracer dataset and report flux-profile intervals for reactions v3 and v7."
+      ]
+    },
+    "scientific-agent-skills/adaptyv": {
+      "zh": [
+        "Adaptyv蛋白表征",
+        "通过 Adaptyv Bio Foundry API 设计蛋白表征实验、估算费用、提交序列并跟踪云端实验室进度与结果；需要 Foundry 账户、Bearer 令牌和网络访问。",
+        "用我的蛋白变体序列在 Adaptyv Foundry 上起草一个 BLI 亲和力实验并给出报价。"
+      ],
+      "en": [
+        "Adaptyv Foundry Protein Assays",
+        "Designs protein characterization experiments on the Adaptyv Bio Foundry cloud lab, covering cost estimates, sequence submission, monitoring, and result retrieval; requires a Foundry account, bearer token, and network access.",
+        "Draft a BLI affinity experiment for my protein variants on Adaptyv Foundry and show the cost estimate and quote."
+      ]
+    },
+    "scientific-agent-skills/aeon": {
+      "zh": [
+        "aeon时间序列",
+        "用 aeon 做时间序列分类、回归、聚类、预测、异常检测、分段与相似性搜索，API 兼容 scikit-learn；需 Python 3.11-3.14 装 aeon 1.6.0。",
+        "用 aeon 比较多通道传感器时间序列的分类器，按实验分组划分数据避免泄漏。"
+      ],
+      "en": [
+        "Aeon Time Series Machine Learning",
+        "Applies the scikit-learn-compatible aeon toolkit to time series classification, regression, clustering, forecasting, anomaly detection, segmentation, and similarity search in a local Python environment.",
+        "Compare time-series classifiers for my multichannel sensor recordings, keeping series from the same experiment together in the splits."
+      ]
+    },
+    "scientific-agent-skills/alphagenome": {
+      "zh": [
+        "基因变异效应预测",
+        "查询 AlphaGenome Atlas 预计算的 GRCh38 单核苷酸变异影响评分与归因，或按需用模型预测变异和窗口的分子效应；需免费非商用 API 密钥与网络访问。",
+        "用 AlphaGenome 查这几个 GRCh38 变异的 Atlas 排名，并看肺组织里哪些特征驱动了评分。"
+      ],
+      "en": [
+        "AlphaGenome Variant Effect Lookup",
+        "Ranks human GRCh38 variants with the precomputed AlphaGenome Atlas AVI scores and feature attributions or scores variants and windows on demand; requires a free non-commercial API key and network access.",
+        "Retrieve AlphaGenome Atlas rankings for these GRCh38 variants and show which features drive the scores in lung tissue."
+      ]
+    },
+    "scientific-agent-skills/analytical-method-validation": {
+      "zh": [
+        "分析方法验证",
+        "按 ICH Q2(R2)、USP、ICH M10、CLSI 等框架规划并计算分析方法验证与转移研究的统计量；脚本仅用 Python 标准库，本地运行无需联网。",
+        "帮我按 ICH Q2(R2) 规划一个 LC-MS 方法验证，先定验收标准再计算重复性和中间精密度。"
+      ],
+      "en": [
+        "Analytical Method Validation",
+        "Plans and computes validation, verification, and transfer statistics for analytical procedures under frameworks like ICH Q2(R2), USP, and ICH M10 using local Python standard-library scripts.",
+        "Plan an ICH Q2(R2) validation for my LC-MS assay and compute repeatability and intermediate precision against pre-stated criteria."
+      ]
+    },
+    "scientific-agent-skills/anndata": {
+      "zh": [
+        "AnnData注释矩阵",
+        "创建、读写、合并和子集化 AnnData 注释矩阵及 h5ad、Zarr 文件，是 scverse 单细胞生态的数据层；需 Python 3.12+，网络仅用于安装。",
+        "把这几个单细胞数据集合并成一个 AnnData 对象，保留原始计数和批次信息并保存为 h5ad。"
+      ],
+      "en": [
+        "AnnData Annotated Matrices",
+        "Creates, reads, combines, and subsets AnnData annotated matrices in h5ad and Zarr formats as the data layer of the scverse single-cell ecosystem; needs Python 3.12+ and the anndata package.",
+        "Combine these single-cell datasets into one AnnData object, preserving raw counts and batch metadata, then save and verify an h5ad file."
+      ]
+    },
+    "scientific-agent-skills/arbor": {
+      "zh": [
+        "Arbor假设树优化",
+        "用 Arbor 假设树精化法组织多轮自主优化实验，含持久假设树、隔离 git worktree 和留出测试门槛；需 Python 3.10+ 与 Git。",
+        "用 Arbor 在固定算力预算下改进这个模型训练实验：先建立基线，再在隔离 worktree 中并行测试假设。"
+      ],
+      "en": [
+        "Arbor Hypothesis Tree Optimization",
+        "Runs Arbor's hypothesis-tree-refinement loop for autonomous artifact optimization with persistent hypotheses, isolated git worktree experiments, and a held-out merge gate; needs Python 3.10+, Git, and credentials for model calls.",
+        "Use Arbor to improve this model-training experiment within a fixed compute budget, testing hypotheses in isolated worktrees against a held-out evaluator."
+      ]
+    },
+    "scientific-agent-skills/arboreto": {
+      "zh": [
+        "Arboreto调控网络",
+        "用 GRNBoost2 和 GENIE3 从 bulk 或单细胞表达数据推断候选基因调控网络并排序；需指定的 Python 3.11 兼容依赖栈，推断本地运行。",
+        "用 Arboreto 对这个细胞群体的表达矩阵跑 GRNBoost2，按给定转录因子列表推断候选调控关系并评估跨种子稳定性。"
+      ],
+      "en": [
+        "Arboreto Regulatory Network Inference",
+        "Infers candidate gene regulatory networks from bulk or single-cell expression with Arboreto's GRNBoost2 and GENIE3, requiring a pinned Python 3.11 compatibility stack with Dask; inference runs locally.",
+        "Run GRNBoost2 on this expression matrix with my transcription-factor list and assess edge stability across seeds and resampled cells."
+      ]
+    },
+    "scientific-agent-skills/astropy": {
+      "zh": [
+        "Astropy天文计算",
+        "用 Astropy 处理天文单位、坐标变换、FITS 文件、表格、时间系统、WCS 与宇宙学计算；需 Python 3.11+，天体名解析等需联网。",
+        "用 Astropy 把两个坐标系不同的源表交叉匹配，统一单位和历元后报告匹配角距。"
+      ],
+      "en": [
+        "Astropy Astronomy Workflows",
+        "Covers Astropy units, coordinates, FITS I/O, tables, time scales, WCS, and cosmology for astronomy code on Python 3.11+; object-name resolution and remote data features need network access.",
+        "Cross-match two source catalogs with different coordinate conventions using Astropy and report match separations with a justified radius."
+      ]
+    },
+    "scientific-agent-skills/autoskill": {
+      "zh": [
+        "技能自动挖掘",
+        "分析指定时段的 Screenpipe 记录，聚类重复科研工作流并起草新技能或组合提案；需本地 Screenpipe 守护进程及 LM Studio 或云端 LLM。",
+        "分析我上周的 Screenpipe 记录，先做 dry run 看聚类，再用本地模型为重复工作流起草技能提案。"
+      ],
+      "en": [
+        "Autoskill Workflow Mining",
+        "Analyzes user-requested Screenpipe history windows to cluster repeated research workflows and stage skill drafts or composition recipes; needs a running local Screenpipe daemon plus LM Studio or an opt-in cloud LLM.",
+        "Analyze last week's Screenpipe history with a dry run first, then draft skill proposals for the repeated workflows using my local model."
+      ]
+    },
+    "scientific-agent-skills/benchling-integration": {
+      "zh": [
+        "Benchling集成",
+        "用 benchling-sdk 和 v2 API 自动化 Benchling 注册实体、序列导入、库存、ELN 与工作流；需租户 API 密钥或 OAuth 凭据及网络。",
+        "用 Benchling SDK 把这个 FASTA 文件的序列批量导入我的租户注册表并保留外部 ID 映射。"
+      ],
+      "en": [
+        "Benchling Lab Data Integration",
+        "Automates Benchling registry entities, sequence imports, inventory, ELN entries, workflows, and warehouse queries via benchling-sdk and the v2 REST API; requires a tenant with API access plus API key or OAuth credentials.",
+        "Import the sequences in this FASTA file into my Benchling tenant's registry, preserving external IDs for reconciliation."
+      ]
+    },
+    "scientific-agent-skills/bgpt-paper-search": {
+      "zh": [
+        "BGPT论文证据检索",
+        "通过 BGPT 远程 MCP 服务按主题或 DOI 检索论文，返回全文提取的声明级证据、实验、统计量和出处；需在宿主配置 BGPT MCP 连接，付费用量需 API 密钥。",
+        "用 BGPT 检索 CRISPR 神经元递送的近期原始研究，汇总每篇论文的实验证据单元和出处。"
+      ],
+      "en": [
+        "BGPT Paper Evidence Search",
+        "Searches BGPT by topic or DOI for claim-level evidence extracted from full text, including experiments, statistics, scope, and provenance, via a configured remote BGPT MCP connection; paid tiers need an API key.",
+        "Search BGPT for recent primary studies on CRISPR delivery in neurons and tabulate each paper's evidence units with provenance."
+      ]
+    },
+    "scientific-agent-skills/bids": {
+      "zh": [
+        "BIDS脑数据组织",
+        "按 BIDS 标准组织、查询、校验和转换神经科学数据集，覆盖 MRI、EEG、PET 等模态；用 PyBIDS 与验证器，DICOM 转换需 dcm2niix。",
+        "把这批 DICOM 扫描数据转换成 BIDS 结构，写好 dataset_description.json 并跑验证器检查合规性。"
+      ],
+      "en": [
+        "BIDS Neuroimaging Data Organization",
+        "Organizes, queries, validates, and converts Brain Imaging Data Structure datasets across MRI, EEG, PET, and other modalities with PyBIDS and the bids-validator; DICOM conversion needs external tools like dcm2niix.",
+        "Convert these DICOM scans to BIDS, write the dataset_description.json, and run the validator to check compliance."
+      ]
+    },
+    "scientific-agent-skills/biopython": {
+      "zh": [
+        "Biopython工具",
+        "用 Biopython 做序列操作、FASTA/GenBank/PDB 解析、比对、系统发育与 NCBI Entrez 检索；Entrez 需邮箱，BLAST 等需外部程序。",
+        "用 Biopython 批量解析这个 GenBank 文件，提取 CDS 翻译并通过 Entrez 拉取对应 PubMed 记录。"
+      ],
+      "en": [
+        "Biopython Molecular Biology",
+        "Provides Biopython workflows for sequence manipulation, FASTA/GenBank/PDB parsing, alignments, phylogenetics, and NCBI Entrez access; Entrez requires a contact email and local tools like BLAST need separate executables.",
+        "Parse this GenBank file with Biopython, extract CDS translations, and fetch the linked PubMed records through Entrez."
+      ]
+    },
+    "scientific-agent-skills/bioservices": {
+      "zh": [
+        "生物数据库整合",
+        "用 bioservices 访问 UniProt、KEGG、ChEMBL、UniChem 等服务做蛋白注释、通路检索与标识映射；需联网，EBI BLAST 需邮箱。",
+        "用 bioservices 把这组 UniProt 编号映射到 KEGG，并拉出对应通路和 GO 注释。"
+      ],
+      "en": [
+        "BioServices Database Access",
+        "Provides a Python interface to UniProt, KEGG, ChEMBL, Reactome, QuickGO, and UniChem for cross-database protein annotation, pathway retrieval, and chemical identifier mapping; needs internet access and a contact email for EBI BLAST.",
+        "Map this list of UniProt accessions to KEGG pathways and retrieve their GO annotations with bioservices."
+      ]
+    },
+    "scientific-agent-skills/bulk-rnaseq": {
+      "zh": [
+        "bulk转录组计数",
+        "把 bulk RNA-seq 的 FASTQ 或 Salmon/STAR 定量结果整理成可复现的基因计数矩阵，支持 nf-core 或独立流程，对接 PyDESeq2。",
+        "把这些 Salmon 定量结果组装成带样本顺序和来源信息的计数矩阵，准备好交给 PyDESeq2 做差异分析。"
+      ],
+      "en": [
+        "Bulk RNA-seq Count Preparation",
+        "Prepares bulk RNA-seq FASTQ or Salmon/STAR/featureCounts outputs into a reproducible gene-level counts matrix via nf-core/rnaseq or standalone quantification, handing off to PyDESeq2; upstream processing needs Nextflow or local bioinformatics tools.",
+        "Assemble these Salmon quantifications into a counts matrix with explicit sample order and provenance for a PyDESeq2 analysis."
+      ]
+    },
+    "scientific-agent-skills/cantera": {
+      "zh": [
+        "Cantera点火延迟",
+        "用 Cantera 3.2 模拟定容或定压封闭绝热均相理想气体反应器，按精确定义计算点火延迟并做守恒和数值细化检查；本地运行无需凭据，自定义机理需 Cantera YAML 文件。",
+        "用 Cantera 算这个机理在 1000 K、1 atm 下氢氧氩混合物的定容点火延迟，并验证数值收敛。"
+      ],
+      "en": [
+        "Cantera Ignition Delay Simulation",
+        "Runs Cantera homogeneous closed adiabatic ideal-gas reactors at constant volume or pressure with a defined ignition-delay measure plus conservation and refinement checks; custom mechanisms must be Cantera YAML files.",
+        "Compute the constant-volume ignition delay for a hydrogen-oxygen-argon mixture at 1000 K and 1 atm with this mechanism and verify numerical resolution."
+      ]
+    },
+    "scientific-agent-skills/cellprofiler": {
+      "zh": [
+        "荧光核图像定量",
+        "用 CellProfiler 4.2.8 无头批处理做二维荧光图像的核分割、计数与逐对象荧光测量；限单通道灰度 TIFF，需另装应用或容器。",
+        "用 CellProfiler 流程对这批 DAPI TIFF 图像做核分割计数，先看分割叠加图质控再跑整个批次。"
+      ],
+      "en": [
+        "CellProfiler Nuclear Quantification",
+        "Runs reproducible headless CellProfiler 4.2.8 pipelines for nuclear segmentation, counts, and per-object fluorescence measurements on 2D grayscale TIFFs; segmentation requires a separately installed CellProfiler application or container.",
+        "Segment and count nuclei in this batch of DAPI TIFFs with CellProfiler, reviewing overlay QC before running the full plate."
+      ]
+    },
+    "scientific-agent-skills/cellxgene-census": {
+      "zh": [
+        "CELLxGENE普查",
+        "查询 CELLxGENE Census 版本化公共单细胞与空间数据，按组织、疾病等取表达切片；需 Linux/macOS、Python 3.10+ 与网络。",
+        "在固定的 Census 版本中查询人脑组织的 B 细胞，估算规模后取出指定基因的表达切片。"
+      ],
+      "en": [
+        "CELLxGENE Census Queries",
+        "Queries versioned public single-cell and spatial transcriptomics data in the CZ CELLxGENE Census by organism, tissue, disease, and cell type without downloading whole studies; needs Linux or macOS, Python 3.10+, and network access.",
+        "Query B cells in human brain tissue on the pinned Census release, estimate the slice size, then pull expression for my gene list."
+      ]
+    },
+    "scientific-agent-skills/cirq": {
+      "zh": [
+        "Cirq量子线路",
+        "用 Google Cirq 设计、模拟和变换量子线路，含噪声建模与面向硬件的编译；本地需 Cirq 1.7.0，云端执行需提供商凭据。",
+        "用 Cirq 搭建这个参数化线路做含噪模拟，再编译到目标硬件门集并扫描参数。"
+      ],
+      "en": [
+        "Cirq Quantum Circuits",
+        "Builds, simulates, and transforms quantum circuits with Google's Cirq, including noise modeling, parameter sweeps, and hardware-oriented compilation for Google Quantum AI and partner backends; cloud execution needs provider credentials.",
+        "Simulate this parameterized circuit with a noise model in Cirq, then compile it to the target hardware gateset and sweep the parameters."
+      ]
+    },
+    "scientific-agent-skills/citation-management": {
+      "zh": [
+        "文献引用管理",
+        "检索OpenAlex、PubMed、Scholar，提取元数据、去重并生成规范BibTeX，适合论文建参考文献；需Python的requests并联网，Scholar易受限。",
+        "帮我把这十几个DOI转成BibTeX并校验卷期页是否齐全"
+      ],
+      "en": [
+        "Citation Management",
+        "Searches OpenAlex, PubMed, and Google Scholar, extracts metadata, deduplicates, and generates validated BibTeX for bibliographies; needs Python with requests and network access (Scholar scraping is rate-limited).",
+        "Convert these DOIs to BibTeX, validate volume and page fields, and search PubMed for highly cited papers on this topic"
+      ]
+    },
+    "scientific-agent-skills/clinical-decision-support": {
+      "zh": [
+        "临床决策评估",
+        "生成研究用临床决策支持文档：GRADE证据概况、聚合队列表、模型性能、生存计划和治理清单；仅用本地脚本，严禁真实诊疗。",
+        "用合成汇总数据为我的模型评估研究生成GRADE证据概况草稿"
+      ],
+      "en": [
+        "Clinical Decision Support",
+        "Produces research-only CDS artifacts — GRADE evidence profiles, aggregate cohort tables, model evaluations, survival plans, and governance checklists — via local Python scripts; never for real patient care.",
+        "Draft a GRADE evidence profile and an aggregate model-performance evaluation for my prediction-model study using synthetic summary data"
+      ]
+    },
+    "scientific-agent-skills/clinical-reports": {
+      "zh": [
+        "临床报告草稿",
+        "生成病例、诊断、试验、CSR和安全性报告的结构草稿并本地校验；只接合成或去标识数据加来源清单，需Python 3.11+，禁用于诊疗递交。",
+        "用CARE模板生成病例报告草稿并检查必填字段是否完整"
+      ],
+      "en": [
+        "Clinical Report Drafting",
+        "Creates safety-bounded draft structures for case reports (CARE), trial reports (CONSORT/SPIRIT/ICH E3), and aggregate safety tables with local checks; only synthetic, de-identified, or aggregate inputs — never for real care or submission.",
+        "Generate a CARE case-report draft template and run the structural checker to flag missing required fields"
+      ]
+    },
+    "scientific-agent-skills/cobrapy": {
+      "zh": [
+        "代谢通量建模",
+        "用COBRApy做约束代谢建模：FBA、FVA、基因敲除、通量采样、培养基和生产包络分析；需Python 3.9+与cobra包及求解器，远程模型需联网。",
+        "加载textbook代谢模型跑FBA和FVA，筛选让乙酸产量最大的敲除"
+      ],
+      "en": [
+        "COBRApy Metabolic Modeling",
+        "Runs constraint-based metabolic modeling with COBRApy — FBA, pFBA, FVA, gene knockouts, flux sampling, media design, and SBML validation; requires Python 3.9+ with the cobra package and a solver (GLPK via swiglpk), network only for remote model downloads.",
+        "Load the textbook metabolic model, run FBA and flux variability analysis, then screen knockouts that maximize acetate production"
+      ]
+    },
+    "scientific-agent-skills/consciousness-council": {
+      "zh": [
+        "多视角议事会",
+        "在对话中模拟多个思维原型对难题分别发言并综合出条件建议，适合决策权衡与研究取舍；纯提示流程，无外部服务，非真实专家意见。",
+        "开一个快速议事会：经费只够试点或正式实验二选一"
+      ],
+      "en": [
+        "Consciousness Council",
+        "Simulates a council of thinking archetypes (Architect, Contrarian, Empiricist, and more) that deliberate a hard choice and yield a conditional recommendation; prompt-only, no services or real experts.",
+        "Run a quick council: our budget covers either a pilot study or the full experiment — which should we do first?"
+      ]
+    },
+    "scientific-agent-skills/dask": {
+      "zh": [
+        "Dask并行计算",
+        "用Dask把pandas、NumPy工作流扩到超内存数据或集群：DataFrame、Array、Futures与分布式诊断；需dask 2026.8.0，云端另需s3fs。",
+        "200GB Parquet内存放不下，用Dask DataFrame做分组聚合并接集群监控"
+      ],
+      "en": [
+        "Dask Parallel Computing",
+        "Scales pandas, NumPy, and custom Python workflows beyond memory or across clusters via Dask DataFrames, Arrays, Bags, Futures, and distributed diagnostics; needs Python 3.10+, dask 2026.8.0, pandas 2+, and s3fs/gcsfs for cloud paths.",
+        "My 200GB of Parquet files won't fit in memory — build a Dask DataFrame groupby aggregation with a distributed client and dashboard"
+      ]
+    },
+    "scientific-agent-skills/database-lookup": {
+      "zh": [
+        "数据库检索",
+        "按契约调用80个公共科学数据库API（UniProt、PubChem、gnomAD、NASA等），带分页计数与溯源；需联网，部分库需各自API密钥或付费许可。",
+        "从UniProt和Reactome查TP53参与的通路并记录端点供复现"
+      ],
+      "en": [
+        "Database Lookup",
+        "Performs reproducible, auditable lookups across 80 public scientific databases (UniProt, PubChem, gnomAD, ClinicalTrials.gov, NASA) with explicit endpoints and pagination; needs network, and some databases require their own API keys or licenses.",
+        "Retrieve all Reactome pathways involving TP53 from UniProt and Reactome, logging endpoints and page counts so the query is reproducible"
+      ]
+    },
+    "scientific-agent-skills/datalad": {
+      "zh": [
+        "数据版本管理",
+        "用DataLad与git-annex管理大数据集：克隆、按需取回、发布及datalad run溯源；需DataLad 1.6.5、Git、git-annex 10.x。",
+        "克隆OpenNeuro的ds000001并用datalad run记录FSL脑提取流程"
+      ],
+      "en": [
+        "DataLad Data Management",
+        "Versions, fetches, and publishes large datasets with DataLad and git-annex (OpenNeuro, DANDI), and records re-executable provenance via datalad run/rerun; requires DataLad 1.6.5, Git, git-annex 10.x, and optionally Singularity/Docker for containers.",
+        "Clone OpenNeuro dataset ds000001, fetch the T1w image, and record a datalad run for FSL brain extraction so it can be re-executed"
+      ]
+    },
+    "scientific-agent-skills/datamol": {
+      "zh": [
+        "Datamol化学信息",
+        "用datamol（RDKit封装）做SMILES标准化、描述符、指纹、聚类、3D构象与并行批处理；需Python 3.11+和datamol 0.13.0。",
+        "标准化一万条SMILES，算ECFP指纹并挑出200个多样分子"
+      ],
+      "en": [
+        "Datamol Cheminformatics",
+        "Handles standard drug-discovery cheminformatics via datamol's Pythonic RDKit wrapper — SMILES standardization, descriptors, fingerprints, clustering, 3D conformers, parallel batches; needs Python 3.11+, datamol 0.13.0, and cloud credentials for remote paths.",
+        "Standardize this table of 10,000 SMILES, compute ECFP fingerprints, and pick 200 diverse representative molecules"
+      ]
+    },
+    "scientific-agent-skills/deepchem": {
+      "zh": [
+        "DeepChem分子ML",
+        "用DeepChem做分子性质预测：特征化、scaffold留出、掩码多任务、图模型与迁移；需Python 3.11、DeepChem 2.8.0和RDKit。",
+        "用ESOL训练溶解度模型：ECFP指纹、scaffold划分并报告原始单位指标"
+      ],
+      "en": [
+        "DeepChem Molecular ML",
+        "Builds molecular property prediction with DeepChem — featurization, scaffold or grouped holdouts, masked multitask labels, graph models, encoder transfer — for ADMET/toxicity/solubility; needs Python 3.11, DeepChem 2.8.0, RDKit, and per-model backends (Torch, DGL).",
+        "Train a solubility model on ESOL data: ECFP fingerprints, scaffold split, MultitaskRegressor, and report metrics in original units"
+      ]
+    },
+    "scientific-agent-skills/deepspot-m": {
+      "zh": [
+        "虚拟空间转录组",
+        "用DeepSpot-M从H&E切片图块预测约1.9万基因的虚拟空间表达；需deepspotm与PyTorch，HF权重受限且仅学术非商用。",
+        "对这张TCGA切片预测EPCAM和CD3D的虚拟空间表达图谱"
+      ],
+      "en": [
+        "DeepSpot-M Virtual Spatial",
+        "Predicts transcriptome-wide virtual spatial expression from 224x224 H&E tiles at ~20x for ~19k protein-coding genes, assembling whole-slide maps; needs deepspotm and PyTorch, gated Hugging Face weights restricted to academic noncommercial use.",
+        "Tile this TCGA slide into 224x224 patches, predict EPCAM and CD3D virtual spatial expression, and assemble the whole-slide map"
+      ]
+    },
+    "scientific-agent-skills/deeptools": {
+      "zh": [
+        "NGS可视化质控",
+        "用deepTools做NGS分析：BAM转bigWig、指纹/PCA质控、TSS热图，适合ChIP/RNA/ATAC-seq；需deepTools 4.0.0和samtools。",
+        "把两个ChIP-seq BAM转成bigWig并做样本相关性和TSS热图"
+      ],
+      "en": [
+        "deepTools NGS Analysis",
+        "Runs the deepTools NGS toolkit — BAM-to-bigWig coverage tracks, fingerprint/correlation/PCA QC, and TSS/peak heatmaps — for ChIP-seq, RNA-seq, and ATAC-seq; requires Python 3.12+, deepTools 4.0.0, and samtools for indexing.",
+        "Convert these two ChIP-seq BAMs to RPGC-normalized bigWigs, run sample correlation QC, and plot a TSS heatmap"
+      ]
+    },
+    "scientific-agent-skills/depmap": {
+      "zh": [
+        "DepMap癌症依赖",
+        "分析DepMap季度数据：CRISPR Chronos效应、细胞系注释、组学与PRISM药敏，做依赖性假设；需numpy/pandas/scipy并联网。",
+        "用DepMap 26Q1比较肺系与其他癌种的KRAS依赖并筛共必需基因"
+      ],
+      "en": [
+        "DepMap Cancer Dependencies",
+        "Retrieves and analyzes DepMap releases — CRISPR Chronos gene effects, model annotations, omics biomarkers, PRISM drug sensitivity — for selective-dependency and synthetic-lethality hypotheses; needs Python with numpy/pandas/scipy and network access for downloads.",
+        "Using DepMap 26Q1, compare KRAS dependency scores between lung-lineage and other models, then list the top 20 co-essential genes"
+      ]
+    },
+    "scientific-agent-skills/dhdna-profiler": {
+      "zh": [
+        "文本风格画像",
+        "按DHDNA十二维度对指定文本的推理写作模式做探索性标注并给引文证据；无任何依赖，但只描述样本证据，不构成心理特质结论，禁用于人事决策。",
+        "用DHDNA框架分析这段研究备忘录的写作风格并附引文"
+      ],
+      "en": [
+        "DHDNA Text Profiling",
+        "Annotates reasoning and writing patterns in a supplied text across the DHDNA rubric's twelve dimensions with quote-level evidence and optional 1–10 scores; no dependencies, but scores describe the sample only and must not drive personnel decisions.",
+        "Apply the DHDNA framework to this research memo of mine and report each dimension with supporting quotations"
+      ]
+    },
+    "scientific-agent-skills/diffdock": {
+      "zh": [
+        "分子对接预测",
+        "用DiffDock从PDB或序列加SMILES预测蛋白-小分子结合构象并排序置信度，支持批量筛查；需上游v1.1.3环境或Docker，序列折叠需CUDA。",
+        "对这个PDB受体和SMILES配体跑DiffDock生成10个构象并按置信度排序"
+      ],
+      "en": [
+        "DiffDock Molecular Docking",
+        "Predicts protein–small-molecule binding poses with DiffDock/DiffDock-L from PDB or sequence plus SMILES, with batch runs and confidence-ranked triage (confidence is not affinity); needs the pinned upstream v1.1.3 environment or Docker, CUDA for sequence folding, and network for weights.",
+        "Dock this SMILES ligand into the PDB receptor with DiffDock, generate 10 poses, rank by confidence, and sanity-check the top pose"
+      ]
+    },
+    "scientific-agent-skills/dnanexus-integration": {
+      "zh": [
+        "DNAnexus平台运维",
+        "在DNAnexus构建基因组工作负载：dx CLI与dxpy、数据传输、applet、监控、WDL/Nextflow导入；需账号、dx-toolkit和Python 3.11+。",
+        "把这个BAM质控脚本写成dxapp.json，校验后带成本上限启动"
+      ],
+      "en": [
+        "DNAnexus Integration",
+        "Builds and operates reproducible genomics workloads on DNAnexus — dx CLI, dxpy automation, data transfers, dxapp.json applets, job monitoring, and WDL/CWL/Nextflow imports; requires a DNAnexus account, dx-toolkit/dxpy, and Python 3.11+; some features need org licenses.",
+        "Package my BAM QC script as a DNAnexus applet: write the dxapp.json, validate it, then launch with dx run and a cost limit"
+      ]
+    },
+    "scientific-agent-skills/esm": {
+      "zh": [
+        "ESM蛋白模型",
+        "用Biohub esm SDK做ESM3生成、ESMC嵌入与ESMFold2折叠；需Python 3.12+和esm 3.4.1.post1，托管推理需ESM_API_KEY。",
+        "用ESM3补全这条掩码序列，再用ESMFold2预测结构导出PDB"
+      ],
+      "en": [
+        "ESM Protein Models",
+        "Uses the Biohub esm SDK for ESM3 masked generation, ESMC embeddings, and ESMFold2 all-atom folding, locally or via hosted clients; needs Python 3.12+, esm 3.4.1.post1, weights/RAM for local inference, and ESM_API_KEY for hosted calls (separate from fair-esm).",
+        "Complete this masked protein sequence with ESM3, then fold it with ESMFold2 and export the PDB file"
+      ]
+    },
+    "scientific-agent-skills/etetoolkit": {
+      "zh": [
+        "系统发育树操作",
+        "用ETE 4处理已有进化树：Newick读写、拓扑比较、基因树事件、NCBI/GTDB分类与渲染；需ete4 4.4.0，分类下载需联网。",
+        "比较两棵Newick树的RF距离，中点重定根并渲染SVG"
+      ],
+      "en": [
+        "ETE Phylogenetic Trees",
+        "Analyzes and renders existing phylogenetic trees with ETE 4 — Newick I/O, topology comparison, gene-tree duplication/speciation events, NCBI/GTDB taxonomy, SmartView/Qt rendering; needs Python 3.10+, ete4 4.4.0, network for taxonomy, Chrome/Qt extras for image output.",
+        "Compare these two Newick trees by Robinson-Foulds distance, midpoint-root the first, and render a publication SVG"
+      ]
+    },
+    "scientific-agent-skills/exa-search": {
+      "zh": [
+        "Exa学术搜索",
+        "用Exa搜索科学技术网页内容并批量提取页面或PDF正文，支持publication类别与学术域名过滤；需Python 3.11+、exa-py、EXA_API_KEY和联网。",
+        "用Exa搜CRISPR脱靶最新论文，限定arxiv.org域名并提取前5篇"
+      ],
+      "en": [
+        "Exa Academic Search",
+        "Searches scientific web content with Exa and batch-extracts page or PDF text, with a publication category and academic domain filters for scholarly discovery; requires Python 3.11+, exa-py, an EXA_API_KEY, and internet access.",
+        "Search Exa for the latest CRISPR off-target papers restricted to arxiv.org and nature.com, then extract text from the top 5"
+      ]
+    },
+    "scientific-agent-skills/experimental-design": {
+      "zh": [
+        "实验设计",
+        "收数据前选设计：随机化、区组、分层、因子/部分因子、响应面、交叉等，脚本生成可复现分配表；需numpy/pandas/pydoe 1.5.0。",
+        "设计三因素两水平全因子实验并把32只小鼠按批次区组随机分组"
+      ],
+      "en": [
+        "Experimental Design",
+        "Designs studies before data collection — randomized, blocked, factorial, screening, response-surface, crossover, and cluster designs — with scripts that generate seeded allocation schedules and DOE matrices; requires Python 3.12+, numpy, pandas, and pydoe 1.5.0.",
+        "Design a 3-factor 2-level full factorial experiment, generate the run table, then block-randomize 32 mice into treatment and control arms by batch"
+      ]
+    },
+    "scientific-agent-skills/exploratory-data-analysis": {
+      "zh": [
+        "探索性数据分析",
+        "对本地科研文件做受限的画像检查：CSV/TSV/JSON 摘要、缺失与泄漏审计、离群值敏感性，可选 NumPy、HDF5、序列与图像元数据；需 Python 3.11+，不联网，不支持的格式直接拒绝。",
+        "帮我检查这个 CSV 的缺失情况和潜在数据泄漏，再给出 EDA 报告"
+      ],
+      "en": [
+        "Exploratory Data Analysis",
+        "Produces bounded, local profiles of supported scientific files with missingness, leakage, and outlier audits; Python 3.11+ core, optional pinned libraries for arrays, HDF5, sequences, and images, and unknown formats fail closed.",
+        "Profile this CSV for missingness and leakage risks, then draft an EDA report"
+      ]
+    },
+    "scientific-agent-skills/fictiv": {
+      "zh": [
+        "Fictiv 零件制造下单",
+        "在你已登录的浏览器里操作 Fictiv 按需制造平台：上传 CAD、配置工艺材料公差、解读 DFM 反馈、获取报价、下单付款和追踪订单；需要联网、浏览器自动化工具和已登录的 Fictiv 账号。",
+        "帮我把这个 STEP 文件在 Fictiv 上配置成 CNC 铝件并拿到报价"
+      ],
+      "en": [
+        "Fictiv Part Manufacturing",
+        "Operates Fictiv's on-demand manufacturing web app end to end—CAD upload, process and material config, DFM feedback, quotes, checkout, order tracking—using network access, browser automation, and your logged-in Fictiv account.",
+        "Configure this STEP file as a CNC aluminum part on Fictiv and get a quote"
+      ]
+    },
+    "scientific-agent-skills/flowio": {
+      "zh": [
+        "FlowIO 流式文件读写",
+        "用 FlowIO 库读写流式细胞术 FCS 2.0/3.0/3.1 文件：检查元数据与通道、提取 NumPy 事件矩阵、处理多数据集文件、导出表格；需 Python 3.9–3.13 和 FlowIO 1.4.0，本地解析不联网，不做补偿与设门。",
+        "读这个 FCS 文件，列出所有通道并把事件数据导出成 NumPy 数组"
+      ],
+      "en": [
+        "FlowIO FCS File Handling",
+        "Reads, inspects, and writes FCS 2.0/3.0/3.1 cytometry files with FlowIO 1.4.0—metadata and channel inspection, NumPy event extraction, multi-dataset files, and FCS 3.1 writing—locally on Python 3.9-3.13; no compensation or gating.",
+        "Read this FCS file, list its channels, and export events to a NumPy array"
+      ]
+    },
+    "scientific-agent-skills/flowkit": {
+      "zh": [
+        "FlowKit 流式数据分析",
+        "用 FlowKit 做流式细胞术分析：溢出补偿、logicle/双指数变换、层级设门、GatingML 及部分 FlowJo 10 工作区重现；需 Python 3.13 与 flowkit 1.3.2 及依赖，安装联网、分析本地进行。",
+        "对这个 FCS 批次应用补偿和设门策略，统计各群体的细胞比例"
+      ],
+      "en": [
+        "FlowKit Cytometry Analysis",
+        "Runs FlowKit 1.3.2 cytometry analysis—spillover compensation, logicle transforms, hierarchical gating, GatingML, and supported FlowJo 10 workspaces—on Python 3.13 with network only for installation.",
+        "Apply compensation and this gating strategy to my FCS batch and report population percentages"
+      ]
+    },
+    "scientific-agent-skills/fluidsim": {
+      "zh": [
+        "FluidSim 流体仿真",
+        "用 FluidSim 规划和审查 Python 伪谱 CFD 仿真：选求解器、核校参数、估算 FFT/MPI 资源、做试运行与诊断，并强制数值有效性检查；示例针对 fluidsim 0.9.0，MPI/原生 FFT 需要 HPC 环境支持。",
+        "帮我为二维湍流选一个 FluidSim 求解器并估算所需 CPU 和内存"
+      ],
+      "en": [
+        "FluidSim CFD Simulations",
+        "Plans and audits FluidSim 0.9.0 pseudospectral CFD runs—solver selection, parameter review, FFT/MPI resource estimation, restarts, and numerical-validity checks; MPI and native FFT need site HPC toolchain support.",
+        "Pick a FluidSim solver for 2D turbulence and estimate the CPU and memory it needs"
+      ]
+    },
+    "scientific-agent-skills/folklore-variant-evidence": {
+      "zh": [
+        "Folklore 变异证据查询",
+        "通过 Folklore 公共 MCP 服务查询 ClinGen 基因-疾病有效性断言和单个 GRCh38 胚系变异的公开证据、ACMG/AMP 决策支持与来源文献；需联网访问 api.helena.bio，免密钥，不接受患者隐私数据。",
+        "查一下 BRCA1 这个变异的公开临床证据和 ACMG 分级依据"
+      ],
+      "en": [
+        "Folklore Variant Evidence",
+        "Queries Folklore's public MCP service at api.helena.bio for ClinGen gene-disease validity assertions and evidence, ACMG/AMP decision support, and linked literature for one GRCh38 germline variant; keyless, network required, no patient data.",
+        "Retrieve public evidence and ACMG classification support for this BRCA1 variant"
+      ]
+    },
+    "scientific-agent-skills/generate-image": {
+      "zh": [
+        "AI 图像生成",
+        "通过 OpenRouter Image API 调用 Gemini、Seedream、Recraft 等模型生成或编辑插画、照片级图像、海报视觉素材和参考图合成；需 Python 3.9+、联网和 OPENROUTER_API_KEY 并按次计费；技术示意图请用 schematics 技能。",
+        "为我的论文海报生成一张示意细胞信号通路的插画"
+      ],
+      "en": [
+        "AI Image Generation",
+        "Generates and edits images through the OpenRouter Image API (Gemini, Seedream, Recraft, GPT-Image) for illustrations, photos, posters, and compositing; needs Python 3.9+, network, and a billed OPENROUTER_API_KEY; technical diagrams use scientific-schematics.",
+        "Generate an illustration of a cell signaling pathway for my conference poster"
+      ]
+    },
+    "scientific-agent-skills/geniml": {
+      "zh": [
+        "Geniml 基因组区间学习",
+        "为 Geniml 基因组区间机器学习做准备与审计：校验 BED 与 universe 契约、规划 Region2Vec/scEmbed 流程、检查模型与分词器兼容性；本地工具不联网，训练栈需 Python 3.12 与 geniml 0.8.4/gtars 0.10.0。",
+        "检查这批 BED 文件和我的 Region2Vec universe 是否兼容"
+      ],
+      "en": [
+        "Geniml Interval Machine Learning",
+        "Audits and plans Geniml genomic-interval ML workflows—BED and universe contract validation, Region2Vec/scEmbed planning, model-tokenizer compatibility—locally; the tested training stack needs Python 3.12 with geniml 0.8.4 and gtars 0.10.0.",
+        "Check whether these BED files are compatible with my Region2Vec universe"
+      ]
+    },
+    "scientific-agent-skills/genomic-coordinates": {
+      "zh": [
+        "基因组坐标换算",
+        "在格式与参考基因组之间安全换算基因组坐标：BED/GFF/VCF/SAM 等 0 基与 1 基转换、变异左对齐与等价判定、装配和 chr 前缀错配检测；纯 Python 3.11+ 标准库不联网，变异规范化需本地参考 FASTA。",
+        "把这个 VCF 的变异坐标换算成 BED 的 0 基区间并检查装配是否一致"
+      ],
+      "en": [
+        "Genomic Coordinate Conversion",
+        "Converts genomic intervals across BED/GFF/VCF/SAM conventions, reconciles 0-based vs 1-based systems, normalizes indels, and detects assembly mismatches using pure Python 3.11+ stdlib offline; variant normalization needs a local reference FASTA.",
+        "Convert these VCF variants to 0-based BED intervals and check for assembly mismatches"
+      ]
+    },
+    "scientific-agent-skills/genomic-intelligence": {
+      "zh": [
+        "基因组智能预测",
+        "调用 Genomic Intelligence 云端 DNA 大模型从序列直接预测启动子、剪接位点、增强子活性、染色质状态、表达量和基因注释；需联网，REST API 要 GI_API_KEY，托管 MCP 演示层可免密钥使用但有限速。",
+        "预测这段 DNA 序列里可能的启动子区域和表达水平"
+      ],
+      "en": [
+        "Genomic Intelligence Predictions",
+        "Predicts promoters, splice sites, enhancer activity, chromatin state, expression, and gene annotation from DNA sequence via Genomic Intelligence's hosted transformer models; network required—REST needs GI_API_KEY, the hosted MCP demo tier is keyless but rate-limited.",
+        "Predict promoter regions and expression level for this DNA sequence"
+      ]
+    },
+    "scientific-agent-skills/geomaster": {
+      "zh": [
+        "地理空间综合分析",
+        "支持遥感、矢量/栅格 GIS、空间统计、地形与网络分析、对地观测机器学习等多语言工作流，含 STAC 目录访问与栅格对齐；核心示例需 Python 3.12+ 与 GeoPandas/Rasterio 等，部分服务需凭据。",
+        "帮我下载这片区域的哨兵影像并和现有矢量图层对齐坐标系"
+      ],
+      "en": [
+        "GeoMaster Geospatial Analysis",
+        "Supports remote sensing, vector/raster GIS, spatial statistics, terrain and network analysis, and Earth-observation ML including STAC catalog access; core recipes need Python 3.12+ with GeoPandas and Rasterio, while Earth Engine/CDS services need credentials.",
+        "Fetch Sentinel imagery for this region and align it with my vector layer's CRS"
+      ]
+    },
+    "scientific-agent-skills/geopandas": {
+      "zh": [
+        "GeoPandas 矢量分析",
+        "为直接使用 GeoPandas GeoSeries/GeoDataFrame、空间操作和矢量 IO 的工作流提供指导与本地审计工具：矢量清点、CRS 重投影规划、几何有效性报告；需 Python 3.12+ 与固定的 GeoPandas 1.2.0 依赖栈。",
+        "审计这个 shapefile 的几何有效性并规划到 WGS84 的重投影"
+      ],
+      "en": [
+        "GeoPandas Vector Workflows",
+        "Guides GeoPandas GeoSeries/GeoDataFrame, spatial operations, and vector I/O with local audit tools for inventory, CRS reprojection planning, and geometry validity; needs Python 3.12+ and the pinned GeoPandas 1.2.0 stack.",
+        "Audit this shapefile's geometry validity and plan its reprojection to WGS84"
+      ]
+    },
+    "scientific-agent-skills/get-available-resources": {
+      "zh": [
+        "可用资源探测",
+        "探测当前进程实际可用的 CPU、内存、磁盘、调度器、容器与加速器限额，输出脱敏 JSON 快照供资源感知规划；纯 Python 3.11+ 标准库，可选 psutil，只读探测不做压测。",
+        "这台机器当前进程能用多少 CPU 和内存？帮我据此规划并行度"
+      ],
+      "en": [
+        "Detect Available Resources",
+        "Detects effective CPU, memory, disk, scheduler, container, and accelerator limits for the current process and emits a redacted JSON snapshot for resource-aware planning; pure Python 3.11+ stdlib with optional psutil, read-only probes only.",
+        "How many CPUs and how much memory can this process actually use? Plan my parallelism accordingly"
+      ]
+    },
+    "scientific-agent-skills/gget": {
+      "zh": [
+        "gget 生物信息查询",
+        "通过 gget 统一接口查询 20 多个生信数据库：基因信息、BLAST/BLAT、病毒序列、PDB 结构、富集分析、OpenTargets、COSMIC、CELLxGENE 等；需 Python 3.12+、gget 0.30.8 和联网，COSMIC 下载要账号。",
+        "用 gget 查 TP53 的基因信息并下载相关 PDB 结构"
+      ],
+      "en": [
+        "gget Bioinformatics Queries",
+        "Queries 20+ bioinformatics resources via the gget 0.30.8 CLI/Python package—gene info, BLAST/BLAT, viral sequences, PDB structures, enrichment, OpenTargets, COSMIC, CELLxGENE; needs Python 3.12+ and network, and COSMIC downloads require an account.",
+        "Use gget to fetch TP53 gene info and download its PDB structures"
+      ]
+    },
+    "scientific-agent-skills/ginkgo-cloud-lab": {
+      "zh": [
+        "Ginkgo 云实验室",
+        "指导在 Ginkgo Bioworks 云实验室选择协议、准备输入、核对报价并在浏览器下单：无细胞/大肠杆菌/毕赤酵母表达、IVT mRNA 合成、热移测定、SPR 等；需联网和浏览器，下单与结果需账号。",
+        "帮我在 Ginkgo 云实验室选一个无细胞蛋白表达协议并准备样品清单"
+      ],
+      "en": [
+        "Ginkgo Cloud Lab Ordering",
+        "Guides protocol selection, input preparation, pricing checks, and browser ordering on Ginkgo Bioworks Cloud Lab—cell-free/E. coli/Pichia expression, IVT mRNA, thermal shift, SPR assays; needs network and a browser, with account access for ordering and results.",
+        "Pick a cell-free protein expression protocol on Ginkgo Cloud Lab and prepare my sample list"
+      ]
+    },
+    "scientific-agent-skills/glycoengineering": {
+      "zh": [
+        "糖基化工程分析",
+        "分析蛋白质糖基化：扫描 N-糖基化 sequon、评估 S/T 富集区、核对 GlyTouCan 糖链证据、准备 NetNGlyc/NetOGlyc 和 GlycoSHIELD 工作流；本地脚本需 Python 3.10+，预测器走浏览器，GlycoSHIELD 另需 GROMACS。",
+        "扫一下这个抗体序列的 N-糖基化位点并查 GlyTouCan 上的相关糖链"
+      ],
+      "en": [
+        "Glycoengineering Analysis",
+        "Analyzes protein glycosylation by scanning N-glycosylation sequons, scoring S/T-rich regions, checking GlyTouCan evidence, and preparing NetNGlyc/NetOGlyc and GlycoSHIELD workflows; local scripts need Python 3.10+, predictors run in a browser, and GlycoSHIELD needs GROMACS.",
+        "Scan this antibody sequence for N-glycosylation sites and look up related glycans on GlyTouCan"
+      ]
+    },
+    "scientific-agent-skills/gtars": {
+      "zh": [
+        "Gtars 基因组区间工具",
+        "用 Gtars（Rust 实现）做基因组区间集合运算、重叠计数、共识与覆盖度、分词化和 refget/BEDbase 规划，覆盖 Python、Rust 与 CLI；Python 绑定需 gtars 0.10.0 与 Python 3.10+，远程缓存需明确授权联网。",
+        "用 gtars 计算这批 BED 文件两两之间的区间重叠计数"
+      ],
+      "en": [
+        "Gtars Interval Toolkit",
+        "Uses Gtars 0.10.0 (Rust core) for genomic interval set algebra, overlaps, consensus and coverage, tokenization, and refget/BEDbase planning across Python, Rust, and CLI; Python bindings need Python 3.10+, and remote caching needs explicit network approval.",
+        "Compute pairwise interval overlap counts across these BED files with gtars"
+      ]
+    },
+    "scientific-agent-skills/histolab": {
+      "zh": [
+        "Histolab 病理切片",
+        "用 Histolab 处理全切片病理图像：查看 WSI 元数据、组织掩膜、随机/网格/评分切图、H&E 染色标准化；需 Python 3.8–3.11、histolab 0.7.0 和原生 OpenSlide，仅支持 Linux/macOS，不做诊断。",
+        "把这张 WSI 切片按网格切成小块并做 H&E 染色标准化"
+      ],
+      "en": [
+        "Histolab Slide Tiling",
+        "Extracts and preprocesses whole-slide histology tiles with Histolab 0.7.0—WSI metadata, tissue masks, random/grid/score-based tiling, H&E normalization; needs Python 3.8-3.11 and native OpenSlide on Linux/macOS, and makes no diagnostic claims.",
+        "Tile this WSI on a grid and apply H&E stain normalization"
+      ]
+    },
+    "scientific-agent-skills/hugging-science": {
+      "zh": [
+        "Hugging Science 资源目录",
+        "在 Hugging Science 目录中检索和评估生物、化学、材料、气候等领域的科学数据集、模型、方法文章和 Spaces 演示，再核对各自运行方式；获取目录需联网和 Python 3.10+，受限资源需 HF_TOKEN。",
+        "帮我找几个单细胞分析的科学模型并核对它们的推理接口"
+      ],
+      "en": [
+        "Hugging Science Catalog",
+        "Discovers and evaluates scientific datasets, models, posts, and Spaces across domains like biology, chemistry, and materials via the Hugging Science catalog; catalog fetch needs Python 3.10+ and network, gated resources need HF_TOKEN.",
+        "Find single-cell analysis models on Hugging Science and check their inference interfaces"
+      ]
+    },
+    "scientific-agent-skills/hypogenic": {
+      "zh": [
+        "HypoGeniC 假设生成",
+        "规划和审计用 ChicagoHAI 的 HypoGeniC/HypoRefine 从带标注文本数据生成候选假设的流程，包括任务配置与假设库；审计工具只用标准库，实际运行需自备 LLM 凭据、Redis 等，输出是候选假设而非科学结论。",
+        "帮我配置 HypoGeniC 在这个标注文本数据集上生成假设的运行计划"
+      ],
+      "en": [
+        "HypoGeniC Hypothesis Generation",
+        "Plans and audits ChicagoHAI HypoGeniC/HypoRefine runs that generate candidate textual hypotheses from labeled datasets; audit tools are stdlib-only, but real runs need a separately approved LLM provider, credentials, and possibly Redis—and outputs are candidates, not validated science.",
+        "Plan a HypoGeniC run to generate hypotheses from this labeled text dataset"
+      ]
+    },
+    "scientific-agent-skills/hypothesis-generation": {
+      "zh": [
+        "科学假说生成",
+        "把观察或初步发现整理成可检验的候选假说、对立解释、判别性预测和预注册式分析计划;完全本地运行,不需网络或凭据。",
+        "帮我把这些实验观察整理成几个可检验的假说,并写出区分它们的判别性预测。"
+      ],
+      "en": [
+        "Hypothesis Generation",
+        "Turns observations or preliminary findings into evidence-bounded candidate hypotheses, rival explanations, discriminating predictions, and preregistration-ready plans; runs fully locally with no network or credentials.",
+        "Turn my pilot experiment observations into competing hypotheses with discriminating predictions I could preregister."
+      ]
+    },
+    "scientific-agent-skills/imaging-data-commons": {
+      "zh": [
+        "癌症影像数据检索",
+        "查询并下载NCI Imaging Data Commons公开癌症影像,支持集合发现、DICOM获取和元数据SQL;数据访问免认证,BigQuery等可选路径需Google凭据。",
+        "帮我查找IDC里肺癌CT影像集合,并下载其中一批DICOM文件。"
+      ],
+      "en": [
+        "Cancer Imaging Data Access",
+        "Queries and downloads public cancer imaging from NCI Imaging Data Commons, including collections, DICOM, metadata SQL and AI datasets; unauthenticated data access, optional BigQuery routes need Google credentials.",
+        "Find IDC collections of lung CT scans and download a batch of DICOM files."
+      ]
+    },
+    "scientific-agent-skills/infographics": {
+      "zh": [
+        "AI科研信息图",
+        "用Nano Banana 2经OpenRouter生成并评审统计摘要、时间线、流程图等信息图,可选Sonar做资料检索;需OPENROUTER_API_KEY和网络。",
+        "根据这份实验数据生成一张对比流程信息图,并帮我检查可读性。"
+      ],
+      "en": [
+        "AI Infographic Generation",
+        "Creates and reviews infographics via Nano Banana 2 on OpenRouter with ten layouts and optional Sonar research; requires network access and an OPENROUTER_API_KEY.",
+        "Generate a process-comparison infographic from this experiment data and review its readability."
+      ]
+    },
+    "scientific-agent-skills/iso-standards-readiness": {
+      "zh": [
+        "ISO合规就绪整理",
+        "为ISO 13485、14971、17025、15189等标准整理受控文档、风险管理、可追溯性和就绪证据清单;只做结构化准备,不含条款原文也不做认证判定。",
+        "帮我按ISO 17025整理实验室的认证范围和受控文档清单,准备内审材料。"
+      ],
+      "en": [
+        "ISO Readiness Evidence",
+        "Organizes scope, controlled documents, risk files, traceability and readiness evidence for ISO 13485, 14971, 17025 and 15189; it structures evidence only and makes no certification or accreditation decisions.",
+        "Organize our lab's accreditation scope and controlled documents for an ISO 17025 internal review."
+      ]
+    },
+    "scientific-agent-skills/lab-hardware-cad": {
+      "zh": [
+        "实验硬件CAD设计",
+        "用build123d参数化设计微流控芯片、光机支架、孔板架等实验硬件并导出STEP/STL/DXF;需安装build123d,查厂商图纸需联网。",
+        "帮我设计一个匹配标准比色皿尺寸的3D打印样品架并导出STEP文件。"
+      ],
+      "en": [
+        "Lab Hardware CAD Design",
+        "Designs parametric lab hardware in build123d - microfluidics, optomechanical mounts, racks and fixtures - exporting STEP/STL/DXF; requires the build123d package, vendor drawings need network.",
+        "Design a 3D-printed cuvette holder matching standard dimensions and export it as STEP."
+      ]
+    },
+    "scientific-agent-skills/labarchive-integration": {
+      "zh": [
+        "LabArchives电子笔记集成",
+        "对接LabArchives ELN及Inventory官方API,处理区域端点、签名请求和用户授权;需LABARCHIVES_*环境变量中的Access Key、UID等凭据并联网。",
+        "用LabArchives API把我的实验笔记条目和附件同步下来,先列出笔记本结构。"
+      ],
+      "en": [
+        "LabArchives ELN Integration",
+        "Integrates with the official LabArchives ELN and Inventory APIs, handling regional endpoints, signed requests and user authorization; needs network and LABARCHIVES_* credentials such as Access Key and UID.",
+        "List my LabArchives notebook structure and sync recent entries with attachments via the API."
+      ]
+    },
+    "scientific-agent-skills/lamindb": {
+      "zh": [
+        "生物数据管理LaminDB",
+        "用LaminDB登记生物数据集、追踪血缘、做Schema校验和Bionty本体注释;本地SQLite免登录,远程存储和私有实例需网络与凭据。",
+        "帮我用LaminDB注册这批AnnData文件并给基因字段做Bionty本体注释。"
+      ],
+      "en": [
+        "Biological Data with LaminDB",
+        "Manages biological datasets with LaminDB: artifact registration, lineage, schema validation and Bionty ontology annotation; local SQLite needs no login, remote storage and private instances need network and credentials.",
+        "Register these AnnData files in LaminDB and annotate the gene fields with Bionty ontologies."
+      ]
+    },
+    "scientific-agent-skills/latchbio-integration": {
+      "zh": [
+        "Latch生信流程平台",
+        "用Latch Python SDK/CLI构建、注册、调试和运行生信工作流,支持Nextflow、Snakemake、Registry和MCP;需Latch账号、网络,本地镜像构建需Docker。",
+        "帮我把这个Snakemake流程打包注册到Latch,并启动一次测试运行。"
+      ],
+      "en": [
+        "Latch Bioinformatics Workflows",
+        "Builds, registers, debugs and runs bioinformatics workflows on Latch via its Python SDK and CLI, covering Nextflow, Snakemake, Registry and MCP; needs a Latch account, network, and Docker for local image builds.",
+        "Package this Snakemake pipeline, register it on Latch and launch a test run."
+      ]
+    },
+    "scientific-agent-skills/latex-posters": {
+      "zh": [
+        "LaTeX学术海报",
+        "用beamerposter、tikzposter或baposter制作会议海报,处理多栏排版、插图和PDF预检;需LaTeX发行版和Poppler,可选AI配图需OPENROUTER_API_KEY。",
+        "把这篇论文的主要内容排成一张beamerposter会议海报并编译成PDF。"
+      ],
+      "en": [
+        "LaTeX Research Posters",
+        "Creates conference posters in LaTeX using beamerposter, tikzposter or baposter with multi-column layouts and PDF preflight; needs a LaTeX distribution and Poppler, optional AI schematics need OPENROUTER_API_KEY.",
+        "Lay out this paper's key results as a beamerposter conference poster and compile the PDF."
+      ]
+    },
+    "scientific-agent-skills/liteparse": {
+      "zh": [
+        "本地文档解析LiteParse",
+        "本地解析PDF、DOCX和图片,输出带边界框的空间化文本、Markdown或页面PNG,支持OCR;Office格式需LibreOffice,可选HTTP OCR需网络。",
+        "把这个文件夹里的论文PDF批量解析成带坐标的JSON供RAG使用。"
+      ],
+      "en": [
+        "Local Parsing with LiteParse",
+        "Parses PDFs, Office files and images locally into spatial text with bounding boxes, Markdown or page PNGs with OCR; Office formats need LibreOffice, optional HTTP OCR needs network.",
+        "Batch-parse this folder of paper PDFs into layout-preserved JSON for my RAG pipeline."
+      ]
+    },
+    "scientific-agent-skills/literature-review": {
+      "zh": [
+        "系统文献综述",
+        "按规范方法在PubMed、arXiv、bioRxiv、Semantic Scholar等库做系统或范围综述,含筛选、引用核验和Markdown/PDF输出;需联网,PDF导出需Pandoc和XeLaTeX。",
+        "帮我对这个主题做一次系统文献检索和筛选,输出带核验引用的综述初稿。"
+      ],
+      "en": [
+        "Systematic Literature Review",
+        "Conducts systematic, scoping and narrative reviews across PubMed, arXiv, bioRxiv, Semantic Scholar and more with screening, citation checking and Markdown/PDF output; needs network, PDF export needs Pandoc and XeLaTeX.",
+        "Run a systematic search and screening on this topic and draft a review with verified citations."
+      ]
+    },
+    "scientific-agent-skills/mageck": {
+      "zh": [
+        "CRISPR筛选分析MAGeCK",
+        "用MAGeCK分析混合CRISPR筛选的FASTQ读数和gRNA计数矩阵,做质控、基因富集/耗竭排名和FDR;需安装MAGeCK 0.5.9.5及其RRA可执行文件。",
+        "帮我用MAGeCK对这套CRISPR敲除筛选计数矩阵做test分析,输出基因排名和FDR。"
+      ],
+      "en": [
+        "CRISPR Screens with MAGeCK",
+        "Analyzes pooled CRISPR screen FASTQ reads and guide-count matrices with MAGeCK, producing QC, gene rankings with effect sizes and FDR; requires MAGeCK 0.5.9.5 with its compiled RRA executable.",
+        "Run MAGeCK test on this knockout screen count matrix and report gene rankings with FDR."
+      ]
+    },
+    "scientific-agent-skills/marine-carbonate-chemistry": {
+      "zh": [
+        "海水碳酸盐化学计算",
+        "用PyCO2SYS求解海水碳酸盐体系:由碱度、DIC、pH、pCO2两两参数推物种分布、文石/方解石饱和度和不确定性;需PyCO2SYS包,本地计算。",
+        "根据这批海水的总碱度和DIC数据,计算pH、文石饱和度并传播测量误差。"
+      ],
+      "en": [
+        "Seawater Carbonate Chemistry",
+        "Solves seawater carbonate systems with PyCO2SYS from paired alkalinity, DIC, pH or pCO2 inputs, giving speciation, mineral saturation and uncertainty propagation; needs the PyCO2SYS package, runs locally.",
+        "From these alkalinity and DIC measurements compute pH and aragonite saturation with propagated uncertainties."
+      ]
+    },
+    "scientific-agent-skills/markdown-mermaid-writing": {
+      "zh": [
+        "Markdown与Mermaid写作",
+        "撰写科学Markdown文档和Mermaid流程、关系、时间线等结构图,带语法参考、模板与可访问性指引;本地渲染需Node.js、Mermaid CLI和Chromium。",
+        "把这套分析流程写成Markdown文档,并用Mermaid画出各模块关系图。"
+      ],
+      "en": [
+        "Markdown and Mermaid Writing",
+        "Writes scientific Markdown docs and Mermaid structural diagrams for workflows, relationships and timelines with syntax references and accessibility guidance; local rendering needs Node.js, Mermaid CLI and Chromium.",
+        "Document this analysis pipeline in Markdown with a Mermaid diagram of the module relationships."
+      ]
+    },
+    "scientific-agent-skills/market-research-reports": {
+      "zh": [
+        "市场调研报告",
+        "构建证据可追溯的市场研究报告和假设驱动的市场规模测算,覆盖市场定义、竞争格局、TAM/SAM/SOM对账;在线检索需用户批准联网,CLI本地运行。",
+        "帮我做一份该试剂盒市场的调研报告,给出TAM/SAM/SOM测算和依据。"
+      ],
+      "en": [
+        "Market Research Reports",
+        "Builds evidence-traceable market research reports and assumption-driven sizing covering market definition, competitive landscape and TAM/SAM/SOM reconciliation; online research needs user-approved network, bundled CLIs run offline.",
+        "Draft a market report for this reagent kit with a sourced TAM/SAM/SOM estimate."
+      ]
+    },
+    "scientific-agent-skills/markitdown": {
+      "zh": [
+        "文档转Markdown",
+        "用微软MarkItDown把Office、PDF等异构文档转成Markdown供检索和LLM/RAG摄取,支持插件、视觉OCR和Azure;本地转换可离线,URL和云服务需网络。",
+        "把这一堆Word和PDF文件批量转成Markdown放进我的知识库。"
+      ],
+      "en": [
+        "Documents to Markdown",
+        "Converts Office, PDF and other documents to Markdown with Microsoft MarkItDown for search and LLM/RAG ingestion, with plugins, vision OCR and Azure support; local conversion works offline, URL and cloud routes need network.",
+        "Batch-convert these Word and PDF files to Markdown for my knowledge base."
+      ]
+    },
+    "scientific-agent-skills/matchms": {
+      "zh": [
+        "质谱谱图比对matchms",
+        "用matchms清洗、比较和检索串联质谱:MS/MS读写、元数据统一、峰过滤、谱图相似度和谱库匹配;需matchms包,USI在线加载需联网。",
+        "帮我用matchms把这批MS/MS谱图对参考谱库做相似度匹配并输出打分矩阵。"
+      ],
+      "en": [
+        "Mass Spectra Matching",
+        "Cleans, compares and searches tandem mass spectra with matchms: MS/MS I/O, metadata harmonization, peak filtering, similarity scoring and library matching; needs the matchms package, USI loading needs network.",
+        "Score these MS/MS spectra against the reference library with matchms and output the score matrix."
+      ]
+    },
+    "scientific-agent-skills/matlab": {
+      "zh": [
+        "MATLAB/Octave数值计算",
+        "构建、评审和迁移MATLAB或GNU Octave数值工作流,覆盖数组、表格、测试、项目、图形和MAT文件及Python互操作;自带CLI本地运行,无需安装MATLAB。",
+        "帮我评审这段MATLAB脚本并给出迁移到GNU Octave的兼容性检查清单。"
+      ],
+      "en": [
+        "MATLAB and Octave Workflows",
+        "Builds, reviews and migrates MATLAB or GNU Octave numerical workflows covering arrays, tables, tests, projects, graphics, MAT files and Python interop; bundled CLIs run locally without MATLAB installed.",
+        "Review this MATLAB script and give me a compatibility checklist for migrating to GNU Octave."
+      ]
+    },
+    "scientific-agent-skills/matplotlib": {
+      "zh": [
+        "Matplotlib科研绘图",
+        "用Matplotlib精细定制各类科学图表并导出PNG/PDF/SVG;需Python 3.11+与Matplotlib,本地绘图无需凭据,安装需联网。",
+        "帮我用Matplotlib画一张多子图的误差线折线图并导出出版用PDF。"
+      ],
+      "en": [
+        "Scientific Plots with Matplotlib",
+        "Creates and finely customizes scientific plots with Matplotlib, exporting PNG/PDF/SVG for publication; needs Python 3.11+ and Matplotlib, local plotting needs no credentials.",
+        "Plot a multi-panel error-bar line chart in Matplotlib and export a publication-ready PDF."
+      ]
+    },
+    "scientific-agent-skills/medchem": {
+      "zh": [
+        "药物化学筛选medchem",
+        "用medchem库做化合物分诊:Lipinski等类药规则、PAINS等结构警示目录、复杂度指标和查询语言批量过滤;需medchem、datamol和RDKit。",
+        "帮我用PAINS和Lipinski规则过滤这个化合物库,输出通过和剔除清单。"
+      ],
+      "en": [
+        "Medicinal Chemistry Filters",
+        "Triages compound libraries with the medchem package: drug-likeness rules like Lipinski, structural alert catalogs like PAINS, complexity metrics and a query language; needs medchem, datamol and RDKit.",
+        "Filter this compound library with PAINS and Lipinski rules and output pass/fail lists."
+      ]
+    },
+    "scientific-agent-skills/modal": {
+      "zh": [
+        "Modal 云端算力",
+        "用 Modal 把 Python 代码打包成无服务器云任务，按需调用 GPU 训练、推理、批处理和定时作业。需要 Modal 账号与网络，GPU 还需绑定支付方式。",
+        "帮我把这个模型推理脚本部署成 Modal 的 GPU 端点，附上容器镜像和定时重训任务"
+      ],
+      "en": [
+        "Modal Serverless Cloud",
+        "Runs Python on demand in the Modal cloud, including GPU training, inference endpoints, batch jobs and schedules; requires a Modal account and network access, plus a payment method for GPUs.",
+        "Deploy this inference script as a Modal GPU endpoint with a scheduled retraining job"
+      ]
+    },
+    "scientific-agent-skills/molecular-dynamics": {
+      "zh": [
+        "分子动力学模拟",
+        "用 OpenMM 与 MDAnalysis 搭建并分析分子动力学模拟：力场、能量最小化、生产运行与 RMSD、RMSF、自由能面等轨迹分析。本地 Python 环境即可运行。",
+        "用 OpenMM 对这个蛋白-配体复合物做能量最小化和 10ns 模拟，再分析 RMSD 与接触图"
+      ],
+      "en": [
+        "Molecular Dynamics",
+        "Sets up and analyzes MD simulations with OpenMM and MDAnalysis, covering force fields, minimization, production runs and trajectory metrics like RMSD, RMSF and free-energy surfaces; runs in a local Python environment.",
+        "Minimize this protein-ligand complex in OpenMM, run 10 ns of MD, then analyze RMSD and contact maps"
+      ]
+    },
+    "scientific-agent-skills/molfeat": {
+      "zh": [
+        "分子特征化",
+        "用 Molfeat 把小分子 SMILES 转成 ECFP/MACCS 指纹、RDKit 描述符或预训练嵌入，用于 QSAR、相似性搜索和虚拟筛选；预训练模型需联网下载权重。",
+        "把这批化合物的 SMILES 用 Molfeat 生成 ECFP 指纹并训练一个活性预测基线模型"
+      ],
+      "en": [
+        "Molecular Featurization",
+        "Turns SMILES into ECFP/MACCS fingerprints, RDKit descriptors, pharmacophores or pretrained embeddings with Molfeat for QSAR, similarity search and virtual screening; pretrained models download weights from the network.",
+        "Featurize these SMILES with Molfeat ECFP fingerprints and train a baseline activity model"
+      ]
+    },
+    "scientific-agent-skills/ncats-arax": {
+      "zh": [
+        "生物医学图谱查询",
+        "查询 NCATS Translator 的 ARAX 生产 API，做受限的一跳或两端点锁定的两跳生物医学知识图谱检索并保留来源证据。仅需 HTTPS 出网，免密钥，但查询内容可能被公开记录。",
+        "查一下 ARAX 里二甲双胍和 AMPK 之间有文献支持的关系路径"
+      ],
+      "en": [
+        "Biomedical Graph Lookup",
+        "Queries the NCATS Translator ARAX production API for bounded one-hop or endpoint-pinned two-hop biomedical knowledge-graph relationships with provenance; needs outbound HTTPS, no API key, but queries may be publicly visible.",
+        "Look up what evidence-backed paths connect metformin and AMPK in ARAX"
+      ]
+    },
+    "scientific-agent-skills/networkx": {
+      "zh": [
+        "网络图分析",
+        "用 NetworkX 构建、分析和可视化复杂网络：最短路、中心性、社区发现、随机图生成和多种图文件格式读写。纯 Python 本地运行，无需凭据。",
+        "用 NetworkX 计算这个引用网络的 PageRank 和社区结构并画出拓扑图"
+      ],
+      "en": [
+        "Network Graph Analysis",
+        "Creates, analyzes and visualizes networks with NetworkX: shortest paths, centrality, community detection, synthetic graph generators and common graph file formats; runs locally in Python with no credentials.",
+        "Compute PageRank and communities on this citation network with NetworkX and plot the topology"
+      ]
+    },
+    "scientific-agent-skills/neurokit2": {
+      "zh": [
+        "生理信号处理",
+        "用 NeuroKit2 对心电、皮电、脑电等生理时间序列做可复现的预处理、事件提取、变异性和复杂度分析。属于研究工具，输出不能当作诊断结论。",
+        "用 NeuroKit2 处理这段 ECG 信号，提取 R 峰并计算心率变异性指标"
+      ],
+      "en": [
+        "Biosignal Processing",
+        "Builds reproducible NeuroKit2 workflows for physiological time-series preprocessing, event detection, variability and complexity analysis across ECG, EDA, EEG and more; a research tool, not for diagnosis.",
+        "Process this ECG recording with NeuroKit2, detect R-peaks and compute HRV metrics"
+      ]
+    },
+    "scientific-agent-skills/neuropixels-analysis": {
+      "zh": [
+        "神经像素数据分析",
+        "用 SpikeInterface 端到端分析 Neuropixels 电生理记录：读取 SpikeGLX/Open Ephys/NWB、预处理、漂移校正、Kilosort4 尖峰排序与单元质量筛选。可选 AI 复核需 Anthropic 密钥。",
+        "帮我把这个 SpikeGLX 的 .ap.bin 记录做完预处理并用 Kilosort4 排序出神经元单元"
+      ],
+      "en": [
+        "Neuropixels Analysis",
+        "Analyzes Neuropixels extracellular recordings end-to-end with SpikeInterface: loading SpikeGLX/Open Ephys/NWB, preprocessing, drift correction, Kilosort4 sorting and unit curation; optional AI review needs an Anthropic API key.",
+        "Preprocess this SpikeGLX .ap.bin recording and spike-sort it with Kilosort4"
+      ]
+    },
+    "scientific-agent-skills/nextflow": {
+      "zh": [
+        "Nextflow 流程",
+        "编写、运行和调试 Nextflow DSL2 与 nf-core 生信流程：process、channel、samplesheet、nf-test、容器与 HPC/云执行器配置。本地需 Bash、Java 17+ 与 Nextflow。",
+        "帮我写一个 Nextflow DSL2 流程跑 RNA-seq 定量，并配置好在 SLURM 集群上断点续跑"
+      ],
+      "en": [
+        "Nextflow Pipelines",
+        "Builds, runs and debugs Nextflow DSL2 and nf-core pipelines: processes, channels, samplesheets, nf-test, containers and HPC/cloud executor config; requires Bash, Java 17+ and Nextflow locally.",
+        "Write a Nextflow DSL2 pipeline for RNA-seq quantification configured to resume on our SLURM cluster"
+      ]
+    },
+    "scientific-agent-skills/nmrglue": {
+      "zh": [
+        "一维核磁处理",
+        "用 nmrglue 把已校准的一维 NMR 自由感应衰减信号处理成定相谱图、峰候选和积分区域。本地运行，需要采集参数；Bruker、Varian、JEOL 原始格式未经验证。",
+        "把这个 1D FID 的核磁数据用 nmrglue 做变迹、傅里叶变换和定相，输出积分结果"
+      ],
+      "en": [
+        "1D NMR Processing",
+        "Processes calibrated one-dimensional NMR free-induction decays with nmrglue into phased spectra, peak candidates and signed integrals; runs locally but needs acquisition parameters, and Bruker/Varian/JEOL imports are unverified.",
+        "Apodize, Fourier-transform and phase this 1D FID with nmrglue and report region integrals"
+      ]
+    },
+    "scientific-agent-skills/nwb-conversion": {
+      "zh": [
+        "NWB 数据转换",
+        "用 NeuroConv 和 PyNWB 把双光子 TIFF 成像和带时间戳的行为位置 CSV 转成 NWB 文件，并做时钟对齐、模式校验和往返检查；不支持任意采集格式或尖峰排序。",
+        "把这套双光子 TIFF 加位置 CSV 转成一个通过 NWB Inspector 校验的 NWB 文件"
+      ],
+      "en": [
+        "NWB Conversion",
+        "Converts planar two-photon TIFF imaging plus timestamped behavioral position CSVs into validated NWB files with NeuroConv and PyNWB, including clock alignment and round-trip checks; arbitrary acquisition formats are not supported.",
+        "Convert this two-photon TIFF session plus position CSV into an NWB file that passes NWB Inspector"
+      ]
+    },
+    "scientific-agent-skills/omero-integration": {
+      "zh": [
+        "OMERO 显微平台",
+        "通过 omero-py、BlitzGateway 和 OMERO CLI 检查并自动化 OMERO.server 上的显微图像清点、元数据导出、标注与 ROI 操作。需要可达的 OMERO 服务器和账号凭据。",
+        "连上我们的 OMERO 服务器，导出这个项目下所有图像的元数据和 ROI 清单"
+      ],
+      "en": [
+        "OMERO Integration",
+        "Inspects and automates OMERO.server microscopy workflows via omero-py, BlitzGateway, CLI, tables, annotations and ROIs; requires network access to an OMERO server and valid credentials or a session key.",
+        "Connect to our OMERO server and export metadata and ROI listings for every image in this project"
+      ]
+    },
+    "scientific-agent-skills/onekgpd": {
+      "zh": [
+        "千人基因组查询",
+        "以个人粒度查询千人基因组计划 3202 个全基因组样本：按基因或区域找变异携带者、查等位基因频率和亲缘关系。变异查询需联网到公共端点，免密钥。",
+        "查一下千人基因组里 BRCA1 区域有哪些个体携带罕见变异，并给出 gnomAD 频率"
+      ],
+      "en": [
+        "1000 Genomes Queries",
+        "Queries the 1000 Genomes Project cohort of 3,202 whole genomes at the individual level: variant carriers in a gene or region, allele frequencies and pairwise relatedness; variant queries need network access, no credentials.",
+        "Find which 1000 Genomes individuals carry rare variants in the BRCA1 region, with gnomAD frequencies"
+      ]
+    },
+    "scientific-agent-skills/ontology-term-resolution": {
+      "zh": [
+        "本体术语解析",
+        "把自由文本解析成规范的本体术语 ID 并校验 CURIE：用 OLS4 查证、ZOOMA 映射实验室缩写、Bioregistry 查前缀、Identifiers.org 生成落地页。仅需网络，免密钥。",
+        "把这张元数据表里的组织和疾病列都解析成 UBERON 和 MONDO 的标准 ID 并校验是否已废弃"
+      ],
+      "en": [
+        "Ontology Term Resolution",
+        "Resolves free-text labels to ontology term IDs and validates CURIEs via EBI OLS4, ZOOMA, Bioregistry, Identifiers.org and Ontobee for metadata annotation and submission audits; needs network access, no API key.",
+        "Resolve the tissue and disease columns in this metadata table to UBERON and MONDO IDs and flag obsolete terms"
+      ]
+    },
+    "scientific-agent-skills/open-notebook": {
+      "zh": [
+        "开源自研笔记库",
+        "通过 REST API 操作自托管的 Open Notebook（NotebookLM 替代品）：导入 PDF、网页、音视频等来源，做带引用的问答、全文与向量检索和多角色播客。需先部署后端实例。",
+        "帮我把这批论文 PDF 导入 Open Notebook，建一个笔记本并做带引用的文献问答"
+      ],
+      "en": [
+        "Open Notebook",
+        "Automates the self-hosted Open Notebook alternative to NotebookLM via its REST API: source ingestion, cited chat, text and vector search, transformations and podcasts; requires a running instance and a configured AI provider.",
+        "Ingest these paper PDFs into Open Notebook, build a notebook and run cited Q&A over them"
+      ]
+    },
+    "scientific-agent-skills/openpiv": {
+      "zh": [
+        "粒子图像测速",
+        "用 OpenPIV 对粒子图像测速（PIV）图像对做互相关、速度场提取、异常向量剔除和涡量、应变率、湍流统计计算。安装后完全离线运行。",
+        "用 OpenPIV 分析这对 PIV 图像，提取速度场并计算涡量分布"
+      ],
+      "en": [
+        "Particle Image Velocimetry",
+        "Performs PIV analysis with OpenPIV: cross-correlating image pairs into velocity fields, validating and replacing spurious vectors, and computing vorticity, strain rate and turbulence statistics; runs offline after install.",
+        "Analyze this PIV image pair with OpenPIV, extract the velocity field and compute vorticity"
+      ]
+    },
+    "scientific-agent-skills/opentrons-integration": {
+      "zh": [
+        "移液机器人协议",
+        "为 Opentrons Flex 和 OT-2 编写、评审、迁移和模拟 Python Protocol API v2 移液协议，覆盖甲板布局、移液器、模块与运行时参数；真实运行需对应硬件与 Opentrons App。",
+        "帮我写一个 Flex 上的 96 孔板梯度稀释协议，先在本地模拟通过再导入 App 分析"
+      ],
+      "en": [
+        "Opentrons Protocols",
+        "Authors, reviews, migrates and simulates Python Protocol API v2 protocols for Opentrons Flex and OT-2, covering deck setup, pipettes, modules and runtime parameters; physical execution needs the robot and Opentrons App.",
+        "Write a Flex serial-dilution protocol for a 96-well plate, simulate it locally, then prepare it for App analysis"
+      ]
+    },
+    "scientific-agent-skills/optimize-for-gpu": {
+      "zh": [
+        "GPU 加速优化",
+        "把 NumPy、pandas、scikit-learn 等 CPU 上的科学计算迁移到 NVIDIA GPU（CuPy、cuDF、cuML、RAPIDS、Numba-CUDA、Warp 等），并用基准对比验证正确且确实更快。需 CUDA GPU。",
+        "我的 pandas 聚合脚本跑 2 亿行太慢，帮我评估并改成 cuDF 的 GPU 版本再对比耗时"
+      ],
+      "en": [
+        "GPU Optimization",
+        "GPU-accelerates scientific Python on NVIDIA hardware via CuPy, cuDF, cuML, RAPIDS, Numba-CUDA and Warp, verifying correctness and real speedups with synchronized benchmarks; requires a CUDA-capable GPU.",
+        "My pandas aggregation over 200M rows is too slow — evaluate a cuDF GPU version and benchmark it"
+      ]
+    },
+    "scientific-agent-skills/pacsomatic": {
+      "zh": [
+        "肿瘤配对基因流程",
+        "准备并启动 nf-core/pacsomatic 的 PacBio HiFi 配对肿瘤-正常基因组流程：生成样本表、固定版本的启动产物和 LSF/Slurm 等调度提交。执行需 Nextflow、Java 与容器运行时。",
+        "帮我把这对未比对的肿瘤和正常 HiFi BAM 生成 pacsomatic 样本表并提交到 Slurm 集群"
+      ],
+      "en": [
+        "PacBio Somatic Workflow",
+        "Prepares and launches the nf-core/pacsomatic matched tumor-normal PacBio HiFi pipeline from unaligned BAMs: samplesheet generation, pinned launch artifacts and LSF/Slurm submission; execution needs Nextflow, Java and containers.",
+        "Build a pacsomatic samplesheet for this unaligned tumor-normal HiFi BAM pair and submit it to Slurm"
+      ]
+    },
+    "scientific-agent-skills/paper-lookup": {
+      "zh": [
+        "文献检索",
+        "统一调用 PubMed、arXiv、OpenAlex、Crossref、Semantic Scholar、Unpaywall 等 18 个学术 API 查论文、引用、开放获取全文并保留可复现的出处。仅需网络和 curl，无需密钥。",
+        "查这个 DOI 的论文元数据、被引情况和有没有开放获取的 PDF"
+      ],
+      "en": [
+        "Paper Lookup",
+        "Searches 18 scholarly APIs including PubMed, arXiv, OpenAlex, Crossref, Semantic Scholar and Unpaywall for papers, citations and open-access full text with reproducible provenance; needs network and curl, no keys required.",
+        "Look up this DOI's metadata, citation counts and whether an open-access PDF exists"
+      ]
+    },
+    "scientific-agent-skills/paperclip": {
+      "zh": [
+        "Paperclip 文献精读",
+        "用 GXL Paperclip CLI/SDK 检索并精读生物医学论文、FDA/EMA/PMDA 文件、临床试验与蛋白记录，支持全文检索、结构化抽取和带行号的引用。需安装 CLI 并配置 API 密钥或登录。",
+        "用 paperclip 在这些论文里检索给药剂量相关段落，抽取成表格并附行号引用"
+      ],
+      "en": [
+        "Paperclip Literature Reading",
+        "Searches and reads biomedical papers, FDA/PMDA/EMA documents, trials and protein records through the GXL Paperclip CLI and SDK, with full-text grep, structured extraction and line-pinned citations; requires the CLI plus an API key or login.",
+        "Use paperclip to grep dosing passages across these papers, extract them into a table with line citations"
+      ]
+    },
+    "scientific-agent-skills/paperzilla": {
+      "zh": [
+        "Paperzilla 项目推荐",
+        "通过 pz 命令行读取 Paperzilla 账号里的项目、推荐信息流和规范论文，可查看推荐理由、导出 JSON、提交反馈；需要已登录的 Paperzilla 账号和网络。",
+        "列出我 Paperzilla 里某个项目本周的推荐论文，挑三篇说明为什么和我的研究相关。"
+      ],
+      "en": [
+        "Paperzilla Project Recommendations",
+        "Uses the pz CLI to browse Paperzilla project feeds, open recommendations, fetch canonical papers, export JSON, and leave feedback; requires the pz CLI, network access, and a Paperzilla account.",
+        "Show this week's recommendations for my Paperzilla project and explain why the top three matter."
+      ]
+    },
+    "scientific-agent-skills/parallel-web": {
+      "zh": [
+        "Parallel 网络检索",
+        "用 Parallel CLI 做网页搜索、URL 内容提取、深度研究报告、结构化数据补全、实体发现和周期性监测；需要 parallel-cli、联网和 Parallel API 密钥或 CLI 登录。",
+        "用 Parallel 做一次深度研究，总结固态电池界面的最新权威进展并保留来源链接。"
+      ],
+      "en": [
+        "Parallel Web Intelligence",
+        "Runs web search, URL extraction, deep research reports, data enrichment, entity discovery, and recurring monitoring via the Parallel CLI; needs parallel-cli, internet access, and a Parallel API key or CLI login.",
+        "Run a Parallel deep research report on solid-state battery interfaces and keep the cited sources."
+      ]
+    },
+    "scientific-agent-skills/pathml": {
+      "zh": [
+        "PathML 病理图像",
+        "用 PathML 在本地处理全切片病理和多重成像数据：加载、切块、质控、预处理、h5path 存储、空间图与受限模型推理；需 Python 3.10–3.12、OpenSlide 和 JDK，研究用途非诊断。",
+        "把这批 H&E 切片按患者切分后切块并做质控，输出 h5path 文件和块坐标清单。"
+      ],
+      "en": [
+        "PathML Digital Pathology",
+        "Builds local computational-pathology workflows with PathML: slide loading, tiling, QC, preprocessing, h5path storage, spatial graphs, and bounded inference; needs Python 3.10–3.12, OpenSlide, and a JDK; research use only, not diagnostic.",
+        "Tile these H&E slides with patient-level splits, run QC, and save h5path files with tile coordinates."
+      ]
+    },
+    "scientific-agent-skills/pathogen-variant-surveillance": {
+      "zh": [
+        "病原变异监测",
+        "查询公开的 GenSpectrum LAPIS 数据，核对谱系命名、每周序列占比、报告延迟和突变频率，支持新冠、流感、RSV、猴痘等；仅需 Python 3.11+ 和网络，无需凭据，结果为描述性数据。",
+        "查一下最近四周 LAPIS 上新冠提交序列中占比最高的几个 Pango 谱系及其命名依据。"
+      ],
+      "en": [
+        "Pathogen Variant Surveillance",
+        "Queries public GenSpectrum LAPIS deployments for lineage nomenclature, weekly sequence proportions, reporting delays, and mutation frequencies across SARS-CoV-2, influenza, RSV, mpox, and more; needs Python 3.11+ and network, no credentials; descriptive only.",
+        "Check the dominant submitted Pango lineages on LAPIS over the last four weeks and verify their nomenclature."
+      ]
+    },
+    "scientific-agent-skills/pathway-enrichment": {
+      "zh": [
+        "通路富集分析",
+        "对基因列表或排序基因数据做 ORA、Enrichr、GSEA、ssGSEA/GSVA 等富集分析，涵盖 gseapy、g:Profiler、MSigDB、GO、KEGG、Reactome；需 Python 3.12+ 和 gseapy，在线查询需联网。",
+        "把这组 PyDESeq2 差异基因做 ORA 和 GSEA，给出显著 GO 和 KEGG 条目并说明背景基因集的选择。"
+      ],
+      "en": [
+        "Pathway Enrichment Analysis",
+        "Runs ORA, Enrichr, preranked GSEA, and ssGSEA/GSVA on gene lists via gseapy, g:Profiler, MSigDB, GO, KEGG, Reactome, and WikiPathways; needs Python 3.12+ with gseapy; online queries need network.",
+        "Run ORA and GSEA on this PyDESeq2 hit list and report significant GO and KEGG terms with the chosen background."
+      ]
+    },
+    "scientific-agent-skills/peer-review": {
+      "zh": [
+        "同行评审辅助",
+        "在获得授权的前提下为论文、预印本或课题申请准备有据可依、有建设性的评审草稿：核查论断与证据、方法、统计、可重复性和图表引用；工具仅本地运行，需人工审稿人确认。",
+        "帮我为这篇已获授权的投稿起草评审意见，逐条核对主要论断是否有证据支持。"
+      ],
+      "en": [
+        "Peer Review Assistant",
+        "Prepares evidence-bounded, constructive review drafts for authorized manuscripts, protocols, preprints, or proposals, checking claims, methods, statistics, reproducibility, and figures; bundled tools run locally and require reviewer authorization.",
+        "Draft a peer review for this authorized submission, checking each major claim against the evidence presented."
+      ]
+    },
+    "scientific-agent-skills/pennylane": {
+      "zh": [
+        "PennyLane 量子电路",
+        "用 PennyLane 0.45.1 构建和微分量子电路、混合 PyTorch/JAX 模型、分子 VQE 和 QAOA 工作流；需 Python 3.11+ 与 NumPy 2+，本地模拟无需凭据，硬件运行需供应商凭据和网络。",
+        "写一个氢分子的 VQE 流程：先在默认模拟器上验证梯度，再说明换到硬件要注意什么。"
+      ],
+      "en": [
+        "PennyLane Quantum Circuits",
+        "Builds and differentiates PennyLane 0.45.1 circuits, hybrid PyTorch/JAX models, molecular VQE, and QAOA workflows; needs Python 3.11+ with NumPy 2+; local simulation needs no credentials, hardware needs provider access and network.",
+        "Write a VQE for molecular hydrogen, verify gradients on the default simulator, then outline hardware steps."
+      ]
+    },
+    "scientific-agent-skills/phylogenetics": {
+      "zh": [
+        "系统发育树构建",
+        "用 MAFFT 比对、IQ-TREE 最大似然或 FastTree 近似推断构建并分析系统发育树，ETE3 做汇总和可视化；需安装这些可执行程序，可视化另需 Python 3.12 与 PyQt5。",
+        "对这组蛋白序列做 MAFFT 比对，用 IQ-TREE 建树并给出带分支支持值的树图。"
+      ],
+      "en": [
+        "Phylogenetic Tree Inference",
+        "Aligns homologous sequences with MAFFT and infers trees via IQ-TREE maximum likelihood or FastTree, with ETE3 summaries and figures; requires those executables installed, plus Python 3.12 and PyQt5 for visualization.",
+        "Align these protein sequences with MAFFT, build an IQ-TREE phylogeny, and produce a support-annotated tree figure."
+      ]
+    },
+    "scientific-agent-skills/pi-agent": {
+      "zh": [
+        "Pi 终端代理",
+        "安装、配置和扩展 Pi 终端编程助手：供应商与模型设置、技能/扩展/主题/提示模板、SDK 嵌入、RPC 与事件流、llama.cpp 本地模型路由及生态包；需 Node.js 22.19+ 和 npm。",
+        "帮我安装 Pi 并配置一个自定义模型供应商，再写一个加载项目上下文的 Pi 扩展。"
+      ],
+      "en": [
+        "Pi Terminal Coding Agent",
+        "Installs, configures, and extends the Pi terminal coding harness: providers, models, skills, extensions, themes, prompt templates, SDK embedding, RPC/event streams, and llama.cpp local models; requires Node.js 22.19+ and npm.",
+        "Install Pi, configure a custom model provider, and write an extension that loads my project context."
+      ]
+    },
+    "scientific-agent-skills/pkpd-modeling": {
+      "zh": [
+        "PK/PD 药代建模",
+        "做药代动力学与药效学分析：非房室分析、房室与群体 PK、暴露-反应、TMDD、生物等效性、异速放大和首次人体剂量等；需 Python 3.12+ 与 NumPy/SciPy，本地运行，商业软件仅作导引不调用。",
+        "对这份浓度-时间数据做非房室分析，给出 AUC、Cmax 和半衰期，并拟合一个一室模型。"
+      ],
+      "en": [
+        "PK/PD Modeling",
+        "Performs pharmacokinetic/pharmacodynamic analysis: NCA, compartmental and population PK, exposure-response, TMDD, bioequivalence, allometric scaling, and first-in-human dose; needs Python 3.12+ with NumPy/SciPy; proprietary tools like NONMEM are oriented to but never invoked.",
+        "Run non-compartmental analysis on this concentration-time data for AUC, Cmax, and half-life, then fit a one-compartment model."
+      ]
+    },
+    "scientific-agent-skills/polars": {
+      "zh": [
+        "Polars 高性能表格",
+        "用 Polars 1.44 做高性能 DataFrame 处理：表达式操作、惰性查询优化、并行执行、流式超核处理、Arrow 互通和 pandas 迁移；需 Python 3.10+，GPU、云和数据库功能需额外安装与配置。",
+        "把这段 pandas 清洗脚本改写成 Polars 惰性查询，处理 20GB 的实验日志并保持分组语义不变。"
+      ],
+      "en": [
+        "Polars DataFrames",
+        "Covers high-performance table processing with Polars 1.44: expression API, lazy query optimization, parallel and streaming execution, Arrow interop, and pandas migration; requires Python 3.10+, with extras for Excel, databases, cloud, and GPU.",
+        "Rewrite this pandas cleaning script as a Polars lazy query that streams a 20GB experiment log."
+      ]
+    },
+    "scientific-agent-skills/polars-bio": {
+      "zh": [
+        "polars-bio 基因组区间",
+        "在 Polars 中对基因组区间做重叠、最近邻、合并、覆盖度、互补和减法运算，并读写 BED、VCF、BAM、CRAM、GFF、FASTA 等格式；需 Python 3.11–3.14 与 polars-bio 0.36，远程数据才需网络凭据。",
+        "统计这批 ChIP-seq 峰与注释基因区间的重叠数，并对 BAM 文件计算目标区覆盖深度。"
+      ],
+      "en": [
+        "polars-bio Genomic Intervals",
+        "Runs genomic interval overlap, nearest, merge, coverage, complement, and subtraction on Polars DataFrames and reads BED, VCF, BAM, CRAM, GFF, FASTA/FASTQ; needs Python 3.11–3.14 with polars-bio 0.36; credentials only for remote data.",
+        "Count overlaps between these ChIP-seq peaks and gene annotations, then compute read depth over target regions."
+      ]
+    },
+    "scientific-agent-skills/pptx-posters": {
+      "zh": [
+        "PPTX 学术海报",
+        "从作者确认的本地内容和清单生成可编辑的无宏 PowerPoint 学术海报，并做物理尺寸、打印、可访问性和包安全检查；需 Python 3.10+ 及固定版本 python-pptx、Pillow、lxml，最终审查由人工完成。",
+        "按我给的清单和图生成一张 48×36 英寸的会议海报 PPTX，并检查图片分辨率和版面。"
+      ],
+      "en": [
+        "PowerPoint Research Posters",
+        "Generates editable macro-free one-slide PowerPoint posters from an author-approved local manifest with physical, printer, accessibility, and package-security checks; needs Python 3.10+ with pinned python-pptx, Pillow, and lxml; final review stays manual.",
+        "Build a 48x36 inch conference poster PPTX from my manifest and verify figure resolution and layout."
+      ]
+    },
+    "scientific-agent-skills/primekg": {
+      "zh": [
+        "PrimeKG 知识图谱",
+        "查询固定版本的 PrimeKG CSV，检索基因、药物、疾病、表型节点的直接关联、疾病上下文和一到两跳路径，保留关系类型与来源；需 Python 3.11+ 与 pandas，本地查询需先下载约 1GB 数据并具备数 GB 内存。",
+        "在 PrimeKG 里查这个疾病的关联基因和药物，再找两条可解释的两跳路径并保留原始关系记录。"
+      ],
+      "en": [
+        "PrimeKG Knowledge Graph",
+        "Queries a pinned PrimeKG CSV for typed gene, drug, disease, and phenotype nodes, direct associations, disease context, and one- or two-hop paths with provenance preserved; needs Python 3.11+, pandas, the ~1GB downloaded CSV, and several GB of RAM.",
+        "Find genes and drugs associated with this disease in PrimeKG, then two interpretable two-hop paths with source rows."
+      ]
+    },
+    "scientific-agent-skills/primer-design": {
+      "zh": [
+        "引物设计与特异性",
+        "用 Primer3 设计并审核 PCR/RT-qPCR 引物：明确热力学条件、参考序列脱靶扩增搜索、外显子交界或异构体特异、克隆尾巴和多重兼容性；需 primer3-py，BLAST 筛查另需本地 blastn/makeblastdb。",
+        "为这个基因的跨外显子区设计 RT-qPCR 引物对，并用本地参考库筛查脱靶产物。"
+      ],
+      "en": [
+        "Primer Design and Specificity",
+        "Designs and audits PCR/RT-qPCR primers with Primer3 thermodynamics, reference-based off-target screening, exon-junction or isoform assays, cloning tails, and multiplex checks; needs primer3-py, plus local blastn/makeblastdb for BLAST screening.",
+        "Design an exon-junction RT-qPCR primer pair for this gene and screen off-target products against a local reference."
+      ]
+    },
+    "scientific-agent-skills/protocolsio-integration": {
+      "zh": [
+        "protocols.io 集成",
+        "按官方 REST/MCP 契约读取、校验并安全导出 protocols.io 实验方案，或生成不执行的修改计划；默认离线校验，REST 读取需官方站点 HTTPS 访问和 bearer token，且必须显式加 --execute 才联网。",
+        "取回这个 DOI 对应方案的指定版本，校验步骤结构并导出为可审阅的 Markdown。"
+      ],
+      "en": [
+        "protocols.io Integration",
+        "Reads, validates, and exports protocols.io protocols per current REST/MCP contracts, or builds non-executing mutation plans; offline validation needs no credentials, REST reads need official-host HTTPS access and usually a bearer token, and network requires explicit --execute.",
+        "Fetch the pinned version of this protocol DOI, validate its step structure, and export a reviewable Markdown."
+      ]
+    },
+    "scientific-agent-skills/pufferlib": {
+      "zh": [
+        "PufferLib 强化学习",
+        "按版本提供 PufferLib 强化学习环境、向量化、策略、PuffeRL 训练与评估指导，覆盖原生 5.0、PyPI 3.0.0 和固定 4.0；自带检查仅需 Python 3.10+，5.0 训练需 C/CUDA 工具链与硬件。",
+        "帮我确认用哪个 PufferLib 版本适配我的 Gymnasium 环境，并检查环境的观测与奖励契约。"
+      ],
+      "en": [
+        "PufferLib RL Environments",
+        "Version-aware guidance for PufferLib environments, vectorization, policies, PuffeRL training, and evaluation across native 5.0, PyPI 3.0.0, and pinned 4.0; bundled checks need only Python 3.10+, while 5.0 training needs a C/CUDA toolchain.",
+        "Help me pick the right PufferLib version for my Gymnasium environment and check its observation and reward contract."
+      ]
+    },
+    "scientific-agent-skills/pybamm": {
+      "zh": [
+        "PyBaMM 电池仿真",
+        "用 PyBaMM 26.9 模拟锂离子电池充放电与搁置实验，记录参数集来源、检查网格与求解器敏感性，并与实测循环曲线比较；需 Python 3.12 与 pybammsolvers，本地仿真无需凭据。",
+        "用 Chen2020 参数跑一个 1C 放电的 SPM 和 DFN 对比仿真，检查不同网格下电压曲线差异。"
+      ],
+      "en": [
+        "PyBaMM Battery Simulation",
+        "Simulates lithium-ion charge, discharge, and rest with PyBaMM 26.9, records parameter-set provenance, checks mesh and solver sensitivity, and compares predictions to cycling data; needs Python 3.12 with pybammsolvers; local runs need no credentials.",
+        "Compare SPM and DFN simulations of a 1C discharge with Chen2020 parameters and check mesh sensitivity."
+      ]
+    },
+    "scientific-agent-skills/pycalphad": {
+      "zh": [
+        "pycalphad 相平衡",
+        "用 pycalphad 0.11 从 TDB 热力学数据库计算有限温度 CALPHAD 平衡、相分数和相成分，适合合金相稳定性、温度扫描和杠杆定律核对；需 Python 3.12+，真实材料需自备授权 TDB 数据库。",
+        "用这个 TDB 数据库计算 Cu-Ni 合金在 800–1400K 的相分数随温度变化并核对质量守恒。"
+      ],
+      "en": [
+        "pycalphad Phase Equilibria",
+        "Computes finite-temperature CALPHAD equilibria, phase fractions, and compositions from TDB databases with pycalphad 0.11, for alloy phase stability and temperature sweeps; needs Python 3.12+, and real materials require a licensed thermodynamic database.",
+        "Compute phase fractions versus temperature for a Cu-Ni alloy from 800–1400K using this TDB and check mass balance."
+      ]
+    },
+    "scientific-agent-skills/pydeseq2": {
+      "zh": [
+        "PyDESeq2 差异表达",
+        "用 PyDESeq2 做批量 RNA-seq 差异表达：计数校验、公式设计、显式对比、Wald 检验、FDR 校正、LFC 收缩和可视化；需 Python 3.11+ 与 PyDESeq2 0.5.4，本地分析无需网络，依赖真实生物学重复。",
+        "对这份计数表按处理与对照做差异表达分析，加入批次协变量并输出校正后的显著基因表。"
+      ],
+      "en": [
+        "PyDESeq2 Differential Expression",
+        "Runs bulk RNA-seq differential expression with PyDESeq2: count validation, formula designs, explicit contrasts, Wald tests, FDR correction, LFC shrinkage, and visualization; needs Python 3.11+ with PyDESeq2 0.5.4 and true biological replicates.",
+        "Run a treatment-versus-control differential expression on this count table with a batch covariate and report significant genes."
+      ]
+    },
+    "scientific-agent-skills/pydicom": {
+      "zh": [
+        "DICOM影像处理",
+        "用 pydicom 读取、检查、转换本地 DICOM 医学影像文件及像素数据，适合科研影像集整理；仅处理本地授权文件，不做诊断也不连 PACS，需安装 pydicom 及可选 NumPy、Pillow、pylibjpeg 插件。",
+        "帮我检查这批 DICOM 文件的传输语法并生成去标识化的副本清单"
+      ],
+      "en": [
+        "DICOM file processing",
+        "Reads, inspects, converts, and preflights local DICOM datasets and pixel data with pydicom for research imaging work; local authorized files only, no diagnostic or PACS use, requires pydicom plus optional NumPy/Pillow/pylibjpeg plugins.",
+        "Inspect this DICOM collection's transfer syntaxes and plan a bounded de-identified export"
+      ]
+    },
+    "scientific-agent-skills/pyhealth": {
+      "zh": [
+        "临床预测建模",
+        "用 PyHealth 2.x 搭建临床机器学习流程，覆盖 EHR、信号、影像任务与 ICD/ATC/RxNorm 编码映射，适合 MIMIC、eICU、OMOP 类预测研究；需 Python 3.12/3.13 和 Torch，受限临床数据须有授权本地访问。",
+        "用 PyHealth 在 MIMIC-IV 上搭一个院内死亡率预测流程并按患者划分数据集"
+      ],
+      "en": [
+        "Clinical prediction pipelines",
+        "Builds PyHealth clinical ML pipelines for EHR, signals, imaging tasks, and medical-code mapping on MIMIC/eICU/OMOP-style data; needs Python 3.12/3.13 with Torch and authorized access to restricted clinical datasets.",
+        "Set up a PyHealth mortality-prediction pipeline on MIMIC-IV with patient-level splits"
+      ]
+    },
+    "scientific-agent-skills/pylabrobot": {
+      "zh": [
+        "实验室自动化规划",
+        "用 PyLabRobot 设计移液机器人资源树、甲板布局和移液方案并做离线仿真，适合协议开发与评审；默认只用软件后端，真实设备必须经操作员安全确认，需安装 PyLabRobot 0.2.2。",
+        "帮我把这个 96 孔板移液协议写成 PyLabRobot 方案并做离线仿真检查"
+      ],
+      "en": [
+        "Lab automation planning",
+        "Develops PyLabRobot liquid-handling resources, deck layouts, and transfer plans with software-only simulation for protocol development and review; physical devices stay behind an explicit operator safety gate, requires PyLabRobot 0.2.2.",
+        "Turn this 96-well pipetting protocol into a PyLabRobot plan and simulate it offline"
+      ]
+    },
+    "scientific-agent-skills/pymatgen": {
+      "zh": [
+        "材料结构分析",
+        "用 pymatgen 校验、转换和分析晶体结构与计算材料数据，支持对称性、相图和电子结构文件，适合材料科学研究；本地功能需 Python 3.11+，查 Materials Project 还需联网和 MP_API_KEY。",
+        "帮我解析这个 VASP 输出文件并检查它在不同容差下的空间群判定"
+      ],
+      "en": [
+        "Materials structure analysis",
+        "Validates, converts, and analyzes crystal structures and computed materials data with pymatgen, covering symmetry, phase diagrams, and electronic-structure files; needs Python 3.11+, and Materials Project queries need network plus an MP_API_KEY.",
+        "Parse this VASP output and check its space-group assignment across tolerances"
+      ]
+    },
+    "scientific-agent-skills/pymc": {
+      "zh": [
+        "贝叶斯概率建模",
+        "用 PyMC 构建贝叶斯模型，含层级模型、NUTS 采样、后验预测检查和 PSIS-LOO 模型比较，适合带不确定性的科学推断；纯本地运行，需 Python 3.12+ 与 PyMC、PyTensor、ArviZ。",
+        "帮我用 PyMC 建一个层级模型并做后验预测检查"
+      ],
+      "en": [
+        "Bayesian modeling with PyMC",
+        "Builds and checks Bayesian models in PyMC, including hierarchical models, NUTS MCMC, posterior predictive checks, and PSIS-LOO comparison; runs fully locally with Python 3.12+ and pinned PyMC/PyTensor/ArviZ versions.",
+        "Build a hierarchical PyMC model and run posterior predictive checks"
+      ]
+    },
+    "scientific-agent-skills/pymoo": {
+      "zh": [
+        "多目标优化",
+        "用 pymoo 求解单目标、多目标优化问题，含 NSGA-II/III、MOEA/D、约束处理和 ZDT/DTLZ 基准，适合工程与科研中的权衡分析；本地运行，需 Python 3.10+ 和 pymoo 0.6.2。",
+        "帮我用 NSGA-II 求解这个两目标约束优化并画出帕累托前沿"
+      ],
+      "en": [
+        "Multi-objective optimization",
+        "Solves single-, multi-, and many-objective optimization with pymoo, including NSGA-II/III, MOEA/D, constraints, and ZDT/DTLZ benchmarks for trade-off analysis; local runs need Python 3.10+ and pymoo 0.6.2.",
+        "Solve this constrained two-objective problem with NSGA-II and plot the Pareto front"
+      ]
+    },
+    "scientific-agent-skills/pyopenms": {
+      "zh": [
+        "质谱数据处理",
+        "用 pyOpenMS 处理蛋白质组学和代谢组学质谱数据，含特征检测、肽段鉴定和定量流程及现成脚本，适合 LC-MS/MS 分析；需 CPython 3.11+ 和 pyOpenMS 3.6.0，搜索引擎可执行文件另行配置。",
+        "帮我检测这批 mzML 文件中的代谢物特征并导出强度矩阵"
+      ],
+      "en": [
+        "Mass spectrometry processing",
+        "Processes proteomics and metabolomics MS data with pyOpenMS, shipping ready-to-run scripts for inspection, feature detection, identification, and quantification; needs CPython 3.11+ and pyOpenMS 3.6.0, search engines installed separately.",
+        "Detect metabolite features in these mzML files and export an intensity matrix"
+      ]
+    },
+    "scientific-agent-skills/pysam": {
+      "zh": [
+        "基因组文件处理",
+        "用 pysam 读写和查询 SAM/BAM/CRAM、VCF/BCF、FASTA/FASTQ 及 tabix 文件，适合区域查询、质控统计和过滤；本地运行需 pysam 0.24.1，CRAM 解码还需匹配的参考基因组 FASTA。",
+        "统计这个 BAM 文件 chr1 指定区域的覆盖度并过滤低质量比对"
+      ],
+      "en": [
+        "Genomic file workflows",
+        "Reads, queries, filters, and writes SAM/BAM/CRAM, VCF/BCF, FASTA/FASTQ, and tabix data with pysam for region queries and QC; needs pysam 0.24.1 locally, and CRAM decoding needs the matching reference FASTA.",
+        "Summarize coverage over a chr1 region in this BAM and filter low-quality alignments"
+      ]
+    },
+    "scientific-agent-skills/pytdc": {
+      "zh": [
+        "治疗数据基准",
+        "通过 PyTDC 使用 Therapeutics Data Commons 的治疗机器学习数据集、任务划分、评估指标和基准组，适合药物研发 ML 研究；需 CPython 3.11、PyTDC 1.1.15 和 setuptools 80.9.0，下载数据集要联网和磁盘空间。",
+        "帮我列出 TDC 里的 ADME 数据集并按推荐划分评估我的预测"
+      ],
+      "en": [
+        "Therapeutics data benchmarks",
+        "Accesses Therapeutics Data Commons datasets, task-aware splits, evaluators, and benchmark groups via PyTDC for drug-discovery ML; needs CPython 3.11, PyTDC 1.1.15, setuptools 80.9.0, plus network and disk for downloads.",
+        "List TDC ADME datasets and evaluate my predictions with the recommended split"
+      ]
+    },
+    "scientific-agent-skills/pytorch-lightning": {
+      "zh": [
+        "PyTorch训练工程化",
+        "用 PyTorch Lightning 把 PyTorch 代码组织成 LightningModule 并配置多 GPU/TPU 训练、回调和日志，适合可扩展深度学习实验；需 lightning 2.6.6 与兼容 PyTorch，分布式训练需相应硬件，在线日志需凭据。",
+        "帮我把这个 PyTorch 训练脚本重构成 LightningModule 并配置 DDP 训练"
+      ],
+      "en": [
+        "Structured PyTorch training",
+        "Organizes PyTorch code into LightningModules and configures Trainers for multi-GPU/TPU, callbacks, loggers, and distributed strategies like DDP/FSDP/DeepSpeed; needs lightning 2.6.6 with matching PyTorch, hardware and logger credentials as applicable.",
+        "Refactor this PyTorch training script into a LightningModule with DDP configured"
+      ]
+    },
+    "scientific-agent-skills/pyzotero": {
+      "zh": [
+        "Zotero文献库管理",
+        "用 pyzotero 通过 Zotero API 检索、创建、更新文献条目、合集、标签和附件，适合文献库自动化与引用导出；远程私有库需 Zotero API key，本地读写需 Zotero 7+/10+ 并开启本地 API。",
+        "帮我把这个文件夹的 PDF 上传到 Zotero 对应条目并导出 BibTeX"
+      ],
+      "en": [
+        "Zotero library management",
+        "Manages Zotero libraries via pyzotero and the Web API v3 or local API, covering items, collections, tags, attachments, and citation export; remote private access needs a Zotero API key, local access needs Zotero 7+/10+ with the local API enabled.",
+        "Attach these PDFs to their Zotero items and export the collection as BibTeX"
+      ]
+    },
+    "scientific-agent-skills/qiime2-amplicon": {
+      "zh": [
+        "16S扩增子分析",
+        "用 QIIME 2 把双端 16S 扩增子读段处理为 ASV 和物种分类并保留分析溯源，适合微生物群落研究；需官方 conda/容器安装的 QIIME 2 2026.7 和兼容的分类器，安装和参考下载要联网。",
+        "帮我把这批双端 16S FASTQ 走一遍引物修剪、DADA2 和物种分类流程"
+      ],
+      "en": [
+        "16S amplicon analysis",
+        "Processes paired-end 16S reads into QIIME 2 ASVs and taxonomy with retained provenance for microbiome studies; requires the official conda/container QIIME 2 2026.7 distribution and a compatible classifier, plus network for installs and reference downloads.",
+        "Run primer trimming, DADA2 denoising, and taxonomy on these paired-end 16S FASTQs"
+      ]
+    },
+    "scientific-agent-skills/qiskit": {
+      "zh": [
+        "量子电路开发",
+        "用 Qiskit 2.x 构建、转译和执行量子电路，支持本地或含噪仿真及 IBM QPU 上的 V2 primitives，适合量子计算实验；本地需 qiskit 和 qiskit-aer，跑 IBM 真机还需 IBM Quantum 账号和 API key。",
+        "帮我构建这个参数化电路，对目标后端转译并在本地模拟采样"
+      ],
+      "en": [
+        "Quantum circuit development",
+        "Builds, transpiles, simulates, and executes Qiskit 2.x circuits via V2 primitives locally or on IBM Quantum Runtime; local work needs qiskit and qiskit-aer, IBM QPU runs additionally need network, an IBM Quantum account, and an API key.",
+        "Build this parameterized circuit, transpile it for the target backend, and sample it locally"
+      ]
+    },
+    "scientific-agent-skills/qutip": {
+      "zh": [
+        "开放量子系统仿真",
+        "用 QuTiP 5 仿真封闭与开放量子系统的动力学、轨迹、稳态和谱，适合量子光学与林德布拉德动力学研究；纯本地运行，需 Python 3.11+ 和 qutip 5.3.1，不是硬件执行工具。",
+        "帮我模拟这个两能级系统在耗散下的时间演化并检验截断收敛性"
+      ],
+      "en": [
+        "Open quantum system simulation",
+        "Simulates closed and open quantum-system dynamics, trajectories, steady states, and spectra with QuTiP 5 for local quantum-dynamics work; needs Python 3.11+ and qutip 5.3.1, no network or hardware execution involved.",
+        "Simulate this driven two-level system's dissipative evolution and test truncation convergence"
+      ]
+    },
+    "scientific-agent-skills/rdkit": {
+      "zh": [
+        "化学信息学分析",
+        "用 RDKit 解析 SMILES/SDF、计算描述符和指纹、做子结构搜索、反应与三维构象，适合需要精细分子控制的药物化学研究；本地运行需安装 rdkit 包，安装后无需联网或凭据。",
+        "帮我计算这批 SMILES 的分子量、LogP 和指纹并做相似性聚类"
+      ],
+      "en": [
+        "Cheminformatics with RDKit",
+        "Parses SMILES/SDF, computes descriptors and fingerprints, runs substructure search, reactions, and 3D generation with RDKit for fine-grained molecular control; local only after installing the rdkit package, no credentials needed.",
+        "Compute MW, LogP, and fingerprints for these SMILES and cluster them by similarity"
+      ]
+    },
+    "scientific-agent-skills/relion": {
+      "zh": [
+        "冷冻电镜精修",
+        "校验并执行 RELION 单颗粒冷冻电镜精修与半图后处理，含 STAR 光学参数、金标准半集和软掩膜检查，适合已提取颗粒的三维重构；需 RELION 5.0.1 加 MPI/OpenMP/FFT 库，GPU 版需加速栈。",
+        "帮我校验这个 particles.star 并启动金标准三维精修"
+      ],
+      "en": [
+        "Cryo-EM refinement",
+        "Validates and runs RELION single-particle cryo-EM refinement and half-map postprocessing, checking STAR optics, gold-standard half sets, and soft masks; requires RELION 5.0.1 with MPI, OpenMP, and an FFT library, GPU builds need their accelerator stack.",
+        "Validate this particles.star file and launch a gold-standard 3D refinement"
+      ]
+    },
+    "scientific-agent-skills/relsa-severity-assessment": {
+      "zh": [
+        "动物福利严重度评估",
+        "用 RELSA 方法把体重、体温、临床评分等福利指标合成相对严重度分数，并用 ARIMA 做探索性预测，适合实验动物研究的 3Rs 和严重度报告；本地运行需 Python 3.12+ 及 numpy、pandas、statsmodels 等。",
+        "帮我把这些小鼠的体重和临床评分合成 RELSA 严重度分数并预测下次观察值"
+      ],
+      "en": [
+        "Animal welfare severity scoring",
+        "Combines welfare readouts like weight, temperature, and clinical scores into RELSA relative severity scores with exploratory ARIMA forecasts for lab-animal studies; runs locally with Python 3.12+ and numpy/pandas/scipy/statsmodels/matplotlib.",
+        "Combine these mouse weight and clinical scores into RELSA severity scores and forecast the next observation"
+      ]
+    },
+    "scientific-agent-skills/research-grants": {
+      "zh": [
+        "科研基金写作",
+        "支持 NSF、NIH、DOE、DARPA 和台湾 NSTC 的申请书撰写与评审，含研究目标、评审标准、预算和合规矩阵，适合基金申请与修改；核实当前资助机会需联网或提供官方文件，示意图功能需 OPENROUTER_API_KEY。",
+        "帮我按 NIH R01 的评审标准检查这份申请书的研究目标和预算一致性"
+      ],
+      "en": [
+        "Research grant writing",
+        "Supports proposal preparation and review for NSF, NIH, DOE, DARPA, and Taiwan NSTC, covering aims, review criteria, budgets, and compliance matrices; verifying current opportunities needs network or supplied official documents, optional figures need OPENROUTER_API_KEY.",
+        "Check this NIH R01 draft's aims and budget consistency against the review criteria"
+      ]
+    },
+    "scientific-agent-skills/research-lookup": {
+      "zh": [
+        "文献证据检索",
+        "为论文或研究简报汇编外部学术证据，默认用 Parallel Search/Extract 检索并生成参考文献、证据矩阵和论点-来源映射，适合系统性文献调研；需 Python 3.10+、联网和 parallel-web-tools CLI，Chat 功能需 PARALLEL_API_KEY。",
+        "帮我为这篇论文的引言检索约60篇相关文献并整理成证据矩阵"
+      ],
+      "en": [
+        "Scholarly evidence gathering",
+        "Compiles scholarly evidence for manuscripts via Parallel Search/Extract/Research into references, evidence matrices, and claim-to-source maps; needs Python 3.10+, network, and the parallel-web-tools CLI, explicit Chat needs PARALLEL_API_KEY and optional Perplexity needs OPENROUTER_API_KEY.",
+        "Gather about 60 relevant references for this paper's introduction and build an evidence matrix"
+      ]
+    },
+    "scientific-agent-skills/rowan": {
+      "zh": [
+        "云端分子建模",
+        "通过 Rowan 云平台 Python API 运行 pKa 预测、构象/互变异构、对接、蛋白-配体共折叠和分子动力学等计算化学流程，适合批量筛选而无需自建 HPC；需 rowan-python、联网和 ROWAN_API_KEY。",
+        "帮我提交这批分子的 pKa 预测和构象搜索到 Rowan 并整理结果"
+      ],
+      "en": [
+        "Cloud molecular modeling",
+        "Runs hosted Rowan workflows for pKa prediction, conformer/tautomer ensembles, docking, protein-ligand cofolding, and MD via its Python API for batch screening without local HPC; needs rowan-python, network access, and a ROWAN_API_KEY.",
+        "Submit pKa prediction and conformer searches for these molecules to Rowan and organize the results"
+      ]
+    },
+    "scientific-agent-skills/scanpy": {
+      "zh": [
+        "Scanpy单细胞分析",
+        "用Scanpy完成单细胞RNA测序的质控、标准化、降维聚类、标志基因排序和假批量准备，适合探索10x或h5ad数据；需Python 3.12+并安装scanpy，本地运行无需凭据。",
+        "用Scanpy分析我的人外周血10x数据：检查质控、聚类细胞、用多个标志基因推断免疫细胞类型并保存UMAP图和h5ad文件"
+      ],
+      "en": [
+        "Scanpy Single-Cell Analysis",
+        "Runs complete Scanpy scRNA-seq workflows: QC, normalization, PCA/UMAP, clustering, exploratory marker ranking, and pseudobulk preparation; requires Python 3.12+ with the scanpy package installed, runs locally without credentials.",
+        "Analyze my human blood 10x data with Scanpy: check quality, cluster cells, propose immune cell types from multiple markers, and save the UMAP plots and h5ad dataset"
+      ]
+    },
+    "scientific-agent-skills/scholar-evaluation": {
+      "zh": [
+        "学术作品评价",
+        "对论文、草稿、方案或研究想法做发展性评审，把每条意见追溯到原文证据，可选本地评分工具做小规模量规审计；不含录用或排名判断，仅本地处理无需凭据。",
+        "用scholar-evaluation评审我的研究方案：围绕问题清晰度和方法与结论的对应关系，把意见链接到原文并保留不确定性，给出具体修改建议"
+      ],
+      "en": [
+        "Scholarly Work Evaluation",
+        "Gives evidence-traceable developmental feedback on papers, drafts, protocols, or research ideas, with optional local standard-library Python rubric auditing; excludes acceptance and ranking judgments and needs no network or credentials.",
+        "Review my research protocol with scholar-evaluation: link comments to the draft, preserve uncertainty, and recommend concrete revisions without issuing an acceptance judgment"
+      ]
+    },
+    "scientific-agent-skills/scientific-brainstorming": {
+      "zh": [
+        "科研头脑风暴",
+        "结构化组织早期科研构想：独立产生候选解释、区分假设与证据、按明确标准比较方向并保留分歧，适合选题和机制讨论；核心流程无需额外软件或凭据。",
+        "用scientific-brainstorming帮我梳理实验异常结果的可能解释：先独立列出候选假设，标注前提和预测，再按信息量与可行性排序后续方向"
+      ],
+      "en": [
+        "Scientific Brainstorming",
+        "Structures early-stage ideation: generates candidate explanations independently, separates assumptions from evidence, compares directions on declared criteria, and preserves dissent; the core workflow needs no packages, network, or credentials.",
+        "Use scientific-brainstorming to explore explanations for an unexpected result: list independent alternatives, label assumptions and predictions, then rank follow-up directions by information gained and feasibility"
+      ]
+    },
+    "scientific-agent-skills/scientific-critical-thinking": {
+      "zh": [
+        "科研批判思维",
+        "评估科学论断的证据支撑：核对研究设计、偏倚、统计解释与适用范围，选用合适的评估框架写出可追溯的建设性批评；核心无需软件，配图需OpenRouter密钥。",
+        "用scientific-critical-thinking评估这篇论文的因果结论：找出确切比较和效应量，审查混杂与选择偏倚，区分报告缺失与方法缺陷"
+      ],
+      "en": [
+        "Scientific Critical Thinking",
+        "Appraises what a scientific claim is supported by across design, bias, statistics, and applicability, then writes a traceable constructive critique; core needs no software, optional diagrams require an OpenRouter API key.",
+        "Assess this paper's causal claim with scientific-critical-thinking: identify the exact comparison and effect estimate, review confounding and selection, and distinguish missing reporting from real design flaws"
+      ]
+    },
+    "scientific-agent-skills/scientific-schematics": {
+      "zh": [
+        "科研示意图生成",
+        "把通路、系统、流程或模型架构的自然语言描述变成PNG示意图草稿，附自动视觉评审和有限次精修；需Python、联网和OpenRouter API密钥，输出为位图需人工核对。",
+        "用scientific-schematics画一张我分析流程的示意图：区分实测输入与推断输出，配色克制，保留评审记录供我逐一检查标签和箭头"
+      ],
+      "en": [
+        "Scientific Schematics",
+        "Drafts raster diagrams of pathways, workflows, or model architectures from a precise brief, with automated visual review and limited refinement; requires Python, network access, and an OpenRouter API key.",
+        "Draft a diagram of my analysis workflow with scientific-schematics: show measured inputs versus inferred outputs, use a restrained palette, and keep the review log for manual checking"
+      ]
+    },
+    "scientific-agent-skills/scientific-slides": {
+      "zh": [
+        "科研幻灯片",
+        "把研究内容组织成会议报告、组会或答辩幻灯片：规划叙事、分配每页要点、选择可编辑PPTX、Beamer或图片式输出并检查排版；生成图需OpenRouter密钥。",
+        "用scientific-slides把我的图表和摘要整理成15分钟会议报告：规划叙事、保留可编辑数据图、加简洁引用并检查成品的可读性"
+      ],
+      "en": [
+        "Scientific Slides",
+        "Builds research talks for conferences, seminars, or defenses: plans the narrative, assigns slide purposes, and assembles editable PPTX, Beamer, or image decks; image generation needs an OpenRouter API key, PPTX needs Node.js and PptxGenJS, Beamer needs TeX.",
+        "Turn my figures and summary into a 15-minute conference talk with scientific-slides: plan the narrative, keep quantitative plots editable, add concise citations, and inspect the rendered deck"
+      ]
+    },
+    "scientific-agent-skills/scientific-visualization": {
+      "zh": [
+        "科研可视化",
+        "用Matplotlib、Seaborn、Plotly设计诚实清晰的科研图：匹配编码、呈现不确定性与缺失值、按目标尺寸导出检查；本地无需凭据。",
+        "用scientific-visualization重画我的多面板结果图：保留每个数据点、标注置信区间和重复单位、不依赖颜色区分组并按稿件宽度导出检查"
+      ],
+      "en": [
+        "Scientific Visualization",
+        "Guides honest research figure design with Matplotlib, Seaborn, or Plotly: encoding choice, uncertainty and missingness display, deliberate export, and final-file inspection; local work needs no credentials, Plotly static export needs a Chrome/Chromium install.",
+        "Redesign my multi-panel results figure with scientific-visualization: preserve every point, label uncertainty intervals and the unit of replication, distinguish groups without color alone, and export at manuscript width"
+      ]
+    },
+    "scientific-agent-skills/scientific-writing": {
+      "zh": [
+        "科研写作",
+        "把已核实的数据与结果转成清晰稿件：起草或修改论文段落、让论断可追溯到证据、核对样本量等一致性并检查报告规范覆盖；本地工具无需密钥，不替你编造内容。",
+        "用scientific-writing按已核实的表格修改我的结果与讨论部分：区分观察与解释、核对所有样本数与单位、标出缺乏来源支撑的表述"
+      ],
+      "en": [
+        "Scientific Writing",
+        "Turns verified study material into clear manuscript prose with claims traced to sources, consistency checks, and reporting-coverage audits; optional local helpers run offline with no API keys and never invent results.",
+        "Revise my Results and Discussion with scientific-writing from verified tables: separate observations from interpretation, reconcile all sample counts and units, and flag unsupported statements"
+      ]
+    },
+    "scientific-agent-skills/scikit-bio": {
+      "zh": [
+        "scikit-bio分析",
+        "用scikit-bio处理序列、群落计数表和系统发育树：Alpha/Beta多样性、UniFrac距离、排序与生态统计；需安装该库，本地运行无需凭据。",
+        "用scikit-bio分析我的群落计数表和样本元数据：核对样本与树梢对齐、比较丰度与系统发育距离、画排序图并评估置换检验是否适合我的重复采样设计"
+      ],
+      "en": [
+        "scikit-bio Community Analysis",
+        "Handles sequences, community tables, and phylogenetic trees for alpha and beta diversity, UniFrac, ordination, and ecological statistics; requires Python 3.10+ with scikit-bio installed, local work needs no credentials.",
+        "Explore my community count table with scikit-bio: align samples and tree tips, compare abundance and phylogenetic distances, show an ordination, and check whether the permutation test fits my repeated sampling design"
+      ]
+    },
+    "scientific-agent-skills/scikit-learn": {
+      "zh": [
+        "sklearn机器学习",
+        "用scikit-learn做分类、回归、聚类和降维：预处理放入管线防泄漏、按独立样本单位划分、调参并报告留出性能；需安装该库。",
+        "用scikit-learn比较我的表格预测模型：同一标本的记录放在同一划分、预处理在交叉验证内拟合、保留独立测试集并报告对科研有意义的误差"
+      ],
+      "en": [
+        "scikit-learn Machine Learning",
+        "Builds and evaluates classification, regression, clustering, and dimensionality-reduction pipelines with leak-free preprocessing and splits that respect the independent sampling unit; requires Python 3.11+ and scikit-learn installed locally.",
+        "Compare models for my tabular prediction task with scikit-learn: keep each specimen's records in one partition, fit preprocessing inside cross-validation, hold out a test set, and report the errors that matter"
+      ]
+    },
+    "scientific-agent-skills/scikit-survival": {
+      "zh": [
+        "生存分析建模",
+        "用scikit-survival处理右删失的时间-事件结局：生存模型选择、指定时点概率预测、考虑删失的评估指标和竞争风险累积发生估计；需Python 3.11+安装该库。",
+        "用scikit-survival评估我的队列时间-事件预测模型：定义事件与删失规则、在训练折内做预处理、在数据支持的时点评估区分度和概率误差"
+      ],
+      "en": [
+        "Survival Analysis Modeling",
+        "Fits survival models on right-censored time-to-event data with censoring-aware evaluation, risk scores, survival probabilities, and nonparametric competing-risk cumulative incidence; requires Python 3.11+ and the scikit-survival package.",
+        "Evaluate my cohort's time-to-event model with scikit-survival: define event and censoring rules, keep preprocessing inside training folds, and report discrimination separately from probability accuracy at supported horizons"
+      ]
+    },
+    "scientific-agent-skills/scvelo": {
+      "zh": [
+        "scVelo RNA速率",
+        "用scVelo基于成对的已剪接/未剪接计数做RNA速率分析：拟合动力学模型、检查基因相位图、构建速度图并检验方向解释的稳健性；需Python 3.13配套环境。",
+        "用scVelo检查我的已对齐剪接/未剪接计数：核对计数来源、查看关键基因的相位图、测试邻居和基因选择的敏感性并对照采集时间标签验证方向"
+      ],
+      "en": [
+        "scVelo RNA Velocity",
+        "Runs RNA velocity analysis from aligned spliced and unspliced counts: kinetic model fitting, gene phase portraits, velocity graphs, and sensitivity checks on directional interpretations; requires a Python 3.13 stack with scvelo, scanpy, and anndata.",
+        "Examine my aligned spliced and unspliced counts with scVelo: verify count provenance, inspect phase portraits for key genes, test neighborhood and gene-set sensitivity, and compare direction with my collection-time labels"
+      ]
+    },
+    "scientific-agent-skills/scvi-tools": {
+      "zh": [
+        "scvi-tools建模",
+        "用scvi-tools拟合单细胞生成模型：批次整合、注释、多模态联合和模型化差异表达；需Python 3.12+及PyTorch，CPU可用。",
+        "用scvi-tools整合我的两个单细胞RNA数据集：保留原始计数、说明哪些变量按批次处理、评估批次混合与已知生物结构的保留并保存模型"
+      ],
+      "en": [
+        "scvi-tools Probabilistic Models",
+        "Fits probabilistic single-cell models for batch integration, annotation, multimodal analysis, and model-based differential expression while preserving required input representations; needs Python 3.12+ with scvi-tools and PyTorch, CPU training supported.",
+        "Integrate my two scRNA-seq datasets with scvi-tools: preserve raw counts, state which variables are treated as batch, assess both batch mixing and retained biology, and save the model with feature order"
+      ]
+    },
+    "scientific-agent-skills/seaborn": {
+      "zh": [
+        "Seaborn统计绘图",
+        "用Seaborn从表格画分布、关系、分类、回归和分面图：显式定义估计与区间、处理重复测量与缺失；需安装seaborn和pandas。",
+        "用Seaborn探索我的重复测量实验：画出每个个体的轨迹和组内变化的汇总、说明每条区间的含义、保留观测缺口并对各处理组用一致的坐标"
+      ],
+      "en": [
+        "Seaborn Statistical Plotting",
+        "Creates distribution, relationship, categorical, regression, and faceted plots from tidy tables with explicit estimators, intervals, and missing-data handling; requires Python with seaborn, pandas, NumPy, and Matplotlib, no credentials needed.",
+        "Explore my repeated-measures experiment with Seaborn: show individual subject trajectories and a separate summary of within-subject change, state what each interval means, and keep consistent scales across treatment groups"
+      ]
+    },
+    "scientific-agent-skills/shap": {
+      "zh": [
+        "SHAP模型解释",
+        "用SHAP解释已训练模型的预测：选择解释器和参考人群、计算特征归因、校验加和性并生成局部与全局图；说明是模型行为而非因果机制，需Python安装shap库。",
+        "用SHAP解释我的分类器在留出样本上的预测：解释阳性类别概率、用训练人群做背景数据、验证归因能还原模型输出并展示个体与汇总视图"
+      ],
+      "en": [
+        "SHAP Model Explanations",
+        "Computes feature attributions for a fitted model: explainer and reference-population selection, additivity validation, and local or global plots that describe model behavior rather than causality; requires Python with the shap package and the model's own library.",
+        "Explain my evaluated classifier's held-out predictions with SHAP: explain positive-class probability, use training data as background, verify attributions reconstruct the output, and show individual and aggregate views"
+      ]
+    },
+    "scientific-agent-skills/simpy": {
+      "zh": [
+        "SimPy离散事件仿真",
+        "用SimPy构建排队和资源竞争的离散事件仿真：实验室流程、服务运营、生产物流；指导建模、验证、独立重复运行和等待时间等指标汇总；需Python安装SimPy，本地运行。",
+        "用SimPy为实验室样本处理排队建模：我给到达规律和设备产能，验证简单情形、用独立重复比较两种产能方案并报告等待时间及不确定性"
+      ],
+      "en": [
+        "SimPy Discrete-Event Simulation",
+        "Builds process-based discrete-event simulations of queues and resource contention for labs, services, or logistics, with verification, independent replications, and performance summaries; requires Python with SimPy installed, runs locally without credentials.",
+        "Model my lab's sample-processing queue with SimPy: use my arrival patterns and equipment capacity, verify simple cases, compare two capacity scenarios across independent replications, and report waiting times with uncertainty"
+      ]
+    },
+    "scientific-agent-skills/stable-baselines3": {
+      "zh": [
+        "SB3强化学习",
+        "用Stable Baselines3在Gymnasium环境训练PPO、SAC、DQN策略：接口校验、监控、保存归一化与检查点、多种子评估；需PyTorch。",
+        "用Stable Baselines3在我的仿真器里训练策略：先验证观测、动作、奖励和回合终止，比较多个训练种子与简单基线，保存归一化状态并在独立场景评估"
+      ],
+      "en": [
+        "Stable Baselines3 Reinforcement Learning",
+        "Trains and evaluates PPO, SAC, DQN, and other policies in Gymnasium environments: interface validation, monitored training, checkpoint and normalization preservation, and multi-seed evaluation; requires Python 3.10+, PyTorch, and stable-baselines3.",
+        "Train a policy in my simulator with Stable Baselines3: validate observations, actions, rewards, and episode endings first, compare training seeds against a baseline, save normalization with each checkpoint, and evaluate on separate scenarios"
+      ]
+    },
+    "scientific-agent-skills/statistical-analysis": {
+      "zh": [
+        "统计分析指导",
+        "围绕研究设计和目标效应选择与报告统计分析：组间比较、回归、相关、假设检验审视、效应量与贝叶斯替代；强调独立抽样单位和不确定性报告，本地Python环境无需凭据。",
+        "用statistical-analysis比较我的配对实验测量：核对配对标识与缺失、定义个体内变化为效应、报告效应估计与区间并区分预设与探索性分析"
+      ],
+      "en": [
+        "Statistical Analysis Guidance",
+        "Chooses and reports analyses around study design and the effect of interest: group comparisons, regression, correlation, assumption review, effect sizes, and Bayesian alternatives; uses a local Python stack like SciPy, statsmodels, PyMC, no credentials needed.",
+        "Compare my paired measurements with statistical-analysis: check pairing identifiers and missing pairs, define within-specimen change as the effect, report an estimate with uncertainty, and separate planned from exploratory analyses"
+      ]
+    },
+    "scientific-agent-skills/statistical-power": {
+      "zh": [
+        "统计功效与样本量",
+        "为研究计划计算样本量、功效、最小可检测效应和功效曲线：标准设计用解析法、复杂设计用模拟，强调假设透明和敏感性范围；需Python安装statsmodels等，本地计算无需凭据。",
+        "用statistical-power为我的配对研究做样本量规划：我提供有意义的个体内效应、变异与相关性假设及预期脱落率，给出敏感性曲线并区分完成例数与招募例数"
+      ],
+      "en": [
+        "Statistical Power and Sample Size",
+        "Plans sample size, power, minimum detectable effects, and power curves using analytical methods for standard designs or simulation for complex ones, with transparent assumptions and sensitivity ranges; needs Python with statsmodels and related packages, runs locally.",
+        "Plan my paired study with statistical-power: use my target within-person effect, variability and correlation assumptions, and expected attrition; show sensitivity curves and distinguish completed participants from recruitment numbers"
+      ]
+    },
+    "scientific-agent-skills/statsmodels": {
+      "zh": [
+        "statsmodels",
+        "用statsmodels拟合回归、广义线性、混合和时间序列模型：构建设计矩阵、诊断残差与影响点、报告系数与边际效应；需安装该库。",
+        "用statsmodels为我的计数结局建带暴露偏移的模型：检查预测变量编码与缺失、评估过度离散、报告可解释的效应和不确定性并找出高影响观测"
+      ],
+      "en": [
+        "Statsmodels Statistical Modeling",
+        "Fits regression, GLMs, discrete and mixed models, and time-series models with diagnostics, interpretable effects, and explicit uncertainty assumptions; requires Python 3.10+ with statsmodels installed, local fitting needs no credentials.",
+        "Model my count outcome with statsmodels including an exposure offset: review predictor coding and missing rows, check overdispersion, report interpretable effects with uncertainty, and flag influential cases"
+      ]
+    },
+    "scientific-agent-skills/sympy": {
+      "zh": [
+        "SymPy符号计算",
+        "用SymPy做精确符号数学：代数化简、微积分、方程求解、符号线性代数，并可生成数值代码或LaTeX；需要Python 3.9+与SymPy 1.14.0，纯数值任务建议用NumPy。",
+        "用SymPy对带假设的符号方程求导并化简，再导出成可调用的Python函数"
+      ],
+      "en": [
+        "SymPy Symbolic Math",
+        "Performs exact symbolic algebra, calculus, equation solving and LaTeX/code generation with SymPy 1.14.0 on Python 3.9+; defer purely numerical workloads to NumPy/SciPy.",
+        "Differentiate and simplify this equation symbolically under positive-real assumptions, then lambdify it to a Python function"
+      ]
+    },
+    "scientific-agent-skills/tamarind": {
+      "zh": [
+        "Tamarind云端生信",
+        "通过Tamarind Bio的REST API或MCP在云端跑AlphaFold、RFdiffusion、DiffDock等结构预测与分子设计工具，无需本地GPU；需要Python 3.10+、Tamarind账号和API密钥。",
+        "把这批蛋白序列提交给Tamarind上的AlphaFold做结构预测并取回结果"
+      ],
+      "en": [
+        "Tamarind Bio Cloud Tools",
+        "Runs hosted AlphaFold, RFdiffusion, DiffDock and other molecular-design tools via Tamarind Bio's REST API or MCP without local GPUs; requires Python 3.10+, a Tamarind account and API key.",
+        "Submit these protein sequences to AlphaFold on Tamarind Bio and download the predicted structures"
+      ]
+    },
+    "scientific-agent-skills/tellurium": {
+      "zh": [
+        "Tellurium生化仿真",
+        "用Tellurium和libRoadRunner仿真SBML/Antimony生化动力学模型，检查单位、比较参数扰动并导出COMBINE归档；需Python 3.11和指定版本依赖，代谢通量分析请用cobrapy。",
+        "仿真这个Antimony模型的浓度时间曲线，并导出可复现的SED-ML实验"
+      ],
+      "en": [
+        "Tellurium Kinetic Simulation",
+        "Simulates SBML/Antimony biochemical kinetics with Tellurium and libRoadRunner, checks units and exports reproducible COMBINE archives; requires Python 3.11 with pinned packages, while flux analysis belongs to cobrapy.",
+        "Simulate this Antimony model's concentration time course and export a replayable SED-ML COMBINE archive"
+      ]
+    },
+    "scientific-agent-skills/tiledbvcf": {
+      "zh": [
+        "TileDB-VCF变异库",
+        "用TileDB-VCF把单样本VCF/BCF导入可增量扩展的队列库，做区间和样本查询、等位统计与导出；需本地TileDB-VCF安装，云端功能另需TileDB Cloud令牌。",
+        "把这些VCF样本导入TileDB-VCF队列并查询某基因组区间的变异记录"
+      ],
+      "en": [
+        "TileDB-VCF Variant Store",
+        "Ingests indexed VCF/BCF into an incremental TileDB-VCF cohort store for region queries, allele statistics and export; needs a native install, and TileDB Cloud adds token and storage requirements.",
+        "Ingest these VCF samples into a TileDB-VCF cohort and query variants overlapping a genomic interval"
+      ]
+    },
+    "scientific-agent-skills/timesfm-forecasting": {
+      "zh": [
+        "TimesFM时序预测",
+        "用Google TimesFM做零样本时间序列预测：规则网格整理、分位数输出、协变量和留出评估；需timesfm 3.0.2与PyTorch，首次运行要联网下载Hugging Face模型权重。",
+        "用TimesFM 2.5对这份月度序列做分位数预测并与朴素基线比较"
+      ],
+      "en": [
+        "TimesFM Time-Series Forecasting",
+        "Zero-shot forecasting with Google's TimesFM covering quantile outputs, covariates and held-out evaluation; requires timesfm 3.0.2 with PyTorch and a network download of the Hugging Face checkpoint.",
+        "Forecast this monthly series with TimesFM quantiles and compare rolling-origin accuracy against a naive baseline"
+      ]
+    },
+    "scientific-agent-skills/torch-geometric": {
+      "zh": [
+        "PyG图神经网络",
+        "用PyTorch Geometric构建GCN、GAT、GraphSAGE等图神经网络，支持异构图、邻居采样和自定义数据集；需Python 3.10+、PyTorch 2.9+和匹配的torch-geometric及可选加速轮子。",
+        "写一个PyG异构图GAT模型对节点分类，并说明数据划分方式"
+      ],
+      "en": [
+        "PyTorch Geometric GNNs",
+        "Builds GCN/GAT/GraphSAGE graph neural networks with PyTorch Geometric including heterogeneous graphs and neighbor sampling; requires PyTorch 2.9+ and version-matched torch-geometric wheels.",
+        "Write a PyG heterogeneous GAT for node classification and document the evaluation split"
+      ]
+    },
+    "scientific-agent-skills/torchdrug": {
+      "zh": [
+        "TorchDrug分子学习",
+        "搭建和排错TorchDrug 0.2.1工作流：分子性质预测、预训练、分子生成、逆合成和蛋白表示；依赖旧栈（PyTorch 1.8–2.0、RDKit、fair-esm），Apple Silicon仅CPU。",
+        "帮我把现有TorchDrug分子性质预测脚本在兼容环境里跑通并修掉报错"
+      ],
+      "en": [
+        "TorchDrug Molecular Learning",
+        "Builds and troubleshoots TorchDrug 0.2.1 workflows for property prediction, pretraining, generation and protein representations; needs its older stack (PyTorch 1.8–2.0, RDKit, fair-esm) and is CPU-only on Apple Silicon.",
+        "Get my TorchDrug property-prediction script running in a compatible environment and fix the errors"
+      ]
+    },
+    "scientific-agent-skills/transformers": {
+      "zh": [
+        "Transformers模型库",
+        "用Hugging Face Transformers加载Hub模型、跑pipeline推理、文本生成和Trainer微调，覆盖NLP、视觉、音频任务；需PyTorch 2.5+，受限模型还需HF令牌。",
+        "用Trainer在自定义数据集上微调一个Transformers分类模型并记录版本"
+      ],
+      "en": [
+        "Hugging Face Transformers",
+        "Loads Hub models, runs pipeline inference and Trainer fine-tuning across NLP, vision and audio with Transformers; requires PyTorch 2.5+ and an HF token for gated models.",
+        "Fine-tune a Transformers classifier on my dataset with Trainer and record the checkpoint revisions"
+      ]
+    },
+    "scientific-agent-skills/treatment-plans": {
+      "zh": [
+        "治疗计划文档",
+        "把已由执业医师确认的临床决策整理成结构化治疗计划文档并做格式校验，只管文档不做医疗判断；纯Python标准库本地JSON，无网络、凭据或第三方依赖。",
+        "把这份医生确认的干预记录整理成治疗计划JSON并校验缺失字段"
+      ],
+      "en": [
+        "Treatment-Plan Documentation",
+        "Formats and structurally validates treatment-plan documents for decisions already supplied by licensed clinicians, never making clinical judgments; uses only the Python standard library on local JSON files.",
+        "Turn this clinician-approved intervention record into a treatment-plan JSON and flag missing fields"
+      ]
+    },
+    "scientific-agent-skills/umap-learn": {
+      "zh": [
+        "UMAP降维",
+        "用umap-learn做非线性降维、2D/3D嵌入、聚类预处理和监督、DensMAP、Parametric UMAP等流程；需Python 3.9+与umap-learn，可选HDBSCAN和TensorFlow。",
+        "把高维单细胞矩阵用UMAP降到二维并检查嵌入对参数的稳定性"
+      ],
+      "en": [
+        "UMAP Dimensionality Reduction",
+        "Applies umap-learn to nonlinear embeddings, clustering preprocessing and supervised/DensMAP/Parametric UMAP workflows; requires Python 3.9+ and umap-learn, with optional HDBSCAN and TensorFlow.",
+        "Embed this high-dimensional cell matrix in 2D with UMAP and check stability across parameters"
+      ]
+    },
+    "scientific-agent-skills/uncertainty-and-units": {
+      "zh": [
+        "单位与不确定度",
+        "用pint和uncertainties跟踪物理单位、传播测量不确定度、做GUM预算和量级合理性检查；需Python 3.12+及NumPy/SciPy，全部本地运行无需联网。",
+        "传播这组测量值的不确定度并检查算出的雷诺数量级是否合理"
+      ],
+      "en": [
+        "Units and Uncertainty",
+        "Tracks physical units and propagates measurement uncertainty with pint and uncertainties, including GUM budgets and plausibility checks; needs Python 3.12+ with NumPy/SciPy and runs fully offline.",
+        "Propagate uncertainty through these measurements and check whether the Reynolds number is plausible"
+      ]
+    },
+    "scientific-agent-skills/usfiscaldata": {
+      "zh": [
+        "美国财政数据",
+        "查询美国财政部Fiscal Data开放API获取国债、财政收支、国债拍卖、利率和汇率等联邦数据；无需API密钥，Python用requests和pandas，需联网。",
+        "拉取过去五年的Debt to the Penny国债数据并整理成可分析的表"
+      ],
+      "en": [
+        "U.S. Treasury Fiscal Data",
+        "Queries the U.S. Treasury Fiscal Data API for debt, revenue, spending, auctions, interest and exchange rates with no API key; Python examples need requests and pandas plus network access.",
+        "Pull five years of Debt to the Penny records and assemble an analysis-ready table"
+      ]
+    },
+    "scientific-agent-skills/vaex": {
+      "zh": [
+        "Vaex大表格分析",
+        "用Vaex处理超出内存的大型HDF5、Arrow、CSV、Parquet表格：惰性表达式、流式统计、分箱可视化和虚拟列；需Python 3.9–3.12与vaex-core及对应子包。",
+        "用Vaex对这个20GB的Parquet表做过滤和分箱统计，不全部载入内存"
+      ],
+      "en": [
+        "Vaex Out-of-Core Tables",
+        "Analyzes larger-than-RAM HDF5/Arrow/CSV/Parquet tables with Vaex lazy expressions, streamed statistics and binned plots; requires Python 3.9–3.12 with vaex-core and format subpackages.",
+        "Filter and bin statistics on this 20GB Parquet table with Vaex without loading it fully into memory"
+      ]
+    },
+    "scientific-agent-skills/venue-templates": {
+      "zh": [
+        "期刊会议模板",
+        "按目标期刊、会议、海报或基金的具体要求准备稿件：核对页数和匿名规则、选用官方模板、检查成稿PDF；需Python 3.11+，编译和PDF检查另需LaTeX与Poppler。",
+        "按NeurIPS当前匿名和页数要求检查我的LaTeX投稿是否合规"
+      ],
+      "en": [
+        "Venue Submission Templates",
+        "Prepares journal, conference, poster and grant documents against venue-specific rules with bundled LaTeX scaffolds; needs Python 3.11+, optional LaTeX/Poppler, and network to verify current instructions.",
+        "Check my LaTeX submission against NeurIPS's current anonymity and page-limit rules"
+      ]
+    },
+    "scientific-agent-skills/waypoint-bio": {
+      "zh": [
+        "Waypoint菌群模型",
+        "使用Outpost Bio的Waypoint菌群基础模型：嵌入样本、微调分类丰度数据、跑Compass基准并转换MetaPhlAn等丰度表；需waypoint-bio包，下载模型要有获批的HF令牌，训练建议GPU。",
+        "把QIIME 2丰度表转成waypoint格式并用Waypoint-45m生成样本嵌入"
+      ],
+      "en": [
+        "Waypoint Microbiome Models",
+        "Works with Outpost Bio's Waypoint microbiome foundation models for embeddings, fine-tuning and the Compass benchmark plus abundance-table conversion; needs waypoint-bio, an approved HF token for downloads, and ideally a GPU.",
+        "Convert this QIIME 2 abundance table to waypoint format and embed samples with Waypoint-45m"
+      ]
+    },
+    "scientific-agent-skills/what-if-oracle": {
+      "zh": [
+        "情景推演分析",
+        "对研究计划做结构化what-if情景分析：有利、基准、不利、黑天鹅和二阶情景，列出假设、证据与决策触发器；属定性规划工具，不估计因果效应或预测概率。",
+        "针对我的实验方案做不利情景推演，列出可能失效环节和应对触发条件"
+      ],
+      "en": [
+        "What-If Scenario Analysis",
+        "Structures what-if scenario analysis for research plans across favorable, adverse, wild-card and second-order scenarios with explicit assumptions and decision triggers; qualitative, not causal or probabilistic forecasting.",
+        "Run adverse-scenario stress tests on my experiment plan with triggers for each failure mode"
+      ]
+    },
+    "scientific-agent-skills/zarr-python": {
+      "zh": [
+        "Zarr分块数组",
+        "用Zarr-Python 3存储和查询分块多维科学数组：编码、分片、S3/GCS后端及与NumPy/Dask/Xarray集成；需Python 3.12+与zarr 3.4.0，远端存储另需相应后端和凭据。",
+        "把这个模拟输出写成Zarr分块数组放到S3并用Xarray读回验证"
+      ],
+      "en": [
+        "Zarr Chunked Arrays",
+        "Stores and queries chunked N-D arrays with Zarr-Python 3 including codecs, sharding, S3/GCS backends and NumPy/Dask/Xarray integration; requires Python 3.12+, zarr 3.4.0 and provider credentials for remote stores.",
+        "Write this simulation output as a sharded Zarr array on S3 and read it back with Xarray to verify"
+      ]
+    }
+  }
+}

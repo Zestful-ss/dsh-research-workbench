@@ -119,14 +119,28 @@ as an existing folder.
 - **Skills page** — subscribe to a suggested upstream repository or add any GitHub repository /
   local folder. Suggested collections cover NatureSkills, figures4papers, Academic Research Skills
   (CC BY-NC 4.0), Science Superpowers (computational-science methodology), Scientific
-  Writer, Bioinformatics Skills, Drug Discovery Skills, and book-to-skill. Per source: current revision, update state, `Check`,
-  `Preview` (installed → latest, pending commits, diffstat), `Update`, `Remove`. Skills from
-  the built-in NatureSkills and figures4papers sources include plain-language purposes and
-  examples; other sources retain their upstream descriptions. Each Skill also shows its
-  category, source, revision, shared-dependency status, enable/disable, the complete upstream
-  `SKILL.md`, and “use in session” (available in research mode). The full 177-skill K-Dense
-  library is usable from a local clone, but its ~470 MB repository is too large for a
-  one-click preset.
+  Agent Skills (198-skill bundle: Science Superpowers, Academic Research Skills and the
+  177-skill K-Dense library), Scientific Writer, Bioinformatics Skills, Drug Discovery Skills,
+  and book-to-skill. Per source: current revision, update state, `Check`,
+  `Preview` (installed → latest, pending commits, diffstat), `Update`, `Remove`. A preset counts
+  as installed by its repository, not by its id, so a repository registered under another id
+  still hides the duplicate subscribe button, and an id already taken by a different repository
+  falls back to `<id>-official` instead of failing. Each Skill shows its category, source,
+  revision, shared-dependency status, enable/disable, the complete `SKILL.md`, and “use in
+  session” (available in research mode).
+- **Skill guides** — every skill from the built-in NatureSkills, figures4papers, Science
+  Superpowers, Academic Research Skills and Scientific Agent Skills sources carries a curated
+  Chinese and English title, purpose and example request, generated from the upstream
+  `SKILL.md` at a recorded hash. When upstream later edits that file the guide is marked as
+  possibly stale and the upstream description is shown next to it; a skill with no curated
+  guide says so and shows its upstream description instead of inventing one.
+- **Shared skill versions** — “Edit shared version” in a skill's detail dialog saves one
+  edited `SKILL.md` under `skill-overrides/` for every assistant that selects that skill.
+  The repository tree, scripts and references stay untouched; the saved text applies from the
+  assistant's next turn. Saving is guarded by the current content hash (a stale editor gets a
+  conflict instead of overwriting), by the repository's own frontmatter rules (name, non-empty
+  description, 256 KiB limit), and by the install lock. “Restore upstream” deletes the shared
+  version; an upstream edit is reported and kept, never silently dropped.
 
 ## Upstream sources are kept whole
 
@@ -147,8 +161,9 @@ The Skills page shows that check per Skill: `nature-shared ✓` means the siblin
   upstream rewrote history).
 - When git cannot reach the network, the same revision is installed from the GitHub archive and
   updates replace the whole tree. Both paths keep the complete directory tree.
-- An archive download gets a ten-minute budget and a 100 MB cap. A download that fails changes
-  nothing: the installed tree is only replaced after the new one is complete.
+- An archive download gets a ten-minute budget and a 100 MB cap, except the
+  `scientific-agent-skills` repository whose full archive is ~245 MB and gets 512 MB. A download
+  that fails changes nothing: the installed tree is only replaced after the new one is complete.
 - One install runs at a time (`install.lock`, with stale-lock recovery); a second request gets
   `423`.
 
@@ -158,7 +173,8 @@ The Skills page shows that check per Skill: `nature-shared ✓` means the siblin
 $DSH_HOME/dsh-research-workbench/
   state.json          sources, disabled skills, literature folders
   sources/<id>/       complete upstream repository trees
-  install.lock        single-writer guard for sync work
+  install.lock        single-writer guard for sync work and shared skill versions
+  skill-overrides/    one saved SKILL.md per customized skill
   roles.json          { version, pending, roles } — Bot id → template + selected Skills
   roles.lock          single-writer guard for role edits
 ```

@@ -883,3 +883,51 @@ describe('projects', () => {
     }
   });
 });
+
+describe('recommendations and unusable customizations', () => {
+  it('marks a skill with a broken shared version unavailable', () => {
+    const rows = [
+      { sourceId: 'source-a', name: 'nature-writing', disabled: false, overrideError: 'bad json' },
+      { sourceId: 'source-a', name: 'nature-paper-xray', disabled: false },
+    ];
+    const evaluation = evaluateSelection(rows, [
+      { sourceId: 'source-a', name: 'nature-writing' },
+      { sourceId: 'source-a', name: 'nature-paper-xray' },
+    ]);
+    const broken = evaluation.entries.find(entry => entry.name === 'nature-writing');
+    assert.equal(broken.available, false);
+    assert.equal(broken.reason, 'override-invalid');
+    assert.equal(evaluation.entries.find(entry => entry.name === 'nature-paper-xray').available, true);
+  });
+
+  it('maps template recommendations to the registered id and reports unavailable ones', async () => {
+    const catalog = {
+      sources: [{
+        id: 'science-superpowers-official',
+        title: 'Science Superpowers',
+        canonicalSourceId: 'science-superpowers',
+      }],
+      skills: [
+        { sourceId: 'science-superpowers-official', name: 'framing-research-questions', category: 'general', description: '问题框定' },
+        { sourceId: 'science-superpowers-official', name: 'surveying-prior-work', category: 'reading', description: '文献调研' },
+        { sourceId: 'science-superpowers-official', name: 'designing-the-analysis', category: 'general', description: '分析设计', disabled: true },
+      ],
+    };
+    const store = new ResearchRoleStore({
+      dataRoot,
+      manager: { status: async () => catalog },
+      log: { warn() {} },
+      ctx: adapterCtx(),
+    });
+    const view = await store.view();
+    const design = view.templates.find(template => template.id === 'research-design');
+    const byName = new Map(design.skills.map(skill => [skill.name, skill]));
+    assert.equal(byName.get('framing-research-questions').sourceId, 'science-superpowers-official');
+    assert.equal(byName.get('framing-research-questions').canonicalSourceId, 'science-superpowers');
+    assert.equal(byName.get('framing-research-questions').available, true);
+    assert.equal(byName.get('designing-the-analysis').available, false);
+    assert.equal(byName.get('designing-the-analysis').reason, 'disabled');
+    assert.equal(byName.get('experimental-design').available, false);
+    assert.equal(byName.get('experimental-design').reason, 'source-missing');
+  });
+});
