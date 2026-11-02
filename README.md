@@ -238,7 +238,9 @@ npm test        # node --test: scanning, roles, provider isolation, HTTP fence, 
 `test/workbench.test.mjs` builds a `nature-skills`-shaped fixture (shared sibling plus skills
 at depths 1 and 2), asserts the scan and the provider contract, and exercises the HTTP route
 including token rejection, the cross-site fence, content-type enforcement, lock contention,
-and directory browsing.
+directory browsing, shared skill versions (save, stale hash, broken file, source removal,
+upstream change, restore), preset identity by repository, and the Academic Research Skills
+path map.
 
 `test/roles.test.mjs` builds a DS-Bot-shaped state file and covers role transactions and
 marker recovery, per-Agent isolation across own chats, earlier segments and group sessions,
