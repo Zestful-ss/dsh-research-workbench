@@ -196,11 +196,12 @@ describe('preset sources', () => {
       'academic-research-skills',
       'science-superpowers',
       'scientific-writer',
-      'bioinformatics-skills',
-      'drug-discovery-skills',
       'book-to-skill',
     ]) {
       assert.equal(ids.includes(id), true, id);
+    }
+    for (const id of ['scientific-agent-skills', 'bioinformatics-skills', 'drug-discovery-skills']) {
+      assert.equal(ids.includes(id), false, `${id} is field-specific and stays out of the suggestions`);
     }
     for (const preset of BUILTIN_PRESET_SOURCES) {
       assert.equal(parseGitHubUrl(preset.url).repository.length > 0, true);

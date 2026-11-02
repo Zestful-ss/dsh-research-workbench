@@ -80,9 +80,9 @@ Skills 页将搜索和分类筛选独立排列，「可以这样说」展开请�
   （Zotero 的 `storage` 目录也可以）。文件可系统打开、在资源管理器中定位，或带入科研助手对话。
 - **科研 Skills 页**：一键订阅推荐来源，或添加任意 GitHub 仓库／本地文件夹。推荐来源包括 NatureSkills、
   figures4papers、Academic Research Skills（CC BY-NC 4.0，仅限非商业使用）、Science Superpowers
-  （计算科研方法论）、Scientific Writer、Bioinformatics Skills、Drug Discovery Skills 与
-  book-to-skill。整库面向单一领域的来源直接按领域命名（Bioinformatics Skills、Drug Discovery
-  Skills），不把学科工具混进一个号称通用的科研技能库。每个来源显示当前版本、更新状态、`检查更新`、`变更预览`、
+  （计算科研方法论）、Scientific Writer 与 book-to-skill。推荐来源都要求跨领域可用；只服务于单一
+  领域的库（生物信息、药物发现、临床工具）在确实做那个方向时按仓库地址自行添加，不作为通用科研
+  集合推荐。每个来源显示当前版本、更新状态、`检查更新`、`变更预览`、
   `更新`、`移除`。预设是否已安装按仓库判断而非来源 id：同一仓库换了 id 仍不会出现重复订阅，
   规范 id 被其他仓库占用时自动改用 `<id>-official` 而不是报错。每个技能显示分类、来源、版本、
   共享依赖状态、启用/停用、完整 `SKILL.md`，以及「在会话中使用」（科研模式下可用）。

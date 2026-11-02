@@ -120,10 +120,10 @@ as an existing folder.
   can be opened natively, revealed in the file manager, or sent to a research assistant.
 - **Skills page** — subscribe to a suggested upstream repository or add any GitHub repository /
   local folder. Suggested collections cover NatureSkills, figures4papers, Academic Research Skills
-  (CC BY-NC 4.0), Science Superpowers (computational-science methodology), Scientific Writer,
-  Bioinformatics Skills, Drug Discovery Skills, and book-to-skill. Collections are listed by
-  field where the whole repository is field-specific (Bioinformatics Skills, Drug Discovery
-  Skills); no suggested collection mixes discipline tools into a general research library.
+  (CC BY-NC 4.0), Science Superpowers (computational-science methodology), Scientific Writer and
+  book-to-skill. Every suggestion stays usable across fields; a discipline-specific library
+  (bioinformatics, drug discovery, clinical tools) is added by URL when that field is the work,
+  never offered as a general research collection.
   Per source: current revision, update state, `Check`,
   `Preview` (installed → latest, pending commits, diffstat), `Update`, `Remove`. A preset counts
   as installed by its repository, not by its id, so a repository registered under another id
