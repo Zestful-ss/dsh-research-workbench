@@ -1,12 +1,11 @@
 # dsh-research-workbench
 
 Research Workbench for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH).
-It has two surfaces:
+Clicking the workbench entry in the sidebar opens research mode directly:
 
 - a **Research mode** — its own sidebar, home, Skills page, and research assistants, with
-  the classic session list and ordinary conversations out of the way;
-- the **classic workbench panel** — the same project, literature, and upstream Skill
-  management reachable from the ordinary Agent sidebar.
+  the classic session list and ordinary conversations out of the way. After **Back to
+  classic Agent**, the same entry returns to research mode without an extra step.
 
 Research assistants are ordinary long-lived **DS-Bot** Bots. The workbench adds a role and an
 optional project to a Bot without owning its name, model, chat history, or group chats: those
@@ -23,8 +22,8 @@ DS-Bot's atomically written `state.json`; changes go through DS-Bot's same-origi
 
 ### Research mode
 
-Enter it from the classic workbench panel (`科研工作台` → `进入科研模式`). The classic
-sidebar, new-session control, brand, and footer are hidden; the research sidebar shows:
+Click `科研工作台` in the sidebar to enter it directly. The classic sidebar, new-session
+control, brand, and footer are hidden; the research sidebar shows:
 
 - **Home** — task cards, project folders, research assistants, materials, and literature.
 - **Research Skills** — upstream source management and the full Skill catalog.
@@ -119,7 +118,9 @@ as an existing folder.
   outside a project still follows the host tools, approvals and permissions, and DS-Bot's
   team memory stays shared across projects.
 
-### Classic workbench panel
+### Projects, materials, and Skills
+
+The research mode's Home and Skills pages provide:
 
 - **Projects** — every registered workspace with its path, session count, and material count,
   plus the project actions above.
