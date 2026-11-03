@@ -186,7 +186,6 @@ describe('DS-Bot state compatibility', () => {
     await rm(stateFile);
     const view = await store.view();
     assert.equal(view.compatible, true);
-    assert.deepEqual(view.prunedRoles, []);
     assert.equal(view.entries.length, 1);
     assert.equal(view.entries[0].botId, 'writer');
     assert.equal(view.entries[0].missing, true);
@@ -796,7 +795,6 @@ describe('projects', () => {
     await writeJsonAtomic(stateFile(), team);
 
     const view = await store.view();
-    assert.deepEqual(view.prunedRoles, ['bot-gone']);
     assert.equal(view.entries.some(row => row.botId === 'bot-gone'), false);
     assert.equal((await store.read()).roles['bot-gone'], undefined);
     await assert.rejects(

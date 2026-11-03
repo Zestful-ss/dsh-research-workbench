@@ -79,9 +79,9 @@ Touch input fields use at least 16px text.
 - Removing a role deletes only the workbench assignment. Deleting the Bot itself is a
   separate, explicit choice.
 - DS-Bot is the authority on Bot existence: once a Bot is deleted there, the workbench
-  removes its role on the next read and reports the sync. A profile with no `state.json`
-  yet, or an unreadable/incompatible state, keeps every role instead of treating an
-  outage as a deletion.
+  removes its role on the next read. A profile with no `state.json` yet, or an
+  unreadable/incompatible state, keeps every role instead of treating an outage as a
+  deletion.
 - Role Skills are delivered to the Bot's own chat, earlier chat segments, group-member
   sessions, and group-member segments. The provider follows DS-Bot's saved ownership before
   each turn, so a new group session or a chat segment added by DS-Bot still sees the right
