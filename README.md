@@ -32,6 +32,10 @@ sidebar, new-session control, brand, and footer are hidden; the research sidebar
   selected Skills.
 - **Back to classic Agent** — removes the research overrides and restores the classic shell.
 
+On DS-Bot's own Bot surface the workbench hands the sidebar, overlays, and model slot back to
+DS-Bot, so its team list and the Bots the workbench created stay visible there; returning to
+the Agent surface restores the research overrides without re-entering research mode.
+
 Task cards and “use this Skill” first ask which research assistant should receive the task,
 then open that Bot's current DS-Bot chat and seed the composer. A task never creates a blank
 workspace session. When no assistant has the needed Skill, the same dialog offers to create
@@ -74,6 +78,10 @@ Touch input fields use at least 16px text.
   two same-name paths inside one source are also a conflict.
 - Removing a role deletes only the workbench assignment. Deleting the Bot itself is a
   separate, explicit choice.
+- DS-Bot is the authority on Bot existence: once a Bot is deleted there, the workbench
+  removes its role on the next read and reports the sync. A profile with no `state.json`
+  yet, or an unreadable/incompatible state, keeps every role instead of treating an
+  outage as a deletion.
 - Role Skills are delivered to the Bot's own chat, earlier chat segments, group-member
   sessions, and group-member segments. The provider follows DS-Bot's saved ownership before
   each turn, so a new group session or a chat segment added by DS-Bot still sees the right
@@ -250,7 +258,8 @@ path map.
 `test/roles.test.mjs` builds a DS-Bot-shaped state file and covers role transactions and
 marker recovery, per-Agent isolation across own chats, earlier segments and group sessions,
 pending markers, duplicate-name conflicts, disabled/removed sources, restart persistence,
-corrupt `roles.json`, the role HTTP actions and the `roles.lock` 423, plus a real local Git
+role sync after a Bot is deleted in DS-Bot and the missing-state-file guard, corrupt
+`roles.json`, the role HTTP actions and the `roles.lock` 423, plus a real local Git
 source whose `applyUpdate` invalidates the selected Skill directory.
 
 Host modules:

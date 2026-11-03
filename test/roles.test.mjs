@@ -181,6 +181,19 @@ describe('DS-Bot state compatibility', () => {
     }
   });
 
+  it('keeps roles when DS-Bot has no state file yet, rather than reading that as deletion', async () => {
+    const { store, stateFile } = await fixture('no-state-file');
+    await rm(stateFile);
+    const view = await store.view();
+    assert.equal(view.compatible, true);
+    assert.deepEqual(view.prunedRoles, []);
+    assert.equal(view.entries.length, 1);
+    assert.equal(view.entries[0].botId, 'writer');
+    assert.equal(view.entries[0].missing, true);
+    // A second read sees the same empty state; the role must survive it too.
+    assert.equal((await store.view()).entries.length, 1);
+  });
+
   it('preserves roles and reports incompatible state and session ownership formats', async () => {
     const { store, packageFile, stateFile, state } = await fixture('incompatible-state');
     await put(packageFile, JSON.stringify({ name: 'ds-bot', version: '1.0.0' }));
@@ -775,21 +788,21 @@ describe('projects', () => {
     assert.equal((await readTeam()).bots['bot-legacy'].id, 'bot-legacy');
   });
 
-  it('refuses to join a project for a Bot DS-Bot no longer has, but allows leaving', async () => {
+  it('removes a role whose Bot was deleted in DS-Bot, and refuses to re-join it', async () => {
     const store = makeStore();
     await prepareAndComplete(store, { botId: 'bot-gone', workspaceId: projectB, name: 'Deleted soon' });
     const team = await readTeam();
     delete team.bots['bot-gone'];
     await writeJsonAtomic(stateFile(), team);
 
+    const view = await store.view();
+    assert.deepEqual(view.prunedRoles, ['bot-gone']);
+    assert.equal(view.entries.some(row => row.botId === 'bot-gone'), false);
+    assert.equal((await store.read()).roles['bot-gone'], undefined);
     await assert.rejects(
       () => store.setProject({ botId: 'bot-gone', workspaceId: projectA, expectedWorkspaceId: projectB }),
       error => error instanceof SkillError && error.code === 'not_found',
     );
-    const left = await store.setProject({ botId: 'bot-gone', workspaceId: null, expectedWorkspaceId: projectB });
-    assert.equal(left.workspaceId, null);
-    const entry = (await store.view()).entries.find(row => row.botId === 'bot-gone');
-    assert.equal(entry.missing, true);
 
     team.bots['bot-gone'] = { id: 'bot-gone', name: 'Gone', sessionId: 'bot-gone' };
     team.bots['bot-http-project'] = { id: 'bot-http-project', name: 'HTTP project role', sessionId: 'bot-http-project' };
