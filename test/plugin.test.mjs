@@ -293,4 +293,37 @@ describe('browser bundle', () => {
     assert.equal(workspaces.options.priority <= -100, true);
     storedSurface = undefined;
   });
+
+  it('keeps the post callback dependency as a deps array, not the boot object', async () => {
+    const source = await readFile(new URL('../lib/client.js', import.meta.url), 'utf8');
+    // useCallback's second argument must be a dependency array. Passing the
+    // boot object itself (`},boot)`) makes React treat it as one dep and
+    // rebuild post on every render; `[token]` is the correct shape.
+    const postBlock = source.match(/const post=useCallback\(async\(action,body=\{\}\)=>\{[\s\S]*?\},\s*(\[[^\]]*\]|boot)\);/);
+    assert.notEqual(postBlock, null, 'post useCallback not found');
+    assert.match(postBlock[1], /^\[token\]$/, `post deps must be [token], got ${postBlock[1]}`);
+    // The token must come from boot?.token, captured before the callback.
+    assert.match(source, /const token=boot\?\.token;/);
+  });
+
+  it('never overwrites a composer draft it cannot read', async () => {
+    const source = await readFile(new URL('../lib/client.js', import.meta.url), 'utf8');
+    const seed = source.slice(
+      source.indexOf('async function seedDraft'),
+      source.indexOf('async function openAssistantChat'),
+    );
+    assert.notEqual(seed.length, 0, 'seedDraft not found');
+    // When getDraft is missing or throws the draft state is unknown: the only
+    // allowed writes are insertText ('inserted') or nothing ('unknown').
+    // setDraft must not appear on that path — it would clobber user text.
+    const unreadable = seed.slice(seed.indexOf('// The draft state cannot be read'));
+    assert.equal(unreadable.includes('setDraft'), false);
+    assert.match(unreadable, /return 'unknown'/);
+    assert.match(unreadable, /return 'inserted'/);
+    // The caller maps every outcome to an honest notice; only a real write
+    // counts as success.
+    assert.match(source, /seeded==='appended'\)api\.setNotice\('draftAppended'\)/);
+    assert.match(source, /seeded==='unknown'\)api\.setNotice\('draftUnknown'\)/);
+    assert.match(source, /return seeded===true\|\|seeded==='inserted'\|\|seeded==='appended'/);
+  });
 });

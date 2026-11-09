@@ -300,6 +300,13 @@ describe('HTTP surface', () => {
     assert.equal(payload.skillStatus.skills.length, 3);
     assert.equal(payload.skillStatus.sources[0].id, 'fixture');
     assert.deepEqual(payload.filesByWorkspace, {});
+    // literatureFiles must be a flat dir->rows map, matching what FilesPanel
+    // reads as literatureFiles[dir]; a nested envelope would hide every file.
+    assert.equal(typeof payload.literatureFiles, 'object');
+    assert.equal(Array.isArray(payload.literatureFiles), false);
+    for (const dir of payload.literatureDirs) {
+      assert.equal(Array.isArray(payload.literatureFiles[dir]), true);
+    }
   });
 
   it('refuses a POST without the boot token', async () => {
@@ -362,9 +369,31 @@ describe('HTTP surface', () => {
     const payload = await added.json();
     assert.deepEqual(payload.literatureDirs, [literature]);
     assert.equal(payload.literatureFiles[literature].length, 1);
+    // Same flat map shape as bootstrap: literatureFiles[dir] is the rows array.
+    assert.equal(Array.isArray(payload.literatureFiles), false);
+    assert.equal(typeof payload.literatureFiles, 'object');
     const removed = await post({ action: 'remove-literature-dir', path: literature }, { 'x-workbench-token': TOKEN });
     assert.deepEqual((await removed.json()).literatureDirs, []);
     assert.equal((await readFile(join(literature, 'one.pdf'), 'utf8')), 'pdf');
+  });
+
+  it('serves literature rows per dir on bootstrap after the dir is registered', async () => {
+    // Regression: bootstrap once nested the dir->rows map inside another
+    // envelope, so literatureFiles[dir] was never an array and the panel
+    // showed zero files. Re-check through a real refresh, not the add action.
+    const literature = join(root, 'papers');
+    await post({ action: 'add-literature-dir', path: literature }, { 'x-workbench-token': TOKEN });
+    const response = await get('action=bootstrap');
+    assert.equal(response.status, 200);
+    const payload = await response.json();
+    assert.deepEqual(payload.literatureDirs, [literature]);
+    assert.equal(typeof payload.literatureFiles, 'object');
+    assert.equal(Array.isArray(payload.literatureFiles), false);
+    const rows = payload.literatureFiles[literature];
+    assert.equal(Array.isArray(rows), true);
+    assert.equal(rows.length, 1);
+    assert.equal(rows[0].name, 'one.pdf');
+    await post({ action: 'remove-literature-dir', path: literature }, { 'x-workbench-token': TOKEN });
   });
 
   it('serves one skill document with its shared dependency report', async () => {
